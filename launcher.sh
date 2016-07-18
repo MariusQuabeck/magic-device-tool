@@ -14,9 +14,9 @@ echo ""
 echo "ubuntu-device-flash"
 echo ""
 sleep 1
-#sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
-#sudo apt-get -qq update
-#sudo apt-get -qq -y install android-tools-adb android-tools-fastboot ubuntu-device-flash phablet-tools
+sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
+sudo apt-get -qq update
+sudo apt-get -qq -y install android-tools-adb android-tools-fastboot ubuntu-device-flash phablet-tools
 clear
 echo ""
 echo "Choose your device"

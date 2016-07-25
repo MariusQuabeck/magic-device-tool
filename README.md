@@ -11,10 +11,10 @@ Currently supported devices:
 
 Usage
 -----
-
-::
+```
 $ chmod +x launcher.sh
 $ ./launcher.sh
+```
 
 todo:
 

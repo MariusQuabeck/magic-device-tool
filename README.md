@@ -21,3 +21,10 @@ todo:
 - add BQ Aquaris M10 FHD (frieza)
 - add BQ Aquaris M10 HD (cooler)
 - add Meizu Pro 5 (turbo)
+
+
+Contact
+-------
+[Marius Quabeck](mailto:misterq@ubuntu.com)
+
+[Join us on Telegram] (https://telegram.me/joinchat/A3LlWgiC4TQYX0epd9w8EQ)

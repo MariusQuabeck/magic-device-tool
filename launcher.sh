@@ -23,12 +23,12 @@ echo "Choose your device"
 echo ""
 echo "[1] Nexus 4 - mako"
 echo "[2] Nexus 7 2013 (WiFi) - flo"
-#echo "[3] BQ Aquaris E4.5 - krillin"
-#echo "[4] BQ Aquaris E5 HD - vegetahd"
-#echo "[5] BQ Aquaris M10 HD - cooler"
-#echo "[6] BQ Aquaris M10 FHD - frieza"
-#echo "[7] Meizu MX 4 - arale"
-#echo "[8] Meizu Pro 5 - turbo"
+echo "[3] BQ Aquaris E4.5 - krillin"
+echo "[4] BQ Aquaris E5 HD - vegetahd"
+echo "[5] BQ Aquaris M10 HD - cooler"
+echo "[6] BQ Aquaris M10 FHD - frieza"
+echo "[7] Meizu MX 4 - arale"
+echo "[8] Meizu Pro 5 - turbo"
 echo ""
 sleep 1
 echo -n "Enter device number: "; read device
@@ -39,22 +39,22 @@ else
     . ./devices/nexus7.sh
   else
     if [ "$device" = "3" ]; then
-      . ./devices/nexus7.sh
+      . ./devices/e45.sh
     else
       if [ "$device" = "4" ]; then
-        . ./devices/nexus7.sh
+        . ./devices/e5hd.sh
       else
         if [ "$device" = "5" ]; then
-          . ./devices/nexus7.sh
+          echo "coming soon"
         else
           if [ "$device" = "6" ]; then
-            . ./devices/nexus7.sh
+            echo "coming soon"
           else
             if [ "$device" = "7" ]; then
-              . ./devices/nexus7.sh
+              . ./devices/mx4.sh
             else
               if [ "$device" = "8" ]; then
-                . ./devices/nexus7.sh
+                echo "coming soon"
 
               else
                 echo "You did not enter a number"

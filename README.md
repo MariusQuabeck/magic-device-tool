@@ -27,4 +27,4 @@ Contact
 -------
 [Marius Quabeck](mailto:misterq@ubuntu.com)
 
-[Join us on Telegram] (https://telegram.me/joinchat/A3LlWgiC4TQYX0epd9w8EQ)
+[Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TQYX0epd9w8EQ)

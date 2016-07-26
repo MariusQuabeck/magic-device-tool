@@ -28,3 +28,7 @@ $ cd magic-device-tool
 $ chmod +x launcher.sh
 $ ./launcher.sh
 ```
+
+TODO
+------
+- Add ubports devices

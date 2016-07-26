@@ -1,5 +1,5 @@
 # magic-device-tool
-A simple batch for installing Ubuntu on your device
+A simple batch for installing Ubuntu and switching channels on your device
 
 Contact
 -------

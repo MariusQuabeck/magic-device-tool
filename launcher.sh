@@ -45,10 +45,10 @@ else
         . ./devices/e5hd.sh
       else
         if [ "$device" = "5" ]; then
-          echo "coming soon"
+          . ./devices/m10hd.sh
         else
           if [ "$device" = "6" ]; then
-            echo "coming soon"
+            . ./devices/m10fhd.sh
           else
             if [ "$device" = "7" ]; then
               . ./devices/mx4.sh

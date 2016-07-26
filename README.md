@@ -1,5 +1,5 @@
 # magic-device-tool
-A batch for installing Ubuntu and Android on your device
+A simple batch for installing Ubuntu and Android on your device
 
 Contact
 -------

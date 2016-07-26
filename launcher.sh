@@ -54,7 +54,7 @@ else
               . ./devices/mx4.sh
             else
               if [ "$device" = "8" ]; then
-                echo "coming soon"
+                . ./devices/turbo.sh
 
               else
                 echo "You did not enter a number"

@@ -9,7 +9,7 @@ Contact
 [Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TQYX0epd9w8EQ)
 
 
-Supported devices:
+Supported devices
 -----
 
 - BQ Aquaris E4.5 (krillin)

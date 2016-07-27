@@ -32,3 +32,4 @@ $ ./launcher.sh
 TODO
 ------
 - Add ubports devices
+- Add BQ channels for mako & flo

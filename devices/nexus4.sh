@@ -70,7 +70,7 @@ if [ "$option" = "1" ]; then
           echo ""
           ubuntu-device-flash touch --channel ubuntu-touch/stable/ubuntu --device mako --bootstrap
           echo ""
-          echo "Rest of the setup will be on your device."
+          echo "Move to your device to finish the setup."
           sleep 1
           echo ""
           echo "Cleaning up.."
@@ -134,7 +134,7 @@ if [ "$option" = "1" ]; then
             sleep 6
             ubuntu-device-flash touch --channel ubuntu-touch/rc-proposed/ubuntu --device mako --bootstrap
             echo ""
-            echo "Rest of the setup will be on your device."
+            echo "Move to your device to finish the setup."
             sleep 1
             echo ""
             echo "Cleaning up.."
@@ -209,7 +209,7 @@ if [ "$option" = "1" ]; then
             echo ""
             ubuntu-device-flash touch --channel ubuntu-touch/stable/ubuntu --device mako
             echo ""
-            echo "Rest of the setup will be on your device."
+            echo "Move to your device to finish the setup."
             sleep 1
             echo ""
             echo "Cleaning up.."
@@ -268,7 +268,7 @@ if [ "$option" = "1" ]; then
               echo ""
               ubuntu-device-flash touch --channel ubuntu-touch/rc-proposed/ubuntu --device mako
               echo ""
-              echo "Rest of the setup will be on your device."
+              echo "Move to your device to finish the setup."
               sleep 1
               echo ""
               echo "Cleaning up.."
@@ -340,7 +340,7 @@ else
         fastboot -w update ./occam-lmy48t/image-occam-lmy48t.zip
         sleep 1
         echo ""
-        echo "Rest of the setup will be on your device."
+        echo "Move to your device to finish the setup."
         echo ""
         echo "Dont think your device is in a bootloop."
         echo "It can take up to 10 minutes until you see the android setup screen"

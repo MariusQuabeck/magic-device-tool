@@ -74,7 +74,7 @@ if [ "$option" = "1" ]; then
           ubuntu-device-flash touch --bootstrap --device turbo --channel ubuntu-touch/stable/meizu.en --recovery-image recovery.img
           sleep 1
           echo ""
-          echo "Rest of the setup will be on your device."
+          echo "Move to your device to finish the setup."
           sleep 1
           echo ""
           echo "Cleaning up.."
@@ -147,7 +147,7 @@ if [ "$option" = "1" ]; then
             ubuntu-device-flash touch --bootstrap --device turbo --channel ubuntu-touch/rc-proposed/meizu-pd.en --recovery-image recovery.img
             sleep 1
             echo ""
-            echo "Rest of the setup will be on your device."
+            echo "Move to your device to finish the setup."
             sleep 1
             echo ""
             echo "Cleaning up.."
@@ -240,7 +240,7 @@ if [ "$option" = "1" ]; then
             ubuntu-device-flash touch --device turbo --channel ubuntu-touch/stable/meizu.en
             sleep 1
             echo ""
-            echo "Rest of the setup will be on your device."
+            echo "Move to your device to finish the setup."
             sleep 1
             echo ""
             echo "Cleaning up.."
@@ -319,7 +319,7 @@ if [ "$option" = "1" ]; then
               ubuntu-device-flash touch --device turbo --channel ubuntu-touch/rc-proposed/meizu-pd.en
               sleep 1
               echo ""
-              echo "Rest of the setup will be on your device."
+              echo "Move to your device to finish the setup."
               sleep 1
               echo ""
               echo "Cleaning up.."

@@ -74,7 +74,7 @@ if [ "$option" = "1" ]; then
           ubuntu-device-flash touch --bootstrap --device frieza --channel ubuntu-touch/stable/bq-aquaris-pd.en --recovery-image recovery-frieza.img
           sleep 1
           echo ""
-          echo "Rest of the setup will be on your device."
+          echo "Move to your device to finish the setup."
           sleep 1
           echo ""
           echo "Cleaning up.."
@@ -147,7 +147,7 @@ if [ "$option" = "1" ]; then
             ubuntu-device-flash touch --bootstrap --device frieza --channel ubuntu-touch/rc-proposed/bq-aquaris-pd.en --recovery-image recovery-frieza.img
             sleep 1
             echo ""
-            echo "Rest of the setup will be on your device."
+            echo "Move to your device to finish the setup."
             sleep 1
             echo ""
             echo "Cleaning up.."
@@ -240,7 +240,7 @@ if [ "$option" = "1" ]; then
             ubuntu-device-flash touch --device frieza --channel ubuntu-touch/stable/bq-aquaris-pd.en
             sleep 1
             echo ""
-            echo "Rest of the setup will be on your device."
+            echo "Move to your device to finish the setup."
             sleep 1
             echo ""
             echo "Cleaning up.."
@@ -319,7 +319,7 @@ if [ "$option" = "1" ]; then
               ubuntu-device-flash touch --device frieza --channel ubuntu-touch/rc-proposed/bq-aquaris-pd.en
               sleep 1
               echo ""
-              echo "Rest of the setup will be on your device."
+              echo "Move to your device to finish the setup."
               sleep 1
               echo ""
               echo "Cleaning up.."

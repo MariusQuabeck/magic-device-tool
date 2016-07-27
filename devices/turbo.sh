@@ -71,7 +71,7 @@ if [ "$option" = "1" ]; then
           sleep 1
           clear
           echo ""
-          ubuntu-device-flash touch --bootstrap --device turbo --channel ubuntu-touch/stable/meizu.en --recovery-image recovery.img
+          ubuntu-device-flash touch --bootstrap --device turbo --channel ubuntu-touch/stable/meizu-pd.en --recovery-image recovery.img
           sleep 1
           echo ""
           echo "Move to your device to finish the setup."
@@ -237,7 +237,7 @@ if [ "$option" = "1" ]; then
             sleep 17
             clear
             echo ""
-            ubuntu-device-flash touch --device turbo --channel ubuntu-touch/stable/meizu.en
+            ubuntu-device-flash touch --device turbo --channel ubuntu-touch/stable/meizu-pd.en
             sleep 1
             echo ""
             echo "Move to your device to finish the setup."

@@ -161,7 +161,7 @@ if [ "$option" = "1" ]; then
           sleep 1
           ubuntu-device-flash touch --channel ubuntu-touch/stable/bq-aquaris.en --device vegetahd --recovery-image recovery-vegetahd.img  --bootstrap
           echo ""
-          echo "Rest of the setup will be on your device."
+          echo "Move to your device to finish the setup."
           sleep 1
           echo ""
           echo "Cleaning up.."
@@ -229,7 +229,7 @@ if [ "$option" = "1" ]; then
             sleep 1
             ubuntu-device-flash touch --channel ubuntu-touch/rc-proposed/bq-aquaris.en --device vegetahd --recovery-image recovery-vegetahd.img  --bootstrap
             echo ""
-            echo "Rest of the setup will be on your device."
+            echo "Move to your device to finish the setup."
             sleep 1
             echo ""
             echo "Cleaning up.."
@@ -305,7 +305,7 @@ if [ "$option" = "1" ]; then
             echo ""
             ubuntu-device-flash touch --channel ubuntu-touch/stable/bq-aquaris.en --device vegetahd
             echo ""
-            echo "Rest of the setup will be on your device."
+            echo "Move to your device to finish the setup."
             sleep 1
             echo ""
             echo "Cleaning up.."
@@ -364,7 +364,7 @@ if [ "$option" = "1" ]; then
               echo ""
               ubuntu-device-flash touch --channel ubuntu-touch/rc-proposed/bq-aquaris.en --device vegetahd
               echo ""
-              echo "Rest of the setup will be on your device."
+              echo "Move to your device to finish the setup."
               sleep 1
               echo ""
               echo "Cleaning up.."

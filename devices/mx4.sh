@@ -69,7 +69,7 @@ if [ "$option" = "1" ]; then
           echo ""
           ubuntu-device-flash touch --channel ubuntu-touch/stable/meizu.en --device arale --bootstrap
           echo ""
-          echo "Rest of the setup will be on your device."
+          echo "Move to your device to finish the setup."
           sleep 1
           echo ""
           echo "Cleaning up.."
@@ -138,7 +138,7 @@ if [ "$option" = "1" ]; then
             sleep 1
             ubuntu-device-flash touch --channel ubuntu-touch/rc-proposed/meizu.en --device arale --bootstrap
             echo ""
-            echo "Rest of the setup will be on your device."
+            echo "Move to your device to finish the setup."
             sleep 1
             echo ""
             echo "Cleaning up.."
@@ -213,7 +213,7 @@ if [ "$option" = "1" ]; then
             echo ""
             ubuntu-device-flash touch --channel ubuntu-touch/stable/meizu.en --device arale
             echo ""
-            echo "Rest of the setup will be on your device."
+            echo "Move to your device to finish the setup."
             sleep 1
             echo ""
             echo "Cleaning up.."
@@ -271,7 +271,7 @@ if [ "$option" = "1" ]; then
               echo ""
               ubuntu-device-flash touch --channel ubuntu-touch/rc-proposed/meizu.en --device arale
               echo ""
-              echo "Rest of the setup will be on your device."
+              echo "Move to your device to finish the setup."
               sleep 1
               echo ""
               echo "Cleaning up.."

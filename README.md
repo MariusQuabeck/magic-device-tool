@@ -18,7 +18,7 @@ Supported devices
 - Meizu MX 4 (arale)
 - Meizu Pro 5 (turbo)
 - LG Nexus 4 (mako)
-- Asus Nexus 7 (flo)
+- ASUS Nexus 7 2013 WiFi (flo)
 
 Usage
 -----

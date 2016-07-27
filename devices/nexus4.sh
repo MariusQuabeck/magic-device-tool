@@ -125,7 +125,7 @@ if [ "$option" = "1" ]; then
             sleep 1
             clear
             echo ""
-            echo "Flashing stable channel"
+            echo "Flashing rc-proposed channel"
             echo ""
             sleep 1
             fastboot format cache

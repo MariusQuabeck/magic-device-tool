@@ -39,7 +39,7 @@ if [ "$option" = "1" ]; then
       echo "Flashing ADB recovery"
       echo ""
       sleep 1
-      echo "Please boot you E4.5 into bootloader/fastboot mode by pressing Power & Vol +"
+      echo "Please boot your E4.5 into bootloader/fastboot mode by pressing Power & Volume Up (+)"
       echo "and select fastboot mode"
       echo ""
       sleep 1
@@ -131,7 +131,7 @@ if [ "$option" = "1" ]; then
       echo "Flashing stable channel"
       echo ""
       sleep 1
-      echo "Please boot you E4.5 into bootloader/fastboot mode by pressing Power & Vol +"
+      echo "Please boot your E4.5 into bootloader/fastboot mode by pressing Power & Volume Up (+)"
       echo "and select fastboot mode"
       echo ""
       sleep 1
@@ -199,7 +199,7 @@ if [ "$option" = "1" ]; then
         echo "Flashing rc-proposed channel"
         echo ""
         sleep 1
-        echo "Please boot you E4.5 into bootloader/fastboot mode by pressing Power & Vol +"
+        echo "Please boot your E4.5 into bootloader/fastboot mode by pressing Power & Volume Up (+)"
         echo "and select fastboot mode"
         echo ""
         sleep 1
@@ -281,7 +281,7 @@ if [ "$option" = "1" ]; then
         echo "Flashing stable channel"
         echo ""
         sleep 1
-        echo "Please boot you E4.5 into recovery mode by pressing Power & Vol +"
+        echo "Please boot your E4.5 into recovery mode by pressing Power & Volume Up (+)"
         echo "and choose recovery"
         echo ""
         sleep 1
@@ -342,7 +342,7 @@ if [ "$option" = "1" ]; then
           echo "Flashing rc-proposed channel"
           echo ""
           sleep 1
-          echo "Please boot you E4.5 into recovery mode by pressing Power & Vol +"
+          echo "Please boot your E4.5 into recovery mode by pressing Power & Volume Up (+)"
           echo "and choose recovery"
           echo ""
           sleep 1

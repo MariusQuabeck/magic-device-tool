@@ -43,7 +43,7 @@ if [ "$option" = "1" ]; then
       echo "Flashing stable channel"
       echo ""
       sleep 1
-      echo "Please boot you Nexus 4 into bootloader/fastboot mode by pressing Power & Vol -"
+      echo "Please boot your Nexus 4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
       echo ""
       sleep 1
       echo -n "Is your Nexus 4 in bootloader/fastboot mode now? [Y/N] "; read bootloadermode
@@ -107,7 +107,7 @@ if [ "$option" = "1" ]; then
         echo "Flashing rc-proposed channel"
         echo ""
         sleep 1
-        echo "Please boot you Nexus 4 into bootloader/fastboot mode by pressing Power & Vol -"
+        echo "Please boot your Nexus 4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
         echo ""
         sleep 1
         echo -n "Is your Nexus 4 in bootloader/fastboot mode now? [Y/N] "; read bootloadermode
@@ -185,7 +185,7 @@ if [ "$option" = "1" ]; then
         echo "Flashing stable channel"
         echo ""
         sleep 1
-        echo "Please boot you Nexus 4 into recovery mode by pressing Power & Vol -"
+        echo "Please boot your Nexus 4 into recovery mode by pressing Power & Volume Down (-)"
         echo "and choose recovery"
         echo ""
         sleep 1
@@ -246,7 +246,7 @@ if [ "$option" = "1" ]; then
           echo "Flashing rc-proposed channel"
           echo ""
           sleep 1
-          echo "Please boot you Nexus 4 into recovery mode by pressing Power & Vol -"
+          echo "Please boot your Nexus 4 into recovery mode by pressing Power & Volume Down (-)"
           echo "and choose recovery"
           echo ""
           sleep 1
@@ -311,7 +311,7 @@ else
     echo ""
     echo "Install Factory Image"
     echo ""
-    echo "Please boot you Nexus 4 into bootloader/fastboot mode by pressing Power & Vol -"
+    echo "Please boot your Nexus 4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
     sleep 1
     echo ""
     echo -n "Is your Nexus 4 in bootloader/fastboot mode now? [Y/N] "; read bootloadermode
@@ -381,7 +381,7 @@ else
       echo ""
       echo "Install TWRP recovery"
       echo ""
-      echo "Please boot you Nexus 4 into bootloader/fastboot mode by pressing Power & Vol -"
+      echo "Please boot your Nexus 4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
       sleep 1
       echo ""
       echo -n "Is your Nexus 4 in bootloader/fastboot mode now? [Y/N] "; read bootloadermode
@@ -455,7 +455,7 @@ else
           echo "Lock bootloader"
           echo ""
           sleep 1
-          echo "Please boot you Nexus 4 into bootloader/fastboot mode by pressing Power & Vol -"
+          echo "Please boot your Nexus 4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
           echo -n "Is your Nexus 4 in bootloader/fastboot mode now? [Y/N] "; read bootloadermode
           if [ "$bootloadermode"==Y -o "$bootloadermode==y" ]; then
             clear
@@ -508,7 +508,7 @@ else
             echo "Unlock bootloader"
             echo ""
             sleep 1
-            echo "Please boot you Nexus 4 into bootloader/fastboot mode by pressing Power & Vol -"
+            echo "Please boot your Nexus 4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
             echo -n "Is your Nexus 4 in bootloader/fastboot mode now? [Y/N] "; read bootloadermode
             if [ "$bootloadermode"==Y -o "$bootloadermode==y" ]; then
               clear

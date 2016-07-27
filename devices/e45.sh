@@ -118,7 +118,7 @@ if [ "$option" = "1" ]; then
   if [ "$optionubuntu" = "1" ]; then
     clear
     echo ""
-    echo "Choose a channel to flash (Will wipe existing data)"
+    echo "Choose a channel to flash with the --wipe option (Will remove existing apps/data)"
     echo ""
     sleep 1
     echo "[1] stable"
@@ -268,7 +268,7 @@ if [ "$option" = "1" ]; then
       clear
       echo ""
       echo "Choose a channel to flash "
-      echo "Your Apps/Data wont be touched, it will just reinstall Ubuntu / switch the channel."
+      echo "Your Apps/Data won't be touched, it will just reinstall Ubuntu / switch the channel."
       echo ""
       sleep 1
       echo "[1] stable"

@@ -18,8 +18,8 @@ if [ "$option" = "1" ]; then
   echo "Install Ubuntu"
   echo ""
   sleep 1
-  echo "[1] Choose a channel to flash (Will wipe existing data)"
-  echo "[2] Choose a channel to flash / Switch channel (Keep existing apps/data) "
+  echo "[1] Choose a channel to flash with the --wipe option (Will remove existing apps/data)"
+  echo "[2] Choose a channel to switch your device to (Will keep existing apps/data) "
   sleep 1
   echo ""
   echo -n "Enter option: "; read optionubuntu

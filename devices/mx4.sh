@@ -38,7 +38,7 @@ if [ "$option" = "1" ]; then
       echo "Flashing stable channel"
       echo ""
       sleep 1
-      echo "Please boot you MX4 into bootloader/fastboot mode by pressing Power & Vol -"
+      echo "Please boot you MX4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
       echo ""
       sleep 1
       echo -n "Is your MX4 in bootloader/fastboot mode now? [Y/N] "; read bootloadermode
@@ -107,7 +107,7 @@ if [ "$option" = "1" ]; then
         echo "Flashing rc-proposed channel"
         echo ""
         sleep 1
-        echo "Please boot you MX4 into bootloader/fastboot mode by pressing Power & Vol -"
+        echo "Please boot you MX4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
         echo ""
         sleep 1
         echo -n "Is your MX4 in bootloader/fastboot mode now? [Y/N] "; read bootloadermode
@@ -190,7 +190,7 @@ if [ "$option" = "1" ]; then
         echo "Flashing stable channel"
         echo ""
         sleep 1
-        echo "Please boot you MX4 into recovery mode by pressing Power & Vol +"
+        echo "Please boot you MX4 into recovery mode by pressing Power & Volume Up (+)"
         echo ""
         sleep 1
         echo -n "Is your MX4 in recovery mode now? [Y/N] "; read recoverymode
@@ -250,7 +250,7 @@ if [ "$option" = "1" ]; then
           echo "Flashing rc-proposed channel"
           echo ""
           sleep 1
-          echo "Please boot you MX4 into recovery mode by pressing Power & Vol +"
+          echo "Please boot you MX4 into recovery mode by pressing Power & Volume Up (+)"
           echo ""
           sleep 1
           echo -n "Is your MX4 in recovery mode now? [Y/N] "; read bootloadermode

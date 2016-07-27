@@ -7,6 +7,10 @@ Contact
 
 [Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TQYX0epd9w8EQ)
 
+Requirements
+----
+
+Ubuntu 15.10 and above
 
 Supported devices
 ----

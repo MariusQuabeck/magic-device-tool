@@ -59,7 +59,7 @@ else
               else
                 echo "You did not enter a number"
                 echo "between 1 and 8."
-                echo "Exiting script. Bye Bye"
+                echo "Well... I'll be here during the whole next test. -GLaDOS"
               fi
             fi
           fi

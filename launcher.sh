@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 echo ""
-echo "Installing necessary tools"
+echo "First we have to install the necessary tools"
 sleep 1
 chmod +x . ./devices/*.sh
 echo ""
@@ -14,9 +14,16 @@ echo ""
 echo "ubuntu-device-flash"
 echo ""
 sleep 1
-sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
-sudo apt-get -qq update
-sudo apt-get -qq -y install android-tools-adb android-tools-fastboot ubuntu-device-flash phablet-tools
+Ubuntu_SDK=ppa:ubuntu-sdk-team/ppa  # the ppa we are adding
+
+if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu-sdk-team-ubuntu-ppa-xenial.list; then
+
+    # commands to add the ppa ...
+    sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
+    sudo apt-get -qq update
+    sudo apt-get -qq -y install android-tools-adb android-tools-fastboot ubuntu-device-flash phablet-tools
+fi
+
 clear
 echo ""
 echo "Choose your device"
@@ -57,8 +64,7 @@ else
                 . ./devices/turbo.sh
 
               else
-                echo "You did not enter a number"
-                echo "between 1 and 8."
+                echo "You did not enter a number between 1 and 8."
                 echo "Well... I'll be here during the whole next test. -GLaDOS"
               fi
             fi

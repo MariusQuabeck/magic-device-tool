@@ -342,8 +342,8 @@ else
         echo ""
         echo "Move to your device to finish the setup."
         echo ""
-        echo "Dont think your device is in a bootloop."
-        echo "It can take up to 10 minutes until you see the android setup screen"
+        echo "Don't think your device is in a bootloop."
+        echo "It can take up to 10 minutes until you see the Android Setup Screen"
         sleep 2
         echo ""
         echo "Cleaning up.."

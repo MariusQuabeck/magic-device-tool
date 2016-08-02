@@ -3,7 +3,6 @@ clear
 echo ""
 echo "First we have to install the necessary tools:"
 sleep 1
-chmod +x . ./devices/*.sh
 echo ""
 echo "- android-tools-adb"
 echo ""
@@ -13,7 +12,7 @@ echo "- phablet-tools"
 echo ""
 echo "- ubuntu-device-flash"
 echo ""
-sleep 5
+sleep 1
 Ubuntu_SDK=ppa:ubuntu-sdk-team/ppa  # the ppa we are adding
 
 if ! grep ^ -q /etc/apt/sources.list.d/ubuntu-sdk-team-ubuntu-ppa-xenial.list; then
@@ -37,40 +36,30 @@ echo "[6] BQ Aquaris M10 FHD - frieza"
 echo "[7] Meizu MX 4 - arale"
 echo "[8] Meizu Pro 5 - turbo"
 echo ""
+echo "[9] Quit"
 sleep 1
+echo ""
 echo -n "Enter device number: "; read device
 if [ "$device" = "1" ]; then
-  . ./devices/nexus4.sh
-else
-  if [ "$device" = "2" ]; then
-    . ./devices/nexus7.sh
-  else
-    if [ "$device" = "3" ]; then
-      . ./devices/e45.sh
-    else
-      if [ "$device" = "4" ]; then
-        . ./devices/e5hd.sh
-      else
-        if [ "$device" = "5" ]; then
-          . ./devices/m10hd.sh
-        else
-          if [ "$device" = "6" ]; then
-            . ./devices/m10fhd.sh
-          else
-            if [ "$device" = "7" ]; then
-              . ./devices/mx4.sh
-            else
-              if [ "$device" = "8" ]; then
-                . ./devices/turbo.sh
-
+  . ./devices/nexus4/nexus4.sh
+elif [ "$device" = "2" ]; then
+    . ./devices/nexus7/nexus7.sh
+  elif [ "$device" = "3" ]; then
+      . ./devices/e45/e45.sh
+    elif [ "$device" = "4" ]; then
+        . ./devices/e5hd/e5hd.sh
+      elif [ "$device" = "5" ]; then
+          . ./devices/m10hd/m10hd.sh
+        elif [ "$device" = "6" ]; then
+            . ./devices/m10fhd/m10fhd.sh
+          elif [ "$device" = "7" ]; then
+              . ./devices/mx4/mx4.sh
+            elif [ "$device" = "8" ]; then
+                . ./devices/pro5/pro5.sh
+              elif [ "$device" = "9" ]; then
+                  exit
               else
-                echo "You did not enter a number between 1 and 8."
+                echo ""
+                echo "You did not enter a number between 1 and 9."
                 echo "Well... I'll be here during the whole next test. -GLaDOS"
               fi
-            fi
-          fi
-        fi
-      fi
-    fi
-  fi
-fi

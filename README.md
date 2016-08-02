@@ -57,7 +57,7 @@ $ ./launcher.sh
 
 TODO
 ------
-- Add ubports devices
+- 
 
 Special thanks to
 ---

@@ -40,7 +40,9 @@ UBports devices
 - Fairphone 2 (FP2)
 - LG Optimus L90 (w7)
 - LG Nexus 5 (hammerhead)
+- Asus Nexus 7 2013 LTE (deb)
 - Samsung Nexus 10 (manta)
+
 
 Usage
 -----

@@ -41,9 +41,10 @@ echo "UBports devices"
 echo ""
 echo "  [9]  OnePlus One - bacon"
 echo "  [10] LG Nexus 5 - hammerhead"
+echo "  [11] Fairphone 2 - FP2"
 echo ""
 echo ""
-echo "  [11]  Quit"
+echo "  [12]  Quit"
 sleep 1
 echo ""
 echo -n "Enter device number: "; read device
@@ -67,7 +68,9 @@ elif [ "$device" = "2" ]; then
                   . ./devices/oneplusone/oneplusone.sh
                 elif [ "$device" = "10" ]; then
                     . ./devices/nexus5/nexus5.sh
-              elif [ "$device" = "11" ]; then
+                  elif [ "$device" = "11" ]; then
+                      . ./devices/fairphone2/fairphone2.sh
+              elif [ "$device" = "12" ]; then
                   exit
               else
                 echo ""

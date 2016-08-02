@@ -38,6 +38,7 @@ Supported devices
 UBports devices
 - OnePlus One (bacon)
 - LG Nexus 5 (hammerhead)
+- Fairphone 2 (FP2)
 
 Usage
 -----

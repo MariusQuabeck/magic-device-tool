@@ -1,4 +1,4 @@
-# Version 1.0 - magic-device-tool 
+# Version 1.0 - magic-device-tool
 
 A simple batch for installing Ubuntu and switching channels on your device
 
@@ -35,6 +35,10 @@ Supported devices
 - LG Nexus 4 (mako)
 - ASUS Nexus 7 2013 WiFi (flo)
 
+UBports devices
+- OnePlus One (bacon)
+- LG Nexus 5 (hammerhead)
+
 Usage
 -----
 ```
@@ -52,4 +56,3 @@ Special thanks to
 ---
 - [Alan Pope](https://github.com/popey) Screencast script
 - [Aaron Honeycutt](https://github.com/ahoneybun) Translations & Testing
-

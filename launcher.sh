@@ -27,16 +27,23 @@ clear
 echo ""
 echo "Choose your device"
 echo ""
-echo "[1] Nexus 4 - mako"
-echo "[2] Nexus 7 2013 (WiFi) - flo"
-echo "[3] BQ Aquaris E4.5 - krillin"
-echo "[4] BQ Aquaris E5 HD - vegetahd"
-echo "[5] BQ Aquaris M10 HD - cooler"
-echo "[6] BQ Aquaris M10 FHD - frieza"
-echo "[7] Meizu MX 4 - arale"
-echo "[8] Meizu Pro 5 - turbo"
+echo "  [1]  LG Nexus 4 - mako"
+echo "  [2]  Asus Nexus 7 2013 (WiFi) - flo"
+echo "  [3]  BQ Aquaris E4.5 - krillin"
+echo "  [4]  BQ Aquaris E5 HD - vegetahd"
+echo "  [5]  BQ Aquaris M10 HD - cooler"
+echo "  [6]  BQ Aquaris M10 FHD - frieza"
+echo "  [7]  Meizu MX 4 - arale"
+echo "  [8]  Meizu Pro 5 - turbo"
 echo ""
-echo "[9] Quit"
+echo ""
+echo "UBports devices"
+echo ""
+echo "  [9]  OnePlus One - bacon"
+echo "  [10] LG Nexus 5 - hammerhead"
+echo ""
+echo ""
+echo "  [11]  Quit"
 sleep 1
 echo ""
 echo -n "Enter device number: "; read device
@@ -57,6 +64,10 @@ elif [ "$device" = "2" ]; then
             elif [ "$device" = "8" ]; then
                 . ./devices/pro5/pro5.sh
               elif [ "$device" = "9" ]; then
+                  . ./devices/oneplusone/oneplusone.sh
+                elif [ "$device" = "10" ]; then
+                    . ./devices/nexus5/nexus5.sh
+              elif [ "$device" = "11" ]; then
                   exit
               else
                 echo ""

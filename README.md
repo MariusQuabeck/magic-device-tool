@@ -4,7 +4,9 @@ A simple batch for installing Ubuntu and switching channels on your device
 
 Contact
 -------
-[Marius Quabeck](mailto:misterq@ubuntu.com)
+Marius Quabeck [(Email)](mailto:misterq@ubuntu.com)
+
+Mister_Q on irc.freenode.net
 
 [Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TQYX0epd9w8EQ)
 

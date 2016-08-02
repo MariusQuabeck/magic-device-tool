@@ -44,10 +44,9 @@ echo "  [10] Fairphone 2 - FP2"
 echo "  [11] LG Nexus 5 - hammerhead"
 echo "  [12] Asus Nexus 7 2013 (LTE) - deb"
 echo "  [13] Samsung Nexus 10 - manta"
-echo "  [14] LG Optimus L90 - w7"
 echo ""
 echo ""
-echo "  [15]  Quit"
+echo "  [14]  Quit"
 sleep 1
 echo ""
 echo -n "Enter device number: "; read device
@@ -78,8 +77,6 @@ elif [ "$device" = "12" ]; then
 elif [ "$device" = "13" ]; then
   . ./devices/nexus10/nexus10.sh
 elif [ "$device" = "14" ]; then
-  . ./devices/optimusl90/optimusl90.sh
-elif [ "$device" = "15" ]; then
   exit
 else
   echo ""

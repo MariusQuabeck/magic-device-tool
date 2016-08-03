@@ -60,5 +60,5 @@ TODO
 
 Special thanks to
 ---
-- [Alan Pope](https://github.com/popey) Screencast script
+- [Alan Pope](https://github.com/popey) & [Stuart Langridge](https://github.com/stuartlangridge) Screencast script
 - [Aaron Honeycutt](https://github.com/ahoneybun) Translations & Testing

@@ -29,7 +29,7 @@ fi
     fastboot reboot-bootloader
     sleep 6
     echo ""
-    ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubuntu-touch/stable --device=deb --bootstrap
+    sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubuntu-touch/stable --device=deb --bootstrap
     echo ""
     echo "Move to your device to finish the setup."
     sleep 1

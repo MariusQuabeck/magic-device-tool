@@ -56,7 +56,8 @@ $ ./launcher.sh
 
 TODO
 ------
-- 
+- Add "Install OpenStore" option
+- Add functionality to automatically check if the user has the latest version of this tool
 
 Special thanks to
 ---

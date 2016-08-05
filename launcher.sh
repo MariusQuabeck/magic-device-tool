@@ -1,25 +1,27 @@
 #!/bin/bash
 clear
-echo ""
-echo "First we have to install the necessary tools:"
-sleep 1
-echo ""
-echo "  → android-tools-adb"
-echo ""
-echo "  → android-tools-fastboot"
-echo ""
-echo "  → phablet-tools"
-echo ""
-echo "  → ubuntu-device-flash"
-echo ""
-echo "  → mplayer"
-echo ""
+
 sleep 1
 Ubuntu_SDK=ppa:ubuntu-sdk-team/ppa  # the ppa we are adding
 
 if ! grep ^ -q /etc/apt/sources.list.d/ubuntu-sdk-team-ubuntu-ppa-xenial.list; then
 
   # commands to add the ppa ...
+  clear
+  echo ""
+  echo "First we have to install the necessary tools:"
+  sleep 1
+  echo ""
+  echo "  → android-tools-adb"
+  echo ""
+  echo "  → android-tools-fastboot"
+  echo ""
+  echo "  → phablet-tools"
+  echo ""
+  echo "  → ubuntu-device-flash"
+  echo ""
+  echo "  → mplayer"
+  echo ""
   sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
   sudo apt-get -qq update
   sudo apt-get -qq -y install android-tools-adb android-tools-fastboot ubuntu-device-flash phablet-tools

@@ -1,6 +1,6 @@
 # Version 1.0 - magic-device-tool
 
-A simple batch for installing Ubuntu and switching channels on your device
+A simple batch tool for installing Ubuntu and switching channels on your device
 
 Contact
 -------

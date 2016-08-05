@@ -15,7 +15,7 @@ Functions
 - Install Ubuntu (with or without wipe)
 - Switch channel
 - Screencast
-- Lock/Unlock bootloader (BQ Phones)
+- Lock/Unlock bootloader (Nexus devices)
 - Install Factory Android Image (Nexus devices)
 - Install TWRP recovery (Nexus devices)
 

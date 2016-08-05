@@ -38,6 +38,7 @@ echo "Please enable developer mode on the device"
       echo ""
       echo "Device detected !"
 
+
 sleep 1
 exit | phablet-shell
 clear
@@ -162,6 +163,7 @@ fi
 ssh $SSH_OPTS -C -c aes128-ctr phablet@localhost mirscreencast -m /var/run/mir_socket --stdout --cap-interval 10 -s 360 640 |  mplayer -framedrop -demuxer rawvideo -rawvideo fps=6:w=360:h=640:format=rgba -
 echo ""
 echo "Back to menu"
+rm -f ~/.AttachedDevices
 sleep 2
 . ./launcher.sh
 
@@ -171,6 +173,7 @@ sleep 2
 [ -n "$SSH_RUNNING" ] || toggle_ssh false
 else
       echo "Device not found"
+      rm -f ~/.AttachedDevices
       sleep 1
       echo "Back to menu"
     sleep 1

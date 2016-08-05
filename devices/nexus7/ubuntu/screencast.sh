@@ -162,6 +162,7 @@ fi
 ssh $SSH_OPTS -C -c aes128-ctr phablet@localhost mirscreencast -m /var/run/mir_socket --stdout --cap-interval 10 -s 625 1000 |  mplayer -vf rotate=2 -framedrop -demuxer rawvideo -rawvideo fps=6:w=625:h=1000:format=rgba -
 echo ""
 echo "Back to menu"
+rm -f ~/.AttachedDevices
 sleep 2
 . ./launcher.sh
 
@@ -172,6 +173,7 @@ sleep 2
 else
       echo "Device not found"
       sleep 1
+      rm -f ~/.AttachedDevices
       echo "Back to menu"
     sleep 1
     . ./launcher.sh

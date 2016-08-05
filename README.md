@@ -22,7 +22,7 @@ Functions
 
 Requirements
 ----
-
+- Ubuntu Phone or Tablet
 - Ubuntu 15.10 and above
 
 Supported devices

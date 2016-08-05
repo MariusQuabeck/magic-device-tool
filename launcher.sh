@@ -4,13 +4,15 @@ echo ""
 echo "First we have to install the necessary tools:"
 sleep 1
 echo ""
-echo "- android-tools-adb"
+echo "  → android-tools-adb"
 echo ""
-echo "- android-tools-fastboot"
+echo "  → android-tools-fastboot"
 echo ""
-echo "- phablet-tools"
+echo "  → phablet-tools"
 echo ""
-echo "- ubuntu-device-flash"
+echo "  → ubuntu-device-flash"
+echo ""
+echo "  → mplayer"
 echo ""
 sleep 1
 Ubuntu_SDK=ppa:ubuntu-sdk-team/ppa  # the ppa we are adding
@@ -21,6 +23,11 @@ if ! grep ^ -q /etc/apt/sources.list.d/ubuntu-sdk-team-ubuntu-ppa-xenial.list; t
   sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
   sudo apt-get -qq update
   sudo apt-get -qq -y install android-tools-adb android-tools-fastboot ubuntu-device-flash phablet-tools
+fi
+
+if [ $(dpkg-query -W -f='${Status}' mplayer 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  sudo apt-get install mplayer;
 fi
 
 clear
@@ -47,8 +54,8 @@ echo "  [13] Samsung Nexus 10 - manta"
 echo ""
 echo ""
 echo "  [14]  Quit"
-sleep 1
 echo ""
+sleep 1
 echo -n "Enter device number: "; read device
 if [ "$device" = "1" ]; then
   . ./devices/nexus4/nexus4.sh

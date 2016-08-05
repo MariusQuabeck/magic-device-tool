@@ -1,5 +1,19 @@
 #!/bin/bash
 clear
+echo ""
+echo "Checking for newer version"
+echo ""
+sleep 1
+git pull > version
+if grep 'Already up-to-date' version
+    then
+      echo ""
+      echo "You are running the latest version of magic-device-tool."
+      sleep 1
+    else
+      exit | ./launcher.sh
+        fi
+        rm -f version
 
 sleep 1
 Ubuntu_SDK=ppa:ubuntu-sdk-team/ppa  # the ppa we are adding

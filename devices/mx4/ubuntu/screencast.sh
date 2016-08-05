@@ -13,19 +13,34 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 # Copyright (C) 2014 Canonical, Ltd.
+adb start-server
 clear
+echo ""
+echo "Please enable developer mode on the device"
+  echo "this is located in system-settings → About → Developer Mode"
+  echo ""
+  echo "Please confirm the pairing dialog on the device"
+  echo ""
+  sleep 1
+  echo -n "Did you enable developer mode ? [Y] "; read developermode
+  if [ "$developermode"==Y -o "$developermode"==y -o "$developermode"=="" ]; then
+    clear
+    echo ""
+    echo "Detecting device"
+    echo ""
+    sleep 1
+    adb devices >~/.AttachedDevices
+    echo ""
+    sleep 1
+  fi
+    if grep 'device$\|device$' ~/.AttachedDevices
+    then
+      echo ""
+      echo "Device detected !"
+
 sleep 1
-apt list | grep mplayer >~/.mplayerinstalled
+exit | phablet-shell
 clear
-mplayer=mplayer  # tool
-
-if ! grep ^ -q mplayer; then
-
-    # commands to install the mplayer ...
-        sudo apt-get -qq -y install mplayer
-fi
-clear
-
 set -e
 
 usage () {
@@ -154,3 +169,11 @@ sleep 2
 
 # turn off ssh access again
 [ -n "$SSH_RUNNING" ] || toggle_ssh false
+else
+      echo "Device not found"
+      sleep 1
+      echo "Back to menu"
+    sleep 1
+    . ./launcher.sh
+
+    fi

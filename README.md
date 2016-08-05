@@ -12,7 +12,7 @@ Mister_Q on irc.freenode.net
 
 Functions
 ---
-- Install Ubuntu (with or without wipe)
+- Install Ubuntu Touch (with or without wipe)
 - Switch channel
 - Screencast
 - Lock/Unlock bootloader (Nexus devices)

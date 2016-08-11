@@ -19,7 +19,7 @@ Functions
 
 - Android
   - Install Factory Android Image (Nexus devices)
-  - Install Phoenix OS (Nexus 7)
+  - Install Phoenix OS (Nexus 7 & 10)
   - Lock/Unlock bootloader (Nexus devices)
   - Install TWRP recovery (Nexus devices)
 

@@ -1,3 +1,1 @@
-#ignore folders
-roms/*
-/roms/*
+roms/testfile

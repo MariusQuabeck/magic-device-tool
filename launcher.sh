@@ -16,33 +16,58 @@ if grep 'Already up-to-date' version
         rm -f version
 
 sleep 1
-Ubuntu_SDK=ppa:ubuntu-sdk-team/ppa  # the ppa we are adding
 
-if ! grep ^ -q /etc/apt/sources.list.d/ubuntu-sdk-team-ubuntu-ppa-xenial.list; then
-
-  # commands to add the ppa ...
-  clear
+if [ $(dpkg-query -W -f='${Status}' phablet-tools 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
   echo ""
   echo "First we have to install the necessary tools:"
-  sleep 1
-  echo ""
-  echo "  → android-tools-adb"
-  echo ""
-  echo "  → android-tools-fastboot"
   echo ""
   echo "  → phablet-tools"
   echo ""
-  echo "  → ubuntu-device-flash"
+  sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
+  sudo apt-get -qq update
+  sudo apt-get -qq -y install phablet-tools;
+fi
+
+if [ $(dpkg-query -W -f='${Status}' ubuntu-device-flash 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
   echo ""
-  echo "  → mplayer"
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → ubuntu-device-flash"
   echo ""
   sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
   sudo apt-get -qq update
-  sudo apt-get -qq -y install android-tools-adb android-tools-fastboot ubuntu-device-flash phablet-tools
+  sudo apt-get -qq -y install ubuntu-device-flash;
+fi
+
+if [ $(dpkg-query -W -f='${Status}' android-tools-fastboot 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → android-tools-fastboot"
+  echo ""
+  sudo apt-get install android-tools-fastboot;
+fi
+
+if [ $(dpkg-query -W -f='${Status}' android-tools-adb 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → android-tools-adb"
+  echo ""
+  sudo apt-get install android-tools-adb;
 fi
 
 if [ $(dpkg-query -W -f='${Status}' mplayer 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → mplayer"
+  echo ""
   sudo apt-get install mplayer;
 fi
 

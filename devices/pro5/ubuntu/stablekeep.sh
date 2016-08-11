@@ -39,9 +39,12 @@ fi
     fastboot flash recovery recovery-turbo.img
     sleep 1
     fastboot boot recovery-turbo.img
-    sleep 10
+    echo ""
+    echo "Please wait, your device will reboot a few times"
+    echo ""
+    sleep 15
     adb reboot recovery
-    sleep 17
+    sleep 30
     clear
     echo ""
     ubuntu-device-flash touch --device turbo --channel ubuntu-touch/stable/meizu-pd.en

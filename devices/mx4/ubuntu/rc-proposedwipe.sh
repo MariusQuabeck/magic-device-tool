@@ -33,7 +33,7 @@ fi
     sleep 1
     fastboot flash recovery recovery-arale.img
     sleep 1
-    ubuntu-device-flash touch --channel ubuntu-touch/rc-proposed/meizu.en --device arale --bootstrap
+    ubuntu-device-flash touch --channel ubuntu-touch/rc-proposed/meizu.en --device arale --recovery-image recovery-arale.img --bootstrap
     echo ""
     echo "Move to your device to finish the setup."
     sleep 1

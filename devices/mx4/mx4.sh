@@ -1,5 +1,6 @@
 #!/bin/bash
 chmod +x . ./devices/mx4/ubuntu/*.sh
+chmod +x . ./devices/mx4/android/*.sh
 clear
 echo ""
 echo "Meizu MX4 - arale"
@@ -12,7 +13,13 @@ echo "[1] Install Ubuntu"
 echo ""
 echo "[2] Screencast"
 echo ""
-echo "[3] Back to menu "
+echo ""
+echo "Android: "
+echo ""
+echo "[3] Install Cyanogenmod 13"
+echo ""
+echo ""
+echo "[4] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
@@ -20,6 +27,8 @@ if [ "$option" = "1" ]; then
 elif [ "$option" = "2" ]; then
   . ./devices/mx4/ubuntu/screencast.sh
 elif [ "$option" = "3" ]; then
+  . ./devices/mx4/android/cyanogenmod.sh
+elif [ "$option" = "4" ]; then
   . ./launcher.sh
 else
   echo ""

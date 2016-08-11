@@ -17,9 +17,11 @@ Functions
   - Switch channel
   - Screencast
 
+
 - Android
-  - Install Factory Android Image (Nexus devices)
+  - Install Cyanogenmod (Meizu MX4)
   - Install Phoenix OS (Nexus 7 & 10)
+  - Install Factory Android Image (Nexus devices)
   - Lock/Unlock bootloader (Nexus devices)
   - Install TWRP recovery (Nexus devices)
 

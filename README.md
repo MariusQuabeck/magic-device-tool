@@ -12,12 +12,16 @@ Mister_Q on irc.freenode.net
 
 Functions
 ---
-- Install Ubuntu Touch (with or without wipe)
-- Switch channel
-- Screencast
-- Lock/Unlock bootloader (Nexus devices)
-- Install Factory Android Image (Nexus devices)
-- Install TWRP recovery (Nexus devices)
+- Ubuntu
+  - Install Ubuntu Touch (with or without wipe)
+  - Switch channel
+  - Screencast
+
+- Android
+  - Install Factory Android Image (Nexus devices)
+  - Install Phoenix OS (Nexus 7)
+  - Lock/Unlock bootloader (Nexus devices)
+  - Install TWRP recovery (Nexus devices)
 
 
 Requirements

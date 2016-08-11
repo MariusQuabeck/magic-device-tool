@@ -103,6 +103,6 @@ elif [ "$device" = "14" ]; then
   exit
 else
   echo ""
-  echo "You did not enter a number between 1 and 15."
+  echo "You did not enter a number between 1 and 14."
   echo "Well... I'll be here during the whole next test. -GLaDOS"
 fi

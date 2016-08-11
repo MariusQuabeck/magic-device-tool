@@ -13,7 +13,7 @@ Mister_Q on irc.freenode.net
 Functions
 ---
 - Ubuntu
-  - Install Ubuntu Touch (with or without wipe)
+  - Install Ubuntu Touch
   - Switch channel
   - Screencast
 

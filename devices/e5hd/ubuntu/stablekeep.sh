@@ -42,6 +42,7 @@ fi
     echo "Device not found"
     sleep 1
     echo ""
+    rm -f ~/.AttachedDevices
     echo "Back to menu"
     sleep 1
     . ./launcher.sh

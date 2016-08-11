@@ -30,7 +30,7 @@ fi
     fastboot reboot-bootloader
     sleep 6
     echo ""
-    wget http://people.canonical.com/~jhm/barajas/recovery-krillin.img
+    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-krillin.img
     sleep 1
     ubuntu-device-flash touch --channel ubuntu-touch/stable/bq-aquaris.en --device krillin --recovery-image recovery-krillin.img  --bootstrap
     echo ""
@@ -39,7 +39,7 @@ fi
     echo ""
     echo "Cleaning up.."
     rm -f ~/.AttachedDevices
-    rm recovery-krillin.img
+    #rm recovery-krillin.img
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
@@ -49,6 +49,7 @@ fi
     echo "Device not found"
     sleep 1
     echo ""
+    rm -f ~/.AttachedDevices
     echo "Back to menu"
     sleep 1
     . ./launcher.sh

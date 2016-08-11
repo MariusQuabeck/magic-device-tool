@@ -80,10 +80,12 @@ elif [ "$ulbootloader" = "2" ]; then
         exit
       fi
   elif [ "$ulbootloader" = "3" ]; then
+      rm -f ~/.AttachedDevices
       echo "Quit"
       echo "Exiting script. Bye Bye"
 fi
 
 else
   echo "Device not found."
+    rm -f ~/.AttachedDevices
   exit

@@ -35,7 +35,7 @@ fi
     echo "Please wait"
     echo ""
     sleep 7
-    wget http://people.canonical.com/~abeato/avila/cooler/recovery-cooler.img
+    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-cooler.img
     sleep 1
     fastboot flash recovery recovery-cooler.img
     sleep 1
@@ -53,7 +53,7 @@ fi
     echo ""
     echo "Cleaning up.."
     rm -f ~/.AttachedDevices
-    rm recovery-cooler.img
+    #rm recovery-cooler.img
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
@@ -61,6 +61,7 @@ fi
     exit
   else
     echo "Device not found"
+    rm -f ~/.AttachedDevices
     echo ""
     sleep 1
     echo "Back to menu"

@@ -41,6 +41,7 @@ fi
   else
     echo "Device not found"
     sleep 1
+    rm -f ~/.AttachedDevices
     echo ""
     echo "Back to menu"
     sleep 1

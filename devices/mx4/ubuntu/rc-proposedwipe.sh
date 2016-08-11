@@ -29,9 +29,9 @@ fi
     fastboot reboot-bootloader
     sleep 6
     echo ""
-    wget http://people.canonical.com/~alextu/tangxi/recovery/recovery.img
+    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-arale.img
     sleep 1
-    fastboot flash recovery recovery.img
+    fastboot flash recovery recovery-arale.img
     sleep 1
     ubuntu-device-flash touch --channel ubuntu-touch/rc-proposed/meizu.en --device arale --bootstrap
     echo ""
@@ -40,7 +40,7 @@ fi
     echo ""
     echo "Cleaning up.."
     rm -f ~/.AttachedDevices
-    rm recovery.img
+    #rm recovery-arale.img
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
@@ -48,6 +48,7 @@ fi
     exit
   else
     echo "Device not found"
+    rm -f ~/.AttachedDevices
     sleep 1
     echo ""
     echo "Back to menu"

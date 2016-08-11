@@ -35,7 +35,7 @@ clear
       adb reboot-bootloader
       echo "Please wait"
       sleep 6
-      wget http://people.canonical.com/~abeato/avila/cooler/recovery-cooler.img
+      wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-cooler.img
       sleep 1
       clear
       echo ""
@@ -47,7 +47,7 @@ clear
       echo ""
       echo "Cleaning up.."
       rm -f ~/.AttachedDevices
-      rm recovery-cooler.img
+      #rm recovery-cooler.img
       echo ""
       sleep 1
       echo "Exiting script. Bye Bye"
@@ -55,6 +55,7 @@ clear
       exit
     else
       echo "Device not found"
+      rm -f ~/.AttachedDevices
       sleep 1
       echo "Back to menu"
     sleep 1

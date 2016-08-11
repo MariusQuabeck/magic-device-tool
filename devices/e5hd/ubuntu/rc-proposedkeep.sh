@@ -43,6 +43,7 @@ fi
     sleep 1
     echo ""
     echo "Back to menu"
+    rm -f ~/.AttachedDevices
     sleep 1
     . ./launcher.sh
   fi

@@ -86,4 +86,5 @@ fi
 
 else
   echo "Device not found."
+    rm -f ~/.AttachedDevices
   exit

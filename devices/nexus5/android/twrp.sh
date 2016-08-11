@@ -22,7 +22,7 @@ fi
     echo ""
     echo "Downloading latest TWRP recovery image.."
     echo ""
-    wget http://people.ubuntu.com/~misterq/phone/twrp-3.0.2-0-hammerhead.img
+    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
     sleep 2
     echo "Installing TWRP..."
     fastboot flash recovery ./twrp-3.0.2-0-hammerhead.img
@@ -33,7 +33,8 @@ fi
     sleep 1
     echo ""
     echo "Cleaning up.."
-    rm -f ./*.img
+    rm -f ~/.AttachedDevices
+    #rm -f ./*.img
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
@@ -41,5 +42,6 @@ fi
     exit
   else
     echo "Device not found"
+    rm -f ~/.AttachedDevices
     exit
   fi

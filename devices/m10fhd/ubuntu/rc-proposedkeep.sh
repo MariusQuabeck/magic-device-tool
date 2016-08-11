@@ -35,7 +35,7 @@ fi
     echo "Please wait"
     echo ""
     sleep 7
-    wget http://people.canonical.com/~abeato/avila/recovery-frieza.img
+    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-frieza.img
     sleep 1
     fastboot flash recovery recovery-frieza.img
     sleep 1
@@ -53,7 +53,7 @@ fi
     echo ""
     echo "Cleaning up.."
     rm -f ~/.AttachedDevices
-    rm recovery-frieza.img
+    #rm recovery-frieza.img
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
@@ -62,6 +62,7 @@ fi
   else
     echo "Device not found"
     echo ""
+    rm -f ~/.AttachedDevices
     sleep 1
     echo "Back to menu"
   sleep 1

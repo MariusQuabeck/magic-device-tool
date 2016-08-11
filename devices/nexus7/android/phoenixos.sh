@@ -22,7 +22,9 @@ fi
     echo ""
     echo "Downloading Phoenix OS.."
     echo ""
-    wget http://files.phoenixos.com/os/Phoenix-Nexus7-flo-1.0.9RC.tar.gz
+    echo "This may take awhile"
+    echo ""
+    wget -c --quiet --show-progress --tries=10 http://files.phoenixos.com/os/Phoenix-Nexus7-flo-1.0.9RC.tar.gz
     sleep 1
     tar xzf Phoenix*
     sleep 1
@@ -41,7 +43,7 @@ fi
     echo "Cleaning up.."
     rm -f ~/.AttachedDevices
     rm -rf ./Phoenix-neuxs7-flo-1.0.9-RC
-    rm -f ./*.tgz
+    #rm -f ./*.tgz
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
@@ -49,5 +51,6 @@ fi
     exit
   else
     echo "Device not found"
+    rm -f ~/.AttachedDevices
     exit
   fi

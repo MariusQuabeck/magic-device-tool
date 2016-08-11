@@ -38,6 +38,7 @@ if grep 'device$\|recovery$' ~/.AttachedDevices
     sleep 1
   else
     echo "Device not found"
+    rm -f ~/.AttachedDevices
     sleep 1
     echo ""
     echo "Back to menu"

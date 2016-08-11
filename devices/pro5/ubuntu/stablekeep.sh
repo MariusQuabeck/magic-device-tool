@@ -34,11 +34,11 @@ fi
     echo "This can take a while"
     echo ""
     sleep 10
-    wget https://git.launchpad.net/~device-release/turbo/+git/recovery/plain/recovery.img
+    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-turbo.img
     sleep 1
-    fastboot flash recovery recovery.img
+    fastboot flash recovery recovery-turbo.img
     sleep 1
-    fastboot boot recovery.img
+    fastboot boot recovery-turbo.img
     sleep 10
     adb reboot recovery
     sleep 17
@@ -52,7 +52,7 @@ fi
     echo ""
     echo "Cleaning up.."
     rm -f ~/.AttachedDevices
-    rm recovery.img
+    #rm recovery-turbo.img
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
@@ -60,6 +60,7 @@ fi
     exit
   else
     echo "Device not found"
+    rm -f ~/.AttachedDevices
     sleep 1
     echo ""
     echo "Back to menu"

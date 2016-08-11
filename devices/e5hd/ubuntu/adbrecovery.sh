@@ -22,7 +22,7 @@
       sleep 1
       clear
       echo ""
-      wget http://people.canonical.com/~jhm/barajas/recovery-vegetahd.img
+      wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-vegetahd.img
       sleep 1
       fastboot flash recovery recovery-vegetahd.img
       echo ""
@@ -31,7 +31,7 @@
       echo ""
       echo "Cleaning up.."
       rm -f ~/.AttachedDevices
-      rm recovery-vegetahd.img
+      #rm recovery-vegetahd.img
       echo ""
       sleep 1
           echo "Back to menu"
@@ -40,6 +40,7 @@
     else
       echo "Device not found"
       sleep 1
+      rm -f ~/.AttachedDevices
           echo "Back to menu"
           sleep 3
           . ./launcher.sh

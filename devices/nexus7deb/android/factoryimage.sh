@@ -22,7 +22,7 @@ fi
     echo ""
     echo "Downloading factory image.."
     echo ""
-    wget https://dl.google.com/dl/android/aosp/razorg-mob30x-factory-1cb173c1.tgz
+    wget -c --quiet --show-progress --tries=10 https://dl.google.com/dl/android/aosp/razorg-mob30x-factory-1cb173c1.tgz
     sleep 1
     tar xzf razorg*
     sleep 1
@@ -44,7 +44,7 @@ fi
     echo "Cleaning up.."
     rm -f ~/.AttachedDevices
     rm -rf ./razorg-mob30x
-    rm -f ./*.tgz
+    #rm -f ./*.tgz
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
@@ -52,5 +52,6 @@ fi
     exit
   else
     echo "Device not found"
+    rm -f ~/.AttachedDevices
     exit
   fi

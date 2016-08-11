@@ -32,11 +32,11 @@ clear
       adb reboot-bootloader
       echo "Please wait"
       sleep 6
-      wget https://git.launchpad.net/~device-release/turbo/+git/recovery/plain/recovery.img
+      wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-turbo.img
       sleep 1
       clear
       echo ""
-      ubuntu-device-flash touch --bootstrap --device turbo --channel ubuntu-touch/rc-proposed/meizu-pd.en --recovery-image recovery.img
+      ubuntu-device-flash touch --bootstrap --device turbo --channel ubuntu-touch/rc-proposed/meizu-pd.en --recovery-image recovery-turbo.img
       sleep 1
       echo ""
       echo "Move to your device to finish the setup."
@@ -44,7 +44,7 @@ clear
       echo ""
       echo "Cleaning up.."
       rm -f ~/.AttachedDevices
-      rm recovery.img
+      #rm recovery-turbo.img
       echo ""
       sleep 1
       echo "Exiting script. Bye Bye"
@@ -52,6 +52,7 @@ clear
       exit
     else
       echo "Device not found"
+      rm -f ~/.AttachedDevices
       sleep 1
       echo ""
       echo "Back to menu"

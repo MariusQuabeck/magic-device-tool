@@ -27,8 +27,12 @@ fi
     wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-krillin.img
     echo ""
 sleep 1
+    fastboot erase recovery
+    sleep 2
     fastboot flash recovery recovery-krillin.img
-    sleep 1    
+    fastboot reboot-bootloader
+echo "flo kurz warten.."
+    sleep 10
     fastboot boot recovery-krillin.img
     echo ""
     echo "Please wait, your device will reboot a few times"

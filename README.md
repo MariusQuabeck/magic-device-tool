@@ -15,6 +15,7 @@ Functions
 - Ubuntu
   - Install Ubuntu Touch
   - Switch channel
+  - Install OpenStore
   - Screencast
 
 
@@ -60,7 +61,6 @@ $ ./launcher.sh
 
 TODO
 ------
-- Add "Install OpenStore" option
 - Add "Install Cyanogenmod" option for all devices
 
 Special thanks to

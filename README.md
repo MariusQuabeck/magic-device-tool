@@ -61,7 +61,7 @@ $ ./launcher.sh
 
 TODO
 ------
-- Add "Install Cyanogenmod" option for all devices
+- Add Android backup/restore option
 
 Special thanks to
 ---

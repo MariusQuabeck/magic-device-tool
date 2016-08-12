@@ -19,7 +19,7 @@ Functions
 
 
 - Android
-  - Install Cyanogenmod (Nexus devices & Meizu MX4)
+  - Install Cyanogenmod
   - Install Phoenix OS (Nexus 7 & 10)
   - Install Factory Android Image (Nexus devices)
   - Lock/Unlock bootloader (Nexus devices)

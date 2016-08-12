@@ -19,7 +19,7 @@ Functions
 
 
 - Android
-  - Install Cyanogenmod (Meizu MX4)
+  - Install Cyanogenmod (Nexus devices & Meizu MX4)
   - Install Phoenix OS (Nexus 7 & 10)
   - Install Factory Android Image (Nexus devices)
   - Lock/Unlock bootloader (Nexus devices)
@@ -41,14 +41,12 @@ Supported devices
 - Meizu MX 4 (arale)
 - Meizu Pro 5 (turbo)
 - LG Nexus 4 (mako)
-- ASUS Nexus 7 2013 WiFi (flo)
-
-UBports devices
-- OnePlus One (bacon)
-- Fairphone 2 (FP2)
 - LG Nexus 5 (hammerhead)
+- ASUS Nexus 7 2013 WiFi (flo)
 - Asus Nexus 7 2013 LTE (deb)
 - Samsung Nexus 10 (manta)
+- OnePlus One (bacon)
+- Fairphone 2 (FP2)
 
 
 Usage

@@ -15,13 +15,14 @@ echo ""
 echo ""
 echo "Android: "
 echo ""
-echo "[3] Install Phoenix OS"
-echo "[4] Install Factory Image"
-echo "[5] Install TWRP recovery"
+echo "[3] Install Cyanogenmod 13"
+echo "[4] Install Phoenix OS"
+echo "[5] Install Factory Image"
+echo "[6] Install TWRP recovery"
 echo ""
-echo "[6] Lock/Unlock bootloader (Will wipe existing apps/data)"
+echo "[7] Lock/Unlock bootloader (Will wipe existing apps/data)"
 echo ""
-echo "[7] Back to menu "
+echo "[8] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
@@ -29,14 +30,16 @@ if [ "$option" = "1" ]; then
 elif [ "$option" = "2" ]; then
   . ./devices/nexus7/ubuntu/screencast.sh
 elif [ "$option" = "3" ]; then
-  . ./devices/nexus7/android/phoenixos.sh
+  . ./devices/nexus7/android/cyanogenmod.sh
 elif [ "$option" = "4" ]; then
-  . ./devices/nexus7/android/factoryimage.sh
+  . ./devices/nexus7/android/phoenixos.sh
 elif [ "$option" = "5" ]; then
-  . ./devices/nexus7/android/twrp.sh
+  . ./devices/nexus7/android/factoryimage.sh
 elif [ "$option" = "6" ]; then
-  . ./devices/nexus7/android/bootloader.sh
+  . ./devices/nexus7/android/twrp.sh
 elif [ "$option" = "7" ]; then
+  . ./devices/nexus7/android/bootloader.sh
+elif [ "$option" = "8" ]; then
   . ./launcher.sh
 else
   echo ""

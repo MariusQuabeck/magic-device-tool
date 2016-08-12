@@ -1,6 +1,6 @@
 # Version 1.0 - magic-device-tool
 
-A simple and feature full batch tool to handle switching multiple Operating Systems (Ubuntu, Android, Cyanogenmod and Phoenix OS) on your mobile devices
+A simple and feature full batch tool to handle switching multiple Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, Cyanogenmod and Phoenix OS) on your mobile devices
 
 Contact
 -------
@@ -67,3 +67,5 @@ Special thanks to
 ---
 - [Alan Pope](https://github.com/popey) & [Stuart Langridge](https://github.com/stuartlangridge) Screencast script
 - [Aaron Honeycutt](https://github.com/ahoneybun) Translations & Testing
+- [Marius Gripsgård](https://github.com/mariogrip) UBports
+- [Brian Douglass](https://github.com/bhdouglass) OpenStore

@@ -75,23 +75,19 @@ clear
 echo ""
 echo "Choose your device"
 echo ""
-echo "  [1]  LG Nexus 4 - mako"
-echo "  [2]  Asus Nexus 7 2013 (WiFi) - flo"
-echo "  [3]  BQ Aquaris E4.5 - krillin"
-echo "  [4]  BQ Aquaris E5 HD - vegetahd"
-echo "  [5]  BQ Aquaris M10 HD - cooler"
-echo "  [6]  BQ Aquaris M10 FHD - frieza"
-echo "  [7]  Meizu MX 4 - arale"
-echo "  [8]  Meizu Pro 5 - turbo"
-echo ""
-echo ""
-echo "UBports devices"
-echo ""
-echo "  [9]  OnePlus One - bacon"
-echo "  [10] Fairphone 2 - FP2"
-echo "  [11] LG Nexus 5 - hammerhead"
-echo "  [12] Asus Nexus 7 2013 (LTE) - deb"
-echo "  [13] Samsung Nexus 10 - manta"
+echo "  [1]  BQ Aquaris E4.5 - krillin"
+echo "  [2]  BQ Aquaris E5 HD - vegetahd"
+echo "  [3]  BQ Aquaris M10 HD - cooler"
+echo "  [4]  BQ Aquaris M10 FHD - frieza"
+echo "  [5]  Meizu MX 4 - arale"
+echo "  [6]  Meizu Pro 5 - turbo"
+echo "  [7]  LG Nexus 4 - mako"
+echo "  [8]  LG Nexus 5 - hammerhead"
+echo "  [9]  Asus Nexus 7 2013 (WiFi) - flo"
+echo "  [10] Asus Nexus 7 2013 (LTE) - deb"
+echo "  [11] Samsung Nexus 10 - manta"
+echo "  [12] OnePlus One - bacon"
+echo "  [13] Fairphone 2 - FP2"
 echo ""
 echo ""
 echo "  [14]  Quit"
@@ -99,31 +95,31 @@ echo ""
 sleep 1
 echo -n "Enter device number: "; read device
 if [ "$device" = "1" ]; then
-  . ./devices/nexus4/nexus4.sh
-elif [ "$device" = "2" ]; then
-  . ./devices/nexus7/nexus7.sh
-elif [ "$device" = "3" ]; then
   . ./devices/e45/e45.sh
-elif [ "$device" = "4" ]; then
+elif [ "$device" = "2" ]; then
   . ./devices/e5hd/e5hd.sh
-elif [ "$device" = "5" ]; then
+elif [ "$device" = "3" ]; then
   . ./devices/m10hd/m10hd.sh
-elif [ "$device" = "6" ]; then
+elif [ "$device" = "4" ]; then
   . ./devices/m10fhd/m10fhd.sh
-elif [ "$device" = "7" ]; then
+elif [ "$device" = "5" ]; then
   . ./devices/mx4/mx4.sh
-elif [ "$device" = "8" ]; then
+elif [ "$device" = "6" ]; then
   . ./devices/pro5/pro5.sh
-elif [ "$device" = "9" ]; then
-  . ./devices/oneplusone/oneplusone.sh
-elif [ "$device" = "10" ]; then
-  . ./devices/fairphone2/fairphone2.sh
-elif [ "$device" = "11" ]; then
+elif [ "$device" = "7" ]; then
+  . ./devices/nexus4/nexus4.sh
+elif [ "$device" = "8" ]; then
   . ./devices/nexus5/nexus5.sh
-elif [ "$device" = "12" ]; then
+elif [ "$device" = "9" ]; then
+  . ./devices/nexus7/nexus7.sh
+elif [ "$device" = "10" ]; then
   . ./devices/nexus7deb/nexus7.sh
-elif [ "$device" = "13" ]; then
+elif [ "$device" = "11" ]; then
   . ./devices/nexus10/nexus10.sh
+elif [ "$device" = "12" ]; then
+  . ./devices/oneplusone/oneplusone.sh
+elif [ "$device" = "13" ]; then
+  . ./devices/fairphone2/fairphone2.sh
 elif [ "$device" = "14" ]; then
   exit
 else

@@ -42,7 +42,7 @@ Supported devices
 - Meizu Pro 5 (turbo)
 - LG Nexus 4 (mako)
 - LG Nexus 5 (hammerhead)
-- ASUS Nexus 7 2013 WiFi (flo)
+- Asus Nexus 7 2013 WiFi (flo)
 - Asus Nexus 7 2013 LTE (deb)
 - Samsung Nexus 10 (manta)
 - OnePlus One (bacon)

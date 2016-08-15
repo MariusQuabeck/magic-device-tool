@@ -21,15 +21,14 @@ Functions
 
 - Android
   - Install Cyanogenmod
-  - Install Phoenix OS (Nexus 7 & 10)
-  - Install Factory Android Image (Nexus devices)
-  - Lock/Unlock bootloader (Nexus devices)
-  - Install TWRP recovery (Nexus devices)
+  - Install Phoenix OS
+  - Install Factory Android Image
+  - Lock/Unlock bootloader
+  - Install TWRP recovery
 
 
 Requirements
 ----
-- Ubuntu Phone or Tablet
 - Ubuntu 15.10 and above
 
 Supported devices

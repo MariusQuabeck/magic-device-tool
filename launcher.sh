@@ -48,7 +48,7 @@ then
   echo ""
   echo "  → android-tools-fastboot"
   echo ""
-  sudo apt-get install android-tools-fastboot;
+  sudo apt-get -qq -y install android-tools-fastboot;
 fi
 
 if [ $(dpkg-query -W -f='${Status}' android-tools-adb 2>/dev/null | grep -c "ok installed") -eq 0 ];
@@ -58,7 +58,7 @@ then
   echo ""
   echo "  → android-tools-adb"
   echo ""
-  sudo apt-get install android-tools-adb;
+  sudo apt-get install -qq -y android-tools-adb;
 fi
 
 if [ $(dpkg-query -W -f='${Status}' mplayer 2>/dev/null | grep -c "ok installed") -eq 0 ];
@@ -68,7 +68,7 @@ then
   echo ""
   echo "  → mplayer"
   echo ""
-  sudo apt-get install mplayer;
+  sudo apt-get install -qq -y mplayer;
 fi
 
 clear

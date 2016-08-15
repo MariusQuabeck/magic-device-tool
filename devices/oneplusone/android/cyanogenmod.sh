@@ -66,6 +66,9 @@ then
   echo ""
   echo "Please wait this can take awhile"
   echo ""
+  echo "You may see a prompt asking you for read/write permissions"
+  echo "Ignore that prompt, the tool will take care of the installation"
+  echo ""
   echo "  → CM 13 zip "
   adb push bacon-snapshot.zip /sdcard/
   echo ""
@@ -75,19 +78,25 @@ then
   echo "========================================="
   sleep 1
   echo ""
-  echo "Move to your device to finish the setup."
+  echo "Installing Cyanogenmod.."
   echo ""
+  adb shell twrp install /sdcard/bacon-snapshot.zip
   sleep 1
-  echo "Choose 'Install' → select the bacon-snapshot zip → press 'Add more Zips' to add"
-  echo "the gapps zip to the queue"
   echo ""
-  echo "(or don't do that if you dont want the google apps..)"
+  echo "Installing GApps.."
   echo ""
-  echo "and then swipe to confirm flash."
+  sleep 3
+  adb shell twrp install /sdcard/open_gapps-arm-6.0-nano-20160811.zip
   echo ""
-  echo "When its done dont forget to clear the caches as suggested by the recovery."
-  echo "Then you can reboot into Cyanogenmod 13 "
-  sleep 1
+  echo "Wipe cache.."
+  echo ""
+  adb shell twrp wipe cache
+  adb shell twrp wipe dalvik
+  echo ""
+  adb reboot
+  echo "The device is now rebooting. Give it time to flash the new ROM. It will boot on its own."
+  echo ""
+  sleep 5
   echo ""
   echo "Cleaning up.."
   rm -f ~/.AttachedDevices

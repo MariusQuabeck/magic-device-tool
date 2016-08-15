@@ -26,6 +26,8 @@ fi
     sleep 1
     fastboot format cache
     fastboot format userdata
+    fastboot format system
+    fastboot erase recovery
     fastboot reboot-bootloader
     sleep 6
     clear
@@ -72,24 +74,36 @@ fi
         echo ""
         echo "Please wait this can take awhile"
         echo ""
+        echo "You may see a prompt asking you for read/write permissions"
+        echo "Ignore that prompt, the tool will take care of the installation"
+        echo ""
         echo "  → CM 13 zip "
         adb push cm-13.0-20160722-UNOFFICIAL-mx4.zip /sdcard/
         echo ""
         echo "  → gapps zip"
         adb push open_gapps-arm-6.0-nano-20160811.zip /sdcard/
         echo ""
-        echo "Move to your device to finish the setup."
-        echo ""
-        echo "Choose 'Install' → select the cm-13.0 zip → press 'plus (+)' to add"
-        echo "the gapps zip to the queue"
-        echo ""
-        echo "(or don't do that if you dont want the google apps..)"
-        echo ""
-        echo "and then swipe to install."
-        echo ""
-        echo "When its done dont forget to clear the caches as suggested by the recovery."
-        echo "Then you can reboot into Cyanogenmod 13 "
         sleep 1
+        echo ""
+        echo "Installing Cyanogenmod.."
+        echo ""
+        adb shell twrp install /sdcard/cm-13.0-20160722-UNOFFICIAL-mx4.zip
+        sleep 1
+        echo ""
+        echo "Installing GApps.."
+        echo ""
+        sleep 3
+        adb shell twrp install /sdcard/open_gapps-arm-6.0-nano-20160811.zip
+        echo ""
+        echo "Wipe cache.."
+        echo ""
+        adb shell twrp wipe cache
+        adb shell twrp wipe dalvik
+        echo ""
+        adb reboot
+        echo "The device is now rebooting. Give it time to flash the new ROM. It will boot on its own."
+        echo ""
+        sleep 5
         echo ""
         echo "Cleaning up.."
         rm -f ~/.AttachedDevices

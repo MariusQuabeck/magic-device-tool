@@ -46,7 +46,7 @@ Supported devices
 - Asus Nexus 7 2013 LTE (deb)
 - Samsung Nexus 10 (manta)
 - OnePlus One (bacon)
-- Fairphone 2 (FP2)
+- Fairphone 2 (FP2) !!May not work!!
 
 
 Usage

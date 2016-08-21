@@ -25,8 +25,8 @@ fi
     echo ""
     sleep 1
     fastboot format cache
-    fastboot format userdata
-    fastboot format system
+    fastboot erase userdata
+    fastboot erase system
     fastboot erase recovery
     fastboot reboot-bootloader
     sleep 6

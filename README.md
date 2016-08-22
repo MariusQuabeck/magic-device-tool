@@ -61,6 +61,8 @@ $ ./launcher.sh
 TODO
 ------
 - Add Android backup/restore option
+- Add more devices
+- Add option for installing Cyanogenmod without GApps
 
 Special thanks to
 ---

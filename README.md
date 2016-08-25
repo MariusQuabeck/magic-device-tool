@@ -14,7 +14,7 @@ Functions
 ---
 - Ubuntu
   - Install Ubuntu Touch
-  - Switch channel
+  - Switch Channels
   - Install OpenStore
   - Screencast
 
@@ -29,7 +29,7 @@ Functions
 
 Requirements
 ----
-- Ubuntu 15.10 and above
+- Ubuntu 16.04 and above
 
 Supported devices
 ----

@@ -63,6 +63,7 @@ TODO
 - Add Android backup/restore option
 - Add more devices
 - Add option for installing Cyanogenmod without GApps
+- Add support for install F-Droid
 
 Special thanks to
 ---

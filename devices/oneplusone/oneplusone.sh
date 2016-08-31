@@ -15,13 +15,16 @@ echo ""
 echo ""
 echo "Android: "
 echo ""
-echo "[3] Install Cyanogenmod 13"
+echo "[3] Back Up your Android device"
+echo
 echo ""
-echo "[4] Install TWRP recovery"
-echo "[5] Lock/Unlock bootloader (Will wipe existing apps/data)"
+echo "[4] Install Cyanogenmod 13"
+echo ""
+echo "[5] Install TWRP recovery"
+echo "[6] Lock/Unlock bootloader (Will wipe existing apps/data)"
 echo ""
 echo ""
-echo "[6] Back to menu "
+echo "[7] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
@@ -29,12 +32,14 @@ if [ "$option" = "1" ]; then
 elif [ "$option" = "2" ]; then
   . ./devices/oneplusone/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
-  . ./devices/oneplusone/android/cyanogenmod.sh
+  . ./devices/oneplusone/android/backup.sh
 elif [ "$option" = "4" ]; then
-  . ./devices/oneplusone/android/twrp.sh
+  . ./devices/oneplusone/android/cyanogenmod.sh
 elif [ "$option" = "5" ]; then
-  . ./devices/oneplusone/android/bootloader.sh
+  . ./devices/oneplusone/android/twrp.sh
 elif [ "$option" = "6" ]; then
+  . ./devices/oneplusone/android/bootloader.sh
+elif [ "$option" = "7" ]; then
   . ./launcher.sh
 else
   echo ""

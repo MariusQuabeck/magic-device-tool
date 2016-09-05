@@ -66,6 +66,7 @@ TODO
 - Add support for install F-Droid
 - Add "add udev rule"
 - Add Zenity for success/failure prompts
+- Give Aaron access to README
 
 Special thanks to
 ---

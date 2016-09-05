@@ -64,7 +64,7 @@ TODO
 - Add more devices
 - Add option for installing Cyanogenmod without GApps
 - Add support for install F-Droid
-- Add "add udev rule"
+- Add option "add udev rule"
 - Add Zenity for success/failure prompts
 - Give Aaron access to README
 

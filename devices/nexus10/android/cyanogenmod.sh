@@ -70,10 +70,10 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → CM 13 zip "
-  adb push manta-snapshot.zip /sdcard/
+  adb push -p manta-snapshot.zip /sdcard/
   echo ""
   echo "  → gapps zip"
-  adb push open_gapps-arm-6.0-nano-20160811.zip /sdcard/
+  adb push -p open_gapps-arm-6.0-nano-20160811.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1

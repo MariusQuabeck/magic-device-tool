@@ -1,6 +1,8 @@
 #!/bin/bash
 chmod +x . ./devices/mx4/ubuntu/*.sh
 chmod +x . ./devices/mx4/android/*.sh
+chmod +x . ./devices/generic/ubuntu/*.sh
+chmod +x . ./devices/generic/android/*.sh
 clear
 echo ""
 echo "Meizu MX4 - arale"
@@ -19,20 +21,26 @@ echo ""
 echo "Android: "
 echo ""
 echo "[4] Install Cyanogenmod 13"
+echo "[5] Install Cyanogenmod 13 without Gapps"
 echo ""
+echo "[6] Back Up your Android device"
 echo ""
-echo "[5] Back to menu "
+echo "[7] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
 . ./devices/mx4/ubuntu/ubuntu.sh
 elif [ "$option" = "2" ]; then
-  . ./devices/mx4/ubuntu/openstore.sh
+  . ./devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
   . ./devices/mx4/ubuntu/screencast.sh
 elif [ "$option" = "4" ]; then
   . ./devices/mx4/android/cyanogenmod.sh
 elif [ "$option" = "5" ]; then
+  . ./devices/mx4/android/cyanogenmodwogapps.sh
+elif [ "$option" = "6" ]; then
+  . ./devices/generic/android/backup.sh
+elif [ "$option" = "7" ]; then
   . ./launcher.sh
 else
   echo ""

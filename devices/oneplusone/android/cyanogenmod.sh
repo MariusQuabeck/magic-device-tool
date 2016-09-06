@@ -55,9 +55,9 @@ then
   fastboot reboot-bootloader
   sleep 7
   fastboot boot twrp-3.0.2-0-bacon.img
-  sleep 15
+  sleep 20
   adb reboot recovery
-  sleep 15
+  sleep 20
   echo ""
   clear
   echo ""
@@ -70,10 +70,10 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → CM 13 zip "
-  adb push bacon-snapshot.zip /sdcard/
+  adb push -p bacon-snapshot.zip /sdcard/
   echo ""
   echo "  → gapps zip"
-  adb push open_gapps-arm-6.0-nano-20160811.zip /sdcard/
+  adb push -p open_gapps-arm-6.0-nano-20160811.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1

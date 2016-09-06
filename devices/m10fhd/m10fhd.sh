@@ -1,5 +1,6 @@
 #!/bin/bash
 chmod +x . ./devices/m10fhd/ubuntu/*.sh
+chmod +x . ./devices/generic/ubuntu/*.sh
 clear
 echo ""
 echo "BQ Aquaris M10 FHD - frieza"
@@ -18,7 +19,7 @@ echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
 . ./devices/m10fhd/ubuntu/ubuntu.sh
 elif [ "$option" = "2" ]; then
-  . ./devices/m10fhd/ubuntu/openstore.sh
+  . ./devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
   . ./devices/m10fhd/ubuntu/screencast.sh
 elif [ "$option" = "4" ]; then

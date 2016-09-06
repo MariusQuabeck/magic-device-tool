@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 13"
+echo "Installing Cyanogenmod 13 without Gapps"
 echo ""
 sleep 1
 echo "Please boot your MX4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
@@ -44,10 +44,6 @@ fi
     sleep 1
     wget -c --quiet --show-progress --tries=10 https://emmaus.pro/MX4_custom_roms/Cyanogenmod%2013/cm-13.0-20160722-UNOFFICIAL-mx4.zip
     echo ""
-    echo "Downloading Open Gapps.."
-    echo ""
-    sleep 1
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/gapps/open_gapps-arm-6.0-nano-20160811.zip
     sleep 2
     clear
     echo ""
@@ -80,9 +76,6 @@ fi
         echo "  → CM 13 zip "
         adb push -p cm-13.0-20160722-UNOFFICIAL-mx4.zip /sdcard/
         echo ""
-        echo "  → gapps zip"
-        adb push -p open_gapps-arm-6.0-nano-20160811.zip /sdcard/
-        echo ""
         sleep 1
         echo ""
         echo "Installing Cyanogenmod.."
@@ -90,11 +83,7 @@ fi
         adb shell twrp install /sdcard/cm-13.0-20160722-UNOFFICIAL-mx4.zip
         sleep 1
         echo ""
-        echo "Installing GApps.."
-        echo ""
-        sleep 3
-        adb shell twrp install /sdcard/open_gapps-arm-6.0-nano-20160811.zip
-        echo ""
+        sleep 2
         echo "Wipe cache.."
         echo ""
         adb shell twrp wipe cache

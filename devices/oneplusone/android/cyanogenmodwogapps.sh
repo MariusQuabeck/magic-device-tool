@@ -1,12 +1,12 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 13"
+echo "Installing Cyanogenmod 13 without Gapps"
 echo ""
 sleep 1
-echo "Please boot your Nexus 5 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
+echo "Please boot your Oneplus One into bootloader/fastboot mode by pressing Power & Volume Up (+)"
 echo ""
 sleep 1
-echo -n "Is your Nexus 5 in bootloader/fastboot mode now? [Y] "; read bootloadermode
+echo -n "Is your Oneplus One in bootloader/fastboot mode now? [Y] "; read bootloadermode
 if [ "$bootloadermode"==Y -o "$bootloadermode"==y -o "$bootloadermode"=="" ]; then
   clear
   echo ""
@@ -28,24 +28,18 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
+  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/twrp-3.0.2-0-bacon.img
   sleep 1
   echo ""
   echo "Downloading Cyanogenmod 13.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/hammerhead-snapshot.zip
-  echo ""
-  echo "Downloading Open Gapps.."
-  echo ""
-  sleep 1
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/gapps/open_gapps-arm-6.0-nano-20160811.zip
-  sleep 2
+  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/bacon-snapshot.zip
   clear
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery twrp-3.0.2-0-hammerhead.img
+  fastboot flash recovery twrp-3.0.2-0-bacon.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -54,10 +48,10 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 7
-  fastboot boot twrp-3.0.2-0-hammerhead.img
-  sleep 15
+  fastboot boot twrp-3.0.2-0-bacon.img
+  sleep 20
   adb reboot recovery
-  sleep 15
+  sleep 20
   echo ""
   clear
   echo ""
@@ -70,23 +64,14 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → CM 13 zip "
-  adb push -p hammerhead-snapshot.zip /sdcard/
+  adb push -p bacon-snapshot.zip /sdcard/
   echo ""
-  echo "  → gapps zip"
-  adb push -p open_gapps-arm-6.0-nano-20160811.zip /sdcard/
-  echo ""
-  echo "========================================="
   sleep 1
   echo ""
   echo "Installing Cyanogenmod.."
   echo ""
-  adb shell twrp install /sdcard/hammerhead-snapshot.zip
+  adb shell twrp install /sdcard/bacon-snapshot.zip
   sleep 1
-  echo ""
-  echo "Installing GApps.."
-  echo ""
-  sleep 3
-  adb shell twrp install /sdcard/open_gapps-arm-6.0-nano-20160811.zip
   echo ""
   echo "Wipe cache.."
   echo ""

@@ -1,5 +1,6 @@
 #!/bin/bash
 chmod +x . ./devices/fairphone2/ubuntu/*.sh
+chmod +x . ./devices/generic/ubuntu/*.sh
 clear
 echo ""
 echo "Fairphone 2 - FP2"
@@ -18,7 +19,7 @@ echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
 . ./devices/fairphone2/ubuntu/ubuntu.sh
 elif [ "$option" = "2" ]; then
-. ./devices/fairphone2/ubuntu/openstore.sh
+. ./devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
   . ./launcher.sh
 else

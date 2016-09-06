@@ -1,5 +1,6 @@
 #!/bin/bash
 chmod +x . ./devices/pro5/ubuntu/*.sh
+chmod +x . ./devices/generic/ubuntu/*.sh
 clear
 echo ""
 echo "Meizu Pro 5 - turbo"
@@ -20,7 +21,7 @@ echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
 . ./devices/pro5/ubuntu/ubuntu.sh
 elif [ "$option" = "2" ]; then
-  . ./devices/pro5/ubuntu/openstore.sh
+  . ./devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
   . ./devices/pro5/ubuntu/screencast.sh
 elif [ "$option" = "4" ]; then

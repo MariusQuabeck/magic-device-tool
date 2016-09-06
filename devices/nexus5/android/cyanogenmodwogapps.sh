@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 13"
+echo "Installing Cyanogenmod 13 without Gapps"
 echo ""
 sleep 1
 echo "Please boot your Nexus 5 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
@@ -36,10 +36,6 @@ then
   sleep 1
   wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/hammerhead-snapshot.zip
   echo ""
-  echo "Downloading Open Gapps.."
-  echo ""
-  sleep 1
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/gapps/open_gapps-arm-6.0-nano-20160811.zip
   sleep 2
   clear
   echo ""
@@ -72,9 +68,6 @@ then
   echo "  → CM 13 zip "
   adb push -p hammerhead-snapshot.zip /sdcard/
   echo ""
-  echo "  → gapps zip"
-  adb push -p open_gapps-arm-6.0-nano-20160811.zip /sdcard/
-  echo ""
   echo "========================================="
   sleep 1
   echo ""
@@ -82,11 +75,6 @@ then
   echo ""
   adb shell twrp install /sdcard/hammerhead-snapshot.zip
   sleep 1
-  echo ""
-  echo "Installing GApps.."
-  echo ""
-  sleep 3
-  adb shell twrp install /sdcard/open_gapps-arm-6.0-nano-20160811.zip
   echo ""
   echo "Wipe cache.."
   echo ""

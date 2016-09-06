@@ -20,9 +20,10 @@ Functions
 
 
 - Android
-  - Install Cyanogenmod
+  - Install Cyanogenmod (with or without Gapps)
   - Install Phoenix OS
   - Install Factory Android Image
+  - Backup / Restore
   - Lock/Unlock bootloader
   - Install TWRP recovery
 
@@ -60,9 +61,7 @@ $ ./launcher.sh
 
 TODO
 ------
-- Add Android backup/restore option
 - Add more devices
-- Add option for installing Cyanogenmod without GApps
 - Add support for install F-Droid
 - Add option "add udev rule"
 - Add Zenity for success/failure prompts
@@ -74,3 +73,4 @@ Special thanks to
 - [Aaron Honeycutt](https://github.com/ahoneybun) Translations & Testing
 - [Marius Gripsgård](https://github.com/mariogrip) UBports
 - [Brian Douglass](https://github.com/bhdouglass) OpenStore
+- [LavrinosMixlu](https://github.com/LavrinosMixlu) Android Backup/Restore

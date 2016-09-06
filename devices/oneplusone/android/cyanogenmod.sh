@@ -35,12 +35,17 @@ then
   echo ""
   sleep 1
   wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/bacon-snapshot.zip
+echo -n "Do you want do download and install gapps? [Y] "; read
+gappsoption
+if [ "$gappsoption"==Y -o "$gappsoption"==y -o "$gappsoption"=="" ]; then
+  clear
   echo ""
   echo "Downloading Open Gapps.."
   echo ""
   sleep 1
   wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/gapps/open_gapps-arm-6.0-nano-20160811.zip
   sleep 2
+fi
   clear
   echo ""
   echo "Installing TWRP recovery"
@@ -71,22 +76,26 @@ then
   echo ""
   echo "  → CM 13 zip "
   adb push bacon-snapshot.zip /sdcard/
+if [ "$gappsoption"==Y -o "$gappsoption"==y -o "$gappsoption"=="" ]; then
   echo ""
   echo "  → gapps zip"
   adb push open_gapps-arm-6.0-nano-20160811.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
+fi
   echo ""
   echo "Installing Cyanogenmod.."
   echo ""
   adb shell twrp install /sdcard/bacon-snapshot.zip
   sleep 1
+if [ "$gappsoption"==Y -o "$gappsoption"==y -o "$gappsoption"=="" ]; then
   echo ""
   echo "Installing GApps.."
   echo ""
   sleep 3
   adb shell twrp install /sdcard/open_gapps-arm-6.0-nano-20160811.zip
+fi
   echo ""
   echo "Wipe cache.."
   echo ""

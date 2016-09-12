@@ -23,7 +23,7 @@ then
   fastboot format cache
   fastboot format userdata
   fastboot reboot-bootloader
-  sleep 6
+  sleep 8
   clear
   echo ""
   echo "Downloading TWRP recovery"
@@ -51,9 +51,9 @@ then
   fastboot reboot-bootloader
   sleep 7
   fastboot boot twrp-3.0.2-0-flo.img
-  sleep 15
+  sleep 17
   adb reboot recovery
-  sleep 15
+  sleep 17
   echo ""
   clear
   echo ""

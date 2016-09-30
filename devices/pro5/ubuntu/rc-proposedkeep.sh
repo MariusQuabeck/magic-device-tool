@@ -35,9 +35,9 @@ fi
     echo ""
     sleep 10
     wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-turbo.img
-    sleep 1
+    sleep 6
     fastboot flash recovery recovery-turbo.img
-    sleep 1
+    sleep 2
     fastboot boot recovery-turbo.img
     echo ""
     echo "Please wait, your device will reboot a few times"

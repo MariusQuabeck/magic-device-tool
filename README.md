@@ -45,6 +45,7 @@ Supported devices
 - LG Nexus 5 (hammerhead)
 - Asus Nexus 7 2013 WiFi (flo)
 - Asus Nexus 7 2013 LTE (deb)
+- Asus Nexus 7 2012 3G (tilapia)
 - Samsung Nexus 10 (manta)
 - OnePlus One (bacon)
 - Fairphone 2 (FP2) !!May not work!!

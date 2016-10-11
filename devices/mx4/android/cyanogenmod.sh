@@ -72,7 +72,7 @@ fi
         echo "Pushing zip's to device"
         sleep 1
         echo ""
-        echo "Please wait this can take awhile"
+        echo "Please wait this can take a while"
         echo ""
         echo "You may see a prompt asking you for read/write permissions"
         echo "Ignore that prompt, the tool will take care of the installation"

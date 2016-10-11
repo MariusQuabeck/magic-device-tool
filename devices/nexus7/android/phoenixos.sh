@@ -22,7 +22,7 @@ fi
     echo ""
     echo "Downloading Phoenix OS.."
     echo ""
-    echo "This may take awhile"
+    echo "This may take a while"
     echo ""
     wget -c --quiet --show-progress --tries=10 http://files.phoenixos.com/os/Phoenix-Nexus7-flo-1.0.9RC.tar.gz
     sleep 1

@@ -22,7 +22,7 @@ fi
     echo ""
     echo "Downloading Phoenix OS.."
     echo ""
-    echo "This may take awhile"
+    echo "This may take a while"
     echo ""
     wget -c --quiet --show-progress --tries=10 http://files.phoenixos.com/os/Phoenix-neuxs10-1.0.5-beta.tar.gz
     sleep 1

@@ -67,16 +67,9 @@ TODO
 ------
 - Add more devices
 - Add support for install F-Droid
-<<<<<<< HEAD
-<<<<<<< HEAD
-- Add a few 'udev rules' for devices
-=======
 - Add option "add udev rule"
 - Add Zenity for success/failure prompts
 - Give Aaron access to README
->>>>>>> upstream/master
-=======
->>>>>>> parent of 67a7358... add udev rules TODO
 
 Special thanks to
 ---

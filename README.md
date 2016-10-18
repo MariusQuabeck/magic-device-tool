@@ -10,6 +10,9 @@ Mister_Q on irc.freenode.net
 
 [Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TQYX0epd9w8EQ)
 
+# Standard Disclaimer Text
+This tool ==**does not**== let you Dual Boot between Android and Ubuntu Touch 
+
 Functions
 ---
 - Ubuntu
@@ -64,9 +67,16 @@ TODO
 ------
 - Add more devices
 - Add support for install F-Droid
+<<<<<<< HEAD
+<<<<<<< HEAD
+- Add a few 'udev rules' for devices
+=======
 - Add option "add udev rule"
 - Add Zenity for success/failure prompts
 - Give Aaron access to README
+>>>>>>> upstream/master
+=======
+>>>>>>> parent of 67a7358... add udev rules TODO
 
 Special thanks to
 ---

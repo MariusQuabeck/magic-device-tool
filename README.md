@@ -11,7 +11,7 @@ Mister_Q on irc.freenode.net
 [Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TQYX0epd9w8EQ)
 
 # Standard Disclaimer Text
-This tool ==**does not**== let you Dual Boot between Android and Ubuntu Touch 
+This tool **does not** let you Dual Boot between Android and Ubuntu Touch 
 
 Functions
 ---

@@ -14,9 +14,9 @@ if [ "$recoverymode"==Y -o "$recoverymode"==y -o "$recoverymode"=="" ]; then
   echo "Detecting device"
   echo ""
   sleep 1
-  adb devices >~/.AttachedDevices
+  adb devices > /tmp/AttachedDevices
 fi
-if grep 'device$\|recovery$' ~/.AttachedDevices
+if grep 'device$\|recovery$' /tmp/AttachedDevices
   then
     echo "Device detected !"
     sleep 1
@@ -31,14 +31,14 @@ if grep 'device$\|recovery$' ~/.AttachedDevices
     sleep 1
     echo ""
     echo "Cleaning up.."
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
     sleep 1
   else
     echo "Device not found"
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     sleep 1
     echo ""
     echo "Back to menu"

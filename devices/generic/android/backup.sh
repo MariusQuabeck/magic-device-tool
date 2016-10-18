@@ -23,9 +23,9 @@ if [ "$broption" = "1" ]; then
   echo "Detecting device"
   echo ""
   sleep 1
-  adb devices >~/.AttachedDevices
+  adb devices > /tmp/AttachedDevices
   fi
-  if grep 'device$\|device$' ~/.AttachedDevices
+  if grep 'device$\|device$' /tmp/AttachedDevices
   then
     echo "Device detected !"
     sleep 1
@@ -44,14 +44,14 @@ if [ "$broption" = "1" ]; then
   echo ""
     echo ""
     echo "Cleaning up.."
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
     sleep 1
   else
     echo "Device not found"
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     sleep 1
     echo ""
     echo "Back to menu"
@@ -72,9 +72,9 @@ elif [ "$broption" = "2" ]; then
   echo "Detecting device"
   echo ""
   sleep 1
-  adb devices >~/.AttachedDevices
+  adb devices >/tmp/AttachedDevices
   fi
-  if grep 'device$\|device$' ~/.AttachedDevices
+  if grep 'device$\|device$' /tmp/AttachedDevices
   then
     echo "Device detected !"
     sleep 1
@@ -85,14 +85,14 @@ elif [ "$broption" = "2" ]; then
   echo ""
     echo ""
     echo "Cleaning up.."
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
     sleep 1
   else
     echo "Device not found"
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     sleep 1
     echo ""
     echo "Back to menu"

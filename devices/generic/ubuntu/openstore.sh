@@ -14,11 +14,11 @@ echo "Please enable developer mode on the device"
     echo "Detecting device"
     echo ""
     sleep 1
-    adb devices >~/.AttachedDevices
+    adb devices > /tmp/AttachedDevices
     echo ""
     sleep 1
   fi
-    if grep 'device$\|device$' ~/.AttachedDevices
+    if grep 'device$\|device$' /tmp/AttachedDevices
     then
       echo ""
       echo "Device detected !"
@@ -38,7 +38,7 @@ echo "done"
 echo ""
 sleep 3
 echo "Back to menu"
-rm -f ~/.AttachedDevices
+rm -f /tmp/AttachedDevices
 sleep 2
 . ./launcher.sh
 
@@ -48,7 +48,7 @@ sleep 2
 else
       echo "Device not found"
       sleep 1
-      rm -f ~/.AttachedDevices
+      rm -f /tmp/AttachedDevices
       echo "Back to menu"
     sleep 1
     . ./launcher.sh

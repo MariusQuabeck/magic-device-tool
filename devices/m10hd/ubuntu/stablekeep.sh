@@ -18,11 +18,11 @@ if [ "$developermode"==Y -o "$developermode"==y -o "$developermode"=="" ]; then
   echo "Detecting device"
   echo ""
   sleep 1
-  adb devices >~/.AttachedDevices
+  adb devices > /tmp/AttachedDevices
 fi
   echo ""
   sleep 1
-  if grep 'device$\|device$' ~/.AttachedDevices
+  if grep 'device$\|device$' /tmp/AttachedDevices
   then
     echo ""
     echo "Device detected !"
@@ -52,7 +52,7 @@ fi
     sleep 1
     echo ""
     echo "Cleaning up.."
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     #rm recovery-cooler.img
     echo ""
     sleep 1
@@ -61,7 +61,7 @@ fi
     exit
   else
     echo "Device not found"
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     echo ""
     sleep 1
     echo "Back to menu"

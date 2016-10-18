@@ -19,11 +19,11 @@ clear
     echo "Detecting device"
     echo ""
     sleep 1
-    adb devices >~/.AttachedDevices
+    adb devices > /tmp/AttachedDevices
     echo ""
     sleep 1
   fi
-    if grep 'device$\|device$' ~/.AttachedDevices
+    if grep 'device$\|device$' /tmp/AttachedDevices
     then
       echo ""
       echo "Device detected !"
@@ -46,7 +46,7 @@ clear
       sleep 1
       echo ""
       echo "Cleaning up.."
-      rm -f ~/.AttachedDevices
+      rm -f /tmp/AttachedDevices
       #rm recovery-cooler.img
       echo ""
       sleep 1
@@ -55,7 +55,7 @@ clear
       exit
     else
       echo "Device not found"
-      rm -f ~/.AttachedDevices
+      rm -f /tmp/AttachedDevices
       sleep 1
       echo "Back to menu"
     sleep 1

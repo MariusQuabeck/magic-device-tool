@@ -14,9 +14,9 @@ if [ "$bootloadermode"==Y -o "$bootloadermode"==y -o "$bootloadermode"=="" ]; th
   echo "Detecting device"
   echo ""
   sleep 1
-  fastboot devices >~/.AttachedDevices
+  fastboot devices > /tmp/AttachedDevices
 fi
-  if grep 'device$\|fastboot$' ~/.AttachedDevices
+  if grep 'device$\|fastboot$' /tmp/AttachedDevices
   then
     echo "Device detected !"
     sleep 1
@@ -43,7 +43,7 @@ sleep 1
     sleep 1
     echo ""
     echo "Cleaning up.."
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     #rm recovery-vegetahd.img
     echo ""
     sleep 1
@@ -53,7 +53,7 @@ sleep 1
   else
     echo "Device not found"
     sleep 1
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     echo ""
     echo "Back to menu"
     sleep 1

@@ -73,6 +73,7 @@ TODO
 - Give Aaron access to README
 - Add Maru OS
 - Add Plasma Mobile
+- Add Sailfish OS
 
 Special thanks to
 ---

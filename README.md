@@ -1,6 +1,6 @@
 # Version 1.0 - magic-device-tool
 
-A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, Cyanogenmod and Phoenix OS) on your mobile devices
+A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, CyanogenMod and Phoenix OS) on your mobile devices.
 
 Contact
 -------
@@ -11,7 +11,7 @@ Mister_Q on irc.freenode.net
 [Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TQYX0epd9w8EQ)
 
 # Standard Disclaimer Text
-This tool **does not** let you Dual Boot between Android and Ubuntu Touch 
+This tool **does not** let you Dual Boot between Android and Ubuntu Touch.
 
 Functions
 ---
@@ -23,7 +23,7 @@ Functions
 
 
 - Android
-  - Install Cyanogenmod (with or without Gapps)
+  - Install CyanogenMod (with or without GApps)
   - Install Phoenix OS
   - Install Factory Android Image
   - Backup / Restore

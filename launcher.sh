@@ -3,6 +3,11 @@ clear
 echo ""
 echo "Checking for newer version"
 echo ""
+echo ""
+echo "If you see this screen for longer than 10 seconds, please delete the magic-device-tool folder"
+echo "and clone the project again. If you are one of these people who don't read instructions or README files"
+echo "and who downloaded this tool as a zip from GitHub instead of cloning it.. RTFM ;)"
+echo ""
 sleep 1
 git pull > version
 if grep 'Already up-to-date' version

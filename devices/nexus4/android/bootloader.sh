@@ -23,9 +23,9 @@ if [ "$ulbootloader" = "1" ]; then
     echo "Detecting device"
     echo ""
     sleep 1
-    fastboot devices >~/.AttachedDevices
+    fastboot devices > /tmp/AttachedDevices
   fi
-    if grep 'device$\|fastboot$' ~/.AttachedDevices
+    if grep 'device$\|fastboot$' /tmp/AttachedDevices
     then
       echo "Device detected !"
       sleep 1
@@ -37,7 +37,7 @@ if [ "$ulbootloader" = "1" ]; then
       echo "Bootloader locked"
       echo ""
       echo "Cleaning up.."
-      rm -f ~/.AttachedDevices
+      rm -f /tmp/AttachedDevices
       echo ""
       echo "Exiting script. Bye Bye"
       sleep 1
@@ -58,9 +58,9 @@ elif [ "$ulbootloader" = "2" ]; then
       echo "Detecting device"
       echo ""
       sleep 1
-      fastboot devices >~/.AttachedDevices
+      fastboot devices >/tmp/AttachedDevices
     fi
-      if grep 'device$\|fastboot$' ~/.AttachedDevices
+      if grep 'device$\|fastboot$' /tmp/AttachedDevices
       then
         echo "Device detected !"
         sleep 1
@@ -75,19 +75,19 @@ elif [ "$ulbootloader" = "2" ]; then
         echo "Bootloader unlocked"
         echo ""
         echo "Cleaning up.."
-        rm -f ~/.AttachedDevices
+        rm -f /tmp/AttachedDevices
         echo ""
         echo "Exiting script. Bye Bye"
         sleep 1
         exit
       fi
   elif [ "$ulbootloader" = "3" ]; then
-      rm -f ~/.AttachedDevices
+      rm -f /tmp/AttachedDevices
       echo "Quit"
       echo "Exiting script. Bye Bye"
 fi
 
 else
   echo "Device not found."
-      rm -f ~/.AttachedDevices
+      rm -f /tmp/AttachedDevices
   exit

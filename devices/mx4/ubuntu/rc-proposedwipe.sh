@@ -13,9 +13,9 @@ if [ "$bootloadermode"==Y -o "$bootloadermode"==y -o "$bootloadermode"=="" ]; th
   echo "Detecting device"
   echo ""
   sleep 1
-  fastboot devices >~/.AttachedDevices
+  fastboot devices > /tmp/AttachedDevices
 fi
-  if grep 'device$\|fastboot$' ~/.AttachedDevices
+  if grep 'device$\|fastboot$' /tmp/AttachedDevices
   then
     echo "Device detected !"
     sleep 1
@@ -39,7 +39,7 @@ fi
     sleep 1
     echo ""
     echo "Cleaning up.."
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     #rm recovery-arale.img
     echo ""
     sleep 1
@@ -48,7 +48,7 @@ fi
     exit
   else
     echo "Device not found"
-    rm -f ~/.AttachedDevices
+    rm -f /tmp/AttachedDevices
     sleep 1
     echo ""
     echo "Back to menu"

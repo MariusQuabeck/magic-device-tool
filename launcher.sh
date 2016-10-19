@@ -86,12 +86,13 @@ echo "  [8]  LG Nexus 5 - hammerhead"
 echo "  [9]  Asus Nexus 7 2013 (WiFi) - flo"
 echo "  [10] Asus Nexus 7 2013 (LTE) - deb"
 echo "  [11] Asus Nexus 7 2012 (3G) - tilapia"
-echo "  [12] Samsung Nexus 10 - manta"
-echo "  [13] OnePlus One - bacon"
-echo "  [14] Fairphone 2 - FP2 !!May not work!!"
+echo "  [12] Asus Nexus 7 2012 (WiFi) - grouper"
+echo "  [13] Samsung Nexus 10 - manta"
+echo "  [14] OnePlus One - bacon"
+echo "  [15] Fairphone 2 - FP2 !!May not work!!"
 echo ""
 echo ""
-echo "  [15]  Quit"
+echo "  [16]  Quit"
 echo ""
 sleep 1
 echo -n "Enter device number: "; read device
@@ -118,15 +119,17 @@ elif [ "$device" = "10" ]; then
 elif [ "$device" = "11" ]; then
   . ./devices/nexus7tilapia/nexus7.sh
 elif [ "$device" = "12" ]; then
-  . ./devices/nexus10/nexus10.sh
+  . ./devices/nexus7grouper/nexus7.sh
 elif [ "$device" = "13" ]; then
-  . ./devices/oneplusone/oneplusone.sh
+  . ./devices/nexus10/nexus10.sh
 elif [ "$device" = "14" ]; then
-  . ./devices/fairphone2/fairphone2.sh
+  . ./devices/oneplusone/oneplusone.sh
 elif [ "$device" = "15" ]; then
+  . ./devices/fairphone2/fairphone2.sh
+elif [ "$device" = "16" ]; then
   exit
 else
   echo ""
-  echo "You did not enter a number between 1 and 15."
+  echo "You did not enter a number between 1 and 16."
   echo "Well... I'll be here during the whole next test. -GLaDOS"
 fi

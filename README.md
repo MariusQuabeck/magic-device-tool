@@ -70,6 +70,8 @@ TODO
 - Add option "add udev rule"
 - Add Zenity for success/failure prompts
 - Give Aaron access to README
+- Add Maru OS
+- Add Plasma Mobile
 
 Special thanks to
 ---

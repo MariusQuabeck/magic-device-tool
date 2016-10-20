@@ -15,7 +15,7 @@ This tool **does not** let you Dual Boot between Android and Ubuntu Touch.
 
 Functions
 ---
-- Ubuntu
+- Ubuntu (capable devices marked with *)
   - Install Ubuntu Touch
   - Switch Channels
   - Install OpenStore
@@ -38,20 +38,20 @@ Requirements
 Supported devices
 ----
 
-- BQ Aquaris E4.5 (krillin)
-- BQ Aquaris E5 HD (vegetahd)
-- BQ Aquaris M10 HD (cooler)
-- BQ Aquaris M10 FHD (frieza)
-- Meizu MX 4 (arale)
-- Meizu Pro 5 (turbo)
-- LG Nexus 4 (mako)
-- LG Nexus 5 (hammerhead)
-- Asus Nexus 7 2013 WiFi (flo)
-- Asus Nexus 7 2013 LTE (deb)
+- BQ Aquaris E4.5 (krillin) *
+- BQ Aquaris E5 HD (vegetahd) *
+- BQ Aquaris M10 HD (cooler) *
+- BQ Aquaris M10 FHD (frieza) *
+- Meizu MX 4 (arale) *
+- Meizu Pro 5 (turbo) *
+- LG Nexus 4 (mako) *
+- LG Nexus 5 (hammerhead)*
+- Asus Nexus 7 2013 WiFi (flo) *
+- Asus Nexus 7 2013 LTE (deb) *
 - Asus Nexus 7 2012 3G (tilapia)
 - Asus Nexus 7 2012 Wifi (grouper)
-- Samsung Nexus 10 (manta)
-- OnePlus One (bacon)
+- Samsung Nexus 10 (manta) *
+- OnePlus One (bacon) *
 - Fairphone 2 (FP2) !!May not work!!
 
 

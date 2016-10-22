@@ -87,3 +87,4 @@ Special thanks to
 - [Marius Gripsgård](https://github.com/mariogrip) UBports
 - [Brian Douglass](https://github.com/bhdouglass) OpenStore
 - [LavrinosMixlu](https://github.com/LavrinosMixlu) Android Backup/Restore
+- [michaelkisiel](https://github.com/michaelkisiel) [mdt-icons](https://github.com/michaelkisiel/mdt-icons)

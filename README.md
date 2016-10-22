@@ -29,7 +29,7 @@ Functions
 - Android
   - Install CyanogenMod (with or without GApps)
   - Install Maru OS
-  - Sailfish OS
+  - Install Sailfish OS
   - Install Phoenix OS
   - Install Factory Android Image
   - Backup / Restore
@@ -77,9 +77,8 @@ TODO
 - Add option "add udev rule"
 - Add Zenity for success/failure prompts
 - Give Aaron access to README
-- Add Maru OS
 - Add Plasma Mobile
-- Add Sailfish OS
+
 
 Special thanks to
 ---

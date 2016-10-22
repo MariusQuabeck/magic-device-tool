@@ -12,7 +12,7 @@ echo -n "Enter option: "; read ubuntuwipechannel
 if [ "$ubuntuwipechannel" = "1" ]; then
 . ./devices/nexus5/ubuntu/stablewipe.sh
 elif [ "$ubuntuwipechannel" = "2" ]; then
-  . ./rc-proposedwipe.sh
+. ./devices/nexus5/ubuntu/rc-proposedwipe.sh
 elif [ "$ubuntuwipechannel" = "3" ]; then
   . ./launcher.sh
 else

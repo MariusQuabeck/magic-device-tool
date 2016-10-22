@@ -2,7 +2,7 @@ clear
 echo ""
 echo "Install TWRP recovery"
 echo ""
-echo "Please boot your Nexus 10 into fastboot mode by pressing Power & Volume Up (+)"
+echo "Please boot your Nexus 10 into fastboot mode by pressing Power & Volume Up (+) & Volume Down (-)"
 sleep 1
 echo ""
 echo -n "Is your Nexus 10 in fastboot mode now? [Y] "; read bootloadermode

@@ -13,7 +13,7 @@ if [ "$ulbootloader" = "1" ]; then
   echo ""
   echo "Lock bootloader"
   echo ""
-  echo "Please boot your Nexus 10 into fastboot mode by pressing Power & Volume Up (+)"
+  echo "Please boot your Nexus 10 into fastboot mode by pressing Power & Volume Up (+) & Volume Down (-)"
   sleep 1
   echo -n "Is your Nexus 10 in fastboot mode now? [Y] "; read bootloadermode
   if [ "$bootloadermode"==Y -o "$bootloadermode"==y -o "$bootloadermode"=="" ]; then

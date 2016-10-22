@@ -2,7 +2,7 @@ clear
 echo ""
 echo "Install Phoenix OS"
 echo ""
-echo "Please boot your Nexus 10 into bootloader/fastboot mode by pressing Power & Volume Up (+)"
+echo "Please boot your Nexus 10 into fastboot mode by pressing Power & Volume Up (+) & Volume Down (-)"
 sleep 1
 echo ""
 echo -n "Is your Nexus 10 in bootloader/fastboot mode now? [Y] "; read bootloadermode
@@ -24,19 +24,19 @@ fi
     echo ""
     echo "This may take a while"
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://files.phoenixos.com/os/Phoenix-neuxs10-1.0.5-beta.tar.gz
+    wget -c --quiet --show-progress --tries=10 http://files.phoenixos.com/os/Phoenix-Nexus10-Manta-1.1.0.tar.gz
     sleep 1
-    tar xzf Phoenix-neuxs10*
+    tar xzf Phoenix-Nexus10-*
     sleep 1
     fastboot erase boot
     fastboot erase cache
     fastboot erase recovery
     fastboot erase system
     fastboot erase userdata
-    fastboot flash bootloader ./Phoenix-neuxs10-1.0.5-beta/bootloader-manta-mantamf01.img
+    fastboot flash bootloader ./Phoenix-Nexus10-Manta-1.1.0/bootloader-manta-mantamf01.img
     fastboot reboot-bootloader
     sleep 6
-    fastboot -w update ./Phoenix-neuxs10-1.0.5-beta/#347_manta_2016-03-24_23-00.zip
+    fastboot -w update ./Phoenix-Nexus10-Manta-1.1.0/433_manta_2016-09-08_19-47.zip
     sleep 1
     echo ""
     echo "Move to your device to finish the setup."

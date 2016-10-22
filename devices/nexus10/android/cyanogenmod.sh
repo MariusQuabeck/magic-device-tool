@@ -3,7 +3,7 @@ echo ""
 echo "Installing Cyanogenmod 13"
 echo ""
 sleep 1
-echo "Please boot your Nexus 10 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
+echo "Please boot your Nexus 10 into fastboot mode by pressing Power & Volume Up (+) & Volume Down (-)"
 echo ""
 sleep 1
 echo -n "Is your Nexus 10 in bootloader/fastboot mode now? [Y] "; read bootloadermode
@@ -55,9 +55,9 @@ then
   fastboot reboot-bootloader
   sleep 7
   fastboot boot twrp-3.0.2-0-manta.img
-  sleep 15
+  sleep 8
   adb reboot recovery
-  sleep 15
+  sleep 19
   echo ""
   clear
   echo ""

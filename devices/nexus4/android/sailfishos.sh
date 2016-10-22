@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 13 without Gapps"
+echo "Installing Sailfish OS"
 echo ""
 sleep 1
 echo "Please boot your Nexus 4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
@@ -13,7 +13,7 @@ if [ "$bootloadermode"==Y -o "$bootloadermode"==y -o "$bootloadermode"=="" ]; th
   echo "Detecting device"
   echo ""
   sleep 1
-  fastboot devices >/tmp/AttachedDevices
+  fastboot devices > /tmp/AttachedDevices
 fi
 if grep 'device$\|fastboot$' /tmp/AttachedDevices
 then
@@ -31,11 +31,16 @@ then
   wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/twrp-3.0.2-0-mako.img
   sleep 1
   echo ""
-  echo "Downloading Cyanogenmod 13.."
+  echo "Downloading Cyanogenmod 12.."
+  echo "(needed for SFOS)"
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/mako-snapshot.zip
+  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/jenkins/90767/cm-11-20141115-SNAPSHOT-M12-mako.zip
   echo ""
+  echo "Downloading Sailfish OS.."
+  echo ""
+  sleep 1
+  wget -c --quiet --show-progress --tries=10 http://images.devaamo.fi/sfa/mako/gamma7.1/sailfishos-mako-release-2.0.2.51-gamma7.1.zip
   sleep 2
   clear
   echo ""
@@ -65,16 +70,24 @@ then
   echo "You may see a prompt asking you for read/write permissions"
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
-  echo "  → CM 13 zip "
-  adb push -p mako-snapshot.zip /sdcard/
+  echo "  → CM 12 zip "
+  adb push -p cm-11-20141115-SNAPSHOT-M12-mako.zip /sdcard/
+  echo ""
+  echo "  → Sailfish OS zip"
+  adb push -p sailfishos-mako-release-2.0.2.51-gamma7.1.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
   echo "Installing Cyanogenmod.."
   echo ""
-  adb shell twrp install /sdcard/mako-snapshot.zip
+  adb shell twrp install /sdcard/cm-11-20141115-SNAPSHOT-M12-mako.zip
   sleep 1
+  echo ""
+  echo "Installing Sailfish OS.."
+  echo ""
+  sleep 3
+  adb shell twrp install /sdcard/sailfishos-mako-release-2.0.2.51-gamma7.1.zip
   echo ""
   echo "Wipe cache.."
   echo ""

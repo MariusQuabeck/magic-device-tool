@@ -55,7 +55,7 @@ then
   fastboot reboot-bootloader
   sleep 7
   fastboot boot twrp-3.0.2-0-hammerhead.img
-  sleep 15
+  sleep 7
   adb reboot recovery
   sleep 15
   echo ""

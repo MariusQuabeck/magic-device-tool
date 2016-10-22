@@ -22,17 +22,17 @@ fi
     echo ""
     echo "Downloading factory image.."
     echo ""
-    wget -c --quiet --show-progress --tries=10 https://dl.google.com/dl/android/aosp/hammerhead-mob30y-factory-7f05cd7f.tgz
+    wget -c --quiet --show-progress --tries=10 https://dl.google.com/dl/android/aosp/hammerhead-m4b30x-factory-10cfaa5c.zip
     sleep 1
-    tar xzf hammerhead*
+    unzip hammerhead*
     sleep 1
-    fastboot flash bootloader ./hammerhead-mob30y/bootloader-hammerhead-hhz20h.img
+    fastboot flash bootloader ./hammerhead-m4b30x/bootloader-hammerhead-hhz20h.img
     fastboot reboot-bootloader
     sleep 6
-    fastboot flash radio ./hammerhead-mob30y/radio-hammerhead-m8974a-2.0.50.2.29.img
+    fastboot flash radio ./hammerhead-m4b30x/radio-hammerhead-m8974a-2.0.50.2.30.img
     fastboot reboot-bootloader
     sleep 6
-    fastboot -w update ./hammerhead-mob30y/image-hammerhead-mob30y.zip
+    fastboot -w update ./hammerhead-m4b30x/image-hammerhead-m4b30x.zip
     sleep 1
     echo ""
     echo "Move to your device to finish the setup."
@@ -43,7 +43,7 @@ fi
     echo ""
     echo "Cleaning up.."
     rm -f /tmp/AttachedDevices
-    rm -rf ./hammerhead-mob30y
+    rm -rf ./hammerhead-m4b30x
     #rm -f ./*.tgz
     echo ""
     sleep 1

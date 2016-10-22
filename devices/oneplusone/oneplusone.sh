@@ -8,6 +8,9 @@ echo ""
 echo "OnePlus One - bacon"
 echo ""
 echo ""
+echo "Please start the tool with 'sudo ./launcher.sh' otherwise it wont work !"
+echo ""
+echo ""
 sleep 1
 echo "Ubuntu: "
 echo ""
@@ -20,12 +23,14 @@ echo ""
 echo "[3] Install Cyanogenmod 13"
 echo "[4] Install Cyanogenmod 13 without Gapps"
 echo ""
-echo "[5] Install TWRP recovery"
-echo "[6] Back Up your Android device"
-echo "[7] Lock/Unlock bootloader (Will wipe existing apps/data)"
+echo "[5] Install Sailfish OS"
+echo ""
+echo "[6] Install TWRP recovery"
+echo "[7] Back Up your Android device"
+echo "[8] Lock/Unlock bootloader (Will wipe existing apps/data)"
 echo ""
 echo ""
-echo "[8] Back to menu "
+echo "[9] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
@@ -37,12 +42,14 @@ elif [ "$option" = "3" ]; then
 elif [ "$option" = "4" ]; then
   . ./devices/oneplusone/android/cyanogenmodwogapps.sh
 elif [ "$option" = "5" ]; then
-  . ./devices/oneplusone/android/twrp.sh
+  . ./devices/oneplusone/android/sailfishos.sh
 elif [ "$option" = "6" ]; then
-  . ./devices/generic/android/backup.sh
+  . ./devices/oneplusone/android/twrp.sh
 elif [ "$option" = "7" ]; then
-  . ./devices/oneplusone/android/bootloader.sh
+  . ./devices/generic/android/backup.sh
 elif [ "$option" = "8" ]; then
+  . ./devices/oneplusone/android/bootloader.sh
+elif [ "$option" = "9" ]; then
   . ./launcher.sh
 else
   echo ""

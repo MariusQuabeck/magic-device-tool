@@ -1,6 +1,6 @@
 # Version 1.0 - magic-device-tool
 
-A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, CyanogenMod, Maru OS and Phoenix OS) on your mobile devices.
+A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, CyanogenMod, Maru OS , Sailfish OS and Phoenix OS) on your mobile devices.
 
 Contact
 -------
@@ -26,6 +26,7 @@ Functions
 - Android
   - Install CyanogenMod (with or without GApps)
   - Install Maru OS
+  - Sailfish OS
   - Install Phoenix OS
   - Install Factory Android Image
   - Backup / Restore

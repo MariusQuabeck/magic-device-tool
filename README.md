@@ -1,6 +1,6 @@
 # Version 1.0 - magic-device-tool
 
-![alt text](https://raw.githubusercontent.com/MariusQuabeck/magic-device-tool/master/mdtlogo.png "magic-device-tool logo")
+![alt text](https://raw.githubusercontent.com/MariusQuabeck/magic-device-tool/master/logo.png "magic-device-tool logo")
 
 
 A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, CyanogenMod, Maru OS , Sailfish OS and Phoenix OS) on your mobile devices.

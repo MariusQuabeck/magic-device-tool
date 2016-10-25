@@ -3,7 +3,7 @@
 ![alt text](https://raw.githubusercontent.com/MariusQuabeck/magic-device-tool/master/logo.png "magic-device-tool logo")
 
 
-A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, CyanogenMod, Maru OS , Sailfish OS and Phoenix OS) on your mobile devices.
+A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, CyanogenMod, Maru OS, Sailfish OS, and Phoenix OS) on your mobile devices.
 
 Contact
 -------
@@ -55,7 +55,7 @@ Supported devices
 - Asus Nexus 7 2013 WiFi (flo)
 - Asus Nexus 7 2013 LTE (deb)
 - Asus Nexus 7 2012 3G (tilapia)
-- Asus Nexus 7 2012 Wifi (grouper)
+- Asus Nexus 7 2012 WiFi (grouper)
 - Samsung Nexus 10 (manta)
 - OnePlus One (bacon)
 - Fairphone 2 (FP2) !!May not work!!

@@ -81,7 +81,6 @@ then
 fi
 
 clear
-echo ""
 echo "Choose your device"
 echo ""
 echo "  [1]  BQ Aquaris E4.5 - krillin"
@@ -99,12 +98,14 @@ echo "  [12] Asus Nexus 7 2012 (WiFi) - grouper"
 echo "  [13] Samsung Nexus 10 - manta"
 echo "  [14] OnePlus One - bacon"
 echo "  [15] Fairphone 2 - FP2 !!May not work!!"
+echo "  ========================================="
+echo "  [16] Join Telegram Group Chat"
+echo "  [17] Report a bug"
 echo ""
-echo ""
-echo "  [16]  Quit"
+echo "  [18] Quit"
 echo ""
 sleep 1
-echo -n "Enter device number: "; read device
+echo -n "Enter number: "; read device
 if [ "$device" = "1" ]; then
   . ./devices/e45/e45.sh
 elif [ "$device" = "2" ]; then
@@ -136,6 +137,10 @@ elif [ "$device" = "14" ]; then
 elif [ "$device" = "15" ]; then
   . ./devices/fairphone2/fairphone2.sh
 elif [ "$device" = "16" ]; then
+  . ./devices/generic/telegram.sh
+elif [ "$device" = "17" ]; then
+  . ./devices/generic/reportabug.sh
+elif [ "$device" = "18" ]; then
   exit
 else
   echo ""

@@ -35,6 +35,10 @@ Functions
   - Backup / Restore
   - Lock/Unlock bootloader
   - Install TWRP recovery
+  
+- Misc
+  - Join Telegram Group Chat
+  - Report a bug
 
 
 Requirements

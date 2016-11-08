@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Installing Maru OS"
+echo "Installing Maru OS without Gapps"
 echo ""
 sleep 1
 echo "Please boot your Nexus 5 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
@@ -34,11 +34,6 @@ then
   echo "Downloading TWRP recovery.."
   echo ""
   wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
-  sleep 1
-  echo ""
-  echo "Downloading Gapps.."
-  echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/gapps/open_gapps-arm-6.0-pico-20161108.zip
   echo ""
   sleep 2
   clear
@@ -72,22 +67,12 @@ then
   echo "  → Maru OS "
   adb push -p maru-v0.3-update-hammerhead-cec8597d.zip /sdcard/
   echo ""
-  sleep 1
-  echo ""
-  echo "  → Gapps "
-  adb push -p open_gapps-arm-6.0-pico-20161108.zip /sdcard/
-  echo ""
   echo "========================================="
   sleep 1
   echo ""
   echo "Installing Maru OS.."
   echo ""
   adb shell twrp install /sdcard/maru-v0.3-update-hammerhead-cec8597d.zip
-  echo ""
-  sleep 3
-  echo "Installing Gapps.."
-  echo ""
-  adb shell twrp install /sdcard/open_gapps-arm-6.0-pico-20161108.zip
   echo ""
   sleep 3
   echo ""

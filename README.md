@@ -93,3 +93,4 @@ Special thanks to
 - [Brian Douglass](https://github.com/bhdouglass) OpenStore
 - [LavrinosMixlu](https://github.com/LavrinosMixlu) Android Backup/Restore
 - [michaelkisiel](https://github.com/michaelkisiel) [mdt-icons](https://github.com/michaelkisiel/mdt-icons)
+- [pdsouza](https://github.com/pdsouza) [Maru OS](https://github.com/maruos/maruos)

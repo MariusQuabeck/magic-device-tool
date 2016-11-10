@@ -82,6 +82,7 @@ TODO
 - Add Zenity for success/failure prompts
 - Give Aaron access to README
 - Add Plasma Mobile
+- Snap
 - ~~Add Kali Linux~~
 
 

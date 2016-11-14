@@ -84,6 +84,7 @@ TODO
 - Add Plasma Mobile
 - Snap
 - ~~Add Kali Linux~~
+- Add FAQ section
 
 
 Special thanks to

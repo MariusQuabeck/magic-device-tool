@@ -85,6 +85,7 @@ TODO
 - Snap
 - ~~Add Kali Linux~~
 - Add FAQ section
+- Add FlymeOS for Meizu devices
 
 
 Special thanks to

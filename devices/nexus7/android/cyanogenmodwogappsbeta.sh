@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 12.1"
+echo "Installing Cyanogenmod 14.1 without Gapps"
 echo ""
 sleep 1
 echo "Please boot your Nexus 7 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
@@ -23,29 +23,25 @@ then
   fastboot format cache
   fastboot format userdata
   fastboot reboot-bootloader
-  sleep 6
+  sleep 8
   clear
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/twrp-3.0.2-0-tilapia.img
+  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/twrp-3.0.2-0-flo.img
   sleep 1
   echo ""
-  echo "Downloading Cyanogenmod 12.1 .."
+  echo "Downloading Cyanogenmod 14.1.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 http://get.cm/get/tilapia-snapshot.zip
+  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/jenkins/187672/cm-14.1-20161125-NIGHTLY-flo.zip
   echo ""
-  echo "Downloading Open Gapps.."
-  echo ""
-  sleep 1
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/gapps/open_gapps-arm-5.1-nano-20161009.zip
   sleep 2
   clear
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery twrp-3.0.2-0-tilapia.img
+  fastboot flash recovery twrp-3.0.2-0-flo.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -54,10 +50,10 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 7
-  fastboot boot twrp-3.0.2-0-tilapia.img
-  sleep 15
+  fastboot boot twrp-3.0.2-0-flo.img
+  sleep 17
   adb reboot recovery
-  sleep 15
+  sleep 17
   echo ""
   clear
   echo ""
@@ -69,30 +65,21 @@ then
   echo "You may see a prompt asking you for read/write permissions"
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
-  echo "  → CM 12.1 zip "
-  adb push -p tilapia-snapshot.zip /sdcard/
-  echo ""
-  echo "  → gapps zip"
-  adb push -p open_gapps-arm-5.1-nano-20161009.zip /sdcard/
+  echo "  → CM 14.1 zip "
+  adb push -p cm-14.1-20161125-NIGHTLY-flo.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
   echo "Installing Cyanogenmod.."
   echo ""
-  adb shell twrp install /sdcard/tilapia-snapshot.zip
-  sleep
-  echo ""
-  echo "Installing GApps.."
-  echo ""
-  sleep 3
-  adb shell twrp install /sdcard/open_gapps-arm-5.1-nano-20161009.zip
+  adb shell twrp install /sdcard/cm-14.1-20161125-NIGHTLY-flo.zip
+  sleep 1
   echo ""
   echo "Wipe cache.."
   echo ""
-  #adb shell twrp wipe cache
-  #sleep 5
-  #adb shell twrp wipe dalvik
+  adb shell twrp wipe cache
+  adb shell twrp wipe dalvik
   echo ""
   adb reboot
   echo "The device is now rebooting. Give it time to flash the new ROM. It will boot on its own."

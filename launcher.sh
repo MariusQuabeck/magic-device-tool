@@ -93,16 +93,14 @@ echo "  [6]  LG Nexus 4 - mako"
 echo "  [7]  LG Nexus 5 - hammerhead"
 echo "  [8]  Asus Nexus 7 2013 (WiFi) - flo"
 echo "  [9]  Asus Nexus 7 2013 (LTE) - deb"
-echo "  [10] Asus Nexus 7 2012 (3G) - tilapia"
-echo "  [11] Asus Nexus 7 2012 (WiFi) - grouper"
-echo "  [12] Samsung Nexus 10 - manta"
-echo "  [13] OnePlus One - bacon"
+echo "  [10] Samsung Nexus 10 - manta"
+echo "  [11] OnePlus One - bacon"
 #echo "  [15] Fairphone 2 - FP2 !!May not work!!" --removed until the ubports build works again
 echo "  ========================================="
-echo "  [14] Join Telegram Group Chat"
-echo "  [15] Report a bug"
+echo "  [12] Join Telegram Group Chat"
+echo "  [13] Report a bug"
 echo ""
-echo "  [16] Quit"
+echo "  [14] Quit"
 echo ""
 sleep 1
 echo -n "Enter number: "; read device
@@ -127,20 +125,16 @@ elif [ "$device" = "8" ]; then
 elif [ "$device" = "9" ]; then
   . ./devices/nexus7deb/nexus7.sh
 elif [ "$device" = "10" ]; then
-  . ./devices/nexus7tilapia/nexus7.sh
-elif [ "$device" = "11" ]; then
-  . ./devices/nexus7grouper/nexus7.sh
-elif [ "$device" = "12" ]; then
   . ./devices/nexus10/nexus10.sh
-elif [ "$device" = "13" ]; then
+elif [ "$device" = "11" ]; then
   . ./devices/oneplusone/oneplusone.sh
 #elif [ "$device" = "15" ]; then
 #  . ./devices/fairphone2/fairphone2.sh
-elif [ "$device" = "14" ]; then
+elif [ "$device" = "12" ]; then
   . ./devices/generic/telegram.sh
-elif [ "$device" = "15" ]; then
+elif [ "$device" = "13" ]; then
   . ./devices/generic/reportabug.sh
-elif [ "$device" = "16" ]; then
+elif [ "$device" = "14" ]; then
   exit
 else
   echo ""

@@ -17,18 +17,16 @@ echo ""
 echo ""
 echo "Android:"
 echo ""
-echo "[3]  Install Cyanogenmod 13"
-echo "[4]  Install Cyanogenmod 13 without Gapps"
-echo "[5]  Install Maru OS"
-echo "[6]  Install Maru OS without Gapps"
-echo "[7]  Install Sailfish OS"
-echo "[8]  Install Factory Image"
-echo "[9]  Install TWRP recovery"
-echo "[10] Back Up your Android device"
+echo "[3]  Install Cyanogenmod"
+echo "[4]  Install Maru OS"
+echo "[5]  Install Sailfish OS"
+echo "[6]  Install Factory Image"
+echo "[7]  Install TWRP recovery"
+echo "[8]  Back Up your Android device"
 echo ""
-echo "[11] Lock/Unlock bootloader (Will wipe existing apps/data)"
+echo "[9]  Lock/Unlock bootloader (Will wipe existing apps/data)"
 echo ""
-echo "[12] Back to menu "
+echo "[10] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
@@ -36,24 +34,20 @@ if [ "$option" = "1" ]; then
 elif [ "$option" = "2" ]; then
 . ./devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
-. ./devices/nexus5/android/cyanogenmod.sh
+. ./devices/nexus5/android/cm.sh
 elif [ "$option" = "4" ]; then
-. ./devices/nexus5/android/cyanogenmodwogapps.sh
+. ./devices/nexus5/android/maru.sh
 elif [ "$option" = "5" ]; then
-. ./devices/nexus5/android/maruos.sh
-elif [ "$option" = "6" ]; then
-. ./devices/nexus5/android/maruoswogapps.sh
-elif [ "$option" = "7" ]; then
 . ./devices/nexus5/android/sailfishos.sh
-elif [ "$option" = "8" ]; then
+elif [ "$option" = "6" ]; then
 . ./devices/nexus5/android/factoryimage.sh
-elif [ "$option" = "9" ]; then
+elif [ "$option" = "7" ]; then
   . ./devices/nexus5/android/twrp.sh
-elif [ "$option" = "10" ]; then
+elif [ "$option" = "8" ]; then
   . ./devices/generic/android/backup.sh
-elif [ "$option" = "11" ]; then
+elif [ "$option" = "9" ]; then
   . ./devices/nexus5/android/bootloader.sh
-elif [ "$option" = "12" ]; then
+elif [ "$option" = "10" ]; then
   . ./launcher.sh
 else
   echo ""

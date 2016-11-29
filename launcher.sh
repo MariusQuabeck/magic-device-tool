@@ -88,21 +88,21 @@ echo "  [2]  BQ Aquaris E5 HD - vegetahd"
 echo "  [3]  BQ Aquaris M10 HD - cooler"
 echo "  [4]  BQ Aquaris M10 FHD - frieza"
 echo "  [5]  Meizu MX 4 - arale"
-echo "  [6]  Meizu Pro 5 - turbo"
-echo "  [7]  LG Nexus 4 - mako"
-echo "  [8]  LG Nexus 5 - hammerhead"
-echo "  [9]  Asus Nexus 7 2013 (WiFi) - flo"
-echo "  [10] Asus Nexus 7 2013 (LTE) - deb"
-echo "  [11] Asus Nexus 7 2012 (3G) - tilapia"
-echo "  [12] Asus Nexus 7 2012 (WiFi) - grouper"
-echo "  [13] Samsung Nexus 10 - manta"
-echo "  [14] OnePlus One - bacon"
-echo "  [15] Fairphone 2 - FP2 !!May not work!!"
+#echo "  [6]  Meizu Pro 5 - turbo" --removed until Marius can get his hands on this device
+echo "  [6]  LG Nexus 4 - mako"
+echo "  [7]  LG Nexus 5 - hammerhead"
+echo "  [8]  Asus Nexus 7 2013 (WiFi) - flo"
+echo "  [9]  Asus Nexus 7 2013 (LTE) - deb"
+echo "  [10] Asus Nexus 7 2012 (3G) - tilapia"
+echo "  [11] Asus Nexus 7 2012 (WiFi) - grouper"
+echo "  [12] Samsung Nexus 10 - manta"
+echo "  [13] OnePlus One - bacon"
+#echo "  [15] Fairphone 2 - FP2 !!May not work!!" --removed until the ubports build works again
 echo "  ========================================="
-echo "  [16] Join Telegram Group Chat"
-echo "  [17] Report a bug"
+echo "  [14] Join Telegram Group Chat"
+echo "  [15] Report a bug"
 echo ""
-echo "  [18] Quit"
+echo "  [16] Quit"
 echo ""
 sleep 1
 echo -n "Enter number: "; read device
@@ -116,31 +116,31 @@ elif [ "$device" = "4" ]; then
   . ./devices/m10fhd/m10fhd.sh
 elif [ "$device" = "5" ]; then
   . ./devices/mx4/mx4.sh
+#elif [ "$device" = "6" ]; then
+#  . ./devices/pro5/pro5.sh
 elif [ "$device" = "6" ]; then
-  . ./devices/pro5/pro5.sh
-elif [ "$device" = "7" ]; then
   . ./devices/nexus4/nexus4.sh
-elif [ "$device" = "8" ]; then
+elif [ "$device" = "7" ]; then
   . ./devices/nexus5/nexus5.sh
-elif [ "$device" = "9" ]; then
+elif [ "$device" = "8" ]; then
   . ./devices/nexus7/nexus7.sh
-elif [ "$device" = "10" ]; then
+elif [ "$device" = "9" ]; then
   . ./devices/nexus7deb/nexus7.sh
-elif [ "$device" = "11" ]; then
+elif [ "$device" = "10" ]; then
   . ./devices/nexus7tilapia/nexus7.sh
-elif [ "$device" = "12" ]; then
+elif [ "$device" = "11" ]; then
   . ./devices/nexus7grouper/nexus7.sh
-elif [ "$device" = "13" ]; then
+elif [ "$device" = "12" ]; then
   . ./devices/nexus10/nexus10.sh
-elif [ "$device" = "14" ]; then
+elif [ "$device" = "13" ]; then
   . ./devices/oneplusone/oneplusone.sh
-elif [ "$device" = "15" ]; then
-  . ./devices/fairphone2/fairphone2.sh
-elif [ "$device" = "16" ]; then
+#elif [ "$device" = "15" ]; then
+#  . ./devices/fairphone2/fairphone2.sh
+elif [ "$device" = "14" ]; then
   . ./devices/generic/telegram.sh
-elif [ "$device" = "17" ]; then
+elif [ "$device" = "15" ]; then
   . ./devices/generic/reportabug.sh
-elif [ "$device" = "18" ]; then
+elif [ "$device" = "16" ]; then
   exit
 else
   echo ""

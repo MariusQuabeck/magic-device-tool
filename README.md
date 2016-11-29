@@ -35,7 +35,7 @@ Functions
   - Backup / Restore
   - Lock/Unlock bootloader
   - Install TWRP recovery
-  
+
 - Misc
   - Join Telegram Group Chat
   - Report a bug
@@ -53,7 +53,7 @@ Supported devices
 - BQ Aquaris M10 HD (cooler)
 - BQ Aquaris M10 FHD (frieza)
 - Meizu MX 4 (arale)
-- Meizu Pro 5 (turbo)
+- ~~Meizu Pro 5 (turbo)~~ removed until Marius can get his hands on this device
 - LG Nexus 4 (mako)
 - LG Nexus 5 (hammerhead)
 - Asus Nexus 7 2013 WiFi (flo)
@@ -62,7 +62,7 @@ Supported devices
 - Asus Nexus 7 2012 WiFi (grouper)
 - Samsung Nexus 10 (manta)
 - OnePlus One (bacon)
-- Fairphone 2 (FP2) !!May not work!!
+- ~~Fairphone 2 (FP2)~~ removed until the ubports build works again
 
 
 Usage

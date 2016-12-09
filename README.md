@@ -85,6 +85,13 @@ TODO
 - Add FAQ section
 - Add FlymeOS for Meizu devices
 
+FAQ
+---
+- Will you support device x?
+  Answer: You can open an issue for a device if it
+      - is able to fastboot and adb correctly (so no Samsung devices)
+      - and has a working port of Ubuntu Touch
+  If your device don't has both, there will be no support. Also please don't open an issue for it..
 
 Special thanks to
 ---

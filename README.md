@@ -71,6 +71,16 @@ $ cd magic-device-tool
 $ chmod +x launcher.sh
 $ ./launcher.sh
 ```
+FAQ
+---
+- Q: Will you support "device x"?  
+  A: You can open an issue for a device, if it:
+   1. is able to fastboot and adb correctly (so no Samsung devices)
+   2. and has a working port of Ubuntu Touch (We are not resposible for the porting).   
+- Q: Will you port Ubuntu Touch to "device x?  
+  A: We are not responsible for porting Ubuntu Touch, so no.
+- Q: Is it called Ubuntu Touch, Ubuntu for devices, or just Ubuntu?  
+  A: We really don't care ;) 
 
 TODO
 ------
@@ -84,14 +94,6 @@ TODO
 - ~~Add Kali Linux~~
 - Add FAQ section
 - Add FlymeOS for Meizu devices
-
-FAQ
----
-- Will you support device x?
-  Answer: You can open an issue for a device if it
-      - is able to fastboot and adb correctly (so no Samsung devices)
-      - and has a working port of Ubuntu Touch
-  If your device don't has both, there will be no support. Also please don't open an issue for it..
 
 Special thanks to
 ---

@@ -73,15 +73,15 @@ $ ./launcher.sh
 ```
 FAQ
 ---
-- Q: Will you support "device x"?  
-  A: You can open an issue for a new device, if it has a working port of Ubuntu Touch. Most of them are at [ubports.com](https://ubports.com/). If your device isn't there, it probably has no working port, so please don't open new issues.      
-- Q: Will you port Ubuntu Touch to "device x?  
+- Q: Will you support "device x"?
+  A: You can open an issue for a new device, if it has a working port of Ubuntu Touch. Most of them are at [ubports.com](https://ubports.com/). If your device isn't there, it probably has no working port, so please don't open new issues.
+- Q: Will you port Ubuntu Touch to "device x?
   A: We are not responsible for porting Ubuntu Touch, so no.
-- Q: What language is mdt written in?  
+- Q: What language is mdt written in?
   A: Bash. So you don't have to give root to an app, you can't figure out.
-- Q: How does mdt work?  
+- Q: How does mdt work?
   A: mdt downloads some tools from the ubuntu repos and, depending on your choices, downloads the newest recovery and ROM for your device and flashes it. If you want to know more, just read the source (it's only bash :).
-- Q: Is it called Ubuntu Touch, Ubuntu for devices, or just Ubuntu?  
+- Q: Is it called Ubuntu Touch, Ubuntu for devices, or just Ubuntu?
   A: We really don't care ;) 
 
 TODO
@@ -94,7 +94,7 @@ TODO
 - Add Plasma Mobile
 - Snap
 - ~~Add Kali Linux~~
-- Add FAQ section
+- ~~Add FAQ section~~
 - Add FlymeOS for Meizu devices
 
 Special thanks to
@@ -106,3 +106,4 @@ Special thanks to
 - [LavrinosMixlu](https://github.com/LavrinosMixlu) Android Backup/Restore
 - [michaelkisiel](https://github.com/michaelkisiel) [mdt-icons](https://github.com/michaelkisiel/mdt-icons)
 - [pdsouza](https://github.com/pdsouza) [Maru OS](https://github.com/maruos/maruos)
+- [kristbaum](https://github.com/kristbaum) FAQ section

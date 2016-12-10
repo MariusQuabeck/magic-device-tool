@@ -74,19 +74,19 @@ $ ./launcher.sh
 FAQ
 ---
 - Q: Will you support "device x"?     
-  	A: You can open an issue for a new device, if it has a working port of Ubuntu Touch. Most of them are at [ubports.com](https://ubports.com/). If your device isn't there, it probably has no working port, so please don't open new issues.
+  A: You can open an issue for a new device, if it has a working port of Ubuntu Touch. Most of them are at [ubports.com](https://ubports.com/). If your device isn't there, it probably has no working port, so please don't open new issues.
 
 - Q: Will you port Ubuntu Touch to "device x"?     
-  	A: We are not responsible for porting Ubuntu Touch, so no.
+  A: We are not responsible for porting Ubuntu Touch, so no.
 
 - Q: What language is mdt written in?    
-  	A: Bash. So you don't have to give root to an app, you can't figure out.
+  A: Bash. So you don't have to give root to an app, you can't figure out.
 
 - Q: How does mdt work?    
-  	A: mdt downloads some tools from the ubuntu repos and, depending on your choices, downloads the newest recovery and ROM for your device and flashes it. If you want to know more, just read the source (it's only bash :).
+  A: mdt downloads some tools from the ubuntu repos and, depending on your choices, downloads the newest recovery and ROM for your device and flashes it. If you want to know more, just read the source (it's only bash :).
 
 - Q: Is it called Ubuntu Touch, Ubuntu for devices, or just Ubuntu?   
-  	A: We really don't care ;) 
+  A: We really don't care ;) 
 
 TODO
 ------

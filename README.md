@@ -11,7 +11,7 @@ Marius Quabeck [(Email)](mailto:misterq@ubuntu.com?subject=magic-device-tool)
 
 Mister_Q on irc.freenode.net
 
-[Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TQYX0epd9w8EQ)
+[Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TT5g7yEvAz8cA)
 
 # Standard Disclaimer Text
 This tool **does not** let you Dual Boot between Android and Ubuntu Touch.

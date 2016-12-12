@@ -5,8 +5,9 @@ echo ""
 sleep 1
 echo "[1] stable"
 echo "[2] rc-proposed"
+echo "[3] devel_rc-proposed"
 echo ""
-echo "[3] Back to menu "
+echo "[4] Back to menu "
 echo ""
 echo -n "Enter option: "; read ubuntuwipechannel
 if [ "$ubuntuwipechannel" = "1" ]; then
@@ -14,10 +15,12 @@ if [ "$ubuntuwipechannel" = "1" ]; then
 elif [ "$ubuntuwipechannel" = "2" ]; then
 . ./devices/oneplusone/ubuntu/rc-proposedwipe.sh
 elif [ "$ubuntuwipechannel" = "3" ]; then
+. ./devices/oneplusone/ubuntu/devel_rc-proposedwipe.sh
+elif [ "$ubuntuwipechannel" = "4" ]; then
   . ./launcher.sh
 else
   echo ""
-  echo "You did not enter a number between 1 and 2."
+  echo "You did not enter a number between 1 and 4."
   echo "Well... I'll be here during the whole next test. -GLaDOS"
   exit
 fi

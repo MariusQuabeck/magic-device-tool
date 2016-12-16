@@ -35,7 +35,7 @@ clear
       adb reboot-bootloader
       echo "Please wait"
       sleep 6
-      wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-cooler.img
+      wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-cooler.img
       sleep 1
       clear
       echo ""

@@ -34,7 +34,7 @@ fi
     echo ""
     echo "Downloading TWRP recovery"
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/twrp-arale.img
+    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-arale.img
     sleep 1
     fastboot flash recovery twrp-arale.img
     sleep 1

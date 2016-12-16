@@ -30,7 +30,7 @@ fi
     fastboot reboot-bootloader
     sleep 6
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-vegetahd.img
+    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-vegetahd.img
     sleep 1
     ubuntu-device-flash touch --channel ubuntu-touch/stable/bq-aquaris.en --device vegetahd --recovery-image recovery-vegetahd.img  --bootstrap
     echo ""

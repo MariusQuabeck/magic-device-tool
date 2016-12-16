@@ -33,12 +33,12 @@ then
   echo ""
   echo "Downloading TWRP recovery.."
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
+  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
   sleep 1
   echo ""
   echo "Downloading Gapps.."
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/gapps/open_gapps-arm-6.0-pico-20161108.zip
+  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/gapps/open_gapps-arm-6.0-pico-20161108.zip
   echo ""
   sleep 2
   clear

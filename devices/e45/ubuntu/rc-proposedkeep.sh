@@ -24,7 +24,7 @@ fi
     echo ""
     echo "Flashing rc-proposed channel"
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-krillin.img
+    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-krillin.img
     echo ""
     sleep 1
     fastboot flash recovery recovery-krillin.img

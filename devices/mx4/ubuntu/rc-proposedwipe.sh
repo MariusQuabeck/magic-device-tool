@@ -29,7 +29,7 @@ fi
     fastboot reboot-bootloader
     sleep 6
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/recovery-arale.img
+    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-arale.img
     sleep 1
     fastboot flash recovery recovery-arale.img
     sleep 1

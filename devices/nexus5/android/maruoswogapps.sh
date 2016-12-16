@@ -33,7 +33,7 @@ then
   echo ""
   echo "Downloading TWRP recovery.."
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
+  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
   echo ""
   sleep 2
   clear

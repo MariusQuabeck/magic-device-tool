@@ -40,7 +40,7 @@ then
   echo "Downloading Sailfish OS.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 http://images.devaamo.fi/sfa/hammerhead/beta0/sailfishos-hammerhead-release-1.1.9.28-beta0-201510022255.zip
+  wget -c --quiet --show-progress --tries=10 http://images.devaamo.fi/sfa/hammerhead/beta5/sailfishos-hammerhead-release-2.0.4.13-beta5-201610241556.zip
   sleep 2
   clear
   echo ""
@@ -74,7 +74,7 @@ then
   adb push -p cm-11-20140805-SNAPSHOT-M9-hammerhead.zip /sdcard/
   echo ""
   echo "  → Sailfish OS zip"
-  adb push -p sailfishos-hammerhead-release-1.1.9.28-beta0-201510022255.zip /sdcard/
+  adb push -p sailfishos-hammerhead-release-2.0.4.13-beta5-201610241556.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
@@ -87,7 +87,7 @@ then
   echo "Installing Sailfish OS.."
   echo ""
   sleep 3
-  adb shell twrp install /sdcard/sailfishos-hammerhead-release-1.1.9.28-beta0-201510022255.zip
+  adb shell twrp install /sdcard/sailfishos-hammerhead-release-2.0.4.13-beta5-201610241556.zip
   echo ""
   echo "Wipe cache.."
   echo ""

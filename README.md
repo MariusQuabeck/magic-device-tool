@@ -7,7 +7,7 @@ A simple and feature full batch tool to handle installing/replacing Operating Sy
 
 Contact
 -------
-Marius Quabeck [(Email)](mailto:marius.quabeck@ubuntu.com?subject=magic-device-tool)
+Marius Quabeck [(Email)](mailto:misterq@ubuntu.com?subject=magic-device-tool)
 
 Mister_Q on irc.freenode.net
 

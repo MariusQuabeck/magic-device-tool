@@ -19,7 +19,7 @@ parts:
       - ubuntu-device-flash
       - wget
       - git 
-      - xdg-open
+      - xdg-utils
       - android-tools-fastboot
       - android-tools-adb
       - mplayer

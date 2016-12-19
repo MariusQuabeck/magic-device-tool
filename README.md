@@ -5,11 +5,6 @@
 
 A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, CyanogenMod, Maru OS, Sailfish OS, and Phoenix OS) on your mobile devices.
 
-Contact
--------
-Marius Quabeck [(Email)](mailto:misterq@ubuntu.com?subject=magic-device-tool)
-
-Mister_Q on irc.freenode.net
 
 [Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TT5g7yEvAz8cA)
 

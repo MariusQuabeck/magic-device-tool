@@ -1,5 +1,85 @@
 #!/bin/bash
 clear
+echo ""
+echo "Checking for newer version"
+echo ""
+echo ""
+echo "If you see this screen for longer than 10 seconds,"
+echo "please delete the magic-device-tool folder and clone the project again."
+echo ""
+echo "If you are one of these people who don't read instructions or README files"
+echo "and who downloaded this tool as a zip from GitHub instead of cloning it..."
+echo ""
+echo "RTFM ;)"
+echo ""
+sleep 1
+git pull > version
+if grep 'Already up-to-date' version
+    then
+      echo ""
+      echo "You are running the latest version of magic-device-tool."
+      sleep 1
+    else
+      exit | ./launcher.sh
+        fi
+        rm -f version
+
+sleep 1
+
+if [ $(dpkg-query -W -f='${Status}' phablet-tools 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → phablet-tools"
+  echo ""
+  sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
+  sudo apt-get -qq update
+  sudo apt-get -qq -y install phablet-tools;
+fi
+
+if [ $(dpkg-query -W -f='${Status}' ubuntu-device-flash 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → ubuntu-device-flash"
+  echo ""
+  sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
+  sudo apt-get -qq update
+  sudo apt-get -qq -y install ubuntu-device-flash;
+fi
+
+if [ $(dpkg-query -W -f='${Status}' android-tools-fastboot 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → android-tools-fastboot"
+  echo ""
+  sudo apt-get -qq -y install android-tools-fastboot;
+fi
+
+if [ $(dpkg-query -W -f='${Status}' android-tools-adb 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → android-tools-adb"
+  echo ""
+  sudo apt-get install -qq -y android-tools-adb;
+fi
+
+if [ $(dpkg-query -W -f='${Status}' mplayer 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → mplayer"
+  echo ""
+  sudo apt-get install -qq -y mplayer;
+fi
+clear
 echo "Choose your device"
 echo ""
 echo "  [1]  BQ Aquaris E4.5 - krillin"

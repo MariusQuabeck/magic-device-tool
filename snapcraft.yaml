@@ -23,6 +23,7 @@ parts:
       - android-tools-fastboot
       - android-tools-adb
       - mplayer
+      - phablet-tools
 
 
   

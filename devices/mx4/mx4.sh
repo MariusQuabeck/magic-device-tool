@@ -29,19 +29,19 @@ echo "[7] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
-. ./devices/mx4/ubuntu/ubuntu.sh
+. $SNAP/devices/mx4/ubuntu/ubuntu.sh
 elif [ "$option" = "2" ]; then
-  . ./devices/generic/ubuntu/openstore.sh
+  . $SNAP/devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
-  . ./devices/mx4/ubuntu/screencast.sh
+  . $SNAP/devices/mx4/ubuntu/screencast.sh
 elif [ "$option" = "4" ]; then
-  . ./devices/mx4/android/cyanogenmod.sh
+  . $SNAP/devices/mx4/android/cyanogenmod.sh
 elif [ "$option" = "5" ]; then
-  . ./devices/mx4/android/cyanogenmodwogapps.sh
+  . $SNAP/devices/mx4/android/cyanogenmodwogapps.sh
 elif [ "$option" = "6" ]; then
-  . ./devices/generic/android/backup.sh
+  . $SNAP/devices/generic/android/backup.sh
 elif [ "$option" = "7" ]; then
-  . ./launcher.sh
+  . $SNAP/launcher.sh
 else
   echo ""
   echo "Invalid Option"

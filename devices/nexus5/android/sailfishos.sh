@@ -113,5 +113,5 @@ else
   echo ""
   echo "Back to menu"
   sleep 1
-  . ./launcher.sh
+  . $SNAP/launcher.sh
 fi

@@ -29,23 +29,23 @@ echo "[7] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "9" ]; then
-. ./devices/nexus10/ubuntu/ubuntu.sh
+. $SNAP/devices/nexus10/ubuntu/ubuntu.sh
 elif [ "$option" = "8" ]; then
-. ./devices/generic/ubuntu/openstore.sh
+. $SNAP/devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "1" ]; then
-. ./devices/nexus10/android/cyanogenmod.sh
+. $SNAP/devices/nexus10/android/cyanogenmod.sh
 elif [ "$option" = "2" ]; then
-. ./devices/nexus10/android/phoenixos.sh
+. $SNAP/devices/nexus10/android/phoenixos.sh
 elif [ "$option" = "3" ]; then
-. ./devices/nexus10/android/factoryimage.sh
+. $SNAP/devices/nexus10/android/factoryimage.sh
 elif [ "$option" = "4" ]; then
-  . ./devices/nexus10/android/twrp.sh
+  . $SNAP/devices/nexus10/android/twrp.sh
 elif [ "$option" = "5" ]; then
-  . ./devices/generic/android/backup.sh
+  . $SNAP/devices/generic/android/backup.sh
 elif [ "$option" = "6" ]; then
-  . ./devices/nexus10/android/bootloader.sh
+  . $SNAP/devices/nexus10/android/bootloader.sh
 elif [ "$option" = "7" ]; then
-  . ./launcher.sh
+  . $SNAP/launcher.sh
 else
   echo ""
   echo "Invalid Option"

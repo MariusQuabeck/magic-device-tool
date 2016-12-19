@@ -10,11 +10,11 @@ echo "[3] Back to menu "
 echo ""
 echo -n "Enter option: "; read ubuntuwipechannel
 if [ "$ubuntuwipechannel" = "1" ]; then
-. ./devices/m10hd/ubuntu/stablewipe.sh
+. $SNAP/devices/m10hd/ubuntu/stablewipe.sh
 elif [ "$ubuntuwipechannel" = "2" ]; then
-  . ./devices/m10hd/ubuntu/rc-proposedwipe.sh
+  . $SNAP/devices/m10hd/ubuntu/rc-proposedwipe.sh
 elif [ "$ubuntuwipechannel" = "3" ]; then
-  . ./launcher.sh
+  . $SNAP/launcher.sh
 else
   echo ""
   echo "You did not enter a number between 1 and 3."

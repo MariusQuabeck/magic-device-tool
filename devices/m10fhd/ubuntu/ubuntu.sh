@@ -11,11 +11,11 @@ sleep 1
 echo ""
 echo -n "Enter option: "; read optionubuntu
 if [ "$optionubuntu" = "1" ]; then
-  . ./devices/m10fhd/ubuntu/flashwipe.sh
+  . $SNAP/devices/m10fhd/ubuntu/flashwipe.sh
 elif [ "$optionubuntu" = "2" ]; then
-  . ./devices/m10fhd/ubuntu/flashkeep.sh
+  . $SNAP/devices/m10fhd/ubuntu/flashkeep.sh
 elif [ "$optionubuntu" = "3" ]; then
-  . ./launcher.sh
+  . $SNAP/launcher.sh
 else
   echo ""
   echo "Invalid Option"

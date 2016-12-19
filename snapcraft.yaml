@@ -9,6 +9,7 @@ confinement: strict
 apps:
   magic-device-tool:
     command: launcher.sh
+    plugs: [network, network-bind, raw-usb]
 parts:
   magic-device-tool:
     source: https://github.com/MariusQuabeck/magic-device-tool.git

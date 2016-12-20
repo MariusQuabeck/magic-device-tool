@@ -5,16 +5,19 @@
 
 A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, CyanogenMod, Maru OS, Sailfish OS, and Phoenix OS) on your mobile devices.
 
-Contact
--------
+## Contact
+
 Marius Quabeck [(Email)](mailto:misterq@ubuntu.com?subject=magic-device-tool)
 
 Mister_Q on irc.freenode.net
 
 [Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TT5g7yEvAz8cA)
 
-# Standard Disclaimer Text
+[Donate if you like](http://paypal.me/MisterQ)
+
+## Standard Disclaimer Text
 This tool **does not** let you Dual Boot between Android and Ubuntu Touch.
+
 Not all ROMs are available for all devices.
 
 Functions
@@ -44,6 +47,10 @@ Functions
 Requirements
 ----
 - Ubuntu 16.04 and above
+- A device from the supported list below
+- USB cable for your device
+- Internet connection
+- about 15 minutes (depending on your Internet speed)
 
 Supported devices
 ----
@@ -65,12 +72,27 @@ Supported devices
 
 Usage
 -----
+
+Connect the device to the computer with the USB cable
+
+Clone the repo down to your local machine from github
 ```
-$ git clone https://github.com/MariusQuabeck/magic-device-tool.git
-$ cd magic-device-tool
-$ chmod +x launcher.sh
-$ ./launcher.sh
+git clone https://github.com/MariusQuabeck/magic-device-tool.git
 ```
+cd into the new directory
+```
+cd magic-device-tool
+```
+Make the file executable so the script can run
+```
+chmod +x launcher.sh
+```
+run the script
+```
+./launcher.sh
+```
+Then follow the simple on screen guide
+
 FAQ
 ---
 - Q: Will you support "device x"?     
@@ -86,12 +108,21 @@ FAQ
   A: mdt downloads some tools from the ubuntu repos and, depending on your choices, downloads the newest recovery and ROM for your device and flashes it. If you want to know more, just read the source (it's only bash :).
 
 - Q: Is it called Ubuntu Touch, Ubuntu for devices, or just Ubuntu?   
-  A: We really don't care ;) 
+  A: We really don't care ;)
+
+- Q: What is "OpenStore"?   
+  A: An easy way to sideload apps (its optional)
+
+- Q: Do I need to root / prep my device?  
+  A: No, MDT can cover all you need
+
+- Q: When i boot into recovery is says its "locked"
+  A: Run the option "Lock/Unlock bootloader" first
 
 TODO
 ------
 - Add more devices
-- Add support for install F-Droid
+- Add support to install F-Droid
 - Add option "add udev rule"
 - Add Zenity for success/failure prompts
 - Give Aaron access to README

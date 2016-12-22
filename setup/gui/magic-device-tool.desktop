@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Magic-Device-Tool
+GenericName=Magic-Device-Tool
+Comment=A simple and feature full tool to handle installing/replacing Operating Systems on your mobile devices.
+Exec=${SNAP}/launcher.sh
+Icon=${SNAP}/meta/gui/mdt.png
+Terminal=true
+Type=Application
+StartupNotify=false
+Categories=Application
+

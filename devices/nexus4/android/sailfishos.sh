@@ -23,7 +23,7 @@ then
   fastboot format cache
   fastboot format userdata
   fastboot reboot-bootloader
-  sleep 6
+  sleep 8
   clear
   echo ""
   echo "Downloading TWRP recovery"
@@ -47,18 +47,18 @@ then
   echo "Installing TWRP recovery"
   echo ""
   fastboot flash recovery twrp-3.0.2-0-mako.img
-  sleep 1
+  sleep 3
   echo ""
   echo "Rebooting device.."
   echo ""
   echo "This will take ~35 seconds. Don't disconnect your device!"
   echo ""
   fastboot reboot-bootloader
-  sleep 7
+  sleep 10
   fastboot boot twrp-3.0.2-0-mako.img
-  sleep 15
+  sleep 20
   adb reboot recovery
-  sleep 15
+  sleep 20
   echo ""
   clear
   echo ""

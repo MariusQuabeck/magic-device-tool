@@ -67,7 +67,7 @@ Supported devices
 - Asus Nexus 7 2013 LTE (deb)
 - Samsung Nexus 10 (manta)
 - OnePlus One (bacon)
-- ~~Fairphone 2 (FP2)~~ removed until the ubports build works again
+- Fairphone 2 (FP2)
 
 
 Usage

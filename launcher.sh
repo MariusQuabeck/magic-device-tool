@@ -94,12 +94,12 @@ echo "  [8]  Asus Nexus 7 2013 (WiFi) - flo"
 echo "  [9]  Asus Nexus 7 2013 (LTE) - deb"
 echo "  [10] Samsung Nexus 10 - manta"
 echo "  [11] OnePlus One - bacon"
-#echo "  [15] Fairphone 2 - FP2 !!May not work!!" --removed until the ubports build works again
+echo "  [12] Fairphone 2 - FP2"
 echo "  ========================================="
-echo "  [12] Join Telegram Group Chat"
-echo "  [13] Report a bug"
+echo "  [13] Join Telegram Group Chat"
+echo "  [14] Report a bug"
 echo ""
-echo "  [14] Quit"
+echo "  [15] Quit"
 echo ""
 sleep 1
 echo -n "Enter number: "; read device
@@ -127,16 +127,16 @@ elif [ "$device" = "10" ]; then
   . ./devices/nexus10/nexus10.sh
 elif [ "$device" = "11" ]; then
   . ./devices/oneplusone/oneplusone.sh
-#elif [ "$device" = "15" ]; then
-#  . ./devices/fairphone2/fairphone2.sh
 elif [ "$device" = "12" ]; then
-  . ./devices/generic/telegram.sh
+  . ./devices/fairphone2/fairphone2.sh
 elif [ "$device" = "13" ]; then
-  . ./devices/generic/reportabug.sh
+  . ./devices/generic/telegram.sh
 elif [ "$device" = "14" ]; then
+  . ./devices/generic/reportabug.sh
+elif [ "$device" = "15" ]; then
   exit
 else
   echo ""
-  echo "You did not enter a number between 1 and 16."
+  echo "You did not enter a number between 1 and 15."
   echo "Well... I'll be here during the whole next test. -GLaDOS"
 fi

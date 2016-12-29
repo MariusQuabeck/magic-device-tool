@@ -5,12 +5,20 @@ echo ""
 sleep 1
 echo "[1] stable"
 echo ""
-echo "[2] Back to menu "
+echo "[2] devel_rc-proposed"
+echo ""
+echo "[3] latest known to work version"
+echo ""
+echo "[4] Back to menu "
 echo ""
 echo -n "Enter option: "; read ubuntuwipechannel
 if [ "$ubuntuwipechannel" = "1" ]; then
 . ./devices/fairphone2/ubuntu/stablewipe.sh
 elif [ "$ubuntuwipechannel" = "2" ]; then
+. ./devices/fairphone2/ubuntu/devel_rc-proposedwipe.sh
+elif [ "$ubuntuwipechannel" = "3" ]; then
+. ./devices/fairphone2/ubuntu/best.sh
+elif [ "$ubuntuwipechannel" = "4" ]; then
   . ./launcher.sh
 else
   echo ""

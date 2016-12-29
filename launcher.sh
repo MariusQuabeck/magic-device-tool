@@ -13,7 +13,7 @@ echo "  [7]  LG Nexus 5 - hammerhead"
 echo "  [8]  Asus Nexus 7 2013 (WiFi) - flo"
 echo "  [9]  Samsung Nexus 10 - manta"
 echo "  [10] OnePlus One - bacon"
-echo "  [11] Fairphone 2 - FP2 !!May not work!!" --removed until the ubports build works again
+echo "  [11] Fairphone 2 - FP2"
 echo "  ========================================="
 echo "  [12] Join Telegram Group Chat"
 echo "  [13] Report a bug"
@@ -54,6 +54,6 @@ elif [ "$device" = "14" ]; then
   exit
 else
   echo ""
-  echo "You did not enter a number between 1 and 16."
+  echo "You did not enter a number between 1 and 14."
   echo "Well... I'll be here during the whole next test. -GLaDOS"
 fi

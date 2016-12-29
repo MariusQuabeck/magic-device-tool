@@ -13,12 +13,12 @@ echo "  [7]  LG Nexus 5 - hammerhead"
 echo "  [8]  Asus Nexus 7 2013 (WiFi) - flo"
 echo "  [9]  Samsung Nexus 10 - manta"
 echo "  [10] OnePlus One - bacon"
-#echo "  [15] Fairphone 2 - FP2 !!May not work!!" --removed until the ubports build works again
+echo "  [11] Fairphone 2 - FP2 !!May not work!!" --removed until the ubports build works again
 echo "  ========================================="
-echo "  [11] Join Telegram Group Chat"
-echo "  [12] Report a bug"
+echo "  [12] Join Telegram Group Chat"
+echo "  [13] Report a bug"
 echo ""
-echo "  [13] Quit"
+echo "  [14] Quit"
 echo ""
 sleep 1
 echo -n "Enter number: "; read device
@@ -44,13 +44,13 @@ elif [ "$device" = "9" ]; then
   . $SNAP/devices/nexus10/nexus10.sh
 elif [ "$device" = "10" ]; then
   . $SNAP/devices/oneplusone/oneplusone.sh
-#elif [ "$device" = "15" ]; then
-#  . ./devices/fairphone2/fairphone2.sh
 elif [ "$device" = "11" ]; then
-  . $SNAP/devices/generic/telegram.sh
+ . $SNAP/devices/fairphone2/fairphone2.sh
 elif [ "$device" = "12" ]; then
-  . $SNAP/devices/generic/reportabug.sh
+  . $SNAP/devices/generic/telegram.sh
 elif [ "$device" = "13" ]; then
+  . $SNAP/devices/generic/reportabug.sh
+elif [ "$device" = "14" ]; then
   exit
 else
   echo ""

@@ -10,9 +10,9 @@ sleep 1
 echo ""
 echo -n "Enter option: "; read optionubuntu
 if [ "$optionubuntu" = "1" ]; then
-  . ./devices/fairphone2/ubuntu/flashwipe.sh
+  . $SNAP/devices/fairphone2/ubuntu/flashwipe.sh
 elif [ "$optionubuntu" = "2" ]; then
-  . ./launcher.sh
+  . $SNAP/launcher.sh
 else
   echo ""
   echo "Invalid Option"

@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Flashing latest image that is known to work"
+echo "Flashing rc-proposed channel"
 echo ""
 sleep 1
 echo "Please boot your Fairphone 2 into fastboot mode by pressing Power & Volume Down (-)"
@@ -22,7 +22,7 @@ fi
     clear
     echo ""
     sleep 1
-        echo "Flashing image"
+        echo "Flashing rc-proposed channel"
     echo ""
     sleep 1
     fastboot format cache
@@ -68,7 +68,7 @@ fi
         #echo "this can take up to ~30 seconds"
         adb shell "
 	mount -a"
-        sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubuntu-touch/devel_rc-proposed --revision=191 --device=FP2
+        sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubuntu-touch/rc-proposed --device=FP2
         sleep 5
         echo ""
         echo "Move to your device to finish the setup."

@@ -133,6 +133,7 @@ TODO
 - ~~Add Kali Linux~~
 - ~~Add FAQ section~~
 - Add FlymeOS for Meizu devices
+- Add revision option
 
 Special thanks to
 ---

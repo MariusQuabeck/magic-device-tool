@@ -7,7 +7,7 @@ echo "[1] stable"
 echo ""
 echo "[2] devel_rc-proposed"
 echo ""
-echo "[3] latest known to work version"
+echo "[3] rc-proposed"
 echo ""
 echo "[4] Back to menu "
 echo ""
@@ -17,7 +17,7 @@ if [ "$ubuntuwipechannel" = "1" ]; then
 elif [ "$ubuntuwipechannel" = "2" ]; then
 . ./devices/fairphone2/ubuntu/devel_rc-proposedwipe.sh
 elif [ "$ubuntuwipechannel" = "3" ]; then
-. ./devices/fairphone2/ubuntu/best.sh
+. ./devices/fairphone2/ubuntu/rc-proposed.sh
 elif [ "$ubuntuwipechannel" = "4" ]; then
   . ./launcher.sh
 else

@@ -80,10 +80,6 @@ git clone https://github.com/MariusQuabeck/magic-device-tool.git
 ```
 cd magic-device-tool
 ```
-Make the file executable so the script can run
-```
-chmod +x launcher.sh
-```
 Run the script
 ```
 ./launcher.sh

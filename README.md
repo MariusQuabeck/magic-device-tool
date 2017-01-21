@@ -114,19 +114,14 @@ FAQ
 
 TODO
 ------
-- [ ] Switch CM to Lineage OS
-- [ ] Add more devices
-- [ ] Add support to install F-Droid
-- [ ] Add option "add udev rule"
-- [ ] Add Zenity for success/failure prompts
-- [ ] Give Aaron access to README
-- [ ] Add Plasma Mobile
-- [ ] Snap
-- [ ] Add feature to flash SD cards with Raspian, Ubuntu,...
-- [X] Add Kali Linux
-- [X] Add FAQ section
-- [ ] Add FlymeOS for Meizu devices
-- [ ] Add revision option
+- Switch CM to Lineage OS
+- Add support to install F-Droid
+- Add option "add udev rule"
+- Give Aaron access to README
+- Add Plasma Mobile
+- Improve the Snap
+- Add feature to flash SD cards with Raspian, Ubuntu,...
+- Add revision option
 
 Special thanks to
 ---
@@ -138,3 +133,4 @@ Special thanks to
 - [michaelkisiel](https://github.com/michaelkisiel) [mdt-icons](https://github.com/michaelkisiel/mdt-icons)
 - [pdsouza](https://github.com/pdsouza) [Maru OS](https://github.com/maruos/maruos)
 - [kristbaum](https://github.com/kristbaum) FAQ section
+- [Simon Quigley](https://github.com/tsimonq2) Readme corrections

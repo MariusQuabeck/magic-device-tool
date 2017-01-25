@@ -2,18 +2,17 @@
 
 ![alt text](https://raw.githubusercontent.com/MariusQuabeck/magic-device-tool/master/mdt.png "magic-device-tool logo")
 
-
 A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, CyanogenMod, Maru OS, Sailfish OS, and Phoenix OS) on your mobile devices.
 
 ## Contact
 
 Marius Quabeck [(Email)](mailto:marius.quabeck@ubuntu.com?subject=magic-device-tool)
 
-Mister_Q on irc.freenode.net
+Mister_Q on the freenode IRC network
 
 [Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TT5g7yEvAz8cA)
 
-[Donate if you like](http://paypal.me/MisterQ)
+[Donate if you like this tool](http://paypal.me/MisterQ)
 
 ## Standard Disclaimer Text
 This tool **does not** let you Dual Boot between Android and Ubuntu Touch.
@@ -28,7 +27,6 @@ Functions
   - Install OpenStore
   - Screencast
 
-
 - Android
   - Install CyanogenMod (with or without GApps)
   - Install Maru OS
@@ -36,7 +34,7 @@ Functions
   - Install Phoenix OS
   - Install Factory Android Image
   - Backup / Restore
-  - Lock/Unlock bootloader
+  - Lock / Unlock bootloader
   - Install TWRP recovery
 
 - Misc
@@ -44,13 +42,12 @@ Functions
   - Report a bug
 
 
-Requirements
+System Requirements
 ----
 - Ubuntu 16.04 and above
 - A device from the supported list below
 - USB cable for your device
 - Internet connection
-- about 15 minutes (depending on your Internet speed)
 
 Supported devices
 ----
@@ -67,7 +64,7 @@ Supported devices
 - Asus Nexus 7 2013 LTE (deb)
 - Samsung Nexus 10 (manta)
 - OnePlus One (bacon)
-- ~~Fairphone 2 (FP2)~~ removed until the ubports build works again
+- Fairphone 2 (FP2)
 
 
 Usage
@@ -75,23 +72,19 @@ Usage
 
 Connect the device to the computer with the USB cable
 
-Clone the repo down to your local machine from github
+Ensure you have Git installed, and clone the repository to your local machine from GitHub
 ```
 git clone https://github.com/MariusQuabeck/magic-device-tool.git
 ```
-cd into the new directory
+`cd` into the new directory
 ```
 cd magic-device-tool
 ```
-Make the file executable so the script can run
-```
-chmod +x launcher.sh
-```
-run the script
+Run the script
 ```
 ./launcher.sh
 ```
-Then follow the simple on screen guide
+Then follow the simple on-screen guide
 
 FAQ
 ---
@@ -105,33 +98,30 @@ FAQ
   A: Bash. So you don't have to give root to an app, you can't figure out.
 
 - Q: How does mdt work?    
-  A: mdt downloads some tools from the ubuntu repos and, depending on your choices, downloads the newest recovery and ROM for your device and flashes it. If you want to know more, just read the source (it's only bash :).
+  A: mdt downloads some tools from the ubuntu repos and, depending on your choices, gets the newest recovery and ROM for your device and flashes it. If you want to know more, just read the source (it's only bash).
 
 - Q: Is it called Ubuntu Touch, Ubuntu for devices, or just Ubuntu?   
   A: We really don't care ;)
 
-- Q: What is "OpenStore"?   
-  A: An easy way to sideload apps (its optional)
+- Q: What is the "OpenStore"?   
+  A: An easy way to sideload apps on Ubuntu Touch. You can find more about it [here](https://open.uappexplorer.com/app/openstore.openstore-team).   
 
 - Q: Do I need to root / prep my device?  
-  A: No, MDT can cover all you need
+  A: No, just read the instructions on the screen and follow them carefully.
 
-- Q: When i boot into recovery is says its "locked"
+- Q: When i boot into recovery it says it's "locked". What can I do?  
   A: Run the option "Lock/Unlock bootloader" first
 
 TODO
 ------
 - Switch CM to Lineage OS
-- Add more devices
 - Add support to install F-Droid
 - Add option "add udev rule"
-- Add Zenity for success/failure prompts
 - Give Aaron access to README
 - Add Plasma Mobile
-- Snap
-- ~~Add Kali Linux~~
-- ~~Add FAQ section~~
-- Add FlymeOS for Meizu devices
+- Improve the Snap
+- Add feature to flash SD cards with Raspian, Ubuntu,...
+- Add revision option
 
 Special thanks to
 ---
@@ -143,3 +133,4 @@ Special thanks to
 - [michaelkisiel](https://github.com/michaelkisiel) [mdt-icons](https://github.com/michaelkisiel/mdt-icons)
 - [pdsouza](https://github.com/pdsouza) [Maru OS](https://github.com/maruos/maruos)
 - [kristbaum](https://github.com/kristbaum) FAQ section
+- [Simon Quigley](https://github.com/tsimonq2) Readme corrections

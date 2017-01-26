@@ -1,3 +1,12 @@
+exists()
+{
+  command -v "$1" >/dev/null 2>&1
+}
+if exists dpkg-query; then
+echo ""
+else
+    cd $SNAP_USER_DATA
+fi
 clear
 echo ""
 echo "Installing LineageOS 14.1"

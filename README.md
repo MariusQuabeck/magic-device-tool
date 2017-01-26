@@ -71,6 +71,15 @@ Supported devices
 Usage
 -----
 
+Recommended:
+```
+sudo snap install magic-device-tool --devmode
+```
+Run the snap
+```
+magic-device-tool
+```
+Advanced:
 Connect the device to the computer with the USB cable
 
 Ensure you have Git installed, and clone the repository to your local machine from GitHub

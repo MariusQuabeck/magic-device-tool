@@ -1,5 +1,93 @@
 #!/bin/bash
 clear
+exists()
+{
+  command -v "$1" >/dev/null 2>&1
+}
+if exists dpkg-query; then
+echo ""
+echo "Checking for newer version"
+echo ""
+echo ""
+echo "If you see this screen for longer than 10 seconds,"
+echo "please delete the magic-device-tool folder and clone the project again."
+echo ""
+echo "If you are one of these people who don't read instructions or README files"
+echo "and who downloaded this tool as a zip from GitHub instead of cloning it..."
+echo ""
+echo "RTFM ;)"
+echo ""
+sleep 1
+git pull > version
+if grep 'Already up-to-date' version
+    then
+      echo ""
+      echo "You are running the latest version of magic-device-tool."
+      sleep 1
+    else
+      exit | ./launcher.sh
+        fi
+        rm -f version
+
+sleep 1
+
+if [ $(dpkg-query -W -f='${Status}' phablet-tools 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → phablet-tools"
+  echo ""
+  sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
+  sudo apt-get -qq update
+  sudo apt-get -qq -y install phablet-tools;
+fi
+
+if [ $(dpkg-query -W -f='${Status}' ubuntu-device-flash 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → ubuntu-device-flash"
+  echo ""
+  sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
+  sudo apt-get -qq update
+  sudo apt-get -qq -y install ubuntu-device-flash;
+fi
+
+if [ $(dpkg-query -W -f='${Status}' android-tools-fastboot 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → android-tools-fastboot"
+  echo ""
+  sudo apt-get -qq -y install android-tools-fastboot;
+fi
+
+if [ $(dpkg-query -W -f='${Status}' android-tools-adb 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → android-tools-adb"
+  echo ""
+  sudo apt-get install -qq -y android-tools-adb;
+fi
+
+if [ $(dpkg-query -W -f='${Status}' mplayer 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo ""
+  echo "First we have to install the necessary tools:"
+  echo ""
+  echo "  → mplayer"
+  echo ""
+  sudo apt-get install -qq -y mplayer;
+fi
+else
+  echo ""
+fi
+clear
 echo "Choose your device"
 echo ""
 echo "  [1]  BQ Aquaris E4.5 - krillin"
@@ -11,49 +99,52 @@ echo "  [5]  Meizu MX 4 - arale"
 echo "  [6]  LG Nexus 4 - mako"
 echo "  [7]  LG Nexus 5 - hammerhead"
 echo "  [8]  Asus Nexus 7 2013 (WiFi) - flo"
-echo "  [9]  Samsung Nexus 10 - manta"
-echo "  [10] OnePlus One - bacon"
-echo "  [11] Fairphone 2 - FP2"
+echo "  [9]  Asus Nexus 7 2013 (LTE) - deb"
+echo "  [10] Samsung Nexus 10 - manta"
+echo "  [11] OnePlus One - bacon"
+echo "  [12] Fairphone 2 - FP2"
 echo "  ========================================="
-echo "  [12] Join Telegram Group Chat"
-echo "  [13] Report a bug"
+echo "  [13] Join Telegram Group Chat"
+echo "  [14] Report a bug"
 echo ""
-echo "  [14] Quit"
+echo "  [15] Quit"
 echo ""
 sleep 1
 echo -n "Enter number: "; read device
 if [ "$device" = "1" ]; then
-  . $SNAP/devices/e45/e45.sh
+  . .$SNAP/devices/e45/e45.sh
 elif [ "$device" = "2" ]; then
-  . $SNAP/devices/e5hd/e5hd.sh
+  . ./devices/e5hd/e5hd.sh
 elif [ "$device" = "3" ]; then
-  . $SNAP/devices/m10hd/m10hd.sh
+  . ./devices/m10hd/m10hd.sh
 elif [ "$device" = "4" ]; then
-  . $SNAP/devices/m10fhd/m10fhd.sh
+  . ./devices/m10fhd/m10fhd.sh
 elif [ "$device" = "5" ]; then
-  . $SNAP/devices/mx4/mx4.sh
+  . ./devices/mx4/mx4.sh
 #elif [ "$device" = "6" ]; then
 #  . ./devices/pro5/pro5.sh
 elif [ "$device" = "6" ]; then
-  . $SNAP/devices/nexus4/nexus4.sh
+  . ./devices/nexus4/nexus4.sh
 elif [ "$device" = "7" ]; then
-  . $SNAP/devices/nexus5/nexus5.sh
+  . ./devices/nexus5/nexus5.sh
 elif [ "$device" = "8" ]; then
-  . $SNAP/devices/nexus7/nexus7.sh
+  . ./devices/nexus7/nexus7.sh
 elif [ "$device" = "9" ]; then
-  . $SNAP/devices/nexus10/nexus10.sh
+  . ./devices/nexus7deb/nexus7.sh
 elif [ "$device" = "10" ]; then
-  . $SNAP/devices/oneplusone/oneplusone.sh
+  . ./devices/nexus10/nexus10.sh
 elif [ "$device" = "11" ]; then
- . $SNAP/devices/fairphone2/fairphone2.sh
+  . ./devices/oneplusone/oneplusone.sh
 elif [ "$device" = "12" ]; then
-  . $SNAP/devices/generic/telegram.sh
+  . ./devices/fairphone2/fairphone2.sh
 elif [ "$device" = "13" ]; then
-  . $SNAP/devices/generic/reportabug.sh
+  . ./devices/generic/telegram.sh
 elif [ "$device" = "14" ]; then
+  . ./devices/generic/reportabug.sh
+elif [ "$device" = "15" ]; then
   exit
 else
   echo ""
-  echo "You did not enter a number between 1 and 14."
+  echo "You did not enter a number between 1 and 15."
   echo "Well... I'll be here during the whole next test. -GLaDOS"
 fi

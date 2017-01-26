@@ -23,6 +23,7 @@ Functions
 
 - Android
   - Install CyanogenMod (with or without GApps)
+  - Install LineageOS (with or without GApps)
   - Install Maru OS
   - Install Sailfish OS
   - Install Phoenix OS
@@ -81,7 +82,7 @@ FAQ
   A: mdt downloads some tools from the ubuntu repos and, depending on your choices, downloads the newest recovery and ROM for your device and flashes it. If you want to know more, just read the source (it's only bash :).
 
 - Q: Is it called Ubuntu Touch, Ubuntu for devices, or just Ubuntu?   
-  A: We really don't care ;) 
+  A: We really don't care ;)
 
 TODO
 ------

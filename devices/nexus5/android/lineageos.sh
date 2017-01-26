@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 13 without Gapps"
+echo "Installing LineageOS 14.1"
 echo ""
 sleep 1
 echo "Please boot your Nexus 5 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
@@ -31,11 +31,15 @@ then
   wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
   sleep 1
   echo ""
-  echo "Downloading Cyanogenmod 13.."
+  echo "Downloading LineageOS 14.1.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/hammerhead-snapshot.zip
+  wget -c --quiet --show-progress --tries=10 https://mirrorbits.lineageos.org/full/hammerhead/20170124/lineage-14.1-20170124-nightly-hammerhead-signed.zip
   echo ""
+  echo "Downloading Open Gapps.."
+  echo ""
+  sleep 1
+  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/gapps/open_gapps-arm-7.1-nano-20170126.zip
   sleep 2
   clear
   echo ""
@@ -65,16 +69,24 @@ then
   echo "You may see a prompt asking you for read/write permissions"
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
-  echo "  → CM 13 zip "
-  adb push -p hammerhead-snapshot.zip /sdcard/
+  echo "  → LineageOS 14.1 zip "
+  adb push -p lineage-14.1-20170124-nightly-hammerhead-signed.zip /sdcard/
+  echo ""
+  echo "  → gapps zip"
+  adb push -p open_gapps-arm-7.1-nano-20170126.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
-  echo "Installing Cyanogenmod.."
+  echo "Installing LineageOS 14.1.."
   echo ""
-  adb shell twrp install /sdcard/hammerhead-snapshot.zip
+  adb shell twrp install /sdcard/lineage-14.1-20170124-nightly-hammerhead-signed.zip
   sleep 1
+  echo ""
+  echo "Installing Open GApps.."
+  echo ""
+  sleep 3
+  adb shell twrp install /sdcard/open_gapps-arm-7.1-nano-20170126.zip
   echo ""
   echo "Wipe cache.."
   echo ""

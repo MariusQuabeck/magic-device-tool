@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 14.1 without Gapps"
+echo "Installing LineageOS 14.1 without Gapps"
 echo ""
 sleep 1
 echo "Please boot your Nexus 4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
@@ -31,10 +31,10 @@ then
   wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-mako.img
   sleep 1
   echo ""
-  echo "Downloading Cyanogenmod 14.1 .."
+  echo "Downloading LineageOS 14.1 .."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/jenkins/187702/cm-14.1-20161126-EXPERIMENTAL-AOH970N005-mako.zip
+  wget -c --quiet --show-progress --tries=10 https://mirrorbits.lineageos.org/full/mako/20170125/lineage-14.1-20170125-nightly-mako-signed.zip
   echo ""
   sleep 2
   clear
@@ -65,15 +65,15 @@ then
   echo "You may see a prompt asking you for read/write permissions"
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
-  echo "  → CM 14.1 zip "
-  adb push -p cm-14.1-20161126-EXPERIMENTAL-AOH970N005-mako.zip /sdcard/
+  echo "  → LineageOS 14.1 zip "
+  adb push -p lineage-14.1-20170125-nightly-mako-signed.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
-  echo "Installing Cyanogenmod.."
+  echo "Installing LineageOS.."
   echo ""
-  adb shell twrp install /sdcard/cm-14.1-20161126-EXPERIMENTAL-AOH970N005-mako.zip
+  adb shell twrp install /sdcard/lineage-14.1-20170125-nightly-mako-signed.zip
   sleep 1
   echo ""
   echo "Wipe cache.."

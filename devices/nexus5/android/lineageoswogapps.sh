@@ -1,12 +1,12 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 13 without Gapps"
+echo "Installing LineageOS 14.1 without Gapps"
 echo ""
 sleep 1
-echo "Please boot your Oneplus One into bootloader/fastboot mode by pressing Power & Volume Up (+)"
+echo "Please boot your Nexus 5 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
 echo ""
 sleep 1
-echo -n "Is your Oneplus One in bootloader/fastboot mode now? [Y] "; read bootloadermode
+echo -n "Is your Nexus 5 in bootloader/fastboot mode now? [Y] "; read bootloadermode
 if [ "$bootloadermode"==Y -o "$bootloadermode"==y -o "$bootloadermode"=="" ]; then
   clear
   echo ""
@@ -28,18 +28,20 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-bacon.img
+  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
   sleep 1
   echo ""
-  echo "Downloading Cyanogenmod 13.."
+  echo "Downloading LineageOS 14.1.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/bacon-snapshot.zip
+  wget -c --quiet --show-progress --tries=10 https://mirrorbits.lineageos.org/full/hammerhead/20170124/lineage-14.1-20170124-nightly-hammerhead-signed.zip
+  echo ""
+  sleep 2
   clear
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery twrp-3.0.2-0-bacon.img
+  fastboot flash recovery twrp-3.0.2-0-hammerhead.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -48,10 +50,10 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 7
-  fastboot boot twrp-3.0.2-0-bacon.img
-  sleep 20
+  fastboot boot twrp-3.0.2-0-hammerhead.img
+  sleep 7
   adb reboot recovery
-  sleep 20
+  sleep 15
   echo ""
   clear
   echo ""
@@ -63,14 +65,15 @@ then
   echo "You may see a prompt asking you for read/write permissions"
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
-  echo "  → CM 13 zip "
-  adb push -p bacon-snapshot.zip /sdcard/
+  echo "  → LineageOS 14.1 zip "
+  adb push -p lineage-14.1-20170124-nightly-hammerhead-signed.zip /sdcard/
   echo ""
+  echo "========================================="
   sleep 1
   echo ""
   echo "Installing Cyanogenmod.."
   echo ""
-  adb shell twrp install /sdcard/bacon-snapshot.zip
+  adb shell twrp install /sdcard/lineage-14.1-20170124-nightly-hammerhead-signed.zip
   sleep 1
   echo ""
   echo "Wipe cache.."

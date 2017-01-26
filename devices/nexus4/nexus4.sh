@@ -18,8 +18,8 @@ echo ""
 echo ""
 echo "Android: "
 echo ""
-echo "[4]  Install Cyanogenmod 14.1 "
-echo "[5]  Install Cyanogenmod 14.1 without Gapps"
+echo "[4]  Install LineageOS 14.1 "
+echo "[5]  Install LineageOS 14.1 without Gapps"
 echo "[6]  Install Sailfish OS"
 echo "[7]  Install Factory Image"
 echo "[8]  Install TWRP recovery"
@@ -37,9 +37,9 @@ elif [ "$option" = "2" ]; then
 elif [ "$option" = "3" ]; then
   . ./devices/nexus4/ubuntu/screencast.sh
 elif [ "$option" = "4" ]; then
-  . ./devices/nexus4/android/cyanogenmod.sh
+  . ./devices/nexus4/android/lineageos.sh
 elif [ "$option" = "5" ]; then
-  . ./devices/nexus4/android/cyanogenmodwogapps.sh
+  . ./devices/nexus4/android/lineageoswogapps.sh
 elif [ "$option" = "6" ]; then
   . ./devices/nexus4/android/sailfishos.sh
 elif [ "$option" = "7" ]; then

@@ -29,6 +29,7 @@ Functions
 
 - Android
   - Install CyanogenMod (with or without GApps)
+  - Install LineageOS (with or without GApps)
   - Install Maru OS
   - Install Sailfish OS
   - Install Phoenix OS

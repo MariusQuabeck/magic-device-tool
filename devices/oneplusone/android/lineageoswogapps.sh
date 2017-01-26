@@ -1,12 +1,12 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 14.1"
+echo "Installing LineageOS 14.1 without Gapps"
 echo ""
 sleep 1
-echo "Please boot your Nexus 4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
+echo "Please boot your Oneplus One into bootloader/fastboot mode by pressing Power & Volume Up (+)"
 echo ""
 sleep 1
-echo -n "Is your Nexus 4 in bootloader/fastboot mode now? [Y] "; read bootloadermode
+echo -n "Is your Oneplus One in bootloader/fastboot mode now? [Y] "; read bootloadermode
 if [ "$bootloadermode"==Y -o "$bootloadermode"==y -o "$bootloadermode"=="" ]; then
   clear
   echo ""
@@ -28,24 +28,18 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-mako.img
+  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-bacon.img
   sleep 1
   echo ""
-  echo "Downloading Cyanogenmod 14.1.."
+  echo "Downloading LineageOS 14.1.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/jenkins/187702/cm-14.1-20161126-EXPERIMENTAL-AOH970N005-mako.zip
-  echo ""
-  echo "Downloading Open Gapps.."
-  echo ""
-  sleep 1
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/gapps/open_gapps-arm-7.1-pico-20161129.zip
-  sleep 2
+  wget -c --quiet --show-progress --tries=10 https://mirrorbits.lineageos.org/full/bacon/20170123/lineage-14.1-20170123-nightly-bacon-signed.zip
   clear
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery twrp-3.0.2-0-mako.img
+  fastboot flash recovery twrp-3.0.2-0-bacon.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -54,10 +48,10 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 7
-  fastboot boot twrp-3.0.2-0-mako.img
-  sleep 15
+  fastboot boot twrp-3.0.2-0-bacon.img
+  sleep 20
   adb reboot recovery
-  sleep 15
+  sleep 20
   echo ""
   clear
   echo ""
@@ -69,24 +63,15 @@ then
   echo "You may see a prompt asking you for read/write permissions"
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
-  echo "  → CM 14.1 zip "
-  adb push -p cm-14.1-20161126-EXPERIMENTAL-AOH970N005-mako.zip /sdcard/
+  echo "  → LineageOS 14.1 zip "
+  adb push -p lineage-14.1-20170123-nightly-bacon-signed.zip /sdcard/
   echo ""
-  echo "  → gapps zip"
-  adb push -p open_gapps-arm-7.1-pico-20161129.zip /sdcard/
-  echo ""
-  echo "========================================="
   sleep 1
   echo ""
-  echo "Installing Cyanogenmod.."
+  echo "Installing LineageOS.."
   echo ""
-  adb shell twrp install /sdcard/cm-14.1-20161126-EXPERIMENTAL-AOH970N005-mako.zip
+  adb shell twrp install /sdcard/lineage-14.1-20170123-nightly-bacon-signed.zip
   sleep 1
-  echo ""
-  echo "Installing GApps.."
-  echo ""
-  sleep 3
-  adb shell twrp install /sdcard/open_gapps-arm-7.1-pico-20161129.zip
   echo ""
   echo "Wipe cache.."
   echo ""

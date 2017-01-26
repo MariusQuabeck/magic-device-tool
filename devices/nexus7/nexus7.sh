@@ -18,7 +18,7 @@ echo ""
 echo ""
 echo "Android: "
 echo ""
-echo "[4]  Install Cyanogenmod"
+echo "[4]  Install LineageOS"
 echo "[5]  Install Sailfish OS"
 echo "[6]  Install Phoenix OS"
 echo "[7]  Install Factory Image"
@@ -37,7 +37,7 @@ elif [ "$option" = "2" ]; then
 elif [ "$option" = "3" ]; then
   . ./devices/nexus7/ubuntu/screencast.sh
 elif [ "$option" = "4" ]; then
-  . ./devices/nexus7/android/cm.sh
+  . ./devices/nexus7/android/los.sh
 elif [ "$option" = "5" ]; then
   . ./devices/nexus7/android/sailfishos.sh
 elif [ "$option" = "6" ]; then

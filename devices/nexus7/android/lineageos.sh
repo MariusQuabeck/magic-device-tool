@@ -1,12 +1,3 @@
-exists()
-{
-  command -v "$1" >/dev/null 2>&1
-}
-if exists dpkg-query; then
-echo ""
-else
-    cd $HOME
-fi
 clear
 echo ""
 echo "Installing LineageOS 14.1"
@@ -37,24 +28,24 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-flo.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-flo.img
   sleep 1
   echo ""
   echo "Downloading LineageOS 14.1.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 https://mirrorbits.lineageos.org/full/flo/20170124/lineage-14.1-20170124-nightly-flo-signed.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/flo/20170124/lineage-14.1-20170124-nightly-flo-signed.zip
   echo ""
   echo "Downloading Open Gapps.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/gapps/open_gapps-arm-7.1-nano-20170126.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/gapps/open_gapps-arm-7.1-nano-20170126.zip
   sleep 2
   clear
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery twrp-3.0.2-0-flo.img
+  fastboot flash $HOME/.cache/magic-device-tool/recovery twrp-3.0.2-0-flo.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -63,7 +54,7 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 7
-  fastboot boot twrp-3.0.2-0-flo.img
+  fastboot boot $HOME/.cache/magic-device-tool/twrp-3.0.2-0-flo.img
   sleep 17
   adb reboot recovery
   sleep 17
@@ -79,10 +70,10 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → LineageOS 14.1 zip "
-  adb push -p lineage-14.1-20170124-nightly-flo-signed.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170124-nightly-flo-signed.zip /sdcard/
   echo ""
   echo "  → open gapps zip"
-  adb push -p open_gapps-arm-7.1-nano-20170126.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/open_gapps-arm-7.1-nano-20170126.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1

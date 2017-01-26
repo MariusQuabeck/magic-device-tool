@@ -24,14 +24,14 @@ fi
     echo ""
     echo "This may take a while"
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://files.phoenixos.com/os/Phoenix-Nexus7-flo-1.0.9RC.tar.gz
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://files.phoenixos.com/os/Phoenix-Nexus7-flo-1.0.9RC.tar.gz
     sleep 1
     tar xzf Phoenix*
     sleep 1
-    fastboot flash bootloader ./Phoenix-neuxs7-flo-1.0.9-RC/bootloader-flo-flo-04.05.img
+    fastboot flash bootloader $HOME/.cache/magic-device-tool/Phoenix-neuxs7-flo-1.0.9-RC/bootloader-flo-flo-04.05.img
     fastboot reboot-bootloader
     sleep 6
-    fastboot -w update ./Phoenix-neuxs7-flo-1.0.9-RC/122_flo_2016-07-19_19-46.zip
+    fastboot -w update $HOME/.cache/magic-device-tool/Phoenix-neuxs7-flo-1.0.9-RC/122_flo_2016-07-19_19-46.zip
     sleep 1
     echo ""
     echo "Move to your device to finish the setup."
@@ -42,7 +42,7 @@ fi
     echo ""
     echo "Cleaning up.."
     rm -f /tmp/AttachedDevices
-    rm -rf ./Phoenix-neuxs7-flo-1.0.9-RC
+    #rm -rf ./Phoenix-neuxs7-flo-1.0.9-RC
     #rm -f ./*.tgz
     echo ""
     sleep 1

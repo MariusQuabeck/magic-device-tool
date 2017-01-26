@@ -22,16 +22,16 @@ fi
     echo ""
     echo "Downloading factory image.."
     echo ""
-    wget -c --quiet --show-progress --tries=10 https://dl.google.com/dl/android/aosp/razor-mob30x-factory-a2a73e87.tgz
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://dl.google.com/dl/android/aosp/razor-mob30x-factory-a2a73e87.tgz
     sleep 1
-    tar xzf razor*
+    tar xzf $HOME/.cache/magic-device-tool/razor*
     sleep 1
     fastboot format cache
     fastboot format userdata
-    fastboot flash bootloader ./razor-mob30x/bootloader-flo-flo-04.08.img
+    fastboot flash bootloader $HOME/.cache/magic-device-tool/razor-mob30x/bootloader-flo-flo-04.08.img
     fastboot reboot-bootloader
     sleep 6
-    fastboot -w update ./razor-mob30x/image-razor-mob30x.zip
+    fastboot -w update $HOME/.cache/magic-device-tool/razor-mob30x/image-razor-mob30x.zip
     sleep 1
     echo ""
     echo "Move to your device to finish the setup."
@@ -42,7 +42,7 @@ fi
     echo ""
     echo "Cleaning up.."
     rm -f /tmp/AttachedDevices
-    rm -rf ./razor-mob30x
+    #rm -rf ./razor-mob30x
     #rm -f ./*.tgz
     echo ""
     sleep 1

@@ -34,20 +34,20 @@ fi
     echo ""
     echo "Downloading TWRP recovery"
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-arale.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-arale.img
     sleep 1
-    fastboot flash recovery twrp-arale.img
+    fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-arale.img
     sleep 1
     echo ""
     echo "Downloading Cyanogenmod 13.."
     echo ""
     sleep 1
-    wget -c --quiet --show-progress --tries=10 https://emmaus.pro/MX4_custom_roms/Cyanogenmod%2013/cm-13.0-20160722-UNOFFICIAL-mx4.zip
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://emmaus.pro/MX4_custom_roms/Cyanogenmod%2013/cm-13.0-20160722-UNOFFICIAL-mx4.zip
     echo ""
     echo "Downloading Open Gapps.."
     echo ""
     sleep 1
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/gapps/open_gapps-arm-6.0-nano-20160811.zip
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/gapps/open_gapps-arm-6.0-nano-20160811.zip
     sleep 2
     clear
     echo ""
@@ -78,10 +78,10 @@ fi
         echo "Ignore that prompt, the tool will take care of the installation"
         echo ""
         echo "  → CM 13 zip "
-        adb push -p cm-13.0-20160722-UNOFFICIAL-mx4.zip /sdcard/
+        adb push -p $HOME/.cache/magic-device-tool/cm-13.0-20160722-UNOFFICIAL-mx4.zip /sdcard/
         echo ""
         echo "  → gapps zip"
-        adb push -p open_gapps-arm-6.0-nano-20160811.zip /sdcard/
+        adb push -p $HOME/.cache/magic-device-tool/open_gapps-arm-6.0-nano-20160811.zip /sdcard/
         echo ""
         sleep 1
         echo ""

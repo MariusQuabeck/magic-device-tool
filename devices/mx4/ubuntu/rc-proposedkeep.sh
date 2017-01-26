@@ -23,12 +23,12 @@ fi
     echo ""
     echo "Flashing rc-proposed channel"
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-arale.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-arale.img
     echo ""
 sleep 1
-    fastboot flash recovery recovery-arale.img
+    fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-arale.img
     sleep 1
-    fastboot boot recovery-arale.img
+    fastboot boot $HOME/.cache/magic-device-tool/recovery-arale.img
     echo ""
     echo "Please wait, your device will reboot a few times"
     echo ""

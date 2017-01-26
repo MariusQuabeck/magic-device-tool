@@ -34,11 +34,11 @@ fi
     echo "This can take a while"
     echo ""
     sleep 10
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-turbo.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-turbo.img
     sleep 6
-    fastboot flash recovery recovery-turbo.img
+    fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-turbo.img
     sleep 2
-    fastboot boot recovery-turbo.img
+    fastboot boot $HOME/.cache/magic-device-tool/recovery-turbo.img
     echo ""
     echo "Please wait, your device will reboot a few times"
     echo ""

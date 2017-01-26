@@ -24,12 +24,12 @@ fi
     echo ""
     echo "Flashing stable channel"
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-krillin.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-krillin.img
     echo ""
 sleep 1
-    fastboot flash recovery recovery-krillin.img
+    fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-krillin.img
     sleep 1
-    fastboot boot recovery-krillin.img
+    fastboot boot $HOME/.cache/magic-device-tool/recovery-krillin.img
     echo ""
     echo "Please wait, your device will reboot a few times"
     echo ""

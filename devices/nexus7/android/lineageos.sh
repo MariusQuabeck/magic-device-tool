@@ -45,7 +45,7 @@ then
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash $HOME/.cache/magic-device-tool/recovery twrp-3.0.2-0-flo.img
+  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-3.0.2-0-flo.img
   sleep 1
   echo ""
   echo "Rebooting device.."

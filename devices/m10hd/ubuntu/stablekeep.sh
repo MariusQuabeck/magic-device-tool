@@ -35,11 +35,11 @@ fi
     echo "Please wait"
     echo ""
     sleep 7
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-cooler.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-cooler.img
     sleep 1
-    fastboot flash recovery recovery-cooler.img
+    fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-cooler.img
     sleep 1
-    fastboot boot recovery-cooler.img
+    fastboot boot $HOME/.cache/magic-device-tool/recovery-cooler.img
     sleep 10
     adb reboot recovery
     sleep 17

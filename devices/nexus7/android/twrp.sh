@@ -22,10 +22,10 @@ fi
     echo ""
     echo "Downloading latest TWRP recovery image.."
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-flo.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-flo.img
     sleep 2
     echo "Installing TWRP..."
-    fastboot flash recovery ./twrp-3.0.2-0-flo.img
+    fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-3.0.2-0-flo.img
     fastboot reboot-bootloader
     sleep 4
     echo ""

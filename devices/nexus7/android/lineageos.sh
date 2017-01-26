@@ -5,7 +5,7 @@ exists()
 if exists dpkg-query; then
 echo ""
 else
-    cd $SNAP_USER_DATA
+    cd $HOME
 fi
 clear
 echo ""

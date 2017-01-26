@@ -17,13 +17,13 @@ echo "[4] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
-. ./devices/m10fhd/ubuntu/ubuntu.sh
+. .$SNAP/devices/m10fhd/ubuntu/ubuntu.sh
 elif [ "$option" = "2" ]; then
-  . ./devices/generic/ubuntu/openstore.sh
+  . .$SNAP/devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
-  . ./devices/m10fhd/ubuntu/screencast.sh
+  . .$SNAP/devices/m10fhd/ubuntu/screencast.sh
 elif [ "$option" = "4" ]; then
-  . ./launcher.sh
+  . .$SNAP/launcher.sh
 else
   echo ""
   echo "Invalid Option"

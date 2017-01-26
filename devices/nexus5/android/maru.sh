@@ -14,11 +14,11 @@ echo "[3] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
-  . ./devices/nexus5/android/maruos.sh
+  . .$SNAP/devices/nexus5/android/maruos.sh
 elif [ "$option" = "2" ]; then
-  . ./devices/nexus5/android/maruoswogapps.sh
+  . .$SNAP/devices/nexus5/android/maruoswogapps.sh
 elif [ "$option" = "3" ]; then
-  . ./devices/nexus5/nexus5.sh
+  . .$SNAP/devices/nexus5/nexus5.sh
 else
   echo ""
   echo "Invalid Option"

@@ -165,7 +165,7 @@ echo ""
 echo "Back to menu"
 rm -f /tmp/AttachedDevices
 sleep 2
-. ./launcher.sh
+. .$SNAP/launcher.sh
 
 
 
@@ -177,6 +177,6 @@ else
       sleep 1
       echo "Back to menu"
     sleep 1
-    . ./launcher.sh
+    . .$SNAP/launcher.sh
 
     fi

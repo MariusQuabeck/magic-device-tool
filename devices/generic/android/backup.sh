@@ -56,7 +56,7 @@ if [ "$broption" = "1" ]; then
     echo ""
     echo "Back to menu"
     sleep 1
-    . ./launcher.sh
+    . .$SNAP/launcher.sh
   fi
 elif [ "$broption" = "2" ]; then
 	echo ""
@@ -97,7 +97,7 @@ elif [ "$broption" = "2" ]; then
     echo ""
     echo "Back to menu"
     sleep 1
-    . ./launcher.sh
+    . .$SNAP/launcher.sh
   fi
 elif [ "$broption" = "3" ]; then
       	echo "Quit"
@@ -108,5 +108,5 @@ else
   echo ""
   echo "Back to menu"
   sleep 1
-  . ./launcher.sh
+  . .$SNAP/launcher.sh
 fi

@@ -115,6 +115,7 @@ FAQ
 
 TODO
 ------
+- Add LineageOS Extras
 - Switch CM to Lineage OS
 - Add support to install F-Droid
 - Add option "add udev rule"

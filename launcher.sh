@@ -113,35 +113,35 @@ echo ""
 sleep 1
 echo -n "Enter number: "; read device
 if [ "$device" = "1" ]; then
-  . .$SNAP/devices/e45/e45.sh
+  . ./devices/e45/e45.sh
 elif [ "$device" = "2" ]; then
   . ./devices/e5hd/e5hd.sh
 elif [ "$device" = "3" ]; then
-  . .$SNAP/devices/m10hd/m10hd.sh
+  . ./devices/m10hd/m10hd.sh
 elif [ "$device" = "4" ]; then
-  . .$SNAP/devices/m10fhd/m10fhd.sh
+  . ./devices/m10fhd/m10fhd.sh
 elif [ "$device" = "5" ]; then
-  . .$SNAP/devices/mx4/mx4.sh
+  . ./devices/mx4/mx4.sh
 #elif [ "$device" = "6" ]; then
-#  . .$SNAP/devices/pro5/pro5.sh
+#  . ./devices/pro5/pro5.sh
 elif [ "$device" = "6" ]; then
-  . .$SNAP/devices/nexus4/nexus4.sh
+  . ./devices/nexus4/nexus4.sh
 elif [ "$device" = "7" ]; then
-  . .$SNAP/devices/nexus5/nexus5.sh
+  . ./devices/nexus5/nexus5.sh
 elif [ "$device" = "8" ]; then
-  . .$SNAP/devices/nexus7/nexus7.sh
+  . ./devices/nexus7/nexus7.sh
 elif [ "$device" = "9" ]; then
-  . .$SNAP/devices/nexus7deb/nexus7.sh
+  . ./devices/nexus7deb/nexus7.sh
 elif [ "$device" = "10" ]; then
-  . .$SNAP/devices/nexus10/nexus10.sh
+  . ./devices/nexus10/nexus10.sh
 elif [ "$device" = "11" ]; then
-  . .$SNAP/devices/oneplusone/oneplusone.sh
+  . ./devices/oneplusone/oneplusone.sh
 elif [ "$device" = "12" ]; then
-  . .$SNAP/devices/fairphone2/fairphone2.sh
+  . ./devices/fairphone2/fairphone2.sh
 elif [ "$device" = "13" ]; then
-  . .$SNAP/devices/generic/telegram.sh
+  . ./devices/generic/telegram.sh
 elif [ "$device" = "14" ]; then
-  . .$SNAP/devices/generic/reportabug.sh
+  . ./devices/generic/reportabug.sh
 elif [ "$device" = "15" ]; then
   exit
 else

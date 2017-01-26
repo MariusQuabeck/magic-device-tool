@@ -34,23 +34,23 @@ echo "[9] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
-  . .$SNAP/devices/oneplusone/ubuntu/ubuntu.sh
+  . ./devices/oneplusone/ubuntu/ubuntu.sh
 elif [ "$option" = "2" ]; then
-  . .$SNAP/devices/generic/ubuntu/openstore.sh
+  . ./devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
-  . .$SNAP/devices/oneplusone/android/lineageos.sh
+  . ./devices/oneplusone/android/lineageos.sh
 elif [ "$option" = "4" ]; then
-  . .$SNAP/devices/oneplusone/android/lineageoswogapps.sh
+  . ./devices/oneplusone/android/lineageoswogapps.sh
 elif [ "$option" = "5" ]; then
-  . .$SNAP/devices/oneplusone/android/sailfishos.sh
+  . ./devices/oneplusone/android/sailfishos.sh
 elif [ "$option" = "6" ]; then
-  . .$SNAP/devices/oneplusone/android/twrp.sh
+  . ./devices/oneplusone/android/twrp.sh
 elif [ "$option" = "7" ]; then
-  . .$SNAP/devices/generic/android/backup.sh
+  . ./devices/generic/android/backup.sh
 elif [ "$option" = "8" ]; then
-  . .$SNAP/devices/oneplusone/android/bootloader.sh
+  . ./devices/oneplusone/android/bootloader.sh
 elif [ "$option" = "9" ]; then
-  . .$SNAP/launcher.sh
+  . ./launcher.sh
 else
   echo ""
   echo "Invalid Option"

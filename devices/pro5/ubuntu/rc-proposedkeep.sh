@@ -41,7 +41,7 @@ fi
     fastboot boot recovery-turbo.img
     echo ""
     echo "Please wait, your device will reboot a few times"
-    echo ""    
+    echo ""
     sleep 15
     adb reboot recovery
     sleep 30
@@ -68,5 +68,5 @@ fi
     echo ""
     echo "Back to menu"
     sleep 1
-    . .$SNAP/launcher.sh
+    . ./launcher.sh
   fi

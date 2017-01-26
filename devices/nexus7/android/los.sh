@@ -19,15 +19,15 @@ echo "[3] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 if [ "$option" = "1" ]; then
-  . .$SNAP/devices/nexus7/android/lineageos.sh
+  . ./devices/nexus7/android/lineageos.sh
 elif [ "$option" = "2" ]; then
-  . .$SNAP/devices/nexus7/android/lineageoswogapps.sh
+  . ./devices/nexus7/android/lineageoswogapps.sh
 #elif [ "$option" = "3" ]; then
-#  . .$SNAP/devices/nexus7/android/cyanogenmodbeta.sh
+#  . ./devices/nexus7/android/cyanogenmodbeta.sh
 #elif [ "$option" = "4" ]; then
-#. .$SNAP/devices/nexus7/android/cyanogenmodwogappsbeta.sh
+#. ./devices/nexus7/android/cyanogenmodwogappsbeta.sh
 elif [ "$option" = "3" ]; then
-  . .$SNAP/devices/nexus7/nexus7.sh
+  . ./devices/nexus7/nexus7.sh
 else
   echo ""
   echo "Invalid Option"

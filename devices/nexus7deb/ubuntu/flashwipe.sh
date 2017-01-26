@@ -9,9 +9,9 @@ echo "[2] Back to menu "
 echo ""
 echo -n "Enter option: "; read ubuntuwipechannel
 if [ "$ubuntuwipechannel" = "1" ]; then
-. .$SNAP/devices/nexus7deb/ubuntu/stablewipe.sh
+. ./devices/nexus7deb/ubuntu/stablewipe.sh
 elif [ "$ubuntuwipechannel" = "2" ]; then
-  . .$SNAP/launcher.sh
+  . ./launcher.sh
 else
   echo ""
   echo "You did not enter a number between 1 and 2."

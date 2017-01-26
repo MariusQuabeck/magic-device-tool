@@ -11,5 +11,4 @@ sleep 5
 echo ""
 echo "Back to menu"
     sleep 1
-    . .$SNAP/launcher.sh
-
+    . ./launcher.sh

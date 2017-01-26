@@ -118,7 +118,7 @@ fi
         echo ""
         echo "Back to menu"
         sleep 1
-        . .$SNAP/launcher.sh
+        . ./launcher.sh
     fi
     else
     echo "Device not found"
@@ -127,5 +127,5 @@ fi
     echo ""
     echo "Back to menu"
     sleep 1
-    . .$SNAP/launcher.sh
+    . ./launcher.sh
   fi

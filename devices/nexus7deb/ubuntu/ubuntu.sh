@@ -10,9 +10,9 @@ sleep 1
 echo ""
 echo -n "Enter option: "; read optionubuntu
 if [ "$optionubuntu" = "1" ]; then
-  . .$SNAP/devices/nexus7deb/ubuntu/flashwipe.sh
+  . ./devices/nexus7deb/ubuntu/flashwipe.sh
 elif [ "$optionubuntu" = "2" ]; then
-  . .$SNAP/launcher.sh
+  . ./launcher.sh
 else
   echo ""
   echo "Invalid Option"

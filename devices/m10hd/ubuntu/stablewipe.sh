@@ -59,6 +59,6 @@ clear
       sleep 1
       echo "Back to menu"
     sleep 1
-    . .$SNAP/launcher.sh
+    . ./launcher.sh
       exit
     fi

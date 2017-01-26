@@ -52,5 +52,5 @@ fi
     rm -f /tmp/AttachedDevices
     echo "Back to menu"
     sleep 1
-    . .$SNAP/launcher.sh
+    . ./launcher.sh
   fi

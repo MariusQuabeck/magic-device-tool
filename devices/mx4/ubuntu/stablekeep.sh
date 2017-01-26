@@ -36,7 +36,7 @@ sleep 1
     adb reboot recovery
     sleep 30
     ubuntu-device-flash touch --channel ubuntu-touch/stable/meizu.en --device arale
-    sleep 1    
+    sleep 1
     echo ""
     echo "Move to your device to finish the setup."
     sleep 1
@@ -56,5 +56,5 @@ sleep 1
     echo ""
     echo "Back to menu"
     sleep 1
-    . .$SNAP/launcher.sh
+    . ./launcher.sh
   fi

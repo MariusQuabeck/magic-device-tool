@@ -28,7 +28,7 @@ fi
     echo ""
     sleep 1
     fastboot flash recovery recovery-krillin.img
-    sleep 1    
+    sleep 1
     fastboot boot recovery-krillin.img
     echo ""
     echo "Please wait, your device will reboot a few times"
@@ -37,7 +37,7 @@ fi
     adb reboot recovery
     sleep 30
     ubuntu-device-flash touch --channel ubuntu-touch/rc-proposed/bq-aquaris.en --device krillin
-    sleep 1    
+    sleep 1
     echo ""
     echo "Move to your device to finish the setup."
     sleep 1
@@ -57,5 +57,5 @@ fi
     echo ""
     echo "Back to menu"
     sleep 1
-    . .$SNAP/launcher.sh
+    . ./launcher.sh
   fi

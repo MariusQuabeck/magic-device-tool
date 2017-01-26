@@ -11,11 +11,11 @@ echo "[3] Back to menu "
 echo ""
 echo -n "Enter option: "; read ubuntukeepchannel
 if [ "$ubuntukeepchannel" = "1" ]; then
-. .$SNAP/devices/pro5/ubuntu/stablekeep.sh
+. ./devices/pro5/ubuntu/stablekeep.sh
 elif [ "$ubuntukeepchannel" = "2" ]; then
-  . .$SNAP/devices/pro5/ubuntu/rc-proposedkeep.sh
+  . ./devices/pro5/ubuntu/rc-proposedkeep.sh
 elif [ "$ubuntukeepchannel" = "3" ]; then
-  . .$SNAP/launcher.sh
+  . ./launcher.sh
 else
   echo ""
   echo "You did not enter a number between 1 and 3."

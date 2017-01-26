@@ -25,7 +25,7 @@ elif [ "$option" = "2" ]; then
 elif [ "$option" = "3" ]; then
   . ./devices/e45/ubuntu/screencast.sh
 elif [ "$option" = "4" ]; then
-  . .$SNAP/launcher.sh
+  . ./launcher.sh
 else
   echo ""
   echo "Invalid Option"

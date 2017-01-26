@@ -86,6 +86,7 @@ then
 fi
 else
   echo ""
+  cd $SNAP/
 fi
 clear
 echo "Choose your device"
@@ -112,9 +113,9 @@ echo ""
 sleep 1
 echo -n "Enter number: "; read device
 if [ "$device" = "1" ]; then
-   .$SNAP/devices/e45/e45.sh
+  . .$SNAP/devices/e45/e45.sh
 elif [ "$device" = "2" ]; then
-  . .$SNAP/devices/e5hd/e5hd.sh
+  . ./devices/e5hd/e5hd.sh
 elif [ "$device" = "3" ]; then
   . .$SNAP/devices/m10hd/m10hd.sh
 elif [ "$device" = "4" ]; then

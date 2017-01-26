@@ -1,5 +1,10 @@
 #!/bin/bash
 clear
+exists()
+{
+  command -v "$1" >/dev/null 2>&1
+}
+if exists dpkg-query; then
 echo ""
 echo "Checking for newer version"
 echo ""
@@ -79,6 +84,9 @@ then
   echo ""
   sudo apt-get install -qq -y mplayer;
 fi
+else
+  echo ""
+fi
 clear
 echo "Choose your device"
 echo ""
@@ -104,7 +112,7 @@ echo ""
 sleep 1
 echo -n "Enter number: "; read device
 if [ "$device" = "1" ]; then
-  . ./devices/e45/e45.sh
+  . .$SNAP/devices/e45/e45.sh
 elif [ "$device" = "2" ]; then
   . ./devices/e5hd/e5hd.sh
 elif [ "$device" = "3" ]; then

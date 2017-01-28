@@ -72,15 +72,6 @@ Usage
 -----
 
 Recommended:
-```
-sudo snap install magic-device-tool --devmode
-```
-Run the snap
-```
-magic-device-tool
-```
-
-Advanced:
 
 Connect the device to the computer with the USB cable
 
@@ -97,6 +88,16 @@ Run the script
 ./launcher.sh
 ```
 Then follow the simple on-screen guide
+
+Advanced:
+
+```
+sudo snap install magic-device-tool --devmode
+```
+Run the snap
+```
+magic-device-tool
+```
 
 FAQ
 ---

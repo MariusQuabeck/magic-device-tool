@@ -136,6 +136,8 @@ TODO
 - Improve the Snap
 - Add feature to flash SD cards with Raspian, Ubuntu,...
 - Add revision option
+- Add 10 mins message for OPO or beat gripsgard to fix it ;)
+
 
 Special thanks to
 ---

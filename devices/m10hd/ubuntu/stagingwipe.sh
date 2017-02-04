@@ -39,7 +39,7 @@ clear
       sleep 1
       clear
       echo ""
-      ubuntu-device-flash touch --bootstrap --device frieza_arm64 --channel ubuntu-touch/staging/ubuntu --recovery-image $HOME/.cache/magic-device-tool/recovery-frieza.img
+      ubuntu-device-flash touch --bootstrap --device frieza --channel ubuntu-touch/staging/ubuntu --recovery-image $HOME/.cache/magic-device-tool/recovery-frieza.img
       sleep 1
       echo ""
       echo "Move to your device to finish the setup."

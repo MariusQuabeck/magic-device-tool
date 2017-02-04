@@ -45,7 +45,7 @@ fi
     sleep 17
     clear
     echo ""
-    ubuntu-device-flash touch --device frieza_arm64 --channel ubuntu-touch/staging/ubuntu
+    ubuntu-device-flash touch --device frieza --channel ubuntu-touch/staging/ubuntu
     sleep 1
     echo ""
     echo "Move to your device to finish the setup."

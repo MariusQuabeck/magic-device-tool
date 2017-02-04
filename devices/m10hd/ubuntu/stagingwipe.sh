@@ -35,11 +35,11 @@ clear
       adb reboot-bootloader
       echo "Please wait"
       sleep 6
-      wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-frieza.img
+      wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-cooler.img
       sleep 1
       clear
       echo ""
-      ubuntu-device-flash touch --bootstrap --device frieza --channel ubuntu-touch/staging/ubuntu --recovery-image $HOME/.cache/magic-device-tool/recovery-frieza.img
+      ubuntu-device-flash touch --bootstrap --device cooler_arm64 --channel ubuntu-touch/staging/ubuntu --recovery-image $HOME/.cache/magic-device-tool/recovery-cooler.img
       sleep 1
       echo ""
       echo "Move to your device to finish the setup."

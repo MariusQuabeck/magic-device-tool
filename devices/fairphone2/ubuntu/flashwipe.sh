@@ -1,5 +1,8 @@
 clear
 echo ""
+echo "Please start the tool with 'sudo ./launcher.sh' otherwise it wont work !"
+echo ""
+echo ""
 echo "Choose a channel to flash (Will remove existing apps/data)"
 echo ""
 sleep 1

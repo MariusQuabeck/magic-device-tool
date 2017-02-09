@@ -32,11 +32,11 @@ echo ""
 echo "If you are one of these people who don't read instructions or README files"
 echo "and who downloaded this tool as a zip from GitHub instead of cloning it..."
 echo ""
-echo "RTFM ;)"
+echo_yellow "RTFM ;)"
 echo ""
 sleep 1
 git pull > version
-if grep 'Already up-to-date' version
+if grep -q 'Already up-to-date' version
     then
       echo ""
       echo_green "You are running the latest version of magic-device-tool."
@@ -49,6 +49,7 @@ if grep 'Already up-to-date' version
 
 sleep 1
 
+echo ""
 echo "Checking if all necessary tools are installed locally..."
 
 check_and_install phablet-tools
@@ -119,6 +120,6 @@ elif [ "$device" = "15" ]; then
   exit
 else
   echo ""
-  echo "You did not enter a number between 1 and 15."
-  echo "Well... I'll be here during the whole next test. -GLaDOS"
+  echo_yellow "You did not enter a number between 1 and 15."
+  echo_yellow "Well... I'll be here during the whole next test. -GLaDOS"
 fi

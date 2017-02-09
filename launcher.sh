@@ -8,12 +8,16 @@ exists()
 }
 
 function check_and_install {
-echo -n "  → $1 "
+echo -n "  → $1: "
 if [ $(dpkg-query -W -f='${Status}' $1 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
   echo_yellow "not found, installing..."
-  sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
-  sudo apt-get -qq update
+  if [[ ! -z $2 ]]
+  then
+    echo "Adding necessary apt repository: $2"
+    sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
+    sudo apt-get -qq update
+  fi
   sudo apt-get -qq -y install $1;
 else
   echo_green "found"
@@ -52,8 +56,9 @@ sleep 1
 echo ""
 echo "Checking if all necessary tools are installed locally..."
 
-check_and_install phablet-tools
-check_and_install ubuntu-device-flash
+command -v add-apt-repository > /dev/null 2>&1 || check_and_install software-properties-common
+check_and_install phablet-tools ppa:ubuntu-sdk-team/ppa
+check_and_install ubuntu-device-flash ppa:ubuntu-sdk-team/ppa
 check_and_install android-tools-fastboot
 check_and_install android-tools-adb
 check_and_install mplayer

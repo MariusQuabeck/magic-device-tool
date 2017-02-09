@@ -31,16 +31,17 @@ if grep 'Already up-to-date' version
 
 sleep 1
 
+echo "Checking if all necessary tools are installed locally..."
+
+echo -n "  → phablet-tools "
 if [ $(dpkg-query -W -f='${Status}' phablet-tools 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
-  echo ""
-  echo "First we have to install the necessary tools:"
-  echo ""
-  echo "  → phablet-tools"
-  echo ""
+  echo "{Yellow}not found, installing..."
   sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
   sudo apt-get -qq update
   sudo apt-get -qq -y install phablet-tools;
+else
+  echo "{Green}OK"
 fi
 
 if [ $(dpkg-query -W -f='${Status}' ubuntu-device-flash 2>/dev/null | grep -c "ok installed") -eq 0 ];

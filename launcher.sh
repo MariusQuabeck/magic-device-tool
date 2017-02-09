@@ -1,9 +1,26 @@
 #!/bin/bash
+. tools/color.sh
+
 clear
 exists()
 {
   command -v "$1" >/dev/null 2>&1
 }
+
+function check_and_install {
+echo -n "  → $1 "
+if [ $(dpkg-query -W -f='${Status}' $1 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo_yellow "not found, installing..."
+  sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
+  sudo apt-get -qq update
+  sudo apt-get -qq -y install $1;
+else
+  echo_green "found"
+fi
+
+}
+
 if exists dpkg-query; then
 echo ""
 echo "Checking for newer version"
@@ -33,58 +50,12 @@ sleep 1
 
 echo "Checking if all necessary tools are installed locally..."
 
-echo -n "  → phablet-tools "
-if [ $(dpkg-query -W -f='${Status}' phablet-tools 2>/dev/null | grep -c "ok installed") -eq 0 ];
-then
-  echo "{Yellow}not found, installing..."
-  sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
-  sudo apt-get -qq update
-  sudo apt-get -qq -y install phablet-tools;
-else
-  echo "{Green}OK"
-fi
+check_and_install phablet-tools
+check_and_install ubuntu-device-flash
+check_and_install android-tools-fastboot
+check_and_install android-tools-adb
+check_and_install mplayer
 
-if [ $(dpkg-query -W -f='${Status}' ubuntu-device-flash 2>/dev/null | grep -c "ok installed") -eq 0 ];
-then
-  echo ""
-  echo "First we have to install the necessary tools:"
-  echo ""
-  echo "  → ubuntu-device-flash"
-  echo ""
-  sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
-  sudo apt-get -qq update
-  sudo apt-get -qq -y install ubuntu-device-flash;
-fi
-
-if [ $(dpkg-query -W -f='${Status}' android-tools-fastboot 2>/dev/null | grep -c "ok installed") -eq 0 ];
-then
-  echo ""
-  echo "First we have to install the necessary tools:"
-  echo ""
-  echo "  → android-tools-fastboot"
-  echo ""
-  sudo apt-get -qq -y install android-tools-fastboot;
-fi
-
-if [ $(dpkg-query -W -f='${Status}' android-tools-adb 2>/dev/null | grep -c "ok installed") -eq 0 ];
-then
-  echo ""
-  echo "First we have to install the necessary tools:"
-  echo ""
-  echo "  → android-tools-adb"
-  echo ""
-  sudo apt-get install -qq -y android-tools-adb;
-fi
-
-if [ $(dpkg-query -W -f='${Status}' mplayer 2>/dev/null | grep -c "ok installed") -eq 0 ];
-then
-  echo ""
-  echo "First we have to install the necessary tools:"
-  echo ""
-  echo "  → mplayer"
-  echo ""
-  sudo apt-get install -qq -y mplayer;
-fi
 else
   echo ""
   cd $SNAP/

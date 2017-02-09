@@ -39,11 +39,12 @@ git pull > version
 if grep 'Already up-to-date' version
     then
       echo ""
-      echo "You are running the latest version of magic-device-tool."
+      echo_green "You are running the latest version of magic-device-tool."
       sleep 1
     else
+      echo_red "End of the show."
       exit | ./launcher.sh
-        fi
+    fi
         rm -f version
 
 sleep 1

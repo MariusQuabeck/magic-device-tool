@@ -91,40 +91,59 @@ echo "  [15] Quit"
 echo ""
 sleep 1
 echo -n "Enter number: "; read device
-if [ "$device" = "1" ]; then
+case "$device" in
+  1)
   . ./devices/e45/e45.sh
-elif [ "$device" = "2" ]; then
+  ;;
+  2)
   . ./devices/e5hd/e5hd.sh
-elif [ "$device" = "3" ]; then
+  ;;
+  3)
   . ./devices/m10hd/m10hd.sh
-elif [ "$device" = "4" ]; then
+  ;;
+  4)
   . ./devices/m10fhd/m10fhd.sh
-elif [ "$device" = "5" ]; then
+  ;;
+  5)
   . ./devices/mx4/mx4.sh
-#elif [ "$device" = "6" ]; then
-#  . ./devices/pro5/pro5.sh
-elif [ "$device" = "6" ]; then
+  ;;
+#  6)
+#   . ./devices/pro5/pro5.sh
+#  ;;
+  6)
   . ./devices/nexus4/nexus4.sh
-elif [ "$device" = "7" ]; then
+  ;;
+  7)
   . ./devices/nexus5/nexus5.sh
-elif [ "$device" = "8" ]; then
+  ;;
+  8)
   . ./devices/nexus7/nexus7.sh
-elif [ "$device" = "9" ]; then
+  ;;
+  9)
   . ./devices/nexus7deb/nexus7.sh
-elif [ "$device" = "10" ]; then
+  ;;
+  10)
   . ./devices/nexus10/nexus10.sh
-elif [ "$device" = "11" ]; then
+  ;;
+  11)
   . ./devices/oneplusone/oneplusone.sh
-elif [ "$device" = "12" ]; then
+  ;;
+  12)
   . ./devices/fairphone2/fairphone2.sh
-elif [ "$device" = "13" ]; then
+  ;;
+  13)
   . ./devices/generic/telegram.sh
-elif [ "$device" = "14" ]; then
+  ;;
+  14)
   . ./devices/generic/reportabug.sh
-elif [ "$device" = "15" ]; then
+  ;;
+  15)
   exit
-else
+  ;; 
+  *)
   echo ""
   echo_yellow "You did not enter a number between 1 and 15."
   echo_yellow "Well... I'll be here during the whole next test. -GLaDOS"
-fi
+  ;;
+esac
+

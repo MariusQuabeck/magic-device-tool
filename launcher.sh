@@ -63,6 +63,9 @@ else
   echo ""
   cd $SNAP/
 fi
+
+EXIT=0
+while [ $EXIT -eq 0 ]; do
 clear
 echo ""
 echo "Choose your device"
@@ -135,12 +138,16 @@ case "$device" in
   . ./devices/generic/reportabug.sh
   ;;
   15)
-  exit
+  echo_green "Thanks for using magic-device-tool!"
+  sleep 1
+  EXIT=1
   ;; 
   *)
   echo ""
   echo_yellow "You did not enter a number between 1 and 15."
   echo_yellow "Well... I'll be here during the whole next test. -GLaDOS"
+  sleep 4
   ;;
 esac
+done
 

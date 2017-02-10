@@ -28,7 +28,7 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-deb.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-deb.img
   sleep 1
   echo ""
   echo "Downloading Cyanogenmod 13.."
@@ -45,7 +45,7 @@ then
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-3.0.2-0-deb.img
+  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-deb.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -54,7 +54,7 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 7
-  fastboot boot $HOME/.cache/magic-device-tool/twrp-3.0.2-0-deb.img
+  fastboot boot $HOME/.cache/magic-device-tool/twrp-deb.img
   sleep 15
   adb reboot recovery
   sleep 15

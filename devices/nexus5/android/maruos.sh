@@ -33,7 +33,7 @@ then
   echo ""
   echo "Downloading TWRP recovery.."
   echo ""
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-hammerhead.img
   sleep 1
   echo ""
   echo "Downloading Gapps.."
@@ -45,7 +45,7 @@ then
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-3.0.2-0-hammerhead.img
+  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-hammerhead.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -54,7 +54,7 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 8
-  fastboot boot $HOME/.cache/magic-device-tool/twrp-3.0.2-0-hammerhead.img
+  fastboot boot $HOME/.cache/magic-device-tool/twrp-hammerhead.img
   sleep 8
   adb reboot recovery
   sleep 17

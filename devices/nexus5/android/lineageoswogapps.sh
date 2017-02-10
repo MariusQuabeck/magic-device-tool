@@ -20,6 +20,7 @@ then
   echo "Device detected !"
   sleep 1
   clear
+  fastboot format system
   fastboot format cache
   fastboot format userdata
   fastboot reboot-bootloader
@@ -28,7 +29,7 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-hammerhead.img
   sleep 1
   echo ""
   echo "Downloading LineageOS 14.1.."
@@ -41,7 +42,7 @@ then
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-3.0.2-0-hammerhead.img
+  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-hammerhead.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -50,7 +51,7 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 7
-  fastboot boot $HOME/.cache/magic-device-tool/twrp-3.0.2-0-hammerhead.img
+  fastboot boot $HOME/.cache/magic-device-tool/twrp-hammerhead.img
   sleep 7
   adb reboot recovery
   sleep 15

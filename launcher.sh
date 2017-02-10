@@ -21,35 +21,34 @@ function check_and_install
 FIRST_RUN=1
 
 clear
-if [ $FIRST_RUN -eq 1 ]; then
-	FIRST_RUN=0
-	if exists dpkg-query; then
+if exists dpkg-query; then
+	echo ""
+	echo "Checking for newer version"
+	echo ""
+	echo ""
+	echo "If you see this screen for longer than 10 seconds,"
+	echo "please delete the magic-device-tool folder and clone the project again."
+	echo ""
+	echo "If you are one of these people who don't read instructions or README files"
+	echo "and who downloaded this tool as a zip from GitHub instead of cloning it..."
+	echo ""
+	echo_yellow "RTFM ;)"
+	sleep 1
+	exists git || check_and_install git
+	git pull > version
+	if grep -q 'Already up-to-date' version; then
 		echo ""
-		echo "Checking for newer version"
-		echo ""
-		echo ""
-		echo "If you see this screen for longer than 10 seconds,"
-		echo "please delete the magic-device-tool folder and clone the project again."
-		echo ""
-		echo "If you are one of these people who don't read instructions or README files"
-		echo "and who downloaded this tool as a zip from GitHub instead of cloning it..."
-		echo ""
-		echo_yellow "RTFM ;)"
+		echo_green "You are running the latest version of magic-device-tool."
 		sleep 1
-		exists git || check_and_install git
-		git pull > version
-		if grep -q 'Already up-to-date' version; then
-			echo ""
-			echo_green "You are running the latest version of magic-device-tool."
-			sleep 1
-		else
-			echo_red "End of the show."
-			exit | ./launcher.sh
-		fi
-		rm -f version
+	else
+		echo_red "End of the show."
+		exit | ./launcher.sh
+	fi
+	rm -f version
 
-		sleep 1
-
+	sleep 1
+	if [ $FIRST_RUN -eq 1 ]; then
+		FIRST_RUN=0
 		echo ""
 		echo "Checking if all necessary tools are installed locally..."
 		echo ""

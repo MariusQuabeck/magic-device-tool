@@ -83,6 +83,8 @@ fi
 	echo ""
         echo "Cleaning up.."
         rm -f /tmp/AttachedDevices
+        sudo chown $SUDO_USER:$SUDO_USER $HOME/.cache/magic-device-tool/*
+        sudo chown -R $SUDO_USER:$SUDO_USER $HOME/.cache/ubuntuimages/
         echo ""
         sleep 1
         echo "Exiting script. Bye Bye"

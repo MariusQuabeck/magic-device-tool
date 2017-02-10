@@ -37,7 +37,6 @@ echo "If you are one of these people who don't read instructions or README files
 echo "and who downloaded this tool as a zip from GitHub instead of cloning it..."
 echo ""
 echo_yellow "RTFM ;)"
-echo ""
 sleep 1
 git pull > version
 if grep -q 'Already up-to-date' version
@@ -55,19 +54,20 @@ sleep 1
 
 echo ""
 echo "Checking if all necessary tools are installed locally..."
-
+echo ""
 command -v add-apt-repository > /dev/null 2>&1 || check_and_install software-properties-common
 check_and_install phablet-tools ppa:ubuntu-sdk-team/ppa
 check_and_install ubuntu-device-flash ppa:ubuntu-sdk-team/ppa
 check_and_install android-tools-fastboot
 check_and_install android-tools-adb
 check_and_install mplayer
-
+sleep 1
 else
   echo ""
   cd $SNAP/
 fi
 clear
+echo ""
 echo "Choose your device"
 echo ""
 echo "  [1]  BQ Aquaris E4.5 - krillin"

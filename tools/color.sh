@@ -1,3 +1,5 @@
+#!/bin/bash
+
 RCol='\e[0m'    # Text Reset
 
 # Regular           Bold                Underline           High Intensity      BoldHigh Intens     Background          High Intensity Backgrounds

@@ -19,54 +19,54 @@ function check_and_install
 }
 
 FIRST_RUN=1
-
-clear
-if exists dpkg-query; then
-	echo ""
-	echo "Checking for newer version"
-	echo ""
-	echo ""
-	echo "If you see this screen for longer than 10 seconds,"
-	echo "please delete the magic-device-tool folder and clone the project again."
-	echo ""
-	echo "If you are one of these people who don't read instructions or README files"
-	echo "and who downloaded this tool as a zip from GitHub instead of cloning it..."
-	echo ""
-	echo_yellow "RTFM ;)"
-	sleep 1
-	exists git || check_and_install git
-	git pull > version
-	if grep -q 'Already up-to-date' version; then
-		echo ""
-		echo_green "You are running the latest version of magic-device-tool."
-		sleep 1
-	else
-		echo_red "End of the show."
-		exit | ./launcher.sh
-	fi
-	rm -f version
-
-	sleep 1
-	if [ $FIRST_RUN -eq 1 ]; then
-		FIRST_RUN=0
-		echo ""
-		echo "Checking if all necessary tools are installed locally..."
-		echo ""
-		exists add-apt-repository || check_and_install software-properties-common
-		check_and_install phablet-tools ppa:ubuntu-sdk-team/ppa
-		check_and_install ubuntu-device-flash ppa:ubuntu-sdk-team/ppa
-		check_and_install android-tools-fastboot
-		check_and_install android-tools-adb
-		check_and_install mplayer
-		sleep 1
-	else
-		echo ""
-		cd $SNAP/
-	fi
-fi
-
 EXIT=0
 while [ $EXIT -eq 0 ]; do
+	clear
+	if exists dpkg-query; then
+		echo ""
+		echo "Checking for newer version"
+		echo ""
+		echo ""
+		echo "If you see this screen for longer than 10 seconds,"
+		echo "please delete the magic-device-tool folder and clone the project again."
+		echo ""
+		echo "If you are one of these people who don't read instructions or README files"
+		echo "and who downloaded this tool as a zip from GitHub instead of cloning it..."
+		echo ""
+		echo_yellow "RTFM ;)"
+		sleep 1
+		exists git || check_and_install git
+		git pull > version
+		if grep -q 'Already up-to-date' version; then
+			echo ""
+			echo_green "You are running the latest version of magic-device-tool."
+			sleep 1
+		else
+			echo_yellow "magic-device-tool was updated and will be restarted now."
+			sleep 1
+			exit | ./launcher.sh
+		fi
+		rm -f version
+
+		sleep 1
+		if [ $FIRST_RUN -eq 1 ]; then
+			FIRST_RUN=0
+			echo ""
+			echo "Checking if all necessary tools are installed locally..."
+			echo ""
+			exists add-apt-repository || check_and_install software-properties-common
+			check_and_install phablet-tools ppa:ubuntu-sdk-team/ppa
+			check_and_install ubuntu-device-flash ppa:ubuntu-sdk-team/ppa
+			check_and_install android-tools-fastboot
+			check_and_install android-tools-adb
+			check_and_install mplayer
+			sleep 1
+		else
+			echo ""
+			cd $SNAP/
+		fi
+	fi
+
 	clear
 	echo ""
 	echo "Choose your device"

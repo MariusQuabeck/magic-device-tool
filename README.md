@@ -150,3 +150,4 @@ Special thanks to
 - [pdsouza](https://github.com/pdsouza) [Maru OS](https://github.com/maruos/maruos)
 - [kristbaum](https://github.com/kristbaum) FAQ section
 - [Simon Quigley](https://github.com/tsimonq2) Readme corrections
+- [Flohack74](https://github.com/Flohack74) Various code improvements

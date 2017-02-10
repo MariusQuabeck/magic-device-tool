@@ -9,11 +9,9 @@ exists()
 
 function check_and_install {
 echo -n "  → $1: "
-if [ $(dpkg-query -W -f='${Status}' $1 2>/dev/null | grep -c "ok installed") -eq 0 ];
-then
+if [ $(dpkg-query -W -f='${Status}' $1 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
   echo_yellow "not found, installing..."
-  if [[ ! -z $2 ]]
-  then
+  if [[ ! -z $2 ]]; then
     echo "Adding necessary apt repository: $2"
     sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
     sudo apt-get -qq update
@@ -26,42 +24,41 @@ fi
 }
 
 if exists dpkg-query; then
-echo ""
-echo "Checking for newer version"
-echo ""
-echo ""
-echo "If you see this screen for longer than 10 seconds,"
-echo "please delete the magic-device-tool folder and clone the project again."
-echo ""
-echo "If you are one of these people who don't read instructions or README files"
-echo "and who downloaded this tool as a zip from GitHub instead of cloning it..."
-echo ""
-echo_yellow "RTFM ;)"
-sleep 1
-git pull > version
-if grep -q 'Already up-to-date' version
-    then
-      echo ""
-      echo_green "You are running the latest version of magic-device-tool."
-      sleep 1
-    else
-      echo_red "End of the show."
-      exit | ./launcher.sh
-    fi
-        rm -f version
+  echo ""
+  echo "Checking for newer version"
+  echo ""
+  echo ""
+  echo "If you see this screen for longer than 10 seconds,"
+  echo "please delete the magic-device-tool folder and clone the project again."
+  echo ""
+  echo "If you are one of these people who don't read instructions or README files"
+  echo "and who downloaded this tool as a zip from GitHub instead of cloning it..."
+  echo ""
+  echo_yellow "RTFM ;)"
+  sleep 1
+  git pull > version
+  if grep -q 'Already up-to-date' version; then
+    echo ""
+    echo_green "You are running the latest version of magic-device-tool."
+    sleep 1
+  else
+    echo_red "End of the show."
+    exit | ./launcher.sh
+  fi
+  rm -f version
 
-sleep 1
+  sleep 1
 
-echo ""
-echo "Checking if all necessary tools are installed locally..."
-echo ""
-command -v add-apt-repository > /dev/null 2>&1 || check_and_install software-properties-common
-check_and_install phablet-tools ppa:ubuntu-sdk-team/ppa
-check_and_install ubuntu-device-flash ppa:ubuntu-sdk-team/ppa
-check_and_install android-tools-fastboot
-check_and_install android-tools-adb
-check_and_install mplayer
-sleep 1
+  echo ""
+  echo "Checking if all necessary tools are installed locally..."
+  echo ""
+  command -v add-apt-repository > /dev/null 2>&1 || check_and_install software-properties-common
+  check_and_install phablet-tools ppa:ubuntu-sdk-team/ppa
+  check_and_install ubuntu-device-flash ppa:ubuntu-sdk-team/ppa
+  check_and_install android-tools-fastboot
+  check_and_install android-tools-adb
+  check_and_install mplayer
+  sleep 1
 else
   echo ""
   cd $SNAP/

@@ -18,7 +18,6 @@ parts:
     stage-packages:
       - ubuntu-device-flash
       - wget
-      - git 
       - xdg-utils
       - android-tools-fastboot
       - android-tools-adb

@@ -14,7 +14,7 @@ if [ "$ubuntuwipechannel" = "1" ]; then
 elif [ "$ubuntuwipechannel" = "2" ]; then
   . ./devices/e5hd/ubuntu/rc-proposedwipe.sh
 elif [ "$ubuntuwipechannel" = "3" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "You did not enter a number between 1 and 3."

@@ -15,7 +15,7 @@ if [ "$ubuntukeepchannel" = "1" ]; then
 elif [ "$ubuntukeepchannel" = "2" ]; then
   . ./devices/nexus4/ubuntu/rc-proposedkeep.sh
 elif [ "$ubuntukeepchannel" = "3" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "You did not enter a number between 1 and 3."

@@ -12,7 +12,7 @@ echo -n "Enter option: "; read optionubuntu
 if [ "$optionubuntu" = "1" ]; then
   . ./devices/nexus7deb/ubuntu/flashwipe.sh
 elif [ "$optionubuntu" = "2" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "Invalid Option"

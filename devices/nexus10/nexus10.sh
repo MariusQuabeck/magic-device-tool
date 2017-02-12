@@ -45,7 +45,7 @@ elif [ "$option" = "5" ]; then
 elif [ "$option" = "6" ]; then
   . ./devices/nexus10/android/bootloader.sh
 elif [ "$option" = "7" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "Invalid Option"

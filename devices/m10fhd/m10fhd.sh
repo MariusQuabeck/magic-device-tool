@@ -23,7 +23,7 @@ elif [ "$option" = "2" ]; then
 elif [ "$option" = "3" ]; then
   . ./devices/m10fhd/ubuntu/screencast.sh
 elif [ "$option" = "4" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "Invalid Option"

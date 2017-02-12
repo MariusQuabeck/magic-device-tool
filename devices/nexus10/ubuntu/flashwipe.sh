@@ -11,7 +11,7 @@ echo -n "Enter option: "; read ubuntuwipechannel
 if [ "$ubuntuwipechannel" = "1" ]; then
 . ./devices/nexus10/ubuntu/stablewipe.sh
 elif [ "$ubuntuwipechannel" = "2" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "You did not enter a number between 1 and 2."

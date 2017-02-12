@@ -39,7 +39,7 @@ echo "Please enable developer mode on the device"
       echo "Device detected !"
 
 sleep 1
-exit | phablet-shell
+return | phablet-shell
 clear
 
 set -e
@@ -65,7 +65,7 @@ The '--copy' option will make it copy your .bashrc down to the device, giving
 you the benefit of preserving your $PS1 (prompt) and any aliases and functions
 you may have defined on your host system.
 EOF
-exit 1
+return 1
 }
 
 if [ -f "$(dirname $0)/shell-adb-common.sh" ]; then
@@ -115,7 +115,7 @@ toggle_ssh(){
 if [ ! -d ~/.ssh ]; then
     echo "no local key, please run the ssh-keygen command first,"
     echo "then run phablet-shell again"
-    exit 1
+    return 1
 fi
 
 # if sshd is already runing, do not attempt to start it
@@ -165,7 +165,7 @@ echo ""
 echo "Back to menu"
 rm -f /tmp/AttachedDevices
 sleep 2
-. ./launcher.sh
+return
 
 
 
@@ -178,6 +178,6 @@ else
       sleep 1
       echo "Back to menu"
     sleep 1
-    . ./launcher.sh
+    return
 
     fi

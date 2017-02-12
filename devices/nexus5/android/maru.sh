@@ -24,5 +24,5 @@ else
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
-  exit
+  return
 fi

@@ -41,7 +41,7 @@ if [ "$ulbootloader" = "1" ]; then
       echo ""
       echo "Exiting script. Bye Bye"
       sleep 1
-      exit
+      return
     fi
 elif [ "$ulbootloader" = "2" ]; then
     clear
@@ -79,7 +79,7 @@ elif [ "$ulbootloader" = "2" ]; then
         echo ""
         echo "Exiting script. Bye Bye"
         sleep 1
-        exit
+        return
       fi
   elif [ "$ulbootloader" = "3" ]; then
       rm -f /tmp/AttachedDevices
@@ -90,4 +90,4 @@ fi
 else
   echo "Device not found."
       rm -f /tmp/AttachedDevices
-  exit
+  return

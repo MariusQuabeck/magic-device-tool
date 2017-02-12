@@ -12,11 +12,11 @@ echo -n "Enter option: "; read optionubuntu
 if [ "$optionubuntu" = "1" ]; then
   . ./devices/oneplusone/ubuntu/flashwipe.sh
 elif [ "$optionubuntu" = "2" ]; then
-  . ./launcher.sh
+  return
 else
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
-  exit
+  return
 fi

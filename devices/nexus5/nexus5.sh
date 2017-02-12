@@ -48,11 +48,11 @@ elif [ "$option" = "8" ]; then
 elif [ "$option" = "9" ]; then
   . ./devices/nexus5/android/bootloader.sh
 elif [ "$option" = "10" ]; then
-  . ./launcher.sh
+  return
 else
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
-  exit
+  return
 fi

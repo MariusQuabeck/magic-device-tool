@@ -15,7 +15,7 @@ if [ "$optionubuntu" = "1" ]; then
 elif [ "$optionubuntu" = "2" ]; then
   . ./devices/m10fhd/ubuntu/flashkeep.sh
 elif [ "$optionubuntu" = "3" ]; then
-  . ./launcher.sh
+  return
 else
   echo ""
   echo "Invalid Option"

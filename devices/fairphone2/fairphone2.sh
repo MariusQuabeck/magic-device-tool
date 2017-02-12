@@ -24,7 +24,7 @@ if [ "$option" = "1" ]; then
 elif [ "$option" = "2" ]; then
 . ./devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
-  . ./launcher.sh
+  return
 else
   echo ""
   echo "Invalid Option"

@@ -61,10 +61,10 @@ while [ $EXIT -eq 0 ]; do
 			check_and_install android-tools-adb
 			check_and_install mplayer
 			sleep 1
-		else
-			echo ""
-			cd $SNAP/
 		fi
+	else
+		echo ""
+		cd $SNAP/
 	fi
 
 	clear
@@ -90,53 +90,52 @@ while [ $EXIT -eq 0 ]; do
 	echo ""
 	echo "  [15] Quit"
 	echo ""
-	sleep 1
 	echo -n "Enter number: "; read device
 	case "$device" in
 	  1)
-	  . ./devices/e45/e45.sh
+	  . devices/e45/e45.sh
 	  ;;
 	  2)
-	  . ./devices/e5hd/e5hd.sh
+	  . devices/e5hd/e5hd.sh
 	  ;;
 	  3)
-	  . ./devices/m10hd/m10hd.sh
+	  . devices/m10hd/m10hd.sh
 	  ;;
 	  4)
-	  . ./devices/m10fhd/m10fhd.sh
+	  . devices/m10fhd/m10fhd.sh
 	  ;;
 	  5)
-	  . ./devices/mx4/mx4.sh
+	  . devices/mx4/mx4.sh
 	  ;;
 	#  6)
-	#   . ./devices/pro5/pro5.sh
+	#   . devices/pro5/pro5.sh
 	#  ;;
 	  6)
-	  . ./devices/nexus4/nexus4.sh
+	  . devices/nexus4/nexus4.sh
 	  ;;
 	  7)
-	  . ./devices/nexus5/nexus5.sh
+	  . devices/nexus5/nexus5.sh
 	  ;;
 	  8)
-	  . ./devices/nexus7/nexus7.sh
+	  . devices/nexus7/nexus7.sh
 	  ;;
 	  9)
-	  . ./devices/nexus7deb/nexus7.sh
+	  . devices/nexus7deb/nexus7.sh
 	  ;;
 	  10)
-	  . ./devices/nexus10/nexus10.sh
+	  . devices/nexus10/nexus10.sh
 	  ;;
 	  11)
-	  . ./devices/oneplusone/oneplusone.sh
+	  . devices/oneplusone/oneplusone.sh
 	  ;;
 	  12)
-	  . ./devices/fairphone2/fairphone2.sh
+	  . devices/fairphone2/fairphone2.sh
 	  ;;
 	  13)
-	  . ./devices/generic/telegram.sh
+	  . devices/generic/telegram.sh
 	  ;;
 	  14)
-	  . ./devices/generic/reportabug.sh
+	  . devices/generic/reportabug.sh
 	  ;;
 	  15)
 	  echo_green "Thanks for using magic-device-tool!"

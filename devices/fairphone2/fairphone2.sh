@@ -6,7 +6,7 @@ echo ""
 echo "Fairphone 2 - FP2"
 echo ""
 echo ""
-echo "Please start the tool with 'sudreturn' otherwise it wont work !"
+echo "Please start the tool with 'sudo ./launcher.sh' otherwise it wont work !"
 echo ""
 echo ""
 sleep 1
@@ -24,11 +24,11 @@ if [ "$option" = "1" ]; then
 elif [ "$option" = "2" ]; then
 . ./devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
-  return
+  exit
 fi

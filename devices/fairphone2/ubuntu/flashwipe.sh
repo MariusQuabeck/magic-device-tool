@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Please start the tool with 'sudreturn' otherwise it wont work !"
+echo "Please start the tool with 'sudo ./launcher.sh' otherwise it wont work !"
 echo ""
 echo ""
 echo "Choose a channel to flash (Will remove existing apps/data)"
@@ -22,10 +22,10 @@ elif [ "$ubuntuwipechannel" = "2" ]; then
 elif [ "$ubuntuwipechannel" = "3" ]; then
 . ./devices/fairphone2/ubuntu/rc-proposed.sh
 elif [ "$ubuntuwipechannel" = "4" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "You did not enter a number between 1 and 2."
   echo "Well... I'll be here during the whole next test. -GLaDOS"
-  return
+  exit
 fi

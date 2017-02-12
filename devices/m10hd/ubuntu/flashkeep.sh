@@ -19,10 +19,10 @@ elif [ "$ubuntukeepchannel" = "2" ]; then
 elif [ "$ubuntukeepchannel" = "3" ]; then
   . ./devices/m10hd/ubuntu/stagingkeep.sh
 elif [ "$ubuntukeepchannel" = "4" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "You did not enter a number between 1 and 3."
   echo "Well... I'll be here during the whole next test. -GLaDOS"
-  return
+  exit
 fi

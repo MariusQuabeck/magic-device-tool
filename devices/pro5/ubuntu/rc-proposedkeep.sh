@@ -60,7 +60,7 @@ fi
     sleep 1
     echo "Exiting script. Bye Bye"
     sleep 1
-    return
+    exit
   else
     echo "Device not found"
     rm -f /tmp/AttachedDevices
@@ -68,5 +68,5 @@ fi
     echo ""
     echo "Back to menu"
     sleep 1
-    return
+    . ./launcher.sh
   fi

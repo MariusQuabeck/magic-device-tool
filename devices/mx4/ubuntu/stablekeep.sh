@@ -48,7 +48,7 @@ sleep 1
     sleep 1
     echo "Exiting script. Bye Bye"
     sleep 1
-    return
+    exit
   else
     echo "Device not found"
     sleep 1
@@ -56,5 +56,5 @@ sleep 1
     echo ""
     echo "Back to menu"
     sleep 1
-    return
+    . ./launcher.sh
   fi

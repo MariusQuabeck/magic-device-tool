@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Please start the tool with 'sudreturn' otherwise it wont work !"
+echo "Please start the tool with 'sudo ./launcher.sh' otherwise it wont work !"
 echo ""
 echo ""
 echo "Flashing stable channel"
@@ -94,7 +94,7 @@ fi
         echo ""
         echo "Back to menu"
         sleep 1
-        return
+        . ./launcher.sh
     fi
     else
     echo "Device not found"
@@ -103,5 +103,5 @@ fi
     echo ""
     echo "Back to menu"
     sleep 1
-    return
+    . ./launcher.sh
   fi

@@ -8,7 +8,7 @@ echo ""
 echo "OnePlus One - bacon"
 echo ""
 echo ""
-echo "Please start the tool with 'sudreturn' otherwise it wont work !"
+echo "Please start the tool with 'sudo ./launcher.sh' otherwise it wont work !"
 echo ""
 echo ""
 sleep 1
@@ -50,11 +50,11 @@ elif [ "$option" = "7" ]; then
 elif [ "$option" = "8" ]; then
   . ./devices/oneplusone/android/bootloader.sh
 elif [ "$option" = "9" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
-  return
+  exit
 fi

@@ -10,4 +10,4 @@ xdg-open https://github.com/MariusQuabeck/magic-device-tool/issues/new
 sleep 5
 echo ""
 echo "Back to menu"
-sleep 1
+    sleep 1

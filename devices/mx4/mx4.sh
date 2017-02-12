@@ -1,4 +1,8 @@
-
+#!/bin/bash
+chmod +x . ./devices/mx4/ubuntu/*.sh
+chmod +x . ./devices/mx4/android/*.sh
+chmod +x . ./devices/generic/ubuntu/*.sh
+chmod +x . ./devices/generic/android/*.sh
 clear
 echo ""
 echo "Meizu MX4 - arale"
@@ -37,11 +41,11 @@ elif [ "$option" = "5" ]; then
 elif [ "$option" = "6" ]; then
   . ./devices/generic/android/backup.sh
 elif [ "$option" = "7" ]; then
-	return
+  . ./launcher.sh
 else
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
-	return
+  exit
 fi

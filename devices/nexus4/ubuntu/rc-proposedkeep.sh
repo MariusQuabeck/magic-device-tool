@@ -43,5 +43,5 @@ if grep 'device$\|recovery$' /tmp/AttachedDevices
     echo ""
     echo "Back to menu"
     sleep 1
-    return
+    . ./launcher.sh
 fi

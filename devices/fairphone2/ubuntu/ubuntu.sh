@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Please start the tool with 'sudreturn' otherwise it wont work !"
+echo "Please start the tool with 'sudo ./launcher.sh' otherwise it wont work !"
 echo ""
 echo "  "
 echo "Install Ubuntu"
@@ -15,11 +15,11 @@ echo -n "Enter option: "; read optionubuntu
 if [ "$optionubuntu" = "1" ]; then
   . ./devices/fairphone2/ubuntu/flashwipe.sh
 elif [ "$optionubuntu" = "2" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
-  return
+  exit
 fi

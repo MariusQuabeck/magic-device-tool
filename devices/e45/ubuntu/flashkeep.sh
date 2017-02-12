@@ -15,10 +15,10 @@ if [ "$ubuntukeepchannel" = "1" ]; then
 elif [ "$ubuntukeepchannel" = "2" ]; then
   . ./devices/e45/ubuntu/rc-proposedkeep.sh
 elif [ "$ubuntukeepchannel" = "3" ]; then
-  return
+  . ./launcher.sh
 else
   echo ""
   echo "You did not enter a number between 1 and 3."
   echo "Well... I'll be here during the whole next test. -GLaDOS"
-  return
+  exit
 fi

@@ -68,5 +68,5 @@ fi
     echo ""
     echo "Back to menu"
     sleep 1
-    . ./launcher.sh
+    return
   fi

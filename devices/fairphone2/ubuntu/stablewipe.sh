@@ -94,7 +94,7 @@ fi
         echo ""
         echo "Back to menu"
         sleep 1
-        . ./launcher.sh
+        return
     fi
     else
     echo "Device not found"
@@ -103,5 +103,5 @@ fi
     echo ""
     echo "Back to menu"
     sleep 1
-    . ./launcher.sh
+    return
   fi

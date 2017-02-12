@@ -41,7 +41,7 @@ elif [ "$option" = "5" ]; then
 elif [ "$option" = "6" ]; then
   . ./devices/generic/android/backup.sh
 elif [ "$option" = "7" ]; then
-  . ./launcher.sh
+  return
 else
   echo ""
   echo "Invalid Option"

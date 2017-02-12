@@ -40,7 +40,7 @@ sleep 3
 echo "Back to menu"
 rm -f /tmp/AttachedDevices
 sleep 2
-. ./launcher.sh
+return
 
 
 
@@ -51,6 +51,6 @@ else
       rm -f /tmp/AttachedDevices
       echo "Back to menu"
     sleep 1
-    . ./launcher.sh
+    return
 
     fi

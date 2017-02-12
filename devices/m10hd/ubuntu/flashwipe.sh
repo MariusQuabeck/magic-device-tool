@@ -18,7 +18,7 @@ elif [ "$ubuntuwipechannel" = "2" ]; then
 elif [ "$ubuntuwipechannel" = "3" ]; then
   . ./devices/m10hd/ubuntu/stagingwipe.sh
 elif [ "$ubuntuwipechannel" = "4" ]; then
-  . ./launcher.sh
+  return
 else
   echo ""
   echo "You did not enter a number between 1 and 3."

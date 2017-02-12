@@ -45,11 +45,11 @@ elif [ "$option" = "7" ]; then
 elif [ "$option" = "8" ]; then
   . ./devices/nexus7deb/android/bootloader.sh
 elif [ "$option" = "9" ]; then
-  . ./launcher.sh
+  return
 else
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
-  exit
+  return
 fi

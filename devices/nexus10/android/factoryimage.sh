@@ -51,9 +51,9 @@ fi
     sleep 1
     echo "Exiting script. Bye Bye"
     sleep 1
-    exit
+    return
   else
     echo "Device not found"
     rm -f /tmp/AttachedDevices
-    exit
+    return
   fi

@@ -23,15 +23,15 @@ echo "Please enable developer mode on the device"
       echo ""
       echo "Device detected !"
 
-exit | phablet-shell
+return | phablet-shell
 clear
-exit | phablet-shell
+return | phablet-shell
 clear
 echo ""
 echo "Installing OpenStore.."
 echo ""
 adb shell "
-cd Downloads && wget -c --quiet --show-progress --tries=10 https://open.uappexplorer.com/api/download/openstore.openstore-team/openstore.openstore-team_latest_armhf.click && pkcon install-local --allow-untrusted openstore.openstore-team_latest_armhf.click && rm openstore.openstore-team_latest_armhf.click && exit"
+cd Downloads && wget -c --quiet --show-progress --tries=10 https://open.uappexplorer.com/api/download/openstore.openstore-team/openstore.openstore-team_latest_armhf.click && pkcon install-local --allow-untrusted openstore.openstore-team_latest_armhf.click && rm openstore.openstore-team_latest_armhf.click && return"
 sleep 1
 echo ""
 echo "done"
@@ -40,7 +40,7 @@ sleep 3
 echo "Back to menu"
 rm -f /tmp/AttachedDevices
 sleep 2
-. ./launcher.sh
+return
 
 
 
@@ -51,6 +51,6 @@ else
       rm -f /tmp/AttachedDevices
       echo "Back to menu"
     sleep 1
-    . ./launcher.sh
+    return
 
     fi

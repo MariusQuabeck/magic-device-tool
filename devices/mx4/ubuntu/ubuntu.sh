@@ -15,11 +15,11 @@ if [ "$optionubuntu" = "1" ]; then
 elif [ "$optionubuntu" = "2" ]; then
   . ./devices/mx4/ubuntu/flashkeep.sh
 elif [ "$optionubuntu" = "3" ]; then
-  . ./launcher.sh
+  return
 else
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
-  exit
+  return
 fi

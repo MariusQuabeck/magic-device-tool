@@ -25,11 +25,11 @@ elif [ "$option" = "2" ]; then
 elif [ "$option" = "3" ]; then
   . ./devices/pro5/ubuntu/screencast.sh
 elif [ "$option" = "4" ]; then
-  . ./launcher.sh
+	return
 else
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
-  exit
+	return
 fi

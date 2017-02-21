@@ -128,6 +128,7 @@ FAQ
 TODO
 ------
 - Add LineageOS Extras
+- Fix CM links in Sailfish install
 - Switch CM to Lineage OS
 - Add support to install F-Droid
 - Add option "add udev rule"

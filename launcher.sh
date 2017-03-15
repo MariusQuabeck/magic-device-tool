@@ -84,10 +84,10 @@ echo "  [10] Samsung Nexus 10 - manta"
 echo "  [11] OnePlus One - bacon"
 echo "  [12] Fairphone 2 - FP2"
 echo "  ========================================="
-#echo "  [13] Join Telegram Group Chat"
-echo "  [13] Report a bug"
+echo "  [13] Join Telegram Group Chat"
+echo "  [14] Report a bug"
 echo ""
-echo "  [14] Quit"
+echo "  [15] Quit"
 echo ""
 sleep 1
 echo -n "Enter number: "; read device
@@ -131,10 +131,10 @@ case "$device" in
   12)
   . ./devices/fairphone2/fairphone2.sh
   ;;
-  #13)
-  #. ./devices/generic/telegram.sh
-  #;;
   13)
+  . ./devices/generic/telegram.sh
+  ;;
+  14)
   . ./devices/generic/reportabug.sh
   ;;
   14)

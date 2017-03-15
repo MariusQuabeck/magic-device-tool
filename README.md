@@ -10,8 +10,7 @@ Marius Quabeck [(Email)](mailto:marius.quabeck@ubuntu.com?subject=magic-device-t
 
 Mister_Q on the freenode IRC network
 
-If you want to join our Telegram group chat,
-please message [@MariusQuabeck](https://telegram.me/mariusquabeck) and he will add you asap
+[Join us on Telegram !](https://t.me/joinchat/AAAAAAiC4TS0ba_TVbQ55g)
 
 [Donate if you like this tool](http://paypal.me/MisterQ)
 

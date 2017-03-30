@@ -7,7 +7,7 @@ echo "[1] stable"
 echo "[2] rc-proposed"
 echo "[3] devel_rc-proposed"
 echo ""
-echo "[3] Back to menu "
+echo "[4] Back to menu "
 echo ""
 echo -n "Enter option: "; read ubuntuwipechannel
 if [ "$ubuntuwipechannel" = "1" ]; then

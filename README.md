@@ -128,6 +128,7 @@ FAQ
 TODO
 ------
 - Add Plasma Mobile
+- Add Maru OS for Nexus 7 2013 WiFi (flo)
 - Add Fairphone OS, Fairphone Open & Sailfish for FP2
 - Add LineageOS Extras
 - Fix CM links in Sailfish install

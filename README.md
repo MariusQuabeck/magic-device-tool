@@ -127,6 +127,7 @@ FAQ
 
 TODO
 ------
+- Add Plasma Mobile
 - Add Fairphone OS, Fairphone Open & Sailfish for FP2
 - Add LineageOS Extras
 - Fix CM links in Sailfish install

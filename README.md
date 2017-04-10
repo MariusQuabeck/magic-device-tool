@@ -127,6 +127,9 @@ FAQ
 
 TODO
 ------
+- Fix Lineage OS download links!!
+- Update Maru OS 0.4
+- Add Maru OS for flo
 - Add Plasma Mobile
 - Add Maru OS for Nexus 7 2013 WiFi (flo)
 - Add Fairphone OS, Fairphone Open & Sailfish for FP2

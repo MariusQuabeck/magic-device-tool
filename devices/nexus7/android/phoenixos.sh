@@ -1,4 +1,4 @@
-clear
+clear	
 echo ""
 echo "Install Phoenix OS"
 echo ""
@@ -17,21 +17,25 @@ fi
   if grep 'device$\|fastboot$' /tmp/AttachedDevices
   then
     echo "Device detected !"
-    sleep 1
+    fastboot format system
+    fastboot format cache
+    fastboot format userdata
+    fastboot reboot-bootloader
+    sleep 8
     clear
     echo ""
     echo "Downloading Phoenix OS.."
     echo ""
     echo "This may take a while"
     echo ""
-    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://files.phoenixos.com/os/Phoenix-Nexus7-flo-1.0.9RC.tar.gz
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://files.phoenixos.com/os/Phoenix-Nexus7-flo-1.1.0.tar.gz
     sleep 1
-    tar xzf Phoenix*
+    tar xzf $HOME/.cache/magic-device-tool/Phoenix* --directory $HOME/.cache/magic-device-tool/
     sleep 1
-    fastboot flash bootloader $HOME/.cache/magic-device-tool/Phoenix-neuxs7-flo-1.0.9-RC/bootloader-flo-flo-04.05.img
+    fastboot flash bootloader $HOME/.cache/magic-device-tool/Phoenix-Nexus7-flo-1.1.0/bootloader-flo-flo-04.05.img
     fastboot reboot-bootloader
     sleep 6
-    fastboot -w update $HOME/.cache/magic-device-tool/Phoenix-neuxs7-flo-1.0.9-RC/122_flo_2016-07-19_19-46.zip
+    fastboot -w update $HOME/.cache/magic-device-tool/Phoenix-Nexus7-flo-1.1.0/164_flo_2016-09-10_10-59.zip
     sleep 1
     echo ""
     echo "Move to your device to finish the setup."

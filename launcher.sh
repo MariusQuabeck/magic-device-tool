@@ -61,7 +61,9 @@ check_and_install ubuntu-device-flash ppa:ubuntu-sdk-team/ppa
 check_and_install android-tools-fastboot
 check_and_install android-tools-adb
 check_and_install mplayer
-sleep 1
+check_and_install tar
+check_and_install unzip
+sleep 2
 else
   echo ""
   cd $SNAP/
@@ -137,7 +139,7 @@ case "$device" in
   14)
   . ./devices/generic/reportabug.sh
   ;;
-  14)
+  15)
   exit
   ;; 
   *)

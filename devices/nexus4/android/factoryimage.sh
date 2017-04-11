@@ -22,9 +22,9 @@ fi
     echo ""
     echo "Downloading factory image.."
     echo ""
-    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://dl.google.com/dl/android/aosp/occam-lmy48t-factory-416938f1.tgz
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://dl.google.com/dl/android/aosp/occam-lmy48t-factory-c43c7cfd.zip
     sleep 1
-    tar xzf $HOME/.cache/magic-device-tool/occam*
+    unzip -d $HOME/.cache/magic-device-tool/ $HOME/.cache/magic-device-tool/occam*
     sleep 1
     fastboot flash bootloader $HOME/.cache/magic-device-tool/occam-lmy48t/bootloader-mako-makoz30f.img
     fastboot reboot-bootloader

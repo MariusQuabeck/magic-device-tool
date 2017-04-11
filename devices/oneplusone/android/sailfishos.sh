@@ -35,7 +35,7 @@ then
   echo "needed for SFOS"
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://download.cyanogenmod.org/get/jenkins/135158/cm-12.1-20151117-SNAPSHOT-YOG7DAO1K6-bacon.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/cyanogenmod/cm-12.1-20151117-SNAPSHOT-YOG7DAO1K6-bacon.zip
   echo ""
   echo "Downloading Sailfish OS.."
   echo ""

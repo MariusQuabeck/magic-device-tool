@@ -23,6 +23,7 @@ then
   fastboot format system
   fastboot format cache
   fastboot format userdata
+  fastboot erase recovery
   fastboot reboot-bootloader
   sleep 6
   clear
@@ -56,9 +57,9 @@ then
   fastboot reboot-bootloader
   sleep 7
   fastboot boot $HOME/.cache/magic-device-tool/twrp-mako.img
-  sleep 25
+  sleep 30
   adb reboot recovery
-  sleep 25
+  sleep 28
   echo ""
   clear
   echo ""

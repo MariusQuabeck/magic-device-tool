@@ -26,7 +26,7 @@ fi
     echo ""
     wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://files.phoenixos.com/os/Phoenix-Nexus10-Manta-1.1.0.tar.gz
     sleep 1
-    tar xzf $HOME/.cache/magic-device-tool/Phoenix-Nexus10-*
+    tar xzf $HOME/.cache/magic-device-tool/Phoenix-Nexus10-* --directory $HOME/.cache/magic-device-tool/
     sleep 1
     fastboot erase boot
     fastboot erase cache

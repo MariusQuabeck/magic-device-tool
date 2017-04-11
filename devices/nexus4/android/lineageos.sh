@@ -51,14 +51,14 @@ then
   echo ""
   echo "Rebooting device.."
   echo ""
-  echo "This will take ~35 seconds. Don't disconnect your device!"
+  echo "This will take ~50 seconds. Don't disconnect your device!"
   echo ""
   fastboot reboot-bootloader
   sleep 7
   fastboot boot $HOME/.cache/magic-device-tool/twrp-mako.img
-  sleep 15
+  sleep 25
   adb reboot recovery
-  sleep 15
+  sleep 25
   echo ""
   clear
   echo ""

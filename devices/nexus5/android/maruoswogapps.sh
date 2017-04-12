@@ -29,7 +29,7 @@ then
   echo "Downloading Maru OS.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://github.com/maruos/maruos/releases/download/v0.3/maru-v0.3-update-hammerhead-cec8597d.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://github.com/maruos/maruos/releases/download/v0.4/maru-v0.4-update-hammerhead-dd793179.zip
   echo ""
   echo "Downloading TWRP recovery.."
   echo ""
@@ -65,14 +65,14 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → Maru OS "
-  adb push -p $HOME/.cache/magic-device-tool/maru-v0.3-update-hammerhead-cec8597d.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/maru-v0.4-update-hammerhead-dd793179.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
   echo "Installing Maru OS.."
   echo ""
-  adb shell twrp install /sdcard/maru-v0.3-update-hammerhead-cec8597d.zip
+  adb shell twrp install /sdcard/maru-v0.4-update-hammerhead-dd793179.zip
   echo ""
   sleep 3
   echo ""

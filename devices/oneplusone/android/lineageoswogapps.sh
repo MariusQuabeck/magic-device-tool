@@ -35,7 +35,7 @@ then
   echo "Downloading LineageOS 14.1.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/bacon/20170403/lineage-14.1-20170403-nightly-bacon-signed.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/bacon/20170410/lineage-14.1-20170410-nightly-bacon-signed.zip
   clear
   echo ""
   echo "Installing TWRP recovery"
@@ -65,13 +65,13 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → LineageOS 14.1 zip "
-  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170403-nightly-bacon-signed.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170410-nightly-bacon-signed.zip /sdcard/
   echo ""
   sleep 1
   echo ""
   echo "Installing LineageOS.."
   echo ""
-  adb shell twrp install /sdcard/lineage-14.1-20170403-nightly-bacon-signed.zip
+  adb shell twrp install /sdcard/lineage-14.1-20170410-nightly-bacon-signed.zip
   sleep 1
   echo ""
   echo "Wipe cache.."

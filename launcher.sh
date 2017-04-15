@@ -38,7 +38,6 @@ echo "and who downloaded this tool as a zip from GitHub instead of cloning it...
 echo ""
 echo_yellow "RTFM ;)"
 sleep 1
-git remote set-url origin https://github.com/magic-device-tool/magic-device-tool.git
 git pull > version
 if grep -q 'Already up-to-date' version
     then

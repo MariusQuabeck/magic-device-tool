@@ -24,7 +24,7 @@ fi
     echo ""
     wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://dl.google.com/dl/android/aosp/razor-mob30x-factory-a2a73e87.tgz
     sleep 1
-    tar xzf $HOME/.cache/magic-device-tool/razor*
+    tar xzf $HOME/.cache/magic-device-tool/razor* --directory $HOME/.cache/magic-device-tool/
     sleep 1
     fastboot format cache
     fastboot format userdata

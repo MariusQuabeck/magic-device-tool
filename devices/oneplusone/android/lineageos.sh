@@ -91,8 +91,6 @@ then
   echo ""
   echo "Wipe cache.."
   echo ""
-  adb shell twrp wipe cache
-  echo ""
   adb reboot
   echo "The device is now rebooting. Give it time to flash the new ROM. It will boot on its own."
   echo ""

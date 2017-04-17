@@ -35,7 +35,7 @@ fi
     echo "Please wait"
     echo ""
     sleep 7
-    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-frieza.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/recovery-frieza.img
     sleep 1
     fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-frieza.img
     sleep 1

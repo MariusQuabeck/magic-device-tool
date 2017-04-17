@@ -34,13 +34,13 @@ fi
     echo ""
     echo "Downloading boot.img"
     echo ""
-    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/fp2/bootfp2.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/fp2/bootfp2.img
     sleep 1
     echo ""
     echo "Downloading recovery.img"
     echo ""
     sleep 1
-    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/fp2/recoveryfp2.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/fp2/recoveryfp2.img
     echo ""
     sleep 1
     fastboot flash recovery $HOME/.cache/magic-device-tool/recoveryfp2.img

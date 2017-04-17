@@ -30,7 +30,7 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-mako.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-mako.img
   sleep 1
   echo ""
   echo "Downloading LineageOS 14.1.."
@@ -41,7 +41,7 @@ then
   echo "Downloading Open Gapps.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/gapps/open_gapps-arm-7.1-nano-20170126.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/gapps/open_gapps-arm-7.1-nano-20170126.zip
   sleep 2
   clear
   echo ""

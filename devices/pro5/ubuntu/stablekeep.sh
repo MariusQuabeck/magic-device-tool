@@ -34,7 +34,7 @@ fi
     echo "This can take a while"
     echo ""
     sleep 10
-    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-turbo.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/recovery-turbo.img
     sleep 6
     fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-turbo.img
     sleep 2

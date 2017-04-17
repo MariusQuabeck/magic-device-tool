@@ -28,14 +28,14 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-bacon.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-bacon.img
   sleep 1
   echo ""
   echo "Downloading Cyanogenmod 12 .."
   echo "needed for SFOS"
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/cyanogenmod/cm-12.1-20151117-SNAPSHOT-YOG7DAO1K6-bacon.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/cyanogenmod/cm-12.1-20151117-SNAPSHOT-YOG7DAO1K6-bacon.zip
   echo ""
   echo "Downloading Sailfish OS.."
   echo ""

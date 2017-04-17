@@ -30,7 +30,7 @@ fi
     fastboot reboot-bootloader
     sleep 6
     echo ""
-    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-krillin.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/recovery-krillin.img
     sleep 1
     ubuntu-device-flash touch --channel ubuntu-touch/stable/bq-aquaris.en --device krillin --recovery-image $HOME/.cache/magic-device-tool/recovery-krillin.img  --bootstrap
     echo ""

@@ -30,7 +30,7 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-mako.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-mako.img
   sleep 1
   echo ""
   echo "Downloading LineageOS 14.1 .."

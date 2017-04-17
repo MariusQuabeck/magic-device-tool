@@ -21,7 +21,6 @@ parts:
       - xdg-utils
       - android-tools-fastboot
       - android-tools-adb
-      - mplayer
       - phablet-tools
       - tar
       - unzip

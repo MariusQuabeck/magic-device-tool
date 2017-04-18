@@ -1,12 +1,12 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 13"
+echo "Installing LineageOS 14.1"
 echo ""
 sleep 1
-echo "Please boot your Nexus 5 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
+echo "Please boot your Nexus 4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
 echo ""
 sleep 1
-echo -n "Is your Nexus 5 in bootloader/fastboot mode now? [Y] "; read bootloadermode
+echo -n "Is your Nexus 4 in bootloader/fastboot mode now? [Y] "; read bootloadermode
 if [ "$bootloadermode"==Y -o "$bootloadermode"==y -o "$bootloadermode"=="" ]; then
   clear
   echo ""
@@ -20,44 +20,46 @@ then
   echo "Device detected !"
   sleep 1
   clear
+  fastboot format system
   fastboot format cache
   fastboot format userdata
+  fastboot erase recovery
   fastboot reboot-bootloader
   sleep 6
   clear
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-mako.img
   sleep 1
   echo ""
-  echo "Downloading Cyanogenmod 13.."
+  echo "Downloading LineageOS 14.1.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/hammerhead-snapshot.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/mako/20170406/lineage-14.1-20170406-nightly-mako-signed.zip
   echo ""
   echo "Downloading Open Gapps.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/gapps/open_gapps-arm-6.0-nano-20160811.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/gapps/open_gapps-arm-7.1-nano-20170126.zip
   sleep 2
   clear
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery twrp-3.0.2-0-hammerhead.img
+  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-mako.img
   sleep 1
   echo ""
   echo "Rebooting device.."
   echo ""
-  echo "This will take ~35 seconds. Don't disconnect your device!"
+  echo "This will take ~50 seconds. Don't disconnect your device!"
   echo ""
   fastboot reboot-bootloader
   sleep 7
-  fastboot boot twrp-3.0.2-0-hammerhead.img
-  sleep 7
+  fastboot boot $HOME/.cache/magic-device-tool/twrp-mako.img
+  sleep 30
   adb reboot recovery
-  sleep 15
+  sleep 28
   echo ""
   clear
   echo ""
@@ -69,29 +71,28 @@ then
   echo "You may see a prompt asking you for read/write permissions"
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
-  echo "  → CM 13 zip "
-  adb push -p hammerhead-snapshot.zip /sdcard/
+  echo "  → LineageOS 14.1 zip "
+  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170406-nightly-mako-signed.zip /sdcard/
   echo ""
-  echo "  → gapps zip"
-  adb push -p open_gapps-arm-6.0-nano-20160811.zip /sdcard/
+  echo "  → open gapps zip"
+  adb push -p $HOME/.cache/magic-device-tool/open_gapps-arm-7.1-nano-20170126.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
-  echo "Installing Cyanogenmod.."
+  echo "Installing LineageOS.."
   echo ""
-  adb shell twrp install /sdcard/hammerhead-snapshot.zip
+  adb shell twrp install /sdcard/lineage-14.1-20170406-nightly-mako-signed.zip
   sleep 1
   echo ""
-  echo "Installing GApps.."
+  echo "Installing Open GApps.."
   echo ""
   sleep 3
-  adb shell twrp install /sdcard/open_gapps-arm-6.0-nano-20160811.zip
+  adb shell twrp install /sdcard/open_gapps-arm-7.1-nano-20170126.zip
   echo ""
   echo "Wipe cache.."
   echo ""
   adb shell twrp wipe cache
-  adb shell twrp wipe dalvik
   echo ""
   adb reboot
   echo "The device is now rebooting. Give it time to flash the new ROM. It will boot on its own."

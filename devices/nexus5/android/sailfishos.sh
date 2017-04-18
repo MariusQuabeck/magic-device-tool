@@ -28,25 +28,25 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-hammerhead.img
   sleep 1
   echo ""
   echo "Downloading Cyanogenmod 11.."
   echo "(needed fo SFOS)"
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/jenkins/78753/cm-11-20140805-SNAPSHOT-M9-hammerhead.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://download.cyanogenmod.org/get/jenkins/78753/cm-11-20140805-SNAPSHOT-M9-hammerhead.zip
   echo ""
   echo "Downloading Sailfish OS.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 http://images.devaamo.fi/sfa/hammerhead/beta5/sailfishos-hammerhead-release-2.0.4.13-beta5-201610241556.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://images.devaamo.fi/sfa/hammerhead/beta5/sailfishos-hammerhead-release-2.0.4.13-beta5-201610241556.zip
   sleep 2
   clear
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery twrp-3.0.2-0-hammerhead.img
+  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-hammerhead.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -55,7 +55,7 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 7
-  fastboot boot twrp-3.0.2-0-hammerhead.img
+  fastboot boot $HOME/.cache/magic-device-tool/twrp-hammerhead.img
   sleep 7
   adb reboot recovery
   sleep 15
@@ -71,10 +71,10 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → CM 11 zip "
-  adb push -p cm-11-20140805-SNAPSHOT-M9-hammerhead.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/cm-11-20140805-SNAPSHOT-M9-hammerhead.zip /sdcard/
   echo ""
   echo "  → Sailfish OS zip"
-  adb push -p sailfishos-hammerhead-release-2.0.4.13-beta5-201610241556.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/sailfishos-hammerhead-release-2.0.4.13-beta5-201610241556.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1

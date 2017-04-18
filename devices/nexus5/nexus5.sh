@@ -17,7 +17,7 @@ echo ""
 echo ""
 echo "Android:"
 echo ""
-echo "[3]  Install Cyanogenmod"
+echo "[3]  Install Lineage OS"
 echo "[4]  Install Maru OS"
 echo "[5]  Install Sailfish OS"
 echo "[6]  Install Factory Image"
@@ -34,7 +34,7 @@ if [ "$option" = "1" ]; then
 elif [ "$option" = "2" ]; then
 . ./devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
-. ./devices/nexus5/android/cm.sh
+. ./devices/nexus5/android/los.sh
 elif [ "$option" = "4" ]; then
 . ./devices/nexus5/android/maru.sh
 elif [ "$option" = "5" ]; then

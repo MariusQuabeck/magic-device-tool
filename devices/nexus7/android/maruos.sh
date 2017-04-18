@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Installing Sailfish OS"
+echo "Installing Maru OS"
 echo ""
 sleep 1
 echo "Please boot your Nexus 7 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
@@ -26,26 +26,26 @@ then
   sleep 6
   clear
   echo ""
-  echo "Downloading TWRP recovery"
-  echo ""
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-deb.img
-  sleep 1
-  echo ""
-  echo "Downloading Cyanogenmod 11.."
+  echo "Downloading Maru OS.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://get.cm/get/jenkins/90776/cm-11-20141115-SNAPSHOT-M12-deb.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://github.com/maruos/maruos/releases/download/v0.4/maru-v0.4-update-flo-9185c8a3.zip
   echo ""
-  echo "Downloading Sailfish OS.."
+  echo "Downloading TWRP recovery.."
   echo ""
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-flo.img
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://images.devaamo.fi/sfe/deb/sfe-deb-1.1.7.28-alpha1/sailfishos-deb-release-1.1.7.28-alpha1.zip
+  echo ""
+  echo "Downloading Gapps.."
+  echo ""
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/gapps/open_gapps-arm-6.0-pico-20161108.zip
+  echo ""
   sleep 2
   clear
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-deb.img
+  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-flo.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -53,11 +53,11 @@ then
   echo "This will take ~35 seconds. Don't disconnect your device!"
   echo ""
   fastboot reboot-bootloader
-  sleep 7
-  fastboot boot $HOME/.cache/magic-device-tool/twrp-deb.img
-  sleep 15
+  sleep 8
+  fastboot boot $HOME/.cache/magic-device-tool/twrp-flo.img
+  sleep 13
   adb reboot recovery
-  sleep 15
+  sleep 17
   echo ""
   clear
   echo ""
@@ -69,24 +69,27 @@ then
   echo "You may see a prompt asking you for read/write permissions"
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
-  echo "  → CM 11 zip "
-  adb push -p $HOME/.cache/magic-device-tool/cm-11-20141115-SNAPSHOT-M12-deb.zip /sdcard/
+  echo "  → Maru OS "
+  adb push -p $HOME/.cache/magic-device-tool/maru-v0.4-update-flo-9185c8a3.zip /sdcard/
   echo ""
-  echo "  → Sailfish OS zip"
-  adb push -p $HOME/.cache/magic-device-tool/sailfishos-deb-release-1.1.7.28-alpha1.zip /sdcard/
+  sleep 1
+  echo ""
+  echo "  → Gapps "
+  adb push -p $HOME/.cache/magic-device-tool/open_gapps-arm-6.0-pico-20161108.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
-  echo "Installing Cyanogenmod.."
+  echo "Installing Maru OS.."
   echo ""
-  adb shell twrp install /sdcard/cm-11-20141115-SNAPSHOT-M12-deb.zip
-  sleep 1
-  echo ""
-  echo "Installing Sailfish OS.."
+  adb shell twrp install /sdcard/maru-v0.4-update-flo-9185c8a3.zip
   echo ""
   sleep 3
-  adb shell twrp install /sdcard/sailfishos-deb-release-1.1.7.28-alpha1.zip
+  echo "Installing Gapps.."
+  echo ""
+  adb shell twrp install /sdcard/open_gapps-arm-6.0-pico-20161108.zip
+  echo ""
+  sleep 3
   echo ""
   echo "Wipe cache.."
   echo ""

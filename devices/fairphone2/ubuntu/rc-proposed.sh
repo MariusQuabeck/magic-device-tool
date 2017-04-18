@@ -34,17 +34,17 @@ fi
     echo ""
     echo "Downloading boot.img"
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/fp2/bootfp2.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/fp2/bootfp2.img
     sleep 1
     echo ""
     echo "Downloading recovery.img"
     echo ""
     sleep 1
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/fp2/recoveryfp2.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/fp2/recoveryfp2.img
     echo ""
     sleep 1
-    fastboot flash recovery recoveryfp2.img
-    fastboot flash boot bootfp2.img
+    fastboot flash recovery $HOME/.cache/magic-device-tool/recoveryfp2.img
+    fastboot flash boot $HOME/.cache/magic-device-tool/bootfp2.img
     clear
     echo ""
     echo "Please boot your Fairphone 2 into recovery mode by pressing Power & Volume Up (+)"
@@ -69,7 +69,7 @@ fi
         #echo "this can take up to ~30 seconds"
         adb shell "
 	mount -a"
-        sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubuntu-touch/rc-proposed --device=FP2
+        ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubuntu-touch/rc-proposed --device=FP2
         sleep 5
         echo ""
         echo "Move to your device to finish the setup."
@@ -80,6 +80,8 @@ fi
 	echo ""
         echo "Cleaning up.."
         rm -f /tmp/AttachedDevices
+        sudo chown $SUDO_USER:$SUDO_USER $HOME/.cache/magic-device-tool/*
+        sudo chown -R $SUDO_USER:$SUDO_USER $HOME/.cache/ubuntuimages/
         echo ""
         sleep 1
         echo "Exiting script. Bye Bye"

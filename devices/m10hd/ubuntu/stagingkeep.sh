@@ -1,6 +1,8 @@
 clear
+adb start-server
+clear
 echo ""
-echo "Flashing stable channel"
+echo "Flashing staging channel"
 echo ""
 sleep 1
 echo "Please enable developer mode on the device"
@@ -27,27 +29,23 @@ fi
     sleep 1
     clear
     echo ""
-    echo "Flashing stable channel"
+    echo "Flashing staging channel"
     echo ""
     adb reboot-bootloader
     echo "Please wait"
-    echo "This can take a while"
     echo ""
+    sleep 7
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/recovery-cooler.img
+    sleep 1
+    fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-cooler.img
+    sleep 1
+    fastboot boot $HOME/.cache/magic-device-tool/recovery-cooler.img
     sleep 10
-    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/recovery-turbo.img
-    sleep 6
-    fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-turbo.img
-    sleep 2
-    fastboot boot $HOME/.cache/magic-device-tool/recovery-turbo.img
-    echo ""
-    echo "Please wait, your device will reboot a few times"
-    echo ""
-    sleep 15
     adb reboot recovery
-    sleep 30
+    sleep 17
     clear
     echo ""
-    ubuntu-device-flash touch --device turbo --channel ubuntu-touch/stable/meizu-pd.en
+    ubuntu-device-flash touch --device cooler_arm64 --channel ubuntu-touch/staging/ubuntu
     sleep 1
     echo ""
     echo "Move to your device to finish the setup."
@@ -55,7 +53,7 @@ fi
     echo ""
     echo "Cleaning up.."
     rm -f /tmp/AttachedDevices
-    #rm recovery-turbo.img
+    #rm recovery-frieza.img
     echo ""
     sleep 1
     echo "Exiting script. Bye Bye"
@@ -63,10 +61,10 @@ fi
     exit
   else
     echo "Device not found"
+    echo ""
     rm -f /tmp/AttachedDevices
     sleep 1
-    echo ""
     echo "Back to menu"
-    sleep 1
-    . ./launcher.sh
+  sleep 1
+  . ./launcher.sh
   fi

@@ -29,23 +29,23 @@ then
   echo "Downloading Maru OS.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 https://github.com/maruos/maruos/releases/download/v0.3/maru-v0.3-update-hammerhead-cec8597d.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://github.com/maruos/maruos/releases/download/v0.4/maru-v0.4-update-hammerhead-dd793179.zip
   echo ""
   echo "Downloading TWRP recovery.."
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-hammerhead.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-hammerhead.img
   sleep 1
   echo ""
   echo "Downloading Gapps.."
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/gapps/open_gapps-arm-6.0-pico-20161108.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/gapps/open_gapps-arm-6.0-pico-20161108.zip
   echo ""
   sleep 2
   clear
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery twrp-3.0.2-0-hammerhead.img
+  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-hammerhead.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -54,7 +54,7 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 8
-  fastboot boot twrp-3.0.2-0-hammerhead.img
+  fastboot boot $HOME/.cache/magic-device-tool/twrp-hammerhead.img
   sleep 8
   adb reboot recovery
   sleep 17
@@ -70,19 +70,19 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → Maru OS "
-  adb push -p maru-v0.3-update-hammerhead-cec8597d.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/maru-v0.4-update-hammerhead-dd793179.zip /sdcard/
   echo ""
   sleep 1
   echo ""
   echo "  → Gapps "
-  adb push -p open_gapps-arm-6.0-pico-20161108.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/open_gapps-arm-6.0-pico-20161108.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
   echo "Installing Maru OS.."
   echo ""
-  adb shell twrp install /sdcard/maru-v0.3-update-hammerhead-cec8597d.zip
+  adb shell twrp install /sdcard/maru-v0.4-update-hammerhead-dd793179.zip
   echo ""
   sleep 3
   echo "Installing Gapps.."

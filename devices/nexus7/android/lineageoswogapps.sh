@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 13"
+echo "Installing LineageOS 14.1 without Gapps"
 echo ""
 sleep 1
 echo "Please boot your Nexus 7 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
@@ -20,6 +20,7 @@ then
   echo "Device detected !"
   sleep 1
   clear
+  fastboot format system
   fastboot format cache
   fastboot format userdata
   fastboot reboot-bootloader
@@ -28,24 +29,20 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/twrp-3.0.2-0-flo.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-flo.img
   sleep 1
   echo ""
-  echo "Downloading Cyanogenmod 13.."
+  echo "Downloading LineageOS 14.1 .."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/flo-snapshot.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/flo/20170411/lineage-14.1-20170411-nightly-flo-signed.zip
   echo ""
-  echo "Downloading Open Gapps.."
-  echo ""
-  sleep 1
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/gapps/open_gapps-arm-6.0-nano-20160811.zip
   sleep 2
   clear
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery twrp-3.0.2-0-flo.img
+  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-flo.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -54,7 +51,7 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 7
-  fastboot boot twrp-3.0.2-0-flo.img
+  fastboot boot $HOME/.cache/magic-device-tool/twrp-flo.img
   sleep 17
   adb reboot recovery
   sleep 17
@@ -69,24 +66,16 @@ then
   echo "You may see a prompt asking you for read/write permissions"
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
-  echo "  → CM 13 zip "
-  adb push -p flo-snapshot.zip /sdcard/
-  echo ""
-  echo "  → gapps zip"
-  adb push -p open_gapps-arm-6.0-nano-20160811.zip /sdcard/
+  echo "  → LineageOS 14.1 zip "
+  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170411-nightly-flo-signed.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
-  echo "Installing Cyanogenmod.."
+  echo "Installing LineageOS 14.1.."
   echo ""
-  adb shell twrp install /sdcard/flo-snapshot.zip
+  adb shell twrp install /sdcard/lineage-14.1-20170411-nightly-flo-signed.zip
   sleep 1
-  echo ""
-  echo "Installing GApps.."
-  echo ""
-  sleep 3
-  adb shell twrp install /sdcard/open_gapps-arm-6.0-nano-20160811.zip
   echo ""
   echo "Wipe cache.."
   echo ""

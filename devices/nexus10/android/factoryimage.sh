@@ -22,19 +22,19 @@ fi
     echo ""
     echo "Downloading factory image.."
     echo ""
-    wget -c --quiet --show-progress --tries=10 https://dl.google.com/dl/android/aosp/mantaray-lmy49j-factory-7887b439.tgz
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://dl.google.com/dl/android/aosp/mantaray-lmy49j-factory-7887b439.tgz
     sleep 1
-    tar xzf mantaray*
+    tar xzf $HOME/.cache/magic-device-tool/mantaray*
     sleep 1
     fastboot erase boot
     fastboot erase cache
     fastboot erase recovery
     fastboot erase system
     fastboot erase userdata
-    fastboot flash bootloader ./mantaray-lmy49j/bootloader-manta-mantamf01.img
+    fastboot flash bootloader $HOME/.cache/magic-device-tool/mantaray-lmy49j/bootloader-manta-mantamf01.img
     fastboot reboot-bootloader
     sleep 6
-    fastboot -w update ./mantaray-lmy49j/image-mantaray-lmy49j.zip
+    fastboot -w update $HOME/.cache/magic-device-tool/mantaray-lmy49j/image-mantaray-lmy49j.zip
     sleep 1
     echo ""
     echo "Move to your device to finish the setup."
@@ -45,7 +45,7 @@ fi
     echo ""
     echo "Cleaning up.."
     rm -f /tmp/AttachedDevices
-    rm -rf ./mantaray-lmy49j
+    #rm -rf ./mantaray-lmy49j
     #rm -f ./*.tgz
     echo ""
     sleep 1

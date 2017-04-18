@@ -24,19 +24,19 @@ fi
     echo ""
     echo "This may take a while"
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://files.phoenixos.com/os/Phoenix-Nexus10-Manta-1.1.0.tar.gz
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://files.phoenixos.com/os/Phoenix-Nexus10-Manta-1.1.0.tar.gz
     sleep 1
-    tar xzf Phoenix-Nexus10-*
+    tar xzf $HOME/.cache/magic-device-tool/Phoenix-Nexus10-* --directory $HOME/.cache/magic-device-tool/
     sleep 1
     fastboot erase boot
     fastboot erase cache
     fastboot erase recovery
     fastboot erase system
     fastboot erase userdata
-    fastboot flash bootloader ./Phoenix-Nexus10-Manta-1.1.0/bootloader-manta-mantamf01.img
+    fastboot flash bootloader $HOME/.cache/magic-device-tool/Phoenix-Nexus10-Manta-1.1.0/bootloader-manta-mantamf01.img
     fastboot reboot-bootloader
     sleep 6
-    fastboot -w update ./Phoenix-Nexus10-Manta-1.1.0/433_manta_2016-09-08_19-47.zip
+    fastboot -w update $HOME/.cache/magic-device-tool/Phoenix-Nexus10-Manta-1.1.0/433_manta_2016-09-08_19-47.zip
     sleep 1
     echo ""
     echo "Move to your device to finish the setup."
@@ -47,7 +47,7 @@ fi
     echo ""
     echo "Cleaning up.."
     rm -f /tmp/AttachedDevices
-    rm -rf ./Phoenix-neuxs10-1.0.5-beta
+    #rm -rf ./Phoenix-neuxs10-1.0.5-beta
     #rm -f ./*.tgz
     echo ""
     sleep 1

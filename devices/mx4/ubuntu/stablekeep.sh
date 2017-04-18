@@ -23,12 +23,12 @@ fi
     echo ""
     echo "Flashing stable channel"
     echo ""
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-arale.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/recovery-arale.img
     echo ""
 sleep 1
-    fastboot flash recovery recovery-arale.img
+    fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-arale.img
     sleep 1
-    fastboot boot recovery-arale.img
+    fastboot boot $HOME/.cache/magic-device-tool/recovery-arale.img
     echo ""
     echo "Please wait, your device will reboot a few times"
     echo ""
@@ -36,7 +36,7 @@ sleep 1
     adb reboot recovery
     sleep 30
     ubuntu-device-flash touch --channel ubuntu-touch/stable/meizu.en --device arale
-    sleep 1    
+    sleep 1
     echo ""
     echo "Move to your device to finish the setup."
     sleep 1

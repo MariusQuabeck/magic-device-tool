@@ -26,6 +26,7 @@ fi
     sleep 1
     fastboot format cache
     fastboot format userdata
+    fastboot format system
     fastboot reboot-bootloader
     sleep 6
     echo ""

@@ -20,8 +20,8 @@ echo ""
 echo ""
 echo "Android: "
 echo ""
-echo "[3] Install Cyanogenmod 13"
-echo "[4] Install Cyanogenmod 13 without Gapps"
+echo "[3] Install LineageOS 14.1"
+echo "[4] Install LineageOS 14.1 without Gapps"
 echo ""
 echo "[5] Install Sailfish OS"
 echo ""
@@ -38,9 +38,9 @@ if [ "$option" = "1" ]; then
 elif [ "$option" = "2" ]; then
   . ./devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
-  . ./devices/oneplusone/android/cyanogenmod.sh
+  . ./devices/oneplusone/android/lineageos.sh
 elif [ "$option" = "4" ]; then
-  . ./devices/oneplusone/android/cyanogenmodwogapps.sh
+  . ./devices/oneplusone/android/lineageoswogapps.sh
 elif [ "$option" = "5" ]; then
   . ./devices/oneplusone/android/sailfishos.sh
 elif [ "$option" = "6" ]; then

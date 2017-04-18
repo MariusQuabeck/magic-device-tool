@@ -7,7 +7,9 @@ sleep 1
 echo "[1] stable"
 echo "[2] rc-proposed"
 echo ""
-echo "[3] Back to menu "
+echo "[3] staging"
+echo ""
+echo "[4] Back to menu "
 echo ""
 echo -n "Enter option: "; read ubuntukeepchannel
 if [ "$ubuntukeepchannel" = "1" ]; then
@@ -15,6 +17,8 @@ if [ "$ubuntukeepchannel" = "1" ]; then
 elif [ "$ubuntukeepchannel" = "2" ]; then
   . ./devices/m10hd/ubuntu/rc-proposedkeep.sh
 elif [ "$ubuntukeepchannel" = "3" ]; then
+  . ./devices/m10hd/ubuntu/stagingkeep.sh
+elif [ "$ubuntukeepchannel" = "4" ]; then
   . ./launcher.sh
 else
   echo ""

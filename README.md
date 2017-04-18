@@ -2,7 +2,7 @@
 
 ![alt text](https://raw.githubusercontent.com/MariusQuabeck/magic-device-tool/master/mdt.png "magic-device-tool logo")
 
-A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, CyanogenMod, Maru OS, Sailfish OS, and Phoenix OS) on your mobile devices.
+A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, LineageOS, Maru OS, Sailfish OS, and Phoenix OS) on your mobile devices.
 
 ## Contact
 
@@ -10,7 +10,7 @@ Marius Quabeck [(Email)](mailto:marius.quabeck@ubuntu.com?subject=magic-device-t
 
 Mister_Q on the freenode IRC network
 
-[Join us on Telegram](https://telegram.me/joinchat/A3LlWgiC4TT5g7yEvAz8cA)
+[Join us on Telegram !](https://t.me/joinchat/AAAAAAiC4TS0ba_TVbQ55g)
 
 [Donate if you like this tool](http://paypal.me/MisterQ)
 
@@ -29,6 +29,7 @@ Functions
 
 - Android
   - Install CyanogenMod (with or without GApps)
+  - Install LineageOS (with or without GApps)
   - Install Maru OS
   - Install Sailfish OS
   - Install Phoenix OS
@@ -70,6 +71,8 @@ Supported devices
 Usage
 -----
 
+Recommended:
+
 Connect the device to the computer with the USB cable
 
 Ensure you have Git installed, and clone the repository to your local machine from GitHub
@@ -85,6 +88,16 @@ Run the script
 ./launcher.sh
 ```
 Then follow the simple on-screen guide
+
+Advanced:
+
+```
+sudo snap install magic-device-tool --devmode
+```
+Run the snap
+```
+magic-device-tool
+```
 
 FAQ
 ---
@@ -114,6 +127,13 @@ FAQ
 
 TODO
 ------
+- Fix Lineage OS download links!!
+- Add Maru OS for flo
+- Add Plasma Mobile
+- Add Maru OS for Nexus 7 2013 WiFi (flo)
+- Add Fairphone OS, Fairphone Open & Sailfish for FP2
+- Add LineageOS Extras
+- Fix CM links in Sailfish install
 - Switch CM to Lineage OS
 - Add support to install F-Droid
 - Add option "add udev rule"
@@ -122,6 +142,8 @@ TODO
 - Improve the Snap
 - Add feature to flash SD cards with Raspian, Ubuntu,...
 - Add revision option
+- Add 10 mins message for OPO or beat gripsgard to fix it ;)
+
 
 Special thanks to
 ---
@@ -134,3 +156,4 @@ Special thanks to
 - [pdsouza](https://github.com/pdsouza) [Maru OS](https://github.com/maruos/maruos)
 - [kristbaum](https://github.com/kristbaum) FAQ section
 - [Simon Quigley](https://github.com/tsimonq2) Readme corrections
+- [Flohack74](https://github.com/Flohack74) Various code improvements

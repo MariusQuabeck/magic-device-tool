@@ -35,17 +35,17 @@ fi
     echo "Please wait"
     echo ""
     sleep 7
-    wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~marius.quabeck/magic-device-tool/recoverys/recovery-frieza.img
+    wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/recovery-frieza.img
     sleep 1
-    fastboot flash recovery recovery-frieza.img
+    fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-frieza.img
     sleep 1
-    fastboot boot recovery-frieza.img
+    fastboot boot $HOME/.cache/magic-device-tool/recovery-frieza.img
     sleep 10
     adb reboot recovery
     sleep 17
     clear
     echo ""
-    ubuntu-device-flash touch --device frieza --channel ubuntu-touch/staging/ubuntu
+    ubuntu-device-flash touch --device frieza_arm64 --channel ubuntu-touch/staging/ubuntu
     sleep 1
     echo ""
     echo "Move to your device to finish the setup."

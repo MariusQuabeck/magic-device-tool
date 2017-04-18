@@ -2,7 +2,7 @@
 
 ![alt text](https://raw.githubusercontent.com/MariusQuabeck/magic-device-tool/master/mdt.png "magic-device-tool logo")
 
-A simple and feature full batch tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, LineageOS, Maru OS, Sailfish OS, and Phoenix OS) on your mobile devices.
+A simple and feature full tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, LineageOS, Maru OS, Sailfish OS, and Phoenix OS) on your mobile devices.
 
 ## Contact
 

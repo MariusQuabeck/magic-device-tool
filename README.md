@@ -127,6 +127,7 @@ FAQ
 
 TODO
 ------
+- Spin up own image-server for ubuntu devices
 - Fix Lineage OS download links!!
 - Add Maru OS for flo
 - Add Plasma Mobile

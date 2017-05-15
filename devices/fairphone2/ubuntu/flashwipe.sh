@@ -10,7 +10,7 @@ sleep 1
 #echo ""
 #echo "[2] devel_rc-proposed"
 #echo ""
-echo "[1] devel_rc-proposed"
+echo "[1] legacy"
 echo ""
 echo "[2] Back to menu "
 echo ""
@@ -18,7 +18,7 @@ echo -n "Enter option: "; read ubuntuwipechannel
 #if [ "$ubuntuwipechannel" = "1" ]; then
 #. ./devices/fairphone2/ubuntu/stablewipe.sh
 if [ "$ubuntuwipechannel" = "1" ]; then
-. ./devices/fairphone2/ubuntu/devel_rc-proposedwipe.sh
+. ./devices/fairphone2/ubuntu/legacywipe.sh
 elif [ "$ubuntuwipechannel" = "2" ]; then
   . ./launcher.sh
 else

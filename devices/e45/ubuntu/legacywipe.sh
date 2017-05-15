@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Flashing stable channel"
+echo "Flashing legacy channel"
 echo ""
 sleep 1
 echo "Please boot your E4.5 into bootloader/fastboot mode by pressing Power & Volume Up (+)"
@@ -22,7 +22,7 @@ fi
     sleep 1
     clear
     echo ""
-    echo "Flashing stable channel"
+    echo "Flashing legacy channel"
     echo ""
     sleep 1
     fastboot format cache
@@ -32,7 +32,7 @@ fi
     echo ""
     wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/recovery-krillin.img
     sleep 1
-    ubuntu-device-flash touch --channel ubuntu-touch/stable/bq-aquaris.en --device krillin --recovery-image $HOME/.cache/magic-device-tool/recovery-krillin.img  --bootstrap
+    ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=krillin --bootstrap --recovery-image $HOME/.cache/magic-device-tool/recovery-krillin.img
     echo ""
     echo "Move to your device to finish the setup."
     sleep 1

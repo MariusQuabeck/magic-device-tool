@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Flashing stable channel"
+echo "Flashing legacy channel"
 echo ""
 sleep 1
 echo "Please boot your MX4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
@@ -21,19 +21,19 @@ fi
     sleep 1
     clear
     echo ""
-    echo "Flashing stable channel"
+    echo "Flashing legacy channel"
     echo ""
     sleep 1
     fastboot format cache
     fastboot format userdata
     fastboot reboot-bootloader
-    sleep 6
+    sleep 7
     echo ""
     wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/recovery-arale.img
-    sleep 1
+    sleep 2
     fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-arale.img
     sleep 1
-    ubuntu-device-flash touch --channel ubuntu-touch/stable/meizu.en --device arale --recovery-image $HOME/.cache/magic-device-tool/recovery-arale.img --bootstrap
+    ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=arale --recovery-image $HOME/.cache/magic-device-tool/recovery-arale.img --bootstrap
     echo ""
     echo "Move to your device to finish the setup."
     sleep 1

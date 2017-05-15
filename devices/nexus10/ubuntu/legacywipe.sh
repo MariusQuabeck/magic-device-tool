@@ -1,9 +1,9 @@
 clear
 echo ""
-echo "Flashing stable channel"
+echo "Flashing legacy channel"
 echo ""
 sleep 1
-echo "Please boot your Nexus 10 into fastboot mode by pressing Power & Volume Up (+)"
+echo "Please boot your Nexus 10 into fastboot mode by pressing Power & Volume Up (+) & Volume Down (-)"
 echo ""
 sleep 1
 echo -n "Is your Nexus 10 in fastboot mode now? [Y] "; read bootloadermode
@@ -29,7 +29,7 @@ fi
     fastboot reboot-bootloader
     sleep 6
     echo ""
-    sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubuntu-touch/stable --device=manta --bootstrap
+    ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=manta --bootstrap
     echo ""
     echo "Move to your device to finish the setup."
     sleep 1

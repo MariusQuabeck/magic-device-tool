@@ -3,13 +3,13 @@ echo ""
 echo "Choose a channel to flash (Will remove existing apps/data)"
 echo ""
 sleep 1
-echo "[1] stable"
+echo "[1] legacy"
 echo ""
 echo "[2] Back to menu "
 echo ""
 echo -n "Enter option: "; read ubuntuwipechannel
 if [ "$ubuntuwipechannel" = "1" ]; then
-. ./devices/nexus10/ubuntu/stablewipe.sh
+. ./devices/nexus10/ubuntu/legacywipe.sh
 elif [ "$ubuntuwipechannel" = "2" ]; then
   . ./launcher.sh
 else

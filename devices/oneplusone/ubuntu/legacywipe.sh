@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Flashing stable channel"
+echo "Flashing legacy channel"
 echo ""
 sleep 1
 echo "Please boot your OnePlus One into fastboot mode by pressing Power & Volume Up (+)"
@@ -21,7 +21,7 @@ fi
     sleep 1
     clear
     echo ""
-    echo "Flashing stable channel"
+    echo "Flashing legacy channel"
     echo ""
     sleep 1
     fastboot format cache
@@ -30,7 +30,7 @@ fi
     fastboot reboot-bootloader
     sleep 6
     echo ""
-    sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubuntu-touch/stable --device=bacon --bootstrap
+    sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=bacon --bootstrap
     echo ""
     echo "Move to your device to finish the setup."
     sleep 1

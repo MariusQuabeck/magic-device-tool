@@ -1,4 +1,7 @@
 clear
+echo ""
+echo "Please start the tool with 'sudo ./launcher.sh' otherwise it wont work !"
+echo ""
 echo "  "
 echo "Install Ubuntu"
 echo ""

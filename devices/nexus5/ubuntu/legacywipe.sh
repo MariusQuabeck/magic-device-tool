@@ -1,6 +1,6 @@
 clear
 echo ""
-echo "Flashing stable channel"
+echo "Flashing legacy channel"
 echo ""
 sleep 1
 echo "Please boot your Nexus 5 into fastboot mode by pressing Power & Volume Down (-)"
@@ -21,7 +21,7 @@ fi
     sleep 1
     clear
     echo ""
-    echo "Flashing stable channel"
+    echo "Flashing legacy channel"
     echo ""
     sleep 1
     fastboot format cache
@@ -29,7 +29,7 @@ fi
     fastboot reboot-bootloader
     sleep 6
     echo ""
-    ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubuntu-touch/stable --device=hammerhead --bootstrap
+    ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=hammerhead --bootstrap
     echo ""
     echo "Move to your device to finish the setup."
     sleep 1

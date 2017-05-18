@@ -38,8 +38,8 @@ echo "and who downloaded this tool as a zip from GitHub instead of cloning it...
 echo ""
 echo_yellow "RTFM ;)"
 sleep 1
-git pull > version
-if grep -q 'Already up-to-date' version
+git fetch
+if [ $(git rev-parse HEAD) == $(git rev-parse @{u}) ]
     then
       echo ""
       echo_green "You are running the latest version of magic-device-tool."
@@ -48,7 +48,6 @@ if grep -q 'Already up-to-date' version
       echo_red "End of the show."
       exit | ./launcher.sh
     fi
-        rm -f version
 
 sleep 1
 
@@ -137,11 +136,10 @@ case "$device" in
   ;;
   13)
   exit
-  ;; 
+  ;;
   *)
   echo ""
   echo_yellow "You did not enter a number between 1 and 13."
   echo_yellow "Well... I'll be here during the whole next test. -GLaDOS"
   ;;
 esac
-

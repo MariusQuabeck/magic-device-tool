@@ -26,6 +26,14 @@ function write_setting() {
     fi
 }
 
+# Asks the user a question in $1, and stores the answer in a setting named $3 with the value from console input into category $2
+function query_user_setting() {
+
+    echo -n $1
+    read value
+    write_setting $2 $3 $value
+}
+
 #init:globally export the path to the settings folder
 export MDT_SETTINGS="$(pwd)/.mdt_settings"
 

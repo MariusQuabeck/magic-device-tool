@@ -9,10 +9,18 @@ function init_settings() {
 }
 
 # searches for a certain setting named $2 in the category provided in $1 and returns its value if found
+# optionally returns a default value in $3 if the value is not found
 function read_setting() {
 
     init_settings $1
-    grep -w $2 "$MDT_SETTINGS/$1.settings" | cut -d = -f 2
+    result="$(grep -w $2 "$MDT_SETTINGS/$1.settings" | cut -d = -f 2)"
+    if [ -n "$result" ]; then
+        echo $result
+    elif [ -n "$3" ]; then
+        echo $3
+    else
+        echo ""
+    fi
 }
 
 # tries to write a setting named$2 with value in $3 to the category provided in $1

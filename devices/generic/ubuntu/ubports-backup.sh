@@ -117,7 +117,7 @@ function do_backup() {
     do_ssh_setup
     do_servertest
     echo "Now doing backup..."
-    adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 /home/phablet $backup_user@$backup_server:$backup_folder/ubports_backup/$device"
+    adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 /home/phablet/* $backup_user@$backup_server:$backup_folder/ubports_backup/$device"
     echo "Backup finished!"
 }
 
@@ -149,7 +149,7 @@ function do_restore() {
     if [ $(wait_for_user_yesno) == "y" ]; then
 
 	echo "Now doing restore..."
-	adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 $backup_user@$backup_server:$backup_folder/ubports_backup/$origin_device /home/phablet"
+	adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 $backup_user@$backup_server:$backup_folder/ubports_backup/$origin_device/* /home/phablet"
         echo "Restore finished, rebooting device..."
         adb reboot
     else

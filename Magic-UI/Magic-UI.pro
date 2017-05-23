@@ -32,7 +32,8 @@ SOURCES += main.cpp\
     settings.cpp \
     android.cpp \
     ui_fns.cpp \
-    d_template.cpp
+    d_template.cpp \
+    d_nexus5.cpp
 
 HEADERS  += mdt.h
 

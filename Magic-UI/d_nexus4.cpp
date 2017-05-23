@@ -1,21 +1,15 @@
-/*
- * This is a template for adding new devices
- * Replace devicename with the new device
- * Only leave actions that are applicable
- * and create teh custom interface options in settings, or use generic.
 #include "mdt.h"
 #include "ui_mdt.h"
 #include <QDebug>
 
 
-void mdt::devicename(QString action, QString option, QString channel)
+void mdt::nexus4(QString action, QString option, QString channel)
 {
     //Device-specific Links:
-    QString twrp_devicename = "Link to trwp recovery for devicename";
-    QString lineageos_devicename = "https://lineageos.mirrorhub.io/full/devicename...";
-    QString factory_devicename = "devicename factory image";
-
-
+    QString twrp_mako = "https://eu.dl.twrp.me/mako/twrp-3.1.1-0-mako.img";
+    QString lineageos_mako = "https://lineageos.mirrorhub.io/full/mako/20170427/lineage-14.1-20170427-nightly-mako-signed.zip";
+    QString factory_mako = "https://dl.google.com/dl/android/aosp/occam-lmy48t-factory-c43c7cfd.zip";
+    //https://dl.google.com/dl/android/aosp/occam-lmy48t-factory-c43c7cfd.zip
     if (action == "Install Ubuntu")
     {
         if (device_connected("fastboot"))
@@ -40,26 +34,30 @@ void mdt::devicename(QString action, QString option, QString channel)
         {
             if (option == "with GApps")
             {
-                orders << get_Android_Install(twrp_devicename, lineageos_devicename, opengapps);
+                orders << get_Android_Install(twrp_mako, lineageos_mako, opengapps);
                 execute();
             }
             else if (option == "with F-Droid")
             {
-                orders << get_Android_Install(twrp_devicename, lineageos_devicename, fdroidota);
+                orders << get_Android_Install(twrp_mako, lineageos_mako, fdroidota);
                 execute();
             }
             else if (option == "Standard")
             {
-                orders << get_Android_Install(twrp_devicename, lineageos_devicename, "None");
+                orders << get_Android_Install(twrp_mako, lineageos_mako, "None");
                 execute();
             }
         }
+    }
+    else if (action == "Install Sailfish OS")
+    {
+
     }
     else if (action == "Install Factory Image")
     {
         if (device_connected("fastboot"))
         {
-            orders << get_Factory_Install(factory_devicename);
+            orders << get_Factory_Install(factory_mako);
             execute();
         }
     }
@@ -67,7 +65,7 @@ void mdt::devicename(QString action, QString option, QString channel)
     {
         if (device_connected("fastboot"))
         {
-            orders << get_TWRP_Install(twrp_devicename);
+            orders << get_TWRP_Install(twrp_mako);
             execute();
         }
     }
@@ -89,4 +87,3 @@ void mdt::devicename(QString action, QString option, QString channel)
     }
 }
 
-*/

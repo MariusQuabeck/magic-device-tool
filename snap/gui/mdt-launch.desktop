@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Magic-Device-Tool
+Exec=${SNAP}/opt/mdt/Magic-UI
+Type=Application
+Icon=${SNAP}/meta/gui/mdt.png
+

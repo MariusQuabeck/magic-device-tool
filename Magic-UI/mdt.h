@@ -86,6 +86,8 @@ private slots:
 
     void nexus4(QString action, QString option, QString channel);
 
+    void nexus5(QString action, QString option, QString channel);
+
     void nexus7_flo(QString action, QString option, QString channel);
 
     void on_listWidget_activated(const QModelIndex &index);

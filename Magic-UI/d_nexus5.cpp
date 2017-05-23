@@ -1,20 +1,14 @@
-/*
- * This is a template for adding new devices
- * Replace devicename with the new device
- * Only leave actions that are applicable
- * and create the custom interface options in settings, or use generic.
- * Don't forget to add your device in the call for action function.
 #include "mdt.h"
 #include "ui_mdt.h"
 #include <QDebug>
 
 
-void mdt::devicename(QString action, QString option, QString channel)
+void mdt::nexus5(QString action, QString option, QString channel)
 {
     //Device-specific Links:
-    QString twrp_devicename = "Link to trwp recovery for devicename";
-    QString lineageos_devicename = "https://lineageos.mirrorhub.io/full/devicename...";
-    QString factory_devicename = "devicename factory image";
+    QString twrp_hammerhead = "http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-hammerhead.img";
+    QString lineageos_hammerhead = "https://lineageos.mirrorhub.io/full/hammerhead/20170516/lineage-14.1-20170516-nightly-hammerhead-signed.zip";
+    QString factory_hammerhead = "https://dl.google.com/dl/android/aosp/hammerhead-m4b30x-factory-10cfaa5c.zip";
 
 
     if (action == "Install Ubuntu")
@@ -41,17 +35,17 @@ void mdt::devicename(QString action, QString option, QString channel)
         {
             if (option == "with GApps")
             {
-                orders << get_Android_Install(twrp_devicename, lineageos_devicename, opengapps);
+                orders << get_Android_Install(twrp_hammerhead, lineageos_hammerhead, opengapps);
                 execute();
             }
             else if (option == "with F-Droid")
             {
-                orders << get_Android_Install(twrp_devicename, lineageos_devicename, fdroidota);
+                orders << get_Android_Install(twrp_hammerhead, lineageos_hammerhead, fdroidota);
                 execute();
             }
             else if (option == "Standard")
             {
-                orders << get_Android_Install(twrp_devicename, lineageos_devicename, "None");
+                orders << get_Android_Install(twrp_hammerhead, lineageos_hammerhead, "None");
                 execute();
             }
         }
@@ -60,7 +54,7 @@ void mdt::devicename(QString action, QString option, QString channel)
     {
         if (device_connected("fastboot"))
         {
-            orders << get_Factory_Install(factory_devicename);
+            orders << get_Factory_Install(factory_hammerhead);
             execute();
         }
     }
@@ -68,7 +62,7 @@ void mdt::devicename(QString action, QString option, QString channel)
     {
         if (device_connected("fastboot"))
         {
-            orders << get_TWRP_Install(twrp_devicename);
+            orders << get_TWRP_Install(twrp_hammerhead);
             execute();
         }
     }
@@ -89,5 +83,3 @@ void mdt::devicename(QString action, QString option, QString channel)
         }
     }
 }
-
-*/

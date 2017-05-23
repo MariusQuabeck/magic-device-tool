@@ -1,1 +1,6 @@
 *.pro.user*
+build*/
+snap/prime/
+snap/parts/
+snap/stage/
+snap/*.snap

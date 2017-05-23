@@ -44,7 +44,7 @@ QStringList mdt::get_Factory_Install(QString image)
 {
     QStringList result;
     result << wget + image
-           << "unzip -od " + HOME + " " + HOME + "occam*.zip"
+           << "unzip -od " + HOME + " " + HOME + get_filename(image) + "*.zip"
            /*<< "fastboot flash bootloader " + HOME + get_filename(image) + "/bootloader-*"
            << "fastboot reboot-bootloader"
            << "sleep 6"

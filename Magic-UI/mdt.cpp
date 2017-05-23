@@ -42,7 +42,7 @@ QString mdt::get_filename(QString link)
 
     if (link.contains("dl.google") && link.contains(".zip"))
     {
-        filename = link.mid(link.lastIndexOf("/") + 1, (link.indexOf("-", (link.lastIndexOf("/") + 10)) - link.lastIndexOf("/") - 1));
+        filename = link.mid(link.lastIndexOf("/") + 1, (link.indexOf("-", (link.lastIndexOf("/") + 12)) - link.lastIndexOf("/") - 1));
     }
     else
     {
@@ -75,7 +75,7 @@ void mdt::call_for_action()
     else if (device == "LG Nexus 4 (mako)")
         nexus4(action, option, channel);
     else if (device == "LG Nexus 5 (hammerhead)")
-        ui->listWidget->addItems(actions_hammerhead);
+        nexus5(action, option, channel);
     else if (device == "Asus Nexus 7 2013 WiFi (flo)")
         nexus7_flo(action, option, channel);
     else if (device == "Asus Nexus 7 2013 LTE (deb)")

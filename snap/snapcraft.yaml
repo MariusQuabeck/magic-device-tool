@@ -11,13 +11,16 @@ confinement: strict
 
 parts:
   mdt:
-    plugin: qmake
+    plugin: qmake 
     qt-version: qt5
     project-files: [Magic-UI.pro]
-    source: https://github.com/MariusQuabeck/magic-device-tool/tree/gui/Magic-UI
+    source-type: git
+    source: https://github.com/MariusQuabeck/magic-device-tool
+    source-branch: gui
+    source-subdir: Magic-UI/
     install: |
-     install -d $SNAPCRAFT_PART_INSTALL/opt/mdt
-     install Magic-UI $SNAPCRAFT_PART_INSTALL/opt/mdt/Magic-UI
+     install -d $SNAPCRAFT_PART_INSTALL/opt/mdt/
+     install Magic-UI/Magic-UI $SNAPCRAFT_PART_INSTALL/opt/mdt/Magic-UI
 #     build-packages:
 #         - build-essential
 #         - qttools5-dev-tools
@@ -34,5 +37,5 @@ parts:
 apps:
   mdt-launch:
     command: desktop-launch "$SNAP/opt/mdt/Magic-UI"
-#   desktop: /path-to-folder../snap/gui/mdt-launch.desktop
+    desktop: /home/kristbaum/Projects/magic-device-tool/snap/gui/mdt-launch.desktop
     plugs: [unity7, network, raw-usb]

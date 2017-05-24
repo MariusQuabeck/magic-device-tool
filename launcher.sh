@@ -73,21 +73,21 @@ echo "Choose your device"
 echo ""
 echo "  [1]  BQ Aquaris E4.5 - krillin"
 echo "  [2]  BQ Aquaris E5 HD - vegetahd"
-#echo "  [3]  BQ Aquaris M10 HD - cooler"
-#echo "  [4]  BQ Aquaris M10 FHD - frieza"
-echo "  [3]  Meizu MX 4 - arale"
-echo "  [4]  LG Nexus 4 - mako"
-echo "  [5]  LG Nexus 5 - hammerhead"
-echo "  [6]  Asus Nexus 7 2013 (WiFi) - flo"
-echo "  [7]  Asus Nexus 7 2013 (LTE) - deb"
-echo "  [8]  Samsung Nexus 10 - manta"
-echo "  [9]  OnePlus One - bacon"
-echo "  [10] Fairphone 2 - FP2"
+echo "  [3]  BQ Aquaris M10 HD - cooler"
+echo "  [4]  BQ Aquaris M10 FHD - frieza"
+echo "  [5]  Meizu MX 4 - arale"
+echo "  [6]  LG Nexus 4 - mako"
+echo "  [7]  LG Nexus 5 - hammerhead"
+echo "  [8]  Asus Nexus 7 2013 (WiFi) - flo"
+echo "  [9]  Asus Nexus 7 2013 (LTE) - deb"
+echo "  [10] Samsung Nexus 10 - manta"
+echo "  [11] OnePlus One - bacon"
+echo "  [12] Fairphone 2 - FP2"
 echo "  ========================================="
-echo "  [11] Join Telegram Group Chat"
-echo "  [12] Report a bug"
+echo "  [13] Join Telegram Group Chat"
+echo "  [14] Report a bug"
 echo ""
-echo "  [13] Quit"
+echo "  [15] Quit"
 echo ""
 sleep 1
 echo -n "Enter number: "; read device
@@ -98,48 +98,48 @@ case "$device" in
   2)
   . ./devices/e5hd/e5hd.sh
   ;;
-#  3)
-#  . ./devices/m10hd/m10hd.sh
-#  ;;
-#  4)
-#  . ./devices/m10fhd/m10fhd.sh
-#  ;;
   3)
-  . ./devices/mx4/mx4.sh
+  . ./devices/m10hd/m10hd.sh
   ;;
   4)
-  . ./devices/nexus4/nexus4.sh
+  . ./devices/m10fhd/m10fhd.sh
   ;;
   5)
-  . ./devices/nexus5/nexus5.sh
+  . ./devices/mx4/mx4.sh
   ;;
   6)
-  . ./devices/nexus7/nexus7.sh
+  . ./devices/nexus4/nexus4.sh
   ;;
   7)
-  . ./devices/nexus7deb/nexus7.sh
+  . ./devices/nexus5/nexus5.sh
   ;;
   8)
-  . ./devices/nexus10/nexus10.sh
+  . ./devices/nexus7/nexus7.sh
   ;;
   9)
-  . ./devices/oneplusone/oneplusone.sh
+  . ./devices/nexus7deb/nexus7.sh
   ;;
   10)
-  . ./devices/fairphone2/fairphone2.sh
+  . ./devices/nexus10/nexus10.sh
   ;;
   11)
-  . ./devices/generic/telegram.sh
+  . ./devices/oneplusone/oneplusone.sh
   ;;
   12)
-  . ./devices/generic/reportabug.sh
+  . ./devices/fairphone2/fairphone2.sh
   ;;
   13)
+  . ./devices/generic/telegram.sh
+  ;;
+  14)
+  . ./devices/generic/reportabug.sh
+  ;;
+  15)
   exit
   ;;
   *)
   echo ""
-  echo_yellow "You did not enter a number between 1 and 13."
+  echo_yellow "You did not enter a number between 1 and 15."
   echo_yellow "Well... I'll be here during the whole next test. -GLaDOS"
   ;;
 esac

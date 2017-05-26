@@ -249,13 +249,3 @@ case "$option" in
 esac
 done
 
-function do_backup() {
-
-
-}
-
-function do_restore() {
-
-
-}
-

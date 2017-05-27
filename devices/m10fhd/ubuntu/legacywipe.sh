@@ -31,10 +31,10 @@ clear
       echo ""
       echo "Flashing stable channel"
       echo ""
-      #fastboot format cache
-      #fastboot format userdata
-      #fastboot format system
-      #fastboot erase recovery
+      fastboot format cache
+      fastboot format userdata
+      fastboot format system
+      fastboot erase recovery
       fastboot reboot-bootloader
       echo "Please wait"
       #echo ""

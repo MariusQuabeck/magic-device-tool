@@ -35,7 +35,7 @@ then
   echo "Downloading LineageOS 14.1.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/hammerhead/20170124/lineage-14.1-20170124-nightly-hammerhead-signed.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/hammerhead/20170524/lineage-14.1-20170524-nightly-hammerhead-signed.zip
   echo ""
   echo "Downloading Open Gapps.."
   echo ""
@@ -71,7 +71,7 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → LineageOS 14.1 zip "
-  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170124-nightly-hammerhead-signed.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170524-nightly-hammerhead-signed.zip /sdcard/
   echo ""
   echo "  → gapps zip"
   adb push -p $HOME/.cache/magic-device-tool/open_gapps-arm-7.1-nano-20170126.zip /sdcard/
@@ -81,7 +81,7 @@ then
   echo ""
   echo "Installing LineageOS 14.1.."
   echo ""
-  adb shell twrp install /sdcard/lineage-14.1-20170124-nightly-hammerhead-signed.zip
+  adb shell twrp install /sdcard/lineage-14.1-20170524-nightly-hammerhead-signed.zip
   sleep 1
   echo ""
   echo "Installing Open GApps.."

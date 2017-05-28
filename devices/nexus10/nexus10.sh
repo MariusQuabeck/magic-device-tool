@@ -17,7 +17,7 @@ echo ""
 echo ""
 echo "Android: "
 echo ""
-echo "[3] Install Cyanogenmod 13"
+echo "[3] Install Lineage OS 13"
 echo "[4] Install Phoenix OS"
 echo "[5] Install Factory Image"
 echo "[6] Install TWRP recovery"
@@ -33,7 +33,7 @@ if [ "$option" = "1" ]; then
 elif [ "$option" = "2" ]; then
 . ./devices/generic/ubuntu/openstore.sh
 elif [ "$option" = "3" ]; then
-. ./devices/nexus10/android/cyanogenmod.sh
+. ./devices/nexus10/android/lineageos.sh
 elif [ "$option" = "4" ]; then
 . ./devices/nexus10/android/phoenixos.sh
 elif [ "$option" = "5" ]; then

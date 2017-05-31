@@ -3,7 +3,7 @@ echo ""
 echo "Flashing stable channel"
 echo ""
 sleep 1
-echo "Please boot your Nexus 7 into fastboot mode by pressing Power & Volume Up (+)"
+echo "Please boot your Nexus 7 into fastboot mode by pressing Power & Volume Down (-)"
 echo ""
 sleep 1
 echo -n "Is your Nexus 7 in fastboot mode now? [Y] "; read bootloadermode

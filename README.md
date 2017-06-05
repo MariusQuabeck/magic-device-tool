@@ -14,8 +14,7 @@ Mister_Q on the freenode IRC network
 
 [Donate if you like this tool](http://paypal.me/MisterQ)
 
-[Buy me devices ;)](https://www.amazon.de/registry/wishlist/3GVUCIW2ZMWC8/ref=cm_sw_em_r_mt_ws__vfwnzbQCE8WVJ
-)
+
 
 
 

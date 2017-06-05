@@ -38,12 +38,14 @@ clear
       fastboot reboot-bootloader
       echo "Please wait"
       #echo ""
-      #wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/recovery-frieza.img
+      rm $HOME/.cache/magic-device-tool/recovery-frieza.img
+      wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://cdimage.ubports.com/devices/recovery-frieza.img
       sleep 12
       #fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-frieza.img
       clear
       echo ""
-      ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=frieza --bootstrap
+      ubuntu-device-flash --server=http://system-image.ubports.com touch --device=frieza --channel=ubports-touch/legacy --bootstrap --recovery-image=$HOME/.cache/magic-device-tool/recovery-frieza.img
+      #ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=frieza --bootstrap
       #ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=frieza --bootstrap --recovery-image $HOME/.cache/magic-device-tool/recovery-frieza.img
       sleep 1
       echo ""
@@ -54,7 +56,7 @@ clear
       echo ""
       echo "Cleaning up.."
       rm -f /tmp/AttachedDevices
-      #rm recovery-frieza.img
+      rm $HOME/.cache/magic-device-tool/recovery-frieza.img
       echo ""
       sleep 1
       echo "Exiting script. Bye Bye"

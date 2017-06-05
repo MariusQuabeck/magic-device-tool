@@ -38,12 +38,14 @@ clear
       fastboot reboot-bootloader
       echo "Please wait"
       echo ""
-      #wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/recovery-cooler.img
+      rm $HOME/.cache/magic-device-tool/recovery-cooler.img
+      wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://cdimage.ubports.com/devices/recovery-cooler.img
       sleep 12
       #fastboot flash recovery $HOME/.cache/magic-device-tool/recovery-cooler.img
       clear
       echo ""
-      ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=cooler --bootstrap
+      ubuntu-device-flash --server=http://system-image.ubports.com touch --device=cooler --channel=ubports-touch/legacy --bootstrap --recovery-image=$HOME/.cache/magic-device-tool/recovery-cooler.img
+      #ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=cooler --bootstrap
       #ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=cooler --bootstrap --recovery-image $HOME/.cache/magic-device-tool/recovery-cooler.img
       sleep 1
       echo ""
@@ -54,6 +56,7 @@ clear
       echo ""
       echo "Cleaning up.."
       rm -f /tmp/AttachedDevices
+      rm $HOME/.cache/magic-device-tool/recovery-cooler.img
       #rm recovery-cooler.img
       echo ""
       sleep 1

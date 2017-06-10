@@ -131,6 +131,7 @@ FAQ
 
 TODO
 ------
+- Rename legacy to stable (UBports)
 - Spin up own image-server for ubuntu devices
 - Fix Lineage OS download links!!
 - Add Maru OS for flo

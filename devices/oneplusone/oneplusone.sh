@@ -17,44 +17,61 @@ echo ""
 echo "[1] Install Ubuntu"
 echo "[2] Install OpenStore"
 echo ""
+echo "[3]  Back Up your UBports device"
+echo ""
 echo ""
 echo "Android: "
 echo ""
-echo "[3] Install LineageOS 14.1"
-echo "[4] Install LineageOS 14.1 without Gapps"
+echo "[4] Install LineageOS 14.1"
+echo "[5] Install LineageOS 14.1 without Gapps"
 echo ""
-echo "[5] Install Sailfish OS"
+echo "[6] Install Sailfish OS"
 echo ""
-echo "[6] Install TWRP recovery"
-echo "[7] Back Up your Android device"
-echo "[8] Lock/Unlock bootloader (Will wipe existing apps/data)"
+echo "[7] Install TWRP recovery"
+echo "[8] Back Up your Android device"
+echo "[9] Lock/Unlock bootloader (Will wipe existing apps/data)"
 echo ""
 echo ""
-echo "[9] Back to menu "
+echo "[0] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
-if [ "$option" = "1" ]; then
+case "$option" in
+1)
   . ./devices/oneplusone/ubuntu/ubuntu.sh
-elif [ "$option" = "2" ]; then
+;;
+2)
   . ./devices/generic/ubuntu/openstore.sh
-elif [ "$option" = "3" ]; then
+;;
+3)
+  . ./devices/generic/ubuntu/ubports-backup.sh
+;;
+4)
   . ./devices/oneplusone/android/lineageos.sh
-elif [ "$option" = "4" ]; then
+;;
+5)
   . ./devices/oneplusone/android/lineageoswogapps.sh
-elif [ "$option" = "5" ]; then
+;;
+6)
   . ./devices/oneplusone/android/sailfishos.sh
-elif [ "$option" = "6" ]; then
+;;
+7)
   . ./devices/oneplusone/android/twrp.sh
-elif [ "$option" = "7" ]; then
+;;
+8)
   . ./devices/generic/android/backup.sh
-elif [ "$option" = "8" ]; then
+;;
+9)
   . ./devices/oneplusone/android/bootloader.sh
-elif [ "$option" = "9" ]; then
+;;
+0)
   . ./launcher.sh
-else
+;;
+*)
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
   exit
-fi
+;;
+esac
+

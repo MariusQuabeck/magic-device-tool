@@ -29,7 +29,7 @@ clear
       sleep 1
       clear
       echo ""
-      echo "Flashing stable channel"
+      echo "Flashing legacy channel"
       echo ""
       fastboot format cache
       fastboot format userdata

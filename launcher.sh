@@ -84,10 +84,11 @@ echo "  [10] Samsung Nexus 10 - manta"
 echo "  [11] OnePlus One - bacon"
 echo "  [12] Fairphone 2 - FP2"
 echo "  ========================================="
-echo "  [13] Join Telegram Group Chat"
-echo "  [14] Report a bug"
+echo "  [13] Donate"
+echo "  [14] Join Telegram Group Chat"
+echo "  [15] Report a bug"
 echo ""
-echo "  [15] Quit"
+echo "  [16] Quit"
 echo ""
 sleep 1
 echo -n "Enter number: "; read device
@@ -129,17 +130,20 @@ case "$device" in
   . ./devices/fairphone2/fairphone2.sh
   ;;
   13)
-  . ./devices/generic/telegram.sh
+  . ./devices/generic/donate.sh
   ;;
   14)
-  . ./devices/generic/reportabug.sh
+  . ./devices/generic/telegram.sh
   ;;
   15)
+  . ./devices/generic/reportabug.sh
+  ;;
+  16)
   exit
   ;;
   *)
   echo ""
-  echo_yellow "You did not enter a number between 1 and 15."
+  echo_yellow "You did not enter a number between 1 and 16."
   echo_yellow "Well... I'll be here during the whole next test. -GLaDOS"
   ;;
 esac

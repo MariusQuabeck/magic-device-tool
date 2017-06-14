@@ -121,7 +121,7 @@ function do_backup() {
         return
     fi
     if [ "$backup_target" == "sdcard" ]; then
-        sdcard=find_sdcard
+        sdcard=$(find_sdcard)
         if [ -z "$sdcard" ]; then
             echo "No SD card found, please check your setup."
         else
@@ -169,7 +169,7 @@ function do_restore() {
         do_ssh_setup
         do_servertest
     fi
-    do_backup_available_folders ssh
+    do_backup_available_folders
     echo "Source: $origin_device => Destination: $device"
     echo -n "CAUTION! This will overwrite your device data now! Proceed?"
     if [ $(wait_for_user_yesno) == "y" ]; then

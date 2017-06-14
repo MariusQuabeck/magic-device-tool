@@ -131,6 +131,7 @@ FAQ
 
 TODO
 ------
+- Add Nexus 7 2012 grouper & tilapia
 - Rename legacy to stable (UBports)
 - Spin up own image-server for ubuntu devices
 - Fix Lineage OS download links!!

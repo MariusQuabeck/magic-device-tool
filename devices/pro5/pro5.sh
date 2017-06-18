@@ -10,26 +10,37 @@ sleep 1
 echo "Ubuntu: "
 echo ""
 echo "[1] Install Ubuntu"
-echo ""
 echo "[2] Install OpenStore"
 echo ""
-echo "[3] Screencast"
+echo "[3] Back Up your UBports device"
 echo ""
-echo "[4] Back to menu "
+echo "[4] Screencast"
+echo ""
+echo "[0] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
-if [ "$option" = "1" ]; then
-. ./devices/pro5/ubuntu/ubuntu.sh
-elif [ "$option" = "2" ]; then
+case "$option" in
+1)
+  . ./devices/pro5/ubuntu/ubuntu.sh
+;;
+2)
   . ./devices/generic/ubuntu/openstore.sh
-elif [ "$option" = "3" ]; then
+;;
+3)
+  . ./devices/generic/ubuntu/ubports-backup.sh
+;;
+4)
   . ./devices/pro5/ubuntu/screencast.sh
-elif [ "$option" = "4" ]; then
+;;
+0)
   . ./launcher.sh
-else
+;;
+*)
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
   exit
-fi
+;;
+esac
+

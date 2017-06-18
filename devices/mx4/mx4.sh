@@ -12,40 +12,54 @@ sleep 1
 echo "Ubuntu: "
 echo ""
 echo "[1] Install Ubuntu"
-echo ""
 echo "[2] Install OpenStore"
 echo ""
-echo "[3] Screencast"
+echo "[3]  Back Up your UBports device"
+echo ""
+echo "[4] Screencast"
 echo ""
 echo ""
 echo "Android: "
 echo ""
-echo "[4] Install Cyanogenmod 13"
-echo "[5] Install Cyanogenmod 13 without Gapps"
+echo "[5] Install Cyanogenmod 13"
+echo "[6] Install Cyanogenmod 13 without Gapps"
 echo ""
-echo "[6] Back Up your Android device"
+echo "[7] Back Up your Android device"
 echo ""
-echo "[7] Back to menu "
+echo "[0] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
-if [ "$option" = "1" ]; then
-. ./devices/mx4/ubuntu/ubuntu.sh
-elif [ "$option" = "2" ]; then
+case "$option" in
+1)
+  . ./devices/mx4/ubuntu/ubuntu.sh
+;;
+2)
   . ./devices/generic/ubuntu/openstore.sh
-elif [ "$option" = "3" ]; then
+;;
+3)
+  . ./devices/generic/ubuntu/ubports-backup.sh
+;;
+4)
   . ./devices/mx4/ubuntu/screencast.sh
-elif [ "$option" = "4" ]; then
+;;
+5)
   . ./devices/mx4/android/cyanogenmod.sh
-elif [ "$option" = "5" ]; then
+;;
+6)
   . ./devices/mx4/android/cyanogenmodwogapps.sh
-elif [ "$option" = "6" ]; then
+;;
+7)
   . ./devices/generic/android/backup.sh
-elif [ "$option" = "7" ]; then
+;;
+0)
   . ./launcher.sh
-else
+;;
+*)
   echo ""
   echo "Invalid Option"
   echo ""
   echo "Exiting script. Bye Bye"
   exit
-fi
+;;
+esac
+

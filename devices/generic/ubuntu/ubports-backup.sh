@@ -20,7 +20,7 @@ function wait_for_user_yesno() {
 
 function test_ssh_connection() {
 
-    connection_test=$(adb shell "sudo -u phablet ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup $backup_user@$backup_server true; echo -n \$?")
+    connection_test=$(adb shell "sudo -u phablet ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup $backup_user@$backup_server 'true; echo -n \$?'")
     echo $connection_test
 }
 
@@ -37,14 +37,13 @@ function push_ssh_key() {
 
 function do_ssh_setup() {
 
-
     echo ""
     echo "SSH setup"
     if [ -z $device ]; then
         echo "No device connected, cannot continue!"
         return
     fi
-    echo "Testing if an rsa key for ubports-backup exists on the mobile device..."
+    echo "Testing if an ssh key for ubports-backup exists on the mobile device..."
     device_key_missing=$(adb shell "sudo -u phablet bash -c 'if [ -e "/home/phablet/.ssh/id_ubports-backup" ]; then echo -n 0; else echo -n 1; fi'")
     if [ "$device_key_missing" -eq "1" ]; then
         if [ -e "$HOME/.ssh/id_ubports-backup" ]; then
@@ -54,7 +53,7 @@ function do_ssh_setup() {
             if [ "$use_local_key" == "y" ]; then
                 push_ssh_key
             else
-                echo "You need to manually remove the local key \$HOME/.shh/id_ubports-backup if you dont want to use it!"
+                echo "You need to manually remove the local key \$HOME/.shh/id_ubports-backup if you dont want to use it, a new one will be then generated at the next start of the backup script."
                 return
             fi 
         else
@@ -62,7 +61,7 @@ function do_ssh_setup() {
             generate_key=$(wait_for_user_yesno)
             echo ""
             if [ "$generate_key" == "y" ]; then
-                echo "Generating new 2048bit RAS key for ssh..."
+                echo "Generating new 2048bit ssh key for ubports-backup (you can find it later in your $HOME/.ssh directory)..."
                 ssh-keygen -t rsa -N "" -f $HOME/.ssh/id_ubports-backup
                 push_ssh_key
             else
@@ -76,7 +75,7 @@ function do_ssh_setup() {
     echo "Testing if we can connect to $backup_server without a password"
     result="$(test_ssh_connection)"
     if [ "$result" != "0" ]; then
-        echo "We could not connect to the remote server, shall we try to push the public key? Your remote ssh password will be needed"
+        echo "We could not connect to the backup server without a password, shall we try to upload the public key? Your remote ssh password will be needed"
         if [ "$(wait_for_user_yesno)" == "y" ]; then
             ssh-copy-id -i $HOME/.ssh/id_ubports-backup.pub $backup_user@$backup_server
             echo "Testing if we can connect to $backup_server without a password"
@@ -86,25 +85,30 @@ function do_ssh_setup() {
                 return
             fi
         else
-            echo "We could not login to server with a key and you did not want us to copy it, exiting..."
+            echo "We could not login to the backup server with a public key and you did not want me to upload it, exiting..."
             return
         fi
     fi
-    echo "SSH Setup & Test OK!"
+    echo_green "SSH Setup & Test OK!"
 }
 
 function do_servertest() {
 
     echo "Checking folder structure on remote server"
-    shell_cmd="mkdir -p $backup_folder/ubports_backup/$device; cd $backup_folder/ubports_backup; echo -n $?"
+    shell_cmd="'mkdir -p $backup_folder/ubports_backup/$device; cd $backup_folder/ubports_backup/$device; echo -n \$?'"
     result=$(adb shell "sudo -u phablet ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup $backup_user@$backup_server $shell_cmd")
     if [ "$result" == "0" ]; then
         echo_green "Servertest OK!"
-        echo 0
     else
         echo_red "Servertest NOT OK!"
-        echo 255
+        echo "adb result was: $result"
     fi
+
+}
+
+function find_sdcard() {
+
+    echo $(adb shell "ls /media/phablet | head -n +3" | tr -d '[:space:]')
 
 }
 
@@ -114,23 +118,45 @@ function do_backup() {
         echo "No device connected, cannot continue!"
         return
     fi
-    do_ssh_setup
-    do_servertest
-    echo "Now doing backup..."
-    adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 /home/phablet/ $backup_user@$backup_server:$backup_folder/ubports_backup/$device/"
-    echo "Backup finished!"
+    if [ "$backup_target" == "sdcard" ]; then
+        sdcard=$(find_sdcard)
+        if [ -z "$sdcard" ]; then
+            echo "No SD card found, please check your setup."
+        else
+            echo "Now doing backup to SD card $sdcard..."
+            adb shell "mkdir -p /media/phablet/$sdcard/$backup_folder/ubports_backup/$device"
+            result=$(adb shell "sudo -u phablet rsync -avz --delete --info=progress2 /home/phablet/ /media/phablet/$sdcard/$backup_folder/ubports_backup/$device/; echo -n \$?")
+        fi
+    else
+        do_ssh_setup
+        do_servertest
+        echo "Now doing backup..."
+        result=$(adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 /home/phablet/ $backup_user@$backup_server:$backup_folder/ubports_backup/$device/; echo -n \$?")
+    fi
+    if [ "$result" == "0" ]; then
+        echo_green "Backup OK!"
+    else
+        echo_red_high "Backup NOT OK!"
+        echo "adb result was: $result"
+    fi
 }
 
 function do_backup_available_folders() {
 
     echo "Checking which backups exist on the server"
-    shell_cmd="ls $backup_folder/ubports_backup/"
-    result=$(ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i $HOME/.ssh/id_ubports-backup $backup_user@$backup_server $shell_cmd)
+
+    if [ "$backup_target" == "sdcard" ]; then
+        sdcard=$(find_sdcard)
+        result=$(adb shell "ls /media/phablet/$sdcard/$backup_folder/ubports_backup/")
+    else
+        shell_cmd="ls $backup_folder/ubports_backup/"
+        result=$(ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i $HOME/.ssh/id_ubports-backup $backup_user@$backup_server $shell_cmd)
+    fi
     echo $result
     origin_device="XXXXXXX"
     echo ""
     while [[ $result != *$origin_device* ]]; do
-        read -p "Please enter a device id which should be used for restore: " origin_device
+        read -p "Please enter a device id which should be used for restore or press enter to return to the menu: " origin_device
     done
 
 }
@@ -142,137 +168,190 @@ function do_restore() {
         echo "No device connected, cannot continue!"
         return
     fi
-    do_ssh_setup
-    do_servertest
-    do_backup_available_folders 
+    if [ "$backup_target" == "ssh" ]; then
+        do_ssh_setup
+        do_servertest
+    fi
+    do_backup_available_folders
+    if [ "$origin_device" == "" ]; then
+        echo "Restore cancelled!"
+        return
+    fi 
     echo "Source: $origin_device => Destination: $device"
     echo -n "CAUTION! This will overwrite your device data now! Proceed?"
     if [ $(wait_for_user_yesno) == "y" ]; then
-
-	echo "Now doing restore..."
-	adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 $backup_user@$backup_server:$backup_folder/ubports_backup/$origin_device/ /home/phablet/"
-        echo "Restore finished, rebooting device..."
-        adb reboot
+        if [ "$backup_target" == "sdcard" ]; then
+            sdcard=$(find_sdcard)
+            if [ -z "$sdcard" ]; then
+                echo "No SD card found, please check your setup."
+            else
+                echo "Now doing restore from SD card $sdcard..."
+                result = $(adb shell "sudo -u phablet rsync -avz --delete --info=progress2 /media/phablet/$sdcard/$backup_folder/ubports_backup/$origin_device/ /home/phablet/; echo -n \$?")
+            fi
+        else
+            echo "Now doing restore..."
+	    result = $(adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 $backup_user@$backup_server:$backup_folder/ubports_backup/$origin_device/ /home/phablet/; echo -n \$?")
+        fi
+        if [ "$result" == "0" ]; then
+            echo_green "Restore OK!"
+            echo "Restore finished, rebooting device..."
+            adb reboot
+        else
+            echo_red_high "Restore NOT OK, your device may be in an unsuable state!"
+            echo "adb result was: $result"
+        fi
     else
         echo "Cancelled restore."
     fi
-
 }
 
 function switch_mode() {
-
    if [ $advanced_mode -eq "0" ]; then
       write_setting ubports_backup advanced_mode 1
    else
       write_setting ubports_backup advanced_mode 0
    fi
+}
 
+function switch_target() {
+    if [ $backup_target == "sdcard" ]; then
+        write_setting ubports_backup backup_target ssh
+    else
+        write_setting ubports_backup backup_target sdcard
+    fi
 }
 
 adb start-server
 
 while [ 1 ]; do
-clear
-advanced_mode=$(read_setting ubports_backup advanced_mode "0")
-backup_server=$(read_setting ubports_backup backup_server)
-backup_server_ok=$(read_setting ubports_backup backup_server_ok "not tested")
-backup_user=$(read_setting ubports_backup backup_user)
-if [ "$advanced_mode" -eq "1" ]; then
-   backup_folder=$(read_setting ubports_backup backup_folder)
-else
-   backup_folder="."
-fi
-ssh_key=$(read_setting ubports_backup custom_ssh_key "id_rsa")
-echo ""
-echo "UBports (simple) Backup"
-echo ""
-echo "This module will make a simple backup or restore of the user data in your UBports device. It is currently in alpha stage and no liability is taken for lost data."
-echo "NOTE: Currently it is not possible to make a backup of the lists of installed Apps, we hope to provide this on a later stage..."
-echo ""
-echo "The things You will need:"
-echo ""
-echo "*) the DNS name or IP address of a backup server that can be used with scp/rsync"
-echo "*) your username on this server"
-echo "*) (optional) a path to the remote directory, which will be used to store the backup: \$HOME/<optional_folder>/ubports_backup/<device_id> - enable advanced mode for this to work."
-echo ""
-echo "The script will create its own SSH key pair which will be then also pushed to the device. Currently we only support one username and one backup server!"
-echo ""
-echo "Currently the following settings are configured:"
-echo ""
-echo "Backup server: $backup_server"
-echo "Username: $backup_user"
-echo "Server status: $backup_server_ok"
-device=$(adb devices | grep -w device | cut -f1)
-echo "Device currently connected: $device"
-if [ "$advanced_mode" -eq "1" ]; then 
-   echo "Current backup path: $backup_user@$backup_server:\$HOME/$backup_folder/ubports_backup/$device" 
-else
-   echo "Current backup path: $backup_user@$backup_server:\$HOME/ubports_backup/$device" 
-fi
-sleep 1
-echo ""
-echo ""
-echo "[1] Change backup server"
-echo ""
-echo "[2] Change username"
-echo ""
-echo "[3] Backup device $device"
-echo ""
-echo "[4] Restore device $device"
-echo ""
-if [ "$advanced_mode" -eq "1" ]; then 
-echo "[5] Change optional folder"
-echo ""
-echo "[6] configure ssh setup"
-echo ""
-echo "[7] Test server setup"
-echo ""
-echo "[8} Switch to simple mode"
-else
-echo "[8] Switch to advanced mode"
-echo ""
-fi
-echo "[9] Back to menu"
-echo ""
-echo -n "Enter option: "; read option
-case "$option" in
-1)
-    query_user_setting "Enter the dns name / IP address of the backup server: " ubports_backup backup_server
-;;
-2)
-    query_user_setting "Enter the username: " ubports_backup backup_user
-;;
-3)
-    do_backup
-    wait_for_user
-;;
-4)
-    do_restore
-    wait_for_user
-;;
-5)
-    query_user_setting "Enter the folder name RELATIVE to \$HOME: " ubports_backup backup_folder
-;;
-6)
-    do_ssh_setup
-    wait_for_user
-;;
-7)
-    do_servertest
-    wait_for_user
-;;
-8)  switch_mode
-;;
-9)
-    . ./launcher.sh
-;; 
-*)
+    clear
+    backup_target=$(read_setting ubports_backup backup_target "sdcard")
+    advanced_mode=$(read_setting ubports_backup advanced_mode "0")
+    backup_server=$(read_setting ubports_backup backup_server)
+    backup_server_ok=$(read_setting ubports_backup backup_server_ok "not tested")
+    backup_user=$(read_setting ubports_backup backup_user)
+    if [ "$advanced_mode" -eq "1" ]; then
+        backup_folder=$(read_setting ubports_backup backup_folder)
+    else
+        backup_folder="."
+    fi
+    ssh_key=$(read_setting ubports_backup custom_ssh_key "id_rsa")
     echo ""
-    echo "Invalid Option"
+    echo "UBports (tiny) Backup"
     echo ""
-    echo "Exiting script. Bye Bye"
-    exit
-;;
-esac
+    echo "This module will make a simple backup or restore of the user data in your UBports device. It is currently in alpha stage and no liability is taken for lost data."
+    echo "NOTE: Currently it is not possible to make a backup of installed Apps, we hope to provide this on a later stage..."
+    echo ""
+    echo "The things You will need:"
+    echo ""
+    echo "For backup to SD cards:"
+    echo "*) An SD card inserted in your phone"
+    echo ""
+    echo "OR"
+    echo ""
+    echo "For backup to remote PCs or servers:"
+    echo "*) the DNS name or IP address of a backup server that can be used with scp/rsync"
+    echo "*) your username on this server"
+    echo "*) (optional) a path to the remote directory, which will be used to store the backup: \$HOME/<optional_folder>/ubports_backup/<device_id> - enable advanced mode for this to work."
+    echo ""
+    echo "The script will create its own SSH key pair which will be then also pushed to the device. Currently we only support one username and one backup server!"
+    echo ""
+    echo "Currently the following settings are configured:"
+    echo ""
+    if [ "$backup_target" == "sdcard" ]; then
+        echo "Backup/Restore to/from SD card"
+    else
+        echo "Backup/Restore to/from ssh server"
+        echo "Backup server: $backup_server"
+        echo "Username: $backup_user"
+        echo "Server status: $backup_server_ok"
+    fi
+    device=$(adb devices | grep -w device | cut -f1)
+    echo "Device currently connected: $device"
+    if [ "$advanced_mode" -eq "1" ]; then 
+        if [ "$backup_target" == "sdcard" ]; then
+            echo "Current backup path: /media/phablet/<SDCARD_NAME>/$backup_folder/ubports_backup/$device" 
+        else
+            echo "Current backup path: $backup_user@$backup_server:\$HOME/$backup_folder/ubports_backup/$device" 
+        fi
+    else
+        if [ "$backup_target" == "sdcard" ]; then
+            echo "Current backup path: /media/phablet/<SDCARD_NAME>/ubports_backup/$device" 
+        else
+            echo "Current backup path: $backup_user@$backup_server:\$HOME/ubports_backup/$device" 
+        fi
+    fi
+    sleep 1
+    echo ""
+    echo ""
+    echo "[1] Switch backup target"
+    echo ""
+    echo "[2] Change backup server"
+    echo ""
+    echo "[3] Change username"
+    echo ""
+    echo "[4] Backup device $device"
+    echo ""
+    echo "[5] Restore device $device"
+    echo ""
+    if [ "$advanced_mode" -eq "1" ]; then 
+        echo "[6] Change optional folder"
+        echo ""
+        if [ "$backup_target" == "ssh" ]; then
+            echo "[7] Test ssh setup"
+            echo ""
+            echo "[8] Test server setup"
+        fi
+        echo ""
+        echo "[9] Switch to simple mode"
+    else
+        echo "[9] Switch to advanced mode"
+    fi
+    echo ""
+    echo "[0] Back to main MDT menu"
+    echo ""
+    echo -n "Enter option: "; read option
+    case "$option" in
+        1)
+            switch_target
+        ;;
+        2)
+            query_user_setting "Enter the dns name or the IP address of the backup server: " ubports_backup backup_server
+        ;;
+        3)
+        query_user_setting "Enter the username: " ubports_backup backup_user
+        ;;
+        4)
+            do_backup
+            wait_for_user
+        ;;
+        5)
+            do_restore
+            wait_for_user
+        ;;
+        6)
+            if [ "$advanced_mode" -eq "1" ]; then
+                query_user_setting "Enter the folder name RELATIVE to \$HOME: " ubports_backup backup_folder
+            fi
+        ;; 
+        7)
+            if [ "$advanced_mode" -eq "1" ]; then
+                do_ssh_setup
+                wait_for_user
+            fi
+        ;;
+        8)
+            if [ "$advanced_mode" -eq "1" ]; then
+                do_servertest
+                wait_for_user
+            fi
+        ;;
+        9)
+            switch_mode
+        ;;
+        0)
+            . ./launcher.sh
+        ;; 
+    esac
 done
 

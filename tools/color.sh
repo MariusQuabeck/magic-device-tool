@@ -26,9 +26,8 @@ function echo_yellow {
 	echo -e "${Yel}$1${RCol}"
 }
 
-
-function echo_red {
-	echo -e "${Red}$1${RCol}"
+function echo_red_high {
+	echo -e "${IRed}$1${RCol}"
 }
 
 

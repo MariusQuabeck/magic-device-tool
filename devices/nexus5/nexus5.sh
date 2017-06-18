@@ -64,6 +64,7 @@ case "$option" in
 ;;
 0)
   . ./launcher.sh
+;;
 *)
   echo ""
   echo "Invalid Option"

@@ -131,13 +131,14 @@ function do_backup() {
         do_ssh_setup
         do_servertest
         echo "Now doing backup..."
-        result=$(adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 /home/phablet/ $backup_user@$backup_server:$backup_folder/ubports_backup/$device/; echo -n \$?")
+        result=$(adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 /home/phablet/ $backup_user@$backup_server:$backup_folder/ubports_backup/$device/ > /tmp/ubports-backup.log; echo -n \$?")
     fi
     if [ "$result" == "0" ]; then
+        adb shell "tail -3 /tmp/ubports-backup.log"
         echo_green "Backup OK!"
     else
+        adb shell "tail -20 /tmp/ubports-backup.log"
         echo_red_high "Backup NOT OK!"
-        echo "adb result was: $result"
     fi
 }
 
@@ -186,19 +187,22 @@ function do_restore() {
                 echo "No SD card found, please check your setup."
             else
                 echo "Now doing restore from SD card $sdcard..."
-                result = $(adb shell "sudo -u phablet rsync -avz --delete --info=progress2 /media/phablet/$sdcard/$backup_folder/ubports_backup/$origin_device/ /home/phablet/; echo -n \$?")
+                result=$(adb shell "sudo -u phablet rsync -avz --delete --info=progress2 /media/phablet/$sdcard/$backup_folder/ubports_backup/$origin_device/ /home/phablet/; echo -n \$?")
             fi
         else
+            echo ""
             echo "Now doing restore..."
-	    result = $(adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 $backup_user@$backup_server:$backup_folder/ubports_backup/$origin_device/ /home/phablet/; echo -n \$?")
+	    result=$(adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -avz --delete --info=progress2 $backup_user@$backup_server:$backup_folder/ubports_backup/$origin_device/ /home/phablet/ > /tmp/ubports-backup.log; echo -n \$?")
         fi
+        adb shell "chmod 0600 \$HOME/.ssh/id_ubports-backup*"
         if [ "$result" == "0" ]; then
+            adb shell "tail -3 /tmp/ubports-backup.log"
             echo_green "Restore OK!"
             echo "Restore finished, rebooting device..."
             adb reboot
         else
+            adb shell "tail -20 /tmp/ubports-backup.log"
             echo_red_high "Restore NOT OK, your device may be in an unsuable state!"
-            echo "adb result was: $result"
         fi
     else
         echo "Cancelled restore."

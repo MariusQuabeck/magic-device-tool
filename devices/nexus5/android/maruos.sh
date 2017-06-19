@@ -29,7 +29,7 @@ then
   echo "Downloading Maru OS.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://github.com/maruos/maruos/releases/download/v0.4/maru-v0.4-update-hammerhead-dd793179.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://github.com/maruos/maruos/releases/download/v0.4.1/maru-v0.4.1-update-hammerhead-599aa3ea.zip
   echo ""
   echo "Downloading TWRP recovery.."
   echo ""
@@ -70,7 +70,7 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → Maru OS "
-  adb push -p $HOME/.cache/magic-device-tool/maru-v0.4-update-hammerhead-dd793179.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/maru-v0.4.1-update-hammerhead-599aa3ea.zip /sdcard/
   echo ""
   sleep 1
   echo ""
@@ -82,7 +82,7 @@ then
   echo ""
   echo "Installing Maru OS.."
   echo ""
-  adb shell twrp install /sdcard/maru-v0.4-update-hammerhead-dd793179.zip
+  adb shell twrp install /sdcard/maru-v0.4.1-update-hammerhead-599aa3ea.zip
   echo ""
   sleep 3
   echo "Installing Gapps.."

@@ -21,7 +21,7 @@ echo ""
 echo -n "Enter option: "; read option
 case "$option" in
 1)
-  . ./devices/fairphone2/ubuntu/ubuntu.sh
+  . ./devices/m10fhd/ubuntu/ubuntu.sh
 ;;
 2)
   . ./devices/generic/ubuntu/openstore.sh

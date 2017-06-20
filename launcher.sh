@@ -1,5 +1,6 @@
 #!/bin/bash
 . tools/color.sh
+. tools/settings.sh
 
 clear
 exists()

@@ -19,16 +19,16 @@ echo ""
 echo ""
 echo "Android:"
 echo ""
-echo "[3]  Install Lineage OS"
-echo "[4]  Install Maru OS"
-echo "[5]  Install Sailfish OS"
-echo "[6]  Install Factory Image"
-echo "[7]  Install TWRP recovery"
-echo "[8]  Back Up your Android device"
+echo "[4]  Install Lineage OS"
+echo "[5]  Install Maru OS"
+echo "[6]  Install Sailfish OS"
+echo "[7]  Install Factory Image"
+echo "[8]  Install TWRP recovery"
+echo "[9]  Back Up your Android device"
 echo ""
-echo "[9]  Lock/Unlock bootloader (Will wipe existing apps/data)"
+echo "[10]  Lock/Unlock bootloader (Will wipe existing apps/data)"
 echo ""
-echo "[10] Back to menu "
+echo "[11] Back to menu "
 echo ""
 echo -n "Enter option: "; read option
 case "$option" in
@@ -62,7 +62,7 @@ case "$option" in
 10)
   . ./devices/nexus5/android/bootloader.sh
 ;;
-0)
+11)
   . ./launcher.sh
 ;;
 *)

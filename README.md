@@ -133,7 +133,6 @@ TODO
 ------
 - Add Nexus 7 2012 grouper & tilapia
 - Rename legacy to stable (UBports)
-- Spin up own image-server for ubuntu devices
 - Fix Lineage OS download links!!
 - Add Maru OS for flo
 - Add Plasma Mobile
@@ -149,7 +148,6 @@ TODO
 - Improve the Snap
 - Add feature to flash SD cards with Raspian, Ubuntu,...
 - Add revision option
-- Add 10 mins message for OPO or beat gripsgard to fix it ;)
 
 
 Special thanks to

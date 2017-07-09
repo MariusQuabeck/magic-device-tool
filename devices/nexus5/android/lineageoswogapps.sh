@@ -72,7 +72,7 @@ then
   echo "========================================="
   sleep 1
   echo ""
-  echo "Installing Cyanogenmod.."
+  echo "Installing LineageOS.."
   echo ""
   adb shell twrp install /sdcard/lineage-14.1-20170530-nightly-hammerhead-signed.zip
   sleep 1

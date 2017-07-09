@@ -1,6 +1,8 @@
+SNAPSHOT_DATE=20170708
+ZIP_FILENAME=lineage-13.0-$SNAPSHOT_DATE-nightly-manta-signed.zip
 clear
 echo ""
-echo "Installing Lineage OS 13"
+echo "Installing LineageOS 13"
 echo ""
 sleep 1
 echo "Please boot your Nexus 10 into fastboot mode by pressing Power & Volume Up (+) & Volume Down (-)"
@@ -31,10 +33,10 @@ then
   wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-manta.img
   sleep 1
   echo ""
-  echo "Downloading Lineage OS 13.."
+  echo "Downloading LineageOS 13.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/manta/20170527/lineage-13.0-20170527-nightly-manta-signed.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://lineageos.mirrorhub.io/full/manta/$SNAPSHOT_DATE/$ZIP_FILENAME
   echo ""
   echo "Downloading Open Gapps.."
   echo ""
@@ -69,8 +71,8 @@ then
   echo "You may see a prompt asking you for read/write permissions"
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
-  echo "  → Lineage OS 13 zip "
-  adb push -p $HOME/.cache/magic-device-tool/manta-snapshot.zip /sdcard/
+  echo "  → LineageOS 13 zip "
+  adb push -p $HOME/.cache/magic-device-tool/$ZIP_FILENAME /sdcard/
   echo ""
   echo "  → gapps zip"
   adb push -p $HOME/.cache/magic-device-tool/open_gapps-arm-6.0-nano-20160811.zip /sdcard/
@@ -78,9 +80,9 @@ then
   echo "========================================="
   sleep 1
   echo ""
-  echo "Installing Cyanogenmod.."
+  echo "Installing LineageOS.."
   echo ""
-  adb shell twrp install /sdcard/lineage-13.0-20170527-nightly-manta-signed.zip
+  adb shell twrp install /sdcard/$ZIP_FILENAME
   sleep 1
   echo ""
   echo "Installing GApps.."

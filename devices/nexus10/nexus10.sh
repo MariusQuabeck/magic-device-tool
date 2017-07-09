@@ -19,13 +19,14 @@ echo ""
 echo ""
 echo "Android: "
 echo ""
-echo "[4] Install Lineage OS 13"
-echo "[5] Install Phoenix OS"
-echo "[6] Install Factory Image"
-echo "[7] Install TWRP recovery"
-echo "[8] Back Up your Android device"
+echo "[4] Install LineageOS 13"
+echo "[5] Install LineageOS 13 without Gapps"
+echo "[6] Install Phoenix OS"
+echo "[7] Install Factory Image"
+echo "[8] Install TWRP recovery"
+echo "[9] Back Up your Android device"
 echo ""
-echo "[9] Lock/Unlock bootloader (Will wipe existing apps/data)"
+echo "[10] Lock/Unlock bootloader (Will wipe existing apps/data)"
 echo ""
 echo "[0] Back to menu "
 echo ""
@@ -41,21 +42,24 @@ case "$option" in
   . ./devices/generic/ubuntu/ubports-backup.sh
 ;;
 4)
-  . ./devices/nexus10/android/cyanogenmod.sh
+  . ./devices/nexus10/android/lineageos.sh
 ;;
 5)
-  . ./devices/nexus10/android/phoenixos.sh
+  . ./devices/nexus10/android/lineageoswogapps.sh
 ;;
 6)
-  . ./devices/nexus10/android/factoryimage.sh
+  . ./devices/nexus10/android/phoenixos.sh
 ;;
 7)
-  . ./devices/nexus10/android/twrp.sh
+  . ./devices/nexus10/android/factoryimage.sh
 ;;
 8)
-  . ./devices/generic/android/backup.sh
+  . ./devices/nexus10/android/twrp.sh
 ;;
 9)
+  . ./devices/generic/android/backup.sh
+;;
+10)
   . ./devices/nexus10/android/bootloader.sh
 ;;
 0)

@@ -24,7 +24,7 @@ fi
     echo ""
     wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://dl.google.com/dl/android/aosp/mantaray-lmy49j-factory-7887b439.tgz
     sleep 1
-    tar xzf $HOME/.cache/magic-device-tool/mantaray*
+    tar xzf $HOME/.cache/magic-device-tool/mantaray-lmy49j-factory-7887b439.tgz --directory $HOME/.cache/magic-device-tool/
     sleep 1
     fastboot erase boot
     fastboot erase cache

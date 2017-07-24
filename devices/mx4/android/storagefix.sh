@@ -42,6 +42,7 @@ fi
     echo ""
     echo "Please wait one minute and reboot your phone to bootloader/fastboot again."
     echo ""
+    echo "Please boot your MX4 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
     sleep 1
     echo -n "Is your MX4 in bootloader/fastboot mode now? [Y] "; read bootloadermode
     if [ "$bootloadermode"==Y -o "$bootloadermode"==y -o "$bootloadermode"=="" ]; then

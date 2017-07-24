@@ -25,11 +25,14 @@ Not all ROMs are available for all devices.
 
 Functions
 ---
-- Ubuntu
+- Ubuntu Touch
   - Install Ubuntu Touch
   - Switch Channels
   - Install OpenStore
   - Screencast
+  
+- Ubuntu 13.04 Desktop (tilapia only)
+  - Install Ubuntu 13.04 Desktop
 
 - Android
   - Install CyanogenMod (with or without GApps)
@@ -62,9 +65,10 @@ Supported devices
 - BQ Aquaris M10 HD (cooler)
 - BQ Aquaris M10 FHD (frieza)
 - Meizu MX 4 (arale)
-- ~~Meizu Pro 5 (turbo)~~ removed until Marius can get his hands on this device
+- Meizu Pro 5 (turbo)
 - LG Nexus 4 (mako)
 - LG Nexus 5 (hammerhead)
+- Asus Nexus 7 2012 (tilapia)
 - Asus Nexus 7 2013 WiFi (flo)
 - Asus Nexus 7 2013 LTE (deb)
 - Samsung Nexus 10 (manta)
@@ -131,23 +135,13 @@ FAQ
 
 TODO
 ------
-- Add Nexus 7 2012 grouper & tilapia
 - Rename legacy to stable (UBports)
-- Fix Lineage OS download links!!
-- Add Maru OS for flo
 - Add Plasma Mobile
-- Add Maru OS for Nexus 7 2013 WiFi (flo)
 - Add Fairphone OS, Fairphone Open & Sailfish for FP2
 - Add LineageOS Extras
-- Fix CM links in Sailfish install
-- Switch CM to Lineage OS
 - Add support to install F-Droid
 - Add option "add udev rule"
-- Give Aaron access to README
-- Add Plasma Mobile
-- Improve the Snap
 - Add feature to flash SD cards with Raspian, Ubuntu,...
-- Add revision option
 
 
 Special thanks to

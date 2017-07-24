@@ -39,7 +39,7 @@ then
   echo "Downloading Sailfish OS.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://gazizova.net/pub/install/nexus7/sailfishos-flo-release-1.1.7.28-flo2.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/sailfishos/sailfishos-flo-release-1.1.7.28-flo2.zip
   sleep 2
   clear
   echo ""

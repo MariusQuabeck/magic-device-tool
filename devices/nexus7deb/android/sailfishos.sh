@@ -34,7 +34,7 @@ then
   echo "Downloading Cyanogenmod 11.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://get.cm/get/jenkins/90776/cm-11-20141115-SNAPSHOT-M12-deb.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/cyanogenmod/cm-11-20141115-SNAPSHOT-M12-deb.zip
   echo ""
   echo "Downloading Sailfish OS.."
   echo ""

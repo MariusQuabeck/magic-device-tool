@@ -3,13 +3,13 @@ echo ""
 echo "Choose a channel to flash (Will remove existing apps/data)"
 echo ""
 sleep 1
-echo "[1] stable"
+echo "[1] devel"
 echo ""
 echo "[2] Back to menu "
 echo ""
 echo -n "Enter option: "; read ubuntuwipechannel
 if [ "$ubuntuwipechannel" = "1" ]; then
-. ./devices/nexus7deb/ubuntu/stablewipe.sh
+. ./devices/nexus7deb/ubuntu/develwipe.sh
 elif [ "$ubuntuwipechannel" = "2" ]; then
   . ./launcher.sh
 else

@@ -35,12 +35,12 @@ then
   echo "(needed for SFOS)"
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://download.cyanogenmod.org/get/jenkins/90767/cm-11-20141115-SNAPSHOT-M12-mako.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/cyanogenmod/cm-11-20141115-SNAPSHOT-M12-mako.zip
   echo ""
   echo "Downloading Sailfish OS.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://images.devaamo.fi/sfa/mako/gamma7.1/sailfishos-mako-release-2.0.2.51-gamma7.1.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://images.devaamo.fi/sfa/mako/gamma8/sailfishos-mako-release-2.0.5.6-gamma8.zip
   sleep 2
   clear
   echo ""
@@ -74,7 +74,7 @@ then
   adb push -p $HOME/.cache/magic-device-tool/cm-11-20141115-SNAPSHOT-M12-mako.zip /sdcard/
   echo ""
   echo "  → Sailfish OS zip"
-  adb push -p $HOME/.cache/magic-device-tool/sailfishos-mako-release-2.0.2.51-gamma7.1.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/sailfishos-mako-release-2.0.5.6-gamma8.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
@@ -87,7 +87,7 @@ then
   echo "Installing Sailfish OS.."
   echo ""
   sleep 3
-  adb shell twrp install /sdcard/sailfishos-mako-release-2.0.2.51-gamma7.1.zip
+  adb shell twrp install /sdcard/sailfishos-mako-release-2.0.5.6-gamma8.zip
   echo ""
   echo "Wipe cache.."
   echo ""

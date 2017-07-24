@@ -41,7 +41,7 @@ case "$option" in
   . ./devices/generic/ubuntu/ubports-backup.sh
 ;;
 4)
-  . ./devices/nexus10/android/cyanogenmod.sh
+  . ./devices/nexus10/android/los.sh
 ;;
 5)
   . ./devices/nexus10/android/phoenixos.sh

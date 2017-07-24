@@ -35,7 +35,7 @@ then
   echo "(needed fo SFOS)"
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://download.cyanogenmod.org/get/jenkins/78753/cm-11-20140805-SNAPSHOT-M9-hammerhead.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/cyanogenmod/cm-11-20140805-SNAPSHOT-M9-hammerhead.zip
   echo ""
   echo "Downloading Sailfish OS.."
   echo ""

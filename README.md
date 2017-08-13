@@ -135,6 +135,7 @@ FAQ
 
 TODO
 ------
+- Add instructions for Solus
 - Rename legacy to stable (UBports)
 - Add Plasma Mobile
 - Add Fairphone OS, Fairphone Open & Sailfish for FP2

@@ -79,25 +79,7 @@ Supported devices
 Usage
 -----
 
-Recommended:
-
-Connect the device to the computer with the USB cable
-
-Ensure you have Git installed, and clone the repository to your local machine from GitHub
-```
-git clone https://github.com/MariusQuabeck/magic-device-tool.git
-```
-`cd` into the new directory
-```
-cd magic-device-tool
-```
-Run the script
-```
-./launcher.sh
-```
-Then follow the simple on-screen guide
-
-Advanced:
+Use a [distro that is capable of Snaps](https://snapcraft.io/), open a terminal and run:
 
 ```
 sudo snap install magic-device-tool --devmode
@@ -106,6 +88,18 @@ Run the snap
 ```
 magic-device-tool
 ```
+Make sure that you have android-tools-adb and android-tools-fastboot installed on your system.
+
+Ubuntu:
+
+```sudo apt install android-tools-adb android-tools-fastboot```
+
+Solus
+
+```sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/solus-project/3rd-party/master/programming/tools/android-tools/pspec.xml```
+
+```sudo eopkg it android-tools*.eopkg;sudo rm android-tools*.eopkg```
+
 
 FAQ
 ---

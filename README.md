@@ -100,6 +100,12 @@ Solus
 
 ```sudo eopkg it android-tools*.eopkg;sudo rm android-tools*.eopkg```
 
+If you still run into any adb/fastboot permission errors and mdt can't find your device, please start the snap as root
+
+```su``` or ```sudo bash```
+
+```magic-device-tool```
+
 
 FAQ
 ---
@@ -137,6 +143,7 @@ TODO
 - Add support to install F-Droid
 - Add option "add udev rule"
 - Add feature to flash SD cards with Raspian, Ubuntu,...
+- Fix udev rules issues properly 
 
 
 Special thanks to

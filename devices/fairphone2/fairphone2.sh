@@ -6,9 +6,6 @@ echo ""
 echo "Fairphone 2 - FP2"
 echo ""
 echo ""
-echo "Please start the tool with 'sudo ./launcher.sh' otherwise it wont work !"
-echo ""
-echo ""
 sleep 1
 echo "Ubuntu: "
 echo ""
@@ -42,4 +39,3 @@ case "$option" in
   exit
 ;;
 esac
-

@@ -69,7 +69,7 @@ fi
         #echo "this can take up to ~30 seconds"
         adb shell "
 	mount -a"
-        ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=FP2
+        sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubports-touch/legacy --device=FP2
         sleep 5
         echo ""
         echo "Move to your device to finish the setup."

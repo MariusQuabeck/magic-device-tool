@@ -88,21 +88,10 @@ Run the snap
 ```
 magic-device-tool
 ```
-Make sure that you have android-tools-adb and android-tools-fastboot installed on your system.
 
-Ubuntu:
+If you run into any adb/fastboot permission errors and mdt can't find your device, please start the snap as root
 
-```sudo apt install android-tools-adb android-tools-fastboot```
-
-Solus
-
-```sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/solus-project/3rd-party/master/programming/tools/android-tools/pspec.xml```
-
-```sudo eopkg it android-tools*.eopkg;sudo rm android-tools*.eopkg```
-
-If you still run into any adb/fastboot permission errors and mdt can't find your device, please start the snap as root
-
-```su``` or ```sudo bash```
+```sudo su``` or ```sudo bash```
 
 ```magic-device-tool```
 

@@ -34,7 +34,7 @@ if grep 'device$\|recovery$' /tmp/AttachedDevices
     rm -f /tmp/AttachedDevices
     echo ""
     sleep 1
-    echo "Exiting script. Bye Bye"
+    echo "Exiting magic-device-tool. Bye Bye"
     sleep 1
   else
     echo "Device not found"

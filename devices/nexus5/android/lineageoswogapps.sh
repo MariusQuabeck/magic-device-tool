@@ -35,7 +35,7 @@ then
   echo "Downloading LineageOS 14.1.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/hammerhead/20170530/lineage-14.1-20170530-nightly-hammerhead-signed.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/hammerhead/20170829/lineage-14.1-20170829-nightly-hammerhead-signed.zip
   echo ""
   sleep 2
   clear
@@ -67,14 +67,14 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → LineageOS 14.1 zip "
-  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170530-nightly-hammerhead-signed.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170829-nightly-hammerhead-signed.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
   echo "Installing Cyanogenmod.."
   echo ""
-  adb shell twrp install /sdcard/lineage-14.1-20170530-nightly-hammerhead-signed.zip
+  adb shell twrp install /sdcard/lineage-14.1-20170829-nightly-hammerhead-signed.zip
   sleep 1
   echo ""
   echo "Wipe cache.."

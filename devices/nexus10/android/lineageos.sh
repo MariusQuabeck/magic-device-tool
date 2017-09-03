@@ -34,7 +34,7 @@ then
   echo "Downloading Lineage OS 13.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/manta/20170722/lineage-13.0-20170722-nightly-manta-signed.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/manta/20170826/lineage-13.0-20170826-nightly-manta-signed.zip
   echo ""
   echo "Downloading Open Gapps.."
   echo ""
@@ -70,7 +70,7 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → Lineage OS 13 zip "
-  adb push -p $HOME/.cache/magic-device-tool/lineage-13.0-20170722-nightly-manta-signed.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/lineage-13.0-20170826-nightly-manta-signed.zip /sdcard/
   echo ""
   echo "  → gapps zip"
   adb push -p $HOME/.cache/magic-device-tool/open_gapps-arm-6.0-nano-20160811.zip /sdcard/
@@ -80,7 +80,7 @@ then
   echo ""
   echo "Installing Lineage OS 13.."
   echo ""
-  adb shell twrp install /sdcard/lineage-13.0-20170722-nightly-manta-signed.zip
+  adb shell twrp install /sdcard/lineage-13.0-20170826-nightly-manta-signed.zip
   sleep 1
   echo ""
   echo "Installing GApps.."

@@ -35,7 +35,7 @@ then
   echo "Downloading LineageOS 13 .."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/manta/20170722/lineage-13.0-20170722-nightly-manta-signed.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/manta/20170826/lineage-13.0-20170826-nightly-manta-signed.zip
   echo ""
   sleep 2
   clear
@@ -67,14 +67,14 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → LineageOS 13 zip "
-  adb push -p $HOME/.cache/magic-device-tool/lineage-13.0-20170722-nightly-manta-signed.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/lineage-13.0-20170826-nightly-manta-signed.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
   echo "Installing LineageOS 13.."
   echo ""
-  adb shell twrp install /sdcard/lineage-13.0-20170722-nightly-manta-signed.zip
+  adb shell twrp install /sdcard/lineage-13.0-20170826-nightly-manta-signed.zip
   sleep 1
   echo ""
   echo "Wipe cache.."

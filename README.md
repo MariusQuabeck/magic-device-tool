@@ -124,6 +124,7 @@ FAQ
 
 TODO
 ------
+- Remove Ubuntu/UBports
 - Add instructions for Solus
 - Rename legacy to stable (UBports)
 - Add Plasma Mobile

@@ -43,7 +43,7 @@ fi
     #rm recovery-arale.img
     echo ""
     sleep 1
-    echo "Exiting script. Bye Bye"
+    echo "Exiting magic-device-tool. Bye Bye"
     sleep 1
     exit
   else

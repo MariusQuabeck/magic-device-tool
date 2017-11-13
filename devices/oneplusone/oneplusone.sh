@@ -8,9 +8,6 @@ echo ""
 echo "OnePlus One - bacon"
 echo ""
 echo ""
-echo "Please start the tool with 'sudo ./launcher.sh' otherwise it wont work !"
-echo ""
-echo ""
 sleep 1
 echo "Ubuntu: "
 echo ""
@@ -70,8 +67,7 @@ case "$option" in
   echo ""
   echo "Invalid Option"
   echo ""
-  echo "Exiting script. Bye Bye"
+  echo "Exiting magic-device-tool. Bye Bye"
   exit
 ;;
 esac
-

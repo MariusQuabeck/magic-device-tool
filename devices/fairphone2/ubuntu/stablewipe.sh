@@ -1,8 +1,5 @@
 clear
 echo ""
-echo "Please start the tool with 'sudo ./launcher.sh' otherwise it wont work !"
-echo ""
-echo ""
 echo "Flashing stable channel"
 echo ""
 sleep 1
@@ -87,7 +84,7 @@ fi
         sudo chown -R $SUDO_USER:$SUDO_USER $HOME/.cache/ubuntuimages/
         echo ""
         sleep 1
-        echo "Exiting script. Bye Bye"
+        echo "Exiting magic-device-tool. Bye Bye"
         sleep 1
       else
         echo "Device not found"

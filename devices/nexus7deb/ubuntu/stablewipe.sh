@@ -29,7 +29,7 @@ fi
     fastboot reboot-bootloader
     sleep 6
     echo ""
-    sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubuntu-touch/stable --device=deb --bootstrap
+    ubuntu-device-flash --server=http://system-image.ubports.com touch --channel=ubuntu-touch/stable --device=deb --bootstrap
     echo ""
     echo "Move to your device to finish the setup."
     sleep 1
@@ -38,7 +38,7 @@ fi
     rm -f /tmp/AttachedDevices
     echo ""
     sleep 1
-    echo "Exiting script. Bye Bye"
+    echo "Exiting magic-device-tool. Bye Bye"
     sleep 1
     exit
     else

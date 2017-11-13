@@ -2,7 +2,7 @@
 
 ![alt text](https://raw.githubusercontent.com/MariusQuabeck/magic-device-tool/master/mdt.png "magic-device-tool logo")
 
-A simple and feature full tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, LineageOS, Maru OS, Sailfish OS, and Phoenix OS) on your mobile devices.
+A simple and featureful tool to handle installing/replacing Operating Systems (Ubuntu Phone / Ubuntu Touch, Android, LineageOS, Maru OS, Sailfish OS, and Phoenix OS) on your mobile devices.
 
 ## Contact
 
@@ -25,11 +25,14 @@ Not all ROMs are available for all devices.
 
 Functions
 ---
-- Ubuntu
+- Ubuntu Touch
   - Install Ubuntu Touch
   - Switch Channels
   - Install OpenStore
   - Screencast
+  
+- Ubuntu 13.04 Desktop (tilapia only)
+  - Install Ubuntu 13.04 Desktop
 
 - Android
   - Install CyanogenMod (with or without GApps)
@@ -62,9 +65,10 @@ Supported devices
 - BQ Aquaris M10 HD (cooler)
 - BQ Aquaris M10 FHD (frieza)
 - Meizu MX 4 (arale)
-- ~~Meizu Pro 5 (turbo)~~ removed until Marius can get his hands on this device
+- Meizu Pro 5 (turbo)
 - LG Nexus 4 (mako)
 - LG Nexus 5 (hammerhead)
+- Asus Nexus 7 2012 (tilapia)
 - Asus Nexus 7 2013 WiFi (flo)
 - Asus Nexus 7 2013 LTE (deb)
 - Samsung Nexus 10 (manta)
@@ -75,25 +79,7 @@ Supported devices
 Usage
 -----
 
-Recommended:
-
-Connect the device to the computer with the USB cable
-
-Ensure you have Git installed, and clone the repository to your local machine from GitHub
-```
-git clone https://github.com/MariusQuabeck/magic-device-tool.git
-```
-`cd` into the new directory
-```
-cd magic-device-tool
-```
-Run the script
-```
-./launcher.sh
-```
-Then follow the simple on-screen guide
-
-Advanced:
+Use a [distro that is capable of Snaps](https://snapcraft.io/), open a terminal and run:
 
 ```
 sudo snap install magic-device-tool --devmode
@@ -102,6 +88,13 @@ Run the snap
 ```
 magic-device-tool
 ```
+
+If you run into any adb/fastboot permission errors and mdt can't find your device, please start the snap as root
+
+```sudo su``` or ```sudo bash```
+
+```magic-device-tool```
+
 
 FAQ
 ---
@@ -131,23 +124,16 @@ FAQ
 
 TODO
 ------
-- Add Nexus 7 2012 grouper & tilapia
+- Remove Ubuntu/UBports
+- Add instructions for Solus
 - Rename legacy to stable (UBports)
-- Fix Lineage OS download links!!
-- Add Maru OS for flo
 - Add Plasma Mobile
-- Add Maru OS for Nexus 7 2013 WiFi (flo)
 - Add Fairphone OS, Fairphone Open & Sailfish for FP2
 - Add LineageOS Extras
-- Fix CM links in Sailfish install
-- Switch CM to Lineage OS
 - Add support to install F-Droid
 - Add option "add udev rule"
-- Give Aaron access to README
-- Add Plasma Mobile
-- Improve the Snap
 - Add feature to flash SD cards with Raspian, Ubuntu,...
-- Add revision option
+- Fix udev rules issues properly 
 
 
 Special thanks to

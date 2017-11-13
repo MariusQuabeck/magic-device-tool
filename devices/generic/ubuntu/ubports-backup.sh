@@ -108,7 +108,7 @@ function do_servertest() {
 
 function find_sdcard() {
 
-    echo $(adb shell "ls /media/phablet 2> /dev/null | head -n +3" | tr -d '[:space:]')
+    printf %q "$(adb shell "ls /media/phablet 2> /dev/null | head -n +3" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
 
 }
 

@@ -2,7 +2,7 @@
 
 function wait_for_user() {
 
-    read -p "Press a key to continue..." tmp 
+    read -p "Hit Enter to continue..." tmp 
 
 }
 

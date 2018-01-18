@@ -60,9 +60,7 @@ then
 	  exit 1
 	fi
   done
-  
-  exit
-  
+    
   echo ""
   echo "Flashing legacy channel"
   echo ""

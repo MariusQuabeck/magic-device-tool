@@ -47,7 +47,7 @@ if [ "$broption" = "1" ]; then
     rm -f /tmp/AttachedDevices
     echo ""
     sleep 1
-    echo "Exiting script. Bye Bye"
+    echo "Exiting magic-device-tool. Bye Bye"
     sleep 1
   else
     echo "Device not found"
@@ -88,7 +88,7 @@ elif [ "$broption" = "2" ]; then
     rm -f /tmp/AttachedDevices
     echo ""
     sleep 1
-    echo "Exiting script. Bye Bye"
+    echo "Exiting magic-device-tool. Bye Bye"
     sleep 1
   else
     echo "Device not found"
@@ -101,7 +101,7 @@ elif [ "$broption" = "2" ]; then
   fi
 elif [ "$broption" = "3" ]; then
       	echo "Quit"
-      	echo "Exiting script. Bye Bye"
+      	echo "Exiting magic-device-tool. Bye Bye"
 else
   echo "Device not found"
   sleep 1

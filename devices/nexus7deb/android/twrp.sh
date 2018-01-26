@@ -2,7 +2,7 @@ clear
 echo ""
 echo "Install TWRP recovery"
 echo ""
-echo "Please boot your Nexus 7 into fastboot mode by pressing Power & Volume Up (+)"
+echo "Please boot your Nexus 7 into fastboot mode by pressing Power & Volume Down (-)"
 sleep 1
 echo ""
 echo -n "Is your Nexus 7 in fastboot mode now? [Y] "; read bootloadermode
@@ -37,7 +37,7 @@ fi
     #rm -f ./*.img
     echo ""
     sleep 1
-    echo "Exiting script. Bye Bye"
+    echo "Exiting magic-device-tool. Bye Bye"
     sleep 1
     exit
   else

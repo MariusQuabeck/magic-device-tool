@@ -21,7 +21,7 @@ fi
     sleep 1
     clear
     echo ""
-    echo "Flashing stable channel"
+    echo "Flashing legacy channel"
     echo ""
     sleep 1
     fastboot format cache
@@ -38,7 +38,7 @@ fi
     rm -f /tmp/AttachedDevices
     echo ""
     sleep 1
-    echo "Exiting script. Bye Bye"
+    echo "Exiting magic-device-tool. Bye Bye"
     sleep 1
     exit
     else

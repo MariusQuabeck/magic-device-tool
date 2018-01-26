@@ -19,7 +19,7 @@ echo ""
 echo ""
 echo "Android: "
 echo ""
-echo "[4] Install Cyanogenmod 13"
+echo "[4] Install Lineage OS 13"
 echo "[5] Install Phoenix OS"
 echo "[6] Install Factory Image"
 echo "[7] Install TWRP recovery"
@@ -41,7 +41,7 @@ case "$option" in
   . ./devices/generic/ubuntu/ubports-backup.sh
 ;;
 4)
-  . ./devices/nexus10/android/cyanogenmod.sh
+  . ./devices/nexus10/android/los.sh
 ;;
 5)
   . ./devices/nexus10/android/phoenixos.sh
@@ -65,7 +65,7 @@ case "$option" in
   echo ""
   echo "Invalid Option"
   echo ""
-  echo "Exiting script. Bye Bye"
+  echo "Exiting magic-device-tool. Bye Bye"
   exit
 ;;
 esac

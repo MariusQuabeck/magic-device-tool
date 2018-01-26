@@ -21,7 +21,7 @@ echo ""
 echo -n "Enter option: "; read option
 case "$option" in
 1)
-  . ./devices/fairphone2/ubuntu/ubuntu.sh
+  . ./devices/m10fhd/ubuntu/ubuntu.sh
 ;;
 2)
   . ./devices/generic/ubuntu/openstore.sh
@@ -39,7 +39,7 @@ case "$option" in
   echo ""
   echo "Invalid Option"
   echo ""
-  echo "Exiting script. Bye Bye"
+  echo "Exiting magic-device-tool. Bye Bye"
   exit
 ;;
 esac

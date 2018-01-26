@@ -24,7 +24,9 @@ echo ""
 echo "[5] Install Cyanogenmod 13"
 echo "[6] Install Cyanogenmod 13 without Gapps"
 echo ""
-echo "[7] Back Up your Android device"
+echo "[7] Fix local storage issue"
+echo ""
+echo "[8] Back Up your Android device"
 echo ""
 echo "[0] Back to menu "
 echo ""
@@ -49,6 +51,9 @@ case "$option" in
   . ./devices/mx4/android/cyanogenmodwogapps.sh
 ;;
 7)
+  . ./devices/mx4/android/storagefix.sh
+;;
+8)
   . ./devices/generic/android/backup.sh
 ;;
 0)
@@ -58,7 +63,7 @@ case "$option" in
   echo ""
   echo "Invalid Option"
   echo ""
-  echo "Exiting script. Bye Bye"
+  echo "Exiting magic-device-tool. Bye Bye"
   exit
 ;;
 esac

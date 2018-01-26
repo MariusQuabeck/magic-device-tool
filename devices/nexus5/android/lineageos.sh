@@ -35,12 +35,12 @@ then
   echo "Downloading LineageOS 14.1.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/hammerhead/20170124/lineage-14.1-20170124-nightly-hammerhead-signed.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/hammerhead/20170829/lineage-14.1-20170829-nightly-hammerhead-signed.zip
   echo ""
   echo "Downloading Open Gapps.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/gapps/open_gapps-arm-7.1-nano-20170126.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/gapps/open_gapps-arm-7.1-nano-20170603.zip
   sleep 2
   clear
   echo ""
@@ -71,23 +71,23 @@ then
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
   echo "  → LineageOS 14.1 zip "
-  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170124-nightly-hammerhead-signed.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170829-nightly-hammerhead-signed.zip /sdcard/
   echo ""
   echo "  → gapps zip"
-  adb push -p $HOME/.cache/magic-device-tool/open_gapps-arm-7.1-nano-20170126.zip /sdcard/
+  adb push -p $HOME/.cache/magic-device-tool/open_gapps-arm-7.1-nano-20170603.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
   echo "Installing LineageOS 14.1.."
   echo ""
-  adb shell twrp install /sdcard/lineage-14.1-20170124-nightly-hammerhead-signed.zip
+  adb shell twrp install /sdcard/lineage-14.1-20170829-nightly-hammerhead-signed.zip
   sleep 1
   echo ""
   echo "Installing Open GApps.."
   echo ""
   sleep 3
-  adb shell twrp install /sdcard/open_gapps-arm-7.1-nano-20170126.zip
+  adb shell twrp install /sdcard/open_gapps-arm-7.1-nano-20170603.zip
   echo ""
   echo "Wipe cache.."
   echo ""
@@ -103,7 +103,7 @@ then
   rm -f /tmp/AttachedDevices
   echo ""
   sleep 1
-  echo "Exiting script. Bye Bye"
+  echo "Exiting magic-device-tool. Bye Bye"
   sleep 1
 
 else

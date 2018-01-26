@@ -2,7 +2,7 @@
 
 function wait_for_user() {
 
-    read -p "Press a key to continue..." tmp 
+    read -p "Hit Enter to continue..." tmp 
 
 }
 
@@ -108,7 +108,7 @@ function do_servertest() {
 
 function find_sdcard() {
 
-    echo $(adb shell "ls /media/phablet 2> /dev/null | head -n +3" | tr -d '[:space:]')
+    printf %q "$(adb shell "ls /media/phablet 2> /dev/null | head -n +3" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
 
 }
 
@@ -127,13 +127,13 @@ function do_backup() {
         else
             echo "Now doing backup to SD card $sdcard..."
             adb shell "mkdir -p /media/phablet/$sdcard/$backup_folder/ubports_backup/$device"
-            adb shell "sudo -u phablet rsync -az --delete --info=progress2 /home/phablet/ /media/phablet/$sdcard/$backup_folder/ubports_backup/$device/ | tee /tmp/ubports-backup.log; echo -n \${PIPESTATUS[0]} >> /tmp/ubports-backup.log"
+            adb shell "sudo -u phablet rsync -az --no-links --delete --info=progress2 /home/phablet/ /media/phablet/$sdcard/$backup_folder/ubports_backup/$device/ | tee /tmp/ubports-backup.log; echo -n \${PIPESTATUS[0]} >> /tmp/ubports-backup.log"
         fi
     else
         do_ssh_setup
         do_servertest
         echo "Now doing backup..."
-        adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -az --delete --info=progress2 /home/phablet/ $backup_user@$backup_server:$backup_folder/ubports_backup/$device/ | tee /tmp/ubports-backup.log; echo -n \${PIPESTATUS[0]} >> /tmp/ubports-backup.log"
+        adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -az --no-links --delete --info=progress2 /home/phablet/ $backup_user@$backup_server:$backup_folder/ubports_backup/$device/ | tee /tmp/ubports-backup.log; echo -n \${PIPESTATUS[0]} >> /tmp/ubports-backup.log"
     fi
     result=$(adb shell "tail -1 /tmp/ubports-backup.log")
     echo "" 
@@ -190,12 +190,12 @@ function do_restore() {
                 echo "No SD card found, please check your setup."
             else
                 echo "Now doing restore from SD card $sdcard..."
-                adb shell "sudo -u phablet rsync -az --delete --info=progress2 /media/phablet/$sdcard/$backup_folder/ubports_backup/$origin_device/ /home/phablet/ | tee /tmp/ubports-backup.log; echo -n \${PIPESTATUS[0]} >> /tmp/ubports-backup.log"
+                adb shell "sudo -u phablet rsync -az --no-links --delete --info=progress2 /media/phablet/$sdcard/$backup_folder/ubports_backup/$origin_device/ /home/phablet/ | tee /tmp/ubports-backup.log; echo -n \${PIPESTATUS[0]} >> /tmp/ubports-backup.log"
             fi
         else
             echo ""
             echo "Now doing restore..."
-	    adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -az --delete --info=progress2 $backup_user@$backup_server:$backup_folder/ubports_backup/$origin_device/ /home/phablet/ | tee /tmp/ubports-backup.log; echo -n \${PIPESTATUS[0]} >> /tmp/ubports-backup.log"
+	    adb shell "sudo -u phablet rsync -e 'ssh -oStrictHostKeyChecking=no -oPasswordAuthentication=no -i /home/phablet/.ssh/id_ubports-backup' -az --no-links --delete --info=progress2 $backup_user@$backup_server:$backup_folder/ubports_backup/$origin_device/ /home/phablet/ | tee /tmp/ubports-backup.log; echo -n \${PIPESTATUS[0]} >> /tmp/ubports-backup.log"
         fi
         adb shell "chmod 0600 \$HOME/.ssh/id_ubports-backup*"
         result=$(adb shell "tail -1 /tmp/ubports-backup.log")
@@ -276,6 +276,12 @@ while [ 1 ]; do
     fi
     device=$(adb devices | grep -w device | cut -f1)
     echo "Device currently connected: $device"
+    if [ -z $device ]; then
+        echo ""
+        echo_red "No device detected! Please make sure developer mode is on and you have authorized this PC to connect with adb to the phone."
+        echo_red "Return to the previous menu and select the backup option again to restart."
+        echo ""
+    fi
     if [ "$advanced_mode" -eq "1" ]; then 
         if [ "$backup_target" = "sdcard" ]; then
             echo "Current backup path: /media/phablet/<SDCARD_NAME>/$backup_folder/ubports_backup/$device" 

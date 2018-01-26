@@ -1,12 +1,12 @@
 clear
 echo ""
-echo "Installing Cyanogenmod 14.1 without Gapps"
+echo "Installing Lineage OS 14.1 without Gapps"
 echo ""
 sleep 1
-echo "Please boot your Nexus 5 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
+echo "Please boot your Nexus 7 into bootloader/fastboot mode by pressing Power & Volume Down (-)"
 echo ""
 sleep 1
-echo -n "Is your Nexus 5 in bootloader/fastboot mode now? [Y] "; read bootloadermode
+echo -n "Is your Nexus 7 in bootloader/fastboot mode now? [Y] "; read bootloadermode
 if [ "$bootloadermode"==Y -o "$bootloadermode"==y -o "$bootloadermode"=="" ]; then
   clear
   echo ""
@@ -28,20 +28,20 @@ then
   echo ""
   echo "Downloading TWRP recovery"
   echo ""
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-hammerhead.img
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ http://mdt-files.com/downloads/magic-device-tool/recoverys/twrp-deb.img
   sleep 1
   echo ""
-  echo "Downloading Cyanogenmod 14.1 .."
+  echo "Downloading Lineage OS 14.1.."
   echo ""
   sleep 1
-  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://download.cyanogenmod.org/get/jenkins/187675/cm-14.1-20161125-NIGHTLY-hammerheadcaf.zip
+  wget -c --quiet --show-progress --tries=10 -P $HOME/.cache/magic-device-tool/ https://mirrorbits.lineageos.org/full/deb/20170828/lineage-14.1-20170828-nightly-deb-signed.zip
   echo ""
   sleep 2
   clear
   echo ""
   echo "Installing TWRP recovery"
   echo ""
-  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-hammerhead.img
+  fastboot flash recovery $HOME/.cache/magic-device-tool/twrp-deb.img
   sleep 1
   echo ""
   echo "Rebooting device.."
@@ -50,8 +50,8 @@ then
   echo ""
   fastboot reboot-bootloader
   sleep 7
-  fastboot boot $HOME/.cache/magic-device-tool/twrp-hammerhead.img
-  sleep 7
+  fastboot boot $HOME/.cache/magic-device-tool/twrp-deb.img
+  sleep 15
   adb reboot recovery
   sleep 15
   echo ""
@@ -65,15 +65,15 @@ then
   echo "You may see a prompt asking you for read/write permissions"
   echo "Ignore that prompt, the tool will take care of the installation"
   echo ""
-  echo "  → CM 14.1 zip "
-  adb push -p $HOME/.cache/magic-device-tool/cm-14.1-20161125-NIGHTLY-hammerheadcaf.zip /sdcard/
+  echo "  → Lineage OS 14.1 zip "
+  adb push -p $HOME/.cache/magic-device-tool/lineage-14.1-20170828-nightly-deb-signed.zip /sdcard/
   echo ""
   echo "========================================="
   sleep 1
   echo ""
-  echo "Installing Cyanogenmod.."
+  echo "Installing Lineage OS 14.1.."
   echo ""
-  adb shell twrp install /sdcard/cm-14.1-20161125-NIGHTLY-hammerheadcaf.zip
+  adb shell twrp install /sdcard/lineage-14.1-20170828-nightly-deb-signed.zip
   sleep 1
   echo ""
   echo "Wipe cache.."
@@ -90,7 +90,7 @@ then
   rm -f /tmp/AttachedDevices
   echo ""
   sleep 1
-  echo "Exiting script. Bye Bye"
+  echo "Exiting magic-device-tool. Bye Bye"
   sleep 1
 
 else

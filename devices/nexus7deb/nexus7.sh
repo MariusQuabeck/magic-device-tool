@@ -19,7 +19,7 @@ echo ""
 echo ""
 echo "Android: "
 echo ""
-echo "[4]  Install Cyanogenmod"
+echo "[4]  Install Lineage OS"
 echo "[5]  Install Sailfish OS"
 echo "[6]  Install Factory Image"
 echo "[7]  Install TWRP recovery"
@@ -41,7 +41,7 @@ case "$option" in
   . ./devices/generic/ubuntu/ubports-backup.sh
 ;;
 4)
-  . ./devices/nexus7deb/android/cm.sh
+  . ./devices/nexus7deb/android/los.sh
 ;;
 5)
   . ./devices/nexus7deb/android/sailfishos.sh
@@ -65,7 +65,7 @@ case "$option" in
   echo ""
   echo "Invalid Option"
   echo ""
-  echo "Exiting script. Bye Bye"
+  echo "Exiting magic-device-tool. Bye Bye"
   exit
 ;;
 esac

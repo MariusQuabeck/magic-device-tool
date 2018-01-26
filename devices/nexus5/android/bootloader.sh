@@ -13,7 +13,7 @@ if [ "$ulbootloader" = "1" ]; then
   echo ""
   echo "Lock bootloader"
   echo ""
-  echo "Please boot your Nexus 5 into fastboot mode by pressing Power & Volume Up (+)"
+  echo "Please boot your Nexus 5 into fastboot mode by pressing Power & Volume Down (-)"
   sleep 1
   echo -n "Is your Nexus 5 in fastboot mode now? [Y] "; read bootloadermode
   if [ "$bootloadermode"==Y -o "$bootloadermode"==y -o "$bootloadermode"=="" ]; then
@@ -38,7 +38,7 @@ if [ "$ulbootloader" = "1" ]; then
       echo "Cleaning up.."
       rm -f /tmp/AttachedDevices
       echo ""
-      echo "Exiting script. Bye Bye"
+      echo "Exiting magic-device-tool. Bye Bye"
       sleep 1
       exit
     fi
@@ -47,7 +47,7 @@ elif [ "$ulbootloader" = "2" ]; then
     echo ""
     echo "Unlock bootloader"
     echo ""
-    echo "Please boot your Nexus 5 into fastboot mode by pressing Power & Volume Up (+)"
+    echo "Please boot your Nexus 5 into fastboot mode by pressing Power & Volume Down (-)"
     sleep 1
     echo -n "Is your Nexus 5 in fastboot mode now? [Y] "; read bootloadermode
     if [ "$bootloadermode"==Y -o "$bootloadermode==y" -o "$bootloadermode"=="" ]; then
@@ -75,14 +75,14 @@ elif [ "$ulbootloader" = "2" ]; then
         echo "Cleaning up.."
         rm -f /tmp/AttachedDevices
         echo ""
-        echo "Exiting script. Bye Bye"
+        echo "Exiting magic-device-tool. Bye Bye"
         sleep 1
         exit
       fi
   elif [ "$ulbootloader" = "3" ]; then
       rm -f /tmp/AttachedDevices
       echo "Quit"
-      echo "Exiting script. Bye Bye"
+      echo "Exiting magic-device-tool. Bye Bye"
 fi
 
 else

@@ -77,18 +77,21 @@ echo "  [2]  BQ Aquaris E5 HD - vegetahd"
 echo "  [3]  BQ Aquaris M10 HD - cooler"
 echo "  [4]  BQ Aquaris M10 FHD - frieza"
 echo "  [5]  Meizu MX 4 - arale"
-echo "  [6]  LG Nexus 4 - mako"
-echo "  [7]  LG Nexus 5 - hammerhead"
-echo "  [8]  Asus Nexus 7 2013 (WiFi) - flo"
-echo "  [9]  Asus Nexus 7 2013 (LTE) - deb"
-echo "  [10] Samsung Nexus 10 - manta"
-echo "  [11] OnePlus One - bacon"
-echo "  [12] Fairphone 2 - FP2"
+echo "  [6]  Meizu Pro 5 - turbo"
+echo "  [7]  LG Nexus 4 - mako"
+echo "  [8]  LG Nexus 5 - hammerhead"
+echo "  [9]  Asus Nexus 7 2013 (WiFi) - flo"
+echo "  [10] Asus Nexus 7 2013 (LTE) - deb"
+echo "  [11] Asus Nexus 7 2012 (3G) - tilapia"
+echo "  [12] Samsung Nexus 10 - manta"
+echo "  [13] OnePlus One - bacon"
+echo "  [14] Fairphone 2 - FP2"
 echo "  ========================================="
-echo "  [13] Join Telegram Group Chat"
-echo "  [14] Report a bug"
+echo "  [15] Donate"
+echo "  [16] Join Telegram Group Chat"
+echo "  [17] Report a bug"
 echo ""
-echo "  [15] Quit"
+echo "  [18] Quit"
 echo ""
 sleep 1
 echo -n "Enter number: "; read device
@@ -109,38 +112,47 @@ case "$device" in
   . ./devices/mx4/mx4.sh
   ;;
   6)
-  . ./devices/nexus4/nexus4.sh
+  . ./devices/pro5/pro5.sh
   ;;
   7)
-  . ./devices/nexus5/nexus5.sh
+  . ./devices/nexus4/nexus4.sh
   ;;
   8)
-  . ./devices/nexus7/nexus7.sh
+  . ./devices/nexus5/nexus5.sh
   ;;
   9)
-  . ./devices/nexus7deb/nexus7.sh
+  . ./devices/nexus7/nexus7.sh
   ;;
   10)
-  . ./devices/nexus10/nexus10.sh
+  . ./devices/nexus7deb/nexus7.sh
   ;;
   11)
-  . ./devices/oneplusone/oneplusone.sh
+  . ./devices/nexus7tilapia/nexus7.sh
   ;;
   12)
-  . ./devices/fairphone2/fairphone2.sh
+  . ./devices/nexus10/nexus10.sh
   ;;
   13)
-  . ./devices/generic/telegram.sh
+  . ./devices/oneplusone/oneplusone.sh
   ;;
   14)
-  . ./devices/generic/reportabug.sh
+  . ./devices/fairphone2/fairphone2.sh
   ;;
   15)
+  . ./devices/generic/donate.sh
+  ;;
+  16)
+  . ./devices/generic/telegram.sh
+  ;;
+  17)
+  . ./devices/generic/reportabug.sh
+  ;;
+  18)
   exit
   ;;
   *)
   echo ""
-  echo_yellow "You did not enter a number between 1 and 15."
+  echo_yellow "You did not enter a number between 1 and 18."
   echo_yellow "Well... I'll be here during the whole next test. -GLaDOS"
   ;;
 esac

@@ -1,3 +1,5 @@
+# THIS PROJECT IS ON HOLD. MOST OF MDT IS NO LONGER WORKING SINCE I HAVE NO TIME TO MAINTAIN IT.
+
 # Version 1.0 - magic-device-tool
 
 ![alt text](https://raw.githubusercontent.com/MariusQuabeck/magic-device-tool/master/mdt.png "magic-device-tool logo")
